@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-science-ml-ai999x"
+version = "1.0.1"
+description = "Offline data science and machine learning solver: evaluation metrics, loss functions and gradients, classical machine-learning algorithms (k-means, kNN, naive Bayes, decision-tree splits, linear and logistic models with regularisation), dimensionality reduction, cross-validation, information theory and neural-network arithmetic, with steps, LaTeX and honest refusals"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ibnul Jaif Farabi"}]
+maintainers = [{name = "AI999X"}]
+keywords = ["data science", "machine learning", "evaluation metrics", "classification metrics", "regression metrics", "loss functions", "information theory", "clustering", "neural networks", "optimizers", "ranking metrics", "ai999x", "offline", "cpu", "step-by-step", "latex"]
+classifiers = ["License :: OSI Approved :: Apache Software License", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Operating System :: OS Independent", "Intended Audience :: Education", "Intended Audience :: Science/Research", "Intended Audience :: Developers", "Topic :: Scientific/Engineering", "Topic :: Education", "Development Status :: 5 - Production/Stable"]
+dependencies = ["sympy>=1.12", "mpmath>=1.3"]
+
+[project.optional-dependencies]
+search = ["onnxruntime>=1.17", "tokenizers>=0.15", "numpy>=1.24"]
+plot = ["matplotlib>=3.7"]
+all = ["matplotlib>=3.7", "numpy>=1.24", "onnxruntime>=1.17", "tokenizers>=0.15"]
+reader = ["onnxruntime>=1.17", "tokenizers>=0.15", "numpy>=1.24"]
+
+[project.scripts]
+data-science-ml-ai999x = "data_science_ml_ai999x.cli:main"
+
+[project.urls]
+"Source" = "https://github.com/AI999X/data-science-ml-ai999x"
+"Issues" = "https://github.com/AI999X/data-science-ml-ai999x/issues"
+"Homepage" = "https://ai999x.com"
+"Hugging Face" = "https://huggingface.co/AI999X/data-science-ml-ai999x"
+"Funding" = "https://buymeacoffee.com/ibnuljaiffarabi"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+data_science_ml_ai999x = ["pack/*.json", "pack/*/*.json", "pack/*.sqlite", "pack/capabilities/*.py", "pack/search/*.onnx", "pack/reader/*.onnx"]

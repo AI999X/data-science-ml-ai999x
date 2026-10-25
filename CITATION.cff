@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "data-science-ml-ai999x: an offline, verified data science and machine learning solver"
+authors:
+  - family-names: Farabi
+    given-names: Ibnul Jaif
+    affiliation: AI999X
+version: 1.0.1
+license: Apache-2.0
+url: "https://huggingface.co/AI999X/data-science-ml-ai999x"
+repository-code: "https://huggingface.co/AI999X/data-science-ml-ai999x"
+keywords:
+  - data science
+  - machine learning
+  - evaluation metrics
+  - classification metrics
+  - regression metrics
+  - loss functions
+  - information theory
+  - clustering
+  - neural networks
+  - optimizers
+  - ranking metrics
+  - ai999x
