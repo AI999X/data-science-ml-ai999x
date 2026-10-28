@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/data-science-ml-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.1
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.2
 
 Field: **Data Science & Machine Learning** · Tasks: Question Answering, Token Classification, Text Classification, Tabular Classification, Tabular Regression, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ data-science-ml-ai999x is an offline, deterministic Python solver that answers d
 
 | Property | Value |
 |---|---|
-| Package | `data-science-ml-ai999x` 1.0.1 (import `data_science_ml_ai999x`) |
+| Package | `data-science-ml-ai999x` 1.0.2 (import `data_science_ml_ai999x`) |
 | Type | Deterministic neuro-symbolic data science and machine learning engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 107 certified procedures |
 | Knowledge pack | version 1.0.0 |
@@ -61,7 +61,18 @@ data_science_ml.ask("Who created you?").message
 # -> data-science-ml-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --capabilities`. The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.1.
+Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --capabilities`. The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.2.
+
+## Find the right capability, and draw it
+
+`data_science_ml.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "data-science-ml-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
+
+```python
+import data_science_ml_ai999x as data_science_ml
+
+data_science_ml.search("Solve x^2 - 5x + 6 = 0", k=2)
+# -> Roots of a quadratic equation (math-foundations-ai999x, 0.63); Roots of a cubic equation (math-foundations-ai999x, 0.59)
+```
 
 ## How every answer is verified
 
@@ -71,6 +82,122 @@ Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --c
 4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
+
+## Worked examples
+
+Each question was put to `data-science-ml-ai999x`; the answer is the one it returned, with the steps it took.
+
+**Binary classification metrics from confusion counts** · _Classification metrics_
+
+> Binary metrics from counts: TP = 40, FP = 10, FN = 5, TN = 45
+
+→ **accuracy = 0.85, precision = 0.8, recall = 0.8888888889, specificity = 0.8181818182, f1 = 0.8421052632, npv = 0.9, balanced_accuracy = 0.8535353535, fpr = 0.1818181818, fnr = 0.1111111111, jaccard = 0.7272727273**
+
+<details><summary>Steps</summary>
+
+- Binary classification metrics from confusion counts: TP = 40, FP = 10, FN = 5, TN = 45 → accuracy = 0.85, precision = 0.8, recall = 0.8888888889, specificity = 0.8181818182, f1 = 0.8421052632, npv = 0.9, balanced_accuracy = 0.8535353535, fpr = 0.1818181818, fnr = 0.1111111111, jaccard = 0.7272727273
+
+</details>
+
+**ROC AUC from scores** · _Classification metrics_
+
+> ROC AUC: y_true = [0, 1, 1, 0, 1], scores = [0.1, 0.9, 0.8, 0.3, 0.2]
+
+→ **auc = 0.8333333333, gini = 0.6666666667, n_pos = 3, n_neg = 2**
+
+<details><summary>Steps</summary>
+
+- ROC AUC from scores: y_true = [0, 1, 1, 0, 1], scores = [0.1, 0.9, 0.8, 0.3, 0.2] → auc = 0.8333333333, gini = 0.6666666667, n_pos = 3, n_neg = 2
+
+</details>
+
+**k-means clustering from given initial centroids** · _Classical algorithms_
+
+> K-means clustering: X = [[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5], [3.5, 4.5]], C = [[1, 1], [5, 6]]
+
+→ **centroids = [[1.25, 1.5], [3.9, 5.1]], labels = [0, 0, 1, 1, 1, 1, 1], inertia = 8.525**
+
+<details><summary>Steps</summary>
+
+- k-means clustering from given initial centroids: X = [1 1; 1.5 2; 3 4; 5 7; 3.5 5; 4.5 5; 3.5 4.5], C = [1 1; 5 6] → centroids = [[1.25, 1.5], [3.9, 5.1]], labels = [0, 0, 1, 1, 1, 1, 1], inertia = 8.525
+
+</details>
+
+**Scaled dot-product attention** · _Neural networks_
+
+> Scaled dot-product attention: Q = [[1, 0], [0, 1]], K = [[1, 0], [0, 1], [1, 1]], V = [[1, 2], [3, 4], [5, 6]], causal = no
+
+→ **weights = [[0.4011120927, 0.1977758146, 0.4011120927], [0.1977758146, 0.4011120927, 0.4011120927]], output = [[3, 4], [3.406672556, 4.406672556]], output_sum = 14.81334511**
+
+<details><summary>Steps</summary>
+
+- Scaled dot-product attention: Q = [1 0; 0 1], K = [1 0; 0 1; 1 1], V = [1 2; 3 4; 5 6], causal = False → weights = [[0.4011120927, 0.1977758146, 0.4011120927], [0.1977758146, 0.4011120927, 0.4011120927]], output = [[3, 4], [3.406672556, 4.406672556]], output_sum = 14.81334511
+
+</details>
+
+**Convolution output size** · _Neural networks_
+
+`m.solve("ml_conv_output_size", n=224, kernel=7, stride=2, padding=3, dilation=1)`
+
+→ **output_size = 112, effective_kernel = 7**
+
+<details><summary>Steps</summary>
+
+- Convolution output size: n = 224, kernel = 7, stride = 2, padding = 3, dilation = 1 → output_size = 112, effective_kernel = 7
+
+</details>
+
+**Adjusted mutual information of two clusterings** · _Clustering metrics_
+
+> Adjusted mutual information: labels_true = [0, 0, 1, 1, 2, 2], labels_pred = [0, 0, 1, 1, 1, 1], method = arithmetic
+
+→ **ami = 0.6153846154, expected_mi = 0.266835672, mutual_information = 0.6365141683**
+
+<details><summary>Steps</summary>
+
+- Adjusted mutual information of two clusterings: labels_true = [0, 0, 1, 1, 2, 2], labels_pred = [0, 0, 1, 1, 1, 1], method = arithmetic → ami = 0.6153846154, expected_mi = 0.266835672, mutual_information = 0.6365141683
+
+</details>
+
+## Figures
+
+Every point was computed by `data-science-ml-ai999x`.
+
+**ROC curve of a scored classifier**
+
+![ROC curve of a scored classifier — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-roc-curve-roc.svg)
+
+_The ROC curve the package returns for 12 scored examples (labels 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0; scores 0.95, 0.9, 0.85, 0.8, 0.7, 0.65, 0.6, 0.5, 0.4, 0.35, 0.3, 0.1): true against false positive rate at each of its thresholds, with area under the curve 0.777778._
+
+**Confusion matrix of a three-class classifier**
+
+![Confusion matrix of a three-class classifier — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-multiclass-confusion-matrix-heatmap.svg)
+
+_The confusion matrix the package returns for true labels [0, 1, 2, 2, 1, 0, 2, 1] and predictions [0, 2, 2, 2, 1, 0, 1, 1]: rows are the true classes 0, 1, 2, columns the predicted ones; 6 of 8 on the diagonal, accuracy 0.75._
+
+**k-means clusters and their centroids**
+
+![k-means clusters and their centroids — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-kmeans-clusters.svg)
+
+_k-means on 7 points from the starting centres [[1, 1], [5, 6]]: the package's final centroids (1.25, 1.5), (3.9, 5.1) (marked; arrows from the starting centres), cluster labels 1, 1, 2, 2, 2, 2, 2 and inertia 8.525._
+
+**Principal components: projection onto the first component**
+
+![Principal components: projection onto the first component — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-pca-pca.svg)
+
+_Principal components of 10 points: the package's first component (0.677873, 0.735179) through the mean of the points explains 96.3181 % of the variance (variance 1.28403 against 0.0490834); each point is joined to its projection at the score the package returns; the short arrow is two standard deviations (0.443095) along the second component._
+
+**Logistic regression: fitted probability and decision boundary**
+
+![Logistic regression: fitted probability and decision boundary — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-logistic-regression-fit-fit.svg)
+
+_Logistic regression fitted by the package to x = 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 with labels 0, 0, 1, 0, 1, 0, 1, 1 (C = 1): weight 0.738776, intercept -1.66225, training accuracy 0.75; the curve is the package's predicted probability at 81 points; marked: the decision boundary x = 2.25, P = 0.5._
+
+**k-nearest neighbours of a query point**
+
+![k-nearest neighbours of a query point — computed by data-science-ml-ai999x](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-knn-classify-neighbours.svg)
+
+_k-nearest-neighbour classification of the query point (3, 2.2) among 6 labelled points (k = 3, euclidean distance): the package's 3 nearest neighbours are points 2, 3, 5 at distances 1.28062, 1.56205, 2.00998 (dashed lines; the circle reaches the farthest of them); 2 of 3 votes give class 0._
 
 ## Capabilities
 
@@ -95,10 +222,10 @@ Capabilities are certified before they ship: each must reproduce hand-worked ref
 ## Citation
 
 ```bibtex
-@software{data_science_ml_ai999x_1_0_1,
+@software{data_science_ml_ai999x_1_0_2,
   title  = {data-science-ml-ai999x: an offline, verified data science and machine learning solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.1},
+  year   = {2026}, version = {1.0.2},
   url    = {https://huggingface.co/AI999X/data-science-ml-ai999x}
 }
 ```
