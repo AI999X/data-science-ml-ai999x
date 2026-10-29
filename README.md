@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/data-science-ml-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.2
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
 Field: **Data Science & Machine Learning** · Tasks: Question Answering, Token Classification, Text Classification, Tabular Classification, Tabular Regression, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ data-science-ml-ai999x is an offline, deterministic Python solver that answers d
 
 | Property | Value |
 |---|---|
-| Package | `data-science-ml-ai999x` 1.0.2 (import `data_science_ml_ai999x`) |
+| Package | `data-science-ml-ai999x` 1.0.3 (import `data_science_ml_ai999x`) |
 | Type | Deterministic neuro-symbolic data science and machine learning engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 107 certified procedures |
 | Knowledge pack | version 1.0.0 |
@@ -61,7 +61,7 @@ data_science_ml.ask("Who created you?").message
 # -> data-science-ml-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --capabilities`. The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.2.
+Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --capabilities`. The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -222,10 +222,10 @@ _k-nearest-neighbour classification of the query point (3, 2.2) among 6 labelled
 ## Citation
 
 ```bibtex
-@software{data_science_ml_ai999x_1_0_2,
+@software{data_science_ml_ai999x_1_0_3,
   title  = {data-science-ml-ai999x: an offline, verified data science and machine learning solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.2},
+  year   = {2026}, version = {1.0.3},
   url    = {https://huggingface.co/AI999X/data-science-ml-ai999x}
 }
 ```

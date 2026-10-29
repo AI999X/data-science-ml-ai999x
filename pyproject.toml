@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "data-science-ml-ai999x"
-version = "1.0.2"
+version = "1.0.3"
 description = "Offline data science and machine learning solver: evaluation metrics, loss functions and gradients, classical machine-learning algorithms (k-means, kNN, naive Bayes, decision-tree splits, linear and logistic models with regularisation), dimensionality reduction, cross-validation, information theory and neural-network arithmetic, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"
