@@ -181,7 +181,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 
 <a id="ml_binary_confusion_matrix"></a>
 
-### Binary confusion matrix from labels — `ml_binary_confusion_matrix`
+### Binary confusion matrix from labels: `ml_binary_confusion_matrix`
 
 Count true positives, false positives, false negatives and true negatives from true and predicted $0/1$ labels, with the accuracy and error rate.
 
@@ -234,7 +234,7 @@ data_science_ml_ai999x.solve('ml_binary_confusion_matrix', y_true=[1, 1, 1, 0, 0
 
 <a id="ml_binary_metrics_from_counts"></a>
 
-### Binary classification metrics from confusion counts — `ml_binary_metrics_from_counts`
+### Binary classification metrics from confusion counts, `ml_binary_metrics_from_counts`
 
 Accuracy, precision, recall (sensitivity), specificity, F1, negative predictive value, balanced accuracy, false positive and false negative rates and the Jaccard index from TP, FP, FN, TN.
 
@@ -300,7 +300,7 @@ data_science_ml_ai999x.solve('ml_binary_metrics_from_counts', TP=90, FP=30, FN=1
 
 <a id="ml_fbeta_score"></a>
 
-### F-beta score — `ml_fbeta_score`
+### F-beta score: `ml_fbeta_score`
 
 The F-beta score, the weighted harmonic mean of precision and recall in which recall counts beta times as much as precision.
 
@@ -351,7 +351,7 @@ data_science_ml_ai999x.solve('ml_fbeta_score', TP=40, FP=10, FN=5, beta=0.5)
 
 <a id="ml_matthews_correlation"></a>
 
-### Matthews correlation coefficient — `ml_matthews_correlation`
+### Matthews correlation coefficient: `ml_matthews_correlation`
 
 The Matthews correlation coefficient (phi coefficient) of a binary confusion matrix, a balanced measure between -1 and 1.
 
@@ -404,7 +404,7 @@ data_science_ml_ai999x.solve('ml_matthews_correlation', TP=6, FP=1, FN=2, TN=3)
 
 <a id="ml_multiclass_confusion_matrix"></a>
 
-### Multi-class confusion matrix — `ml_multiclass_confusion_matrix`
+### Multi-class confusion matrix: `ml_multiclass_confusion_matrix`
 
 The confusion matrix of a multi-class classifier (true classes in rows, predicted in columns) with the number correct and the accuracy.
 
@@ -458,7 +458,7 @@ data_science_ml_ai999x.solve('ml_multiclass_confusion_matrix', y_true=[3, 1, 2, 
 
 <a id="ml_precision_recall_f1_averaged"></a>
 
-### Averaged precision, recall and F1 (multi-class) — `ml_precision_recall_f1_averaged`
+### Averaged precision, recall and F1 (multi-class), `ml_precision_recall_f1_averaged`
 
 Multi-class precision, recall and F1 averaged over classes: macro (unweighted), weighted (by support) or micro (pooled counts).
 
@@ -518,7 +518,7 @@ data_science_ml_ai999x.solve('ml_precision_recall_f1_averaged', y_true=[0, 1, 2,
 
 <a id="ml_classification_report"></a>
 
-### Per-class precision, recall, F1 and support — `ml_classification_report`
+### Per-class precision, recall, F1 and support, `ml_classification_report`
 
 A classification report: precision, recall, F1 and support for every class, with the macro-averaged F1.
 
@@ -569,7 +569,7 @@ data_science_ml_ai999x.solve('ml_classification_report', y_true=[1, 1, 2, 2, 3, 
 
 <a id="ml_cohen_kappa"></a>
 
-### Cohen's kappa (unweighted, linear or quadratic) — `ml_cohen_kappa`
+### Cohen's kappa (unweighted, linear or quadratic), `ml_cohen_kappa`
 
 Cohen's kappa, the agreement between two raters (or a classifier and the truth) corrected for chance, optionally weighted by the distance between classes.
 
@@ -620,7 +620,7 @@ data_science_ml_ai999x.solve('ml_cohen_kappa', y1=[1, 2, 3, 3, 2, 1, 3, 2, 1, 1]
 
 <a id="ml_balanced_accuracy"></a>
 
-### Balanced accuracy (multi-class) — `ml_balanced_accuracy`
+### Balanced accuracy (multi-class): `ml_balanced_accuracy`
 
 Balanced accuracy, the mean recall over the classes present in the true labels, and its chance-adjusted form.
 
@@ -668,7 +668,7 @@ data_science_ml_ai999x.solve('ml_balanced_accuracy', y_true=[0, 1, 2, 2, 1, 0, 2
 
 <a id="ml_log_loss_binary"></a>
 
-### Binary log loss (cross-entropy) — `ml_log_loss_binary`
+### Binary log loss (cross-entropy): `ml_log_loss_binary`
 
 The mean binary cross-entropy (log loss) of predicted probabilities of the positive class, in nats and in bits.
 
@@ -716,7 +716,7 @@ data_science_ml_ai999x.solve('ml_log_loss_binary', y_true=[0, 0, 1], p=[0.1, 0.4
 
 <a id="ml_log_loss_multiclass"></a>
 
-### Multi-class log loss (categorical cross-entropy) — `ml_log_loss_multiclass`
+### Multi-class log loss (categorical cross-entropy), `ml_log_loss_multiclass`
 
 The mean categorical cross-entropy of predicted class probabilities (rows of P), with the perplexity exp(loss).
 
@@ -768,7 +768,7 @@ data_science_ml_ai999x.solve('ml_log_loss_multiclass', y_true=[1, 1], P=[[0.2, 0
 
 <a id="ml_brier_score"></a>
 
-### Brier score — `ml_brier_score`
+### Brier score: `ml_brier_score`
 
 The Brier score, the mean squared difference between predicted probabilities of the positive class and the $0/1$ outcomes.
 
@@ -815,7 +815,7 @@ data_science_ml_ai999x.solve('ml_brier_score', y_true=[0, 1, 0], p=[0.3, 0.6, 0.
 
 <a id="ml_roc_auc"></a>
 
-### ROC AUC from scores — `ml_roc_auc`
+### ROC AUC from scores: `ml_roc_auc`
 
 The area under the ROC curve from $0/1$ labels and classifier scores: the probability that a random positive scores above a random negative (ties count one half), with the Gini coefficient 2 AUC - 1.
 
@@ -871,7 +871,7 @@ data_science_ml_ai999x.solve('ml_roc_auc', y_true=[1, 0, 1, 0], scores=[0.5, 0.5
 
 <a id="ml_roc_curve"></a>
 
-### ROC curve points — `ml_roc_curve`
+### ROC curve points: `ml_roc_curve`
 
 The ROC curve of a scored classifier: the false and true positive rates at every distinct score threshold (a score at or above the threshold is positive), and the trapezoidal area under it.
 
@@ -924,7 +924,7 @@ data_science_ml_ai999x.solve('ml_roc_curve', y_true=[1, 0, 1, 0, 0, 1], scores=[
 
 <a id="ml_average_precision"></a>
 
-### Average precision and precision-recall AUC — `ml_average_precision`
+### Average precision and precision-recall AUC, `ml_average_precision`
 
 Average precision (the step-wise area under the precision-recall curve, sum of (R_k - R_{$k-1$}) P_k over distinct score thresholds) and the trapezoidal area under the precision-recall curve.
 
@@ -971,7 +971,7 @@ data_science_ml_ai999x.solve('ml_average_precision', y_true=[1, 0, 1, 0, 0, 1], 
 
 <a id="ml_top_k_accuracy"></a>
 
-### Top-k accuracy — `ml_top_k_accuracy`
+### Top-k accuracy: `ml_top_k_accuracy`
 
 The fraction of samples whose true class is among the k highest-scored classes.
 
@@ -1020,7 +1020,7 @@ data_science_ml_ai999x.solve('ml_top_k_accuracy', y_true=[3, 0, 1], S=[[0.1, 0.2
 
 <a id="ml_hamming_loss"></a>
 
-### Hamming loss and subset accuracy (multi-label) — `ml_hamming_loss`
+### Hamming loss and subset accuracy (multi-label), `ml_hamming_loss`
 
 For multi-label predictions (0/1 indicator matrices): the Hamming loss (fraction of wrong labels) and the subset accuracy (fraction of samples with every label right).
 
@@ -1069,7 +1069,7 @@ data_science_ml_ai999x.solve('ml_hamming_loss', Y_true=[[1, 1], [0, 1], [1, 0]],
 
 <a id="ml_balanced_class_weights"></a>
 
-### Balanced class weights — `ml_balanced_class_weights`
+### Balanced class weights: `ml_balanced_class_weights`
 
 Class weights that balance an imbalanced training set: n / (K n_c) for each class c.
 
@@ -1094,9 +1094,9 @@ $$
 
 *Class counts tallied from y = [0, 0, 0, 0, 0, 0, 1, 1] (class 0: 6, class 1: 2) and the returned balanced weights 0.666667, 2: weight × count is the same for every class.*
 
-![Balanced weights of a two-class label list of 20 samples with k samples of class 1, k = 1 … 19 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = 10 both are 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-curve)
+![Balanced weights of a two-class label list of 8 samples (the worked example's size) with k samples of class 1, k = 1 … 7 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = n/2 both are 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-curve)
 
-*Balanced weights of a two-class label list of 20 samples with k samples of class 1, k = 1 … 19 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = 10 both are 1.*
+*Balanced weights of a two-class label list of 8 samples (the worked example's size) with k samples of class 1, k = 1 … 7 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = n/2 both are 1. Marked: the worked example, k = 2: weights 0.6667 and 2.*
 
 ```python
 data_science_ml_ai999x.solve('ml_balanced_class_weights', y=[0, 0, 0, 0, 0, 0, 1, 1])
@@ -1119,7 +1119,7 @@ data_science_ml_ai999x.solve('ml_balanced_class_weights', y=[1, 2, 2, 3, 3, 3])
 
 <a id="ml_expected_calibration_error"></a>
 
-### Expected calibration error — `ml_expected_calibration_error`
+### Expected calibration error: `ml_expected_calibration_error`
 
 The expected calibration error (support-weighted mean gap between accuracy and mean confidence over equal-width probability bins) and the maximum calibration error.
 
@@ -1172,7 +1172,7 @@ data_science_ml_ai999x.solve('ml_expected_calibration_error', y_true=[0, 1, 1, 0
 
 <a id="ml_regression_metrics"></a>
 
-### Regression metrics (MAE, MSE, RMSE, R^2, explained variance) — `ml_regression_metrics`
+### Regression metrics (MAE, MSE, RMSE, R^2, explained variance), `ml_regression_metrics`
 
 The standard regression error metrics of predictions against true values: mean absolute error, mean squared error, root mean squared error, $R^{2}$, explained variance, median absolute error and maximum error.
 
@@ -1229,7 +1229,7 @@ data_science_ml_ai999x.solve('ml_regression_metrics', y_true=[10, 20, 30, 40, 50
 
 <a id="ml_mape"></a>
 
-### Mean absolute percentage error — `ml_mape`
+### Mean absolute percentage error: `ml_mape`
 
 The mean absolute percentage error of predictions, as a fraction and in per cent.
 
@@ -1277,7 +1277,7 @@ data_science_ml_ai999x.solve('ml_mape', y_true=[3, -0.5, 2, 7], y_pred=[2.5, 0, 
 
 <a id="ml_adjusted_r2"></a>
 
-### Adjusted R^2 — `ml_adjusted_r2`
+### Adjusted R^2, `ml_adjusted_r2`
 
 $R^{2}$ and the adjusted $R^{2}$ that penalises the number of predictors p of the model.
 
@@ -1330,7 +1330,7 @@ data_science_ml_ai999x.solve('ml_adjusted_r2', y_true=[3, 5, 7, 6, 9, 11, 10, 14
 
 <a id="ml_huber_loss"></a>
 
-### Huber, smooth L1 and pseudo-Huber loss — `ml_huber_loss`
+### Huber, smooth L1 and pseudo-Huber loss: `ml_huber_loss`
 
 The mean Huber loss with threshold delta (quadratic for small errors, linear for large), the smooth L1 loss (Huber / delta) and the pseudo-Huber loss.
 
@@ -1384,7 +1384,7 @@ data_science_ml_ai999x.solve('ml_huber_loss', y_true=[1, 2, 3], y_pred=[4, 2, 2.
 
 <a id="ml_quantile_loss"></a>
 
-### Quantile (pinball) loss — `ml_quantile_loss`
+### Quantile (pinball) loss: `ml_quantile_loss`
 
 The mean pinball loss of predictions of the alpha-quantile: under-predictions cost alpha per unit, over-predictions $1 - \alpha.$
 
@@ -1432,7 +1432,7 @@ data_science_ml_ai999x.solve('ml_quantile_loss', y_true=[10, 20, 30], y_pred=[12
 
 <a id="ml_tweedie_deviance"></a>
 
-### Mean Tweedie deviance (normal, Poisson, gamma, compound Poisson-gamma) — `ml_tweedie_deviance`
+### Mean Tweedie deviance (normal, Poisson, gamma, compound Poisson-gamma), `ml_tweedie_deviance`
 
 The mean Tweedie deviance of predictions for a stated power: 0 squared error, 1 Poisson, 2 gamma, 3 inverse Gaussian, between 1 and 2 compound Poisson-gamma.
 
@@ -1486,7 +1486,7 @@ data_science_ml_ai999x.solve('ml_tweedie_deviance', y_true=[2, 0, 1, 4], y_pred=
 
 <a id="ml_mean_squared_log_error"></a>
 
-### Mean squared logarithmic error — `ml_mean_squared_log_error`
+### Mean squared logarithmic error: `ml_mean_squared_log_error`
 
 The mean squared logarithmic error ln(1 + y) - ln(1 + y_hat) and its square root (RMSLE), for non-negative targets such as counts and prices.
 
@@ -1534,7 +1534,7 @@ data_science_ml_ai999x.solve('ml_mean_squared_log_error', y_true=[100, 200], y_p
 
 <a id="ml_softmax"></a>
 
-### Softmax — `ml_softmax`
+### Softmax: `ml_softmax`
 
 The softmax of a vector of logits (numerically stable: the largest logit is subtracted first), with log-sum-exp.
 
@@ -1580,7 +1580,7 @@ data_science_ml_ai999x.solve('ml_softmax', z=[1000, 1001])
 
 <a id="ml_log_softmax"></a>
 
-### Log-softmax — `ml_log_softmax`
+### Log-softmax: `ml_log_softmax`
 
 The log-softmax of logits, z_i - log sum exp(z), computed stably even for very large logits.
 
@@ -1626,7 +1626,7 @@ data_science_ml_ai999x.solve('ml_log_softmax', z=[1000, 0, -1000])
 
 <a id="ml_sigmoid"></a>
 
-### Sigmoid (logistic function) and its derivative — `ml_sigmoid`
+### Sigmoid (logistic function) and its derivative, `ml_sigmoid`
 
 The logistic sigmoid $1 / (1 + e^{-z})$, its derivative sigma(1 - sigma) and log sigma(z), computed stably for large |z|.
 
@@ -1648,9 +1648,9 @@ $$
 - **Assumes:** finite z
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The logistic sigmoid and its derivative for z from −6 to 6 (61 runs)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sigmoid-curve)
+![The logistic sigmoid and its derivative for z from -6 to 6 (61 runs)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sigmoid-curve)
 
-*The logistic sigmoid and its derivative for z from −6 to 6 (61 runs). Marked: the worked example z = 0, σ = 0.5, σ′ = 0.25 (the derivative's maximum).*
+*The logistic sigmoid and its derivative for z from -6 to 6 (61 runs). Marked: the worked example z = 0, σ = 0.5, σ′ = 0.25 (the derivative peaks at z = 0).*
 
 ```python
 data_science_ml_ai999x.solve('ml_sigmoid', z=0)
@@ -1679,7 +1679,7 @@ data_science_ml_ai999x.solve('ml_sigmoid', z=-35)
 
 <a id="ml_cross_entropy_logits"></a>
 
-### Cross-entropy loss from logits and its gradient — `ml_cross_entropy_logits`
+### Cross-entropy loss from logits and its gradient, `ml_cross_entropy_logits`
 
 The cross-entropy loss of one sample from its logits and true class, the predicted probability of that class, and the gradient of the loss with respect to the logits (softmax minus one-hot).
 
@@ -1728,7 +1728,7 @@ data_science_ml_ai999x.solve('ml_cross_entropy_logits', z=[0.5, -1, 3, 0], y=2)
 
 <a id="ml_bce_with_logits"></a>
 
-### Binary cross-entropy with logits and its gradient — `ml_bce_with_logits`
+### Binary cross-entropy with logits and its gradient, `ml_bce_with_logits`
 
 The mean binary cross-entropy computed directly from logits (stable for large |z|; soft targets allowed) and its gradient with respect to each logit.
 
@@ -1776,7 +1776,7 @@ data_science_ml_ai999x.solve('ml_bce_with_logits', y=[0.8, 0.1], z=[1.5, 0.3])
 
 <a id="ml_hinge_loss"></a>
 
-### Hinge and squared hinge loss — `ml_hinge_loss`
+### Hinge and squared hinge loss: `ml_hinge_loss`
 
 The mean hinge loss max(0, $1 - y$ f) of a margin classifier with labels -1/+1, the mean squared hinge loss and the number of margin violations.
 
@@ -1825,7 +1825,7 @@ data_science_ml_ai999x.solve('ml_hinge_loss', y_true=[1, 1, -1], scores=[0.9, 1.
 
 <a id="ml_multiclass_hinge_loss"></a>
 
-### Multi-class hinge loss (Crammer-Singer and Weston-Watkins) — `ml_multiclass_hinge_loss`
+### Multi-class hinge loss (Crammer-Singer and Weston-Watkins), `ml_multiclass_hinge_loss`
 
 The multi-class hinge losses of a decision matrix: Crammer-Singer max(0, 1 - f_y + max_{$j  \neq  y$} f_j) and Weston-Watkins sum_{$j  \neq  y$} max(0, 1 - f_y + f_j) / K, averaged over samples.
 
@@ -1876,7 +1876,7 @@ data_science_ml_ai999x.solve('ml_multiclass_hinge_loss', y_true=[2, 0], D=[[0.5,
 
 <a id="ml_kl_divergence_discrete"></a>
 
-### KL divergence, Jensen-Shannon divergence and cross-entropy of discrete distributions — `ml_kl_divergence_discrete`
+### KL divergence, Jensen-Shannon divergence and cross-entropy of discrete distributions, `ml_kl_divergence_discrete`
 
 The Kullback-Leibler divergence of two discrete distributions in both directions, the Jensen-Shannon divergence, the cross-entropy H(p, q) and the entropy H(p).
 
@@ -1906,9 +1906,9 @@ $$
 
 *The stated distributions p = [0.5, 0.5] and q = [0.9, 0.1]: returned KL(p‖q) = 0.736966, KL(q‖p) = 0.531004 (not symmetric), Jensen–Shannon 0.146793, cross-entropy 1.73697 = H(p) 1 + KL(p‖q), in bits.*
 
-![Divergences between p = (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kl-divergence-discrete-curve)
+![Divergences between the worked example's p = ['0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kl-divergence-discrete-curve)
 
-*Divergences between p = (0.5, 0.5) and q = (q₁, 1 − q₁) as q₁ runs from 0.02 to 0.98 (49 runs each): both KL directions vanish at q = p and grow without bound at the edges at different rates; Jensen–Shannon stays below 1 bit.*
+*Divergences between the worked example's p = ['0.5', '0.5'] and a q moved from p towards and past its q = ['0.9', '0.1'] (49 runs each): both KL directions vanish at q = p and grow, at different rates, as q moves away; Jensen–Shannon stays below 1 bit. Marked: the worked example, KL(p‖q) = 0.736966, KL(q‖p) = 0.531004, JS = 0.146793 bits.*
 
 ```python
 data_science_ml_ai999x.solve('ml_kl_divergence_discrete', p=[0.5, 0.5], q=[0.9, 0.1], unit='bits')
@@ -1932,7 +1932,7 @@ data_science_ml_ai999x.solve('ml_kl_divergence_discrete', p=[0.36, 0.48, 0.16], 
 
 <a id="ml_label_smoothing_cross_entropy"></a>
 
-### Cross-entropy with label smoothing — `ml_label_smoothing_cross_entropy`
+### Cross-entropy with label smoothing: `ml_label_smoothing_cross_entropy`
 
 The cross-entropy of logits against a smoothed target (1 - epsilon on the true class plus epsilon spread evenly over all K classes) and its gradient with respect to the logits.
 
@@ -1985,7 +1985,7 @@ data_science_ml_ai999x.solve('ml_label_smoothing_cross_entropy', z=[0.5, -1, 3, 
 
 <a id="ml_focal_loss"></a>
 
-### Binary focal loss and its gradient — `ml_focal_loss`
+### Binary focal loss and its gradient: `ml_focal_loss`
 
 The mean binary focal loss -alpha_t $(1 - p_t)^{\gamma}$ log p_t from logits (it down-weights easy examples) and its gradient with respect to each logit.
 
@@ -2039,7 +2039,7 @@ data_science_ml_ai999x.solve('ml_focal_loss', y=[0, 1], z=[1.5, 0.3], gamma=0, a
 
 <a id="ml_mse_gradient"></a>
 
-### Mean squared error loss and gradient of a linear model — `ml_mse_gradient`
+### Mean squared error loss and gradient of a linear model, `ml_mse_gradient`
 
 The mean squared error of a linear model y_hat = X w + b and its gradient with respect to the weights and the bias.
 
@@ -2090,7 +2090,7 @@ data_science_ml_ai999x.solve('ml_mse_gradient', X=[[1], [2], [3], [4]], y=[2, 4,
 
 <a id="ml_logistic_loss_gradient"></a>
 
-### Logistic regression loss and gradient (L2-regularised) — `ml_logistic_loss_gradient`
+### Logistic regression loss and gradient (L2-regularised), `ml_logistic_loss_gradient`
 
 The mean logistic (binary cross-entropy) loss of a linear model with an L2 penalty (lam / 2) ||w||^2 and its gradient with respect to the weights and the bias.
 
@@ -2142,7 +2142,7 @@ data_science_ml_ai999x.solve('ml_logistic_loss_gradient', X=[[0.5], [1.5], [-1]]
 
 <a id="ml_gradient_descent_step_linear"></a>
 
-### One gradient-descent step for linear regression — `ml_gradient_descent_step_linear`
+### One gradient-descent step for linear regression, `ml_gradient_descent_step_linear`
 
 One full-batch gradient-descent step on the mean squared error of a linear model: the new weights and bias and the loss before and after the step.
 
@@ -2194,7 +2194,7 @@ data_science_ml_ai999x.solve('ml_gradient_descent_step_linear', X=[[1, 2], [3, 4
 
 <a id="ml_distance_metrics"></a>
 
-### Distances and cosine similarity between two vectors — `ml_distance_metrics`
+### Distances and cosine similarity between two vectors, `ml_distance_metrics`
 
 The Euclidean, Manhattan and Chebyshev distances between two feature vectors, and their cosine similarity and cosine distance.
 
@@ -2219,9 +2219,9 @@ $$
 - **Assumes:** equal lengths; non-zero vectors
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The distances the package returns between the two points x = (1, 2) and z = (4, 6) chosen here (the worked example uses three dimensions): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-geometry)
+![The distances the package returns between the worked example's points x and z (3 dimensions; drawn in the first two, the others shown in the labels): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-geometry)
 
-*The distances the package returns between the two points x = (1, 2) and z = (4, 6) chosen here (the worked example uses three dimensions): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0.992278 (distance 0.00772212).*
+*The distances the package returns between the worked example's points x and z (3 dimensions; drawn in the first two, the others shown in the labels): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0.855482 (distance 0.144518). The legs drawn are those of the first two coordinates.*
 
 ```python
 data_science_ml_ai999x.solve('ml_distance_metrics', x=[1, 2, 3], z=[4, 6, 3])
@@ -2245,7 +2245,7 @@ data_science_ml_ai999x.solve('ml_distance_metrics', x=[1, 0], z=[1, 1])
 
 <a id="ml_rbf_kernel_matrix"></a>
 
-### RBF (Gaussian) kernel matrix — `ml_rbf_kernel_matrix`
+### RBF (Gaussian) kernel matrix: `ml_rbf_kernel_matrix`
 
 The Gram matrix of the radial basis function kernel exp(-gamma ||x_i - x_j||^2) for a set of points, and the mean off-diagonal similarity.
 
@@ -2297,7 +2297,7 @@ data_science_ml_ai999x.solve('ml_rbf_kernel_matrix', X=[[1], [2], [4]], gamma=1)
 
 <a id="ml_entropy"></a>
 
-### Shannon entropy and perplexity of a distribution — `ml_entropy`
+### Shannon entropy and perplexity of a distribution, `ml_entropy`
 
 The Shannon entropy of a discrete probability distribution in the stated unit, its perplexity (e^H in nats = 2^H in bits), the maximum entropy log K and the normalised entropy H / log K.
 
@@ -2323,11 +2323,11 @@ $$
 
 ![The stated distribution p = [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-distribution)
 
-*The stated distribution p = [0.5, 0.25, 0.25]: returned entropy 1.5 bits (maximum 1.58496 for three outcomes, normalised 0.946395), perplexity 2.82843 — as uncertain as 2.82843 equally likely outcomes.*
+*The stated distribution p = [0.5, 0.25, 0.25]: returned entropy 1.5 bits (maximum 1.58496 for three outcomes, normalised 0.946395), perplexity 2.82843, as uncertain as 2.82843 equally likely outcomes.*
 
-![Shannon entropy of a two-outcome distribution (p, 1 − p) as p runs from 0 to 1 (51 runs): zero for a certain outcome, maximal at p = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-curve)
+![Shannon entropy (bits) of the worked example's distribution p = ['0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-curve)
 
-*Shannon entropy of a two-outcome distribution (p, 1 − p) as p runs from 0 to 1 (51 runs): zero for a certain outcome, maximal at p = 0.5 (marked, H = 1 bit).*
+*Shannon entropy (bits) of the worked example's distribution p = ['0.5', '0.25', '0.25'] blended step by step with the uniform distribution over its 3 outcomes (51 runs): entropy rises to its largest value, 1.58496, when every outcome is equally likely. Marked: the worked example itself, H = 1.5.*
 
 ```python
 data_science_ml_ai999x.solve('ml_entropy', p=[0.5, 0.25, 0.25], unit='bits')
@@ -2357,7 +2357,7 @@ data_science_ml_ai999x.solve('ml_entropy', p=[0.25, 0.25, 0.25, 0.25], unit='bit
 
 <a id="ml_joint_conditional_entropy"></a>
 
-### Joint, marginal and conditional entropy and mutual information — `ml_joint_conditional_entropy`
+### Joint, marginal and conditional entropy and mutual information, `ml_joint_conditional_entropy`
 
 From a joint probability table of X (rows) and Y (columns): the joint entropy, both marginal entropies, both conditional entropies and the mutual information.
 
@@ -2385,7 +2385,7 @@ $$
 
 ![Information diagram of the joint distribution P = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-joint-conditional-entropy-diagram)
 
-*Information diagram of the joint distribution P = [[0.25, 0.25], [0.5, 0]] (rows X, columns Y): H(X) = 1 and H(Y) = 0.811278 drawn as overlapping bars; the overlap is the mutual information 0.311278, the rest the conditional entropies H(X|Y) = 0.688722 and H(Y|X) = 0.5; the line spans H(X, Y) = 1.5 bits — all returned values.*
+*Information diagram of the joint distribution P = [[0.25, 0.25], [0.5, 0]] (rows X, columns Y): H(X) = 1 and H(Y) = 0.811278 drawn as overlapping bars; the overlap is the mutual information 0.311278, the rest the conditional entropies H(X|Y) = 0.688722 and H(Y|X) = 0.5; the line spans H(X, Y) = 1.5 bits, all returned values.*
 
 ![The stated joint distribution P(X, Y) = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-joint-conditional-entropy-joint)
 
@@ -2413,7 +2413,7 @@ data_science_ml_ai999x.solve('ml_joint_conditional_entropy', P=[[0.1, 0.2, 0.1],
 
 <a id="ml_mutual_information_labels"></a>
 
-### Mutual information between two label sequences — `ml_mutual_information_labels`
+### Mutual information between two label sequences, `ml_mutual_information_labels`
 
 The mutual information between two discrete variables observed together (two label lists), with both entropies and the conditional entropy H(x | y), from the empirical joint distribution.
 
@@ -2467,7 +2467,7 @@ data_science_ml_ai999x.solve('ml_mutual_information_labels', x=[1, 1, 2, 2, 3, 3
 
 <a id="ml_information_gain"></a>
 
-### Information gain and gain ratio of a split — `ml_information_gain`
+### Information gain and gain ratio of a split, `ml_information_gain`
 
 The information gain (in bits) of splitting class labels y by a discrete feature x, with the parent and conditional entropies, the split information and the gain ratio (C4.5).
 
@@ -2522,7 +2522,7 @@ data_science_ml_ai999x.solve('ml_information_gain', y=[0, 0, 1, 1], x=[0, 0, 1, 
 
 <a id="ml_gini_split"></a>
 
-### Gini impurity decrease of a split — `ml_gini_split`
+### Gini impurity decrease of a split: `ml_gini_split`
 
 The Gini impurity of a node, the size-weighted Gini impurity of its children after a split, and the decrease (the CART split criterion).
 
@@ -2570,7 +2570,7 @@ data_science_ml_ai999x.solve('ml_gini_split', y=[1, 2, 2, 3, 3, 3], g=[0, 0, 1, 
 
 <a id="ml_normalized_mutual_information"></a>
 
-### Normalised mutual information of two clusterings — `ml_normalized_mutual_information`
+### Normalised mutual information of two clusterings, `ml_normalized_mutual_information`
 
 The normalised mutual information between two clusterings (or a clustering and the true classes), with the stated normaliser of the two entropies, and the mutual information in nats.
 
@@ -2623,7 +2623,7 @@ data_science_ml_ai999x.solve('ml_normalized_mutual_information', labels_true=[0,
 
 <a id="ml_adjusted_mutual_information"></a>
 
-### Adjusted mutual information of two clusterings — `ml_adjusted_mutual_information`
+### Adjusted mutual information of two clusterings, `ml_adjusted_mutual_information`
 
 The adjusted mutual information between two clusterings: the mutual information corrected for chance by its expected value under random labellings with the same cluster sizes (hypergeometric model).
 
@@ -2676,7 +2676,7 @@ data_science_ml_ai999x.solve('ml_adjusted_mutual_information', labels_true=[0, 0
 
 <a id="ml_rand_index"></a>
 
-### Rand index, adjusted Rand index and Fowlkes-Mallows index — `ml_rand_index`
+### Rand index, adjusted Rand index and Fowlkes-Mallows index, `ml_rand_index`
 
 Pair-counting agreement between two clusterings: the Rand index, the adjusted Rand index (corrected for chance) and the Fowlkes-Mallows index.
 
@@ -2728,7 +2728,7 @@ data_science_ml_ai999x.solve('ml_rand_index', labels_true=[0, 0, 0, 1, 1, 1], la
 
 <a id="ml_homogeneity_completeness_v_measure"></a>
 
-### Homogeneity, completeness and V-measure — `ml_homogeneity_completeness_v_measure`
+### Homogeneity, completeness and V-measure: `ml_homogeneity_completeness_v_measure`
 
 Entropy-based clustering scores against true classes: homogeneity (each cluster holds one class), completeness (each class sits in one cluster) and their weighted harmonic mean, the V-measure.
 
@@ -2781,7 +2781,7 @@ data_science_ml_ai999x.solve('ml_homogeneity_completeness_v_measure', labels_tru
 
 <a id="ml_silhouette_score"></a>
 
-### Silhouette score — `ml_silhouette_score`
+### Silhouette score: `ml_silhouette_score`
 
 The mean silhouette coefficient of a clustering (Euclidean distance) and the silhouette of each sample: (b - a) / max(a, b), a = mean distance within its cluster, b = mean distance to the nearest other cluster.
 
@@ -2833,7 +2833,7 @@ data_science_ml_ai999x.solve('ml_silhouette_score', X=[[0], [1], [5], [6], [11]]
 
 <a id="ml_davies_bouldin_index"></a>
 
-### Davies-Bouldin index — `ml_davies_bouldin_index`
+### Davies-Bouldin index: `ml_davies_bouldin_index`
 
 The Davies-Bouldin index of a clustering: the mean over clusters of the worst ratio of within-cluster scatter to between-centroid distance (lower is better).
 
@@ -2854,9 +2854,9 @@ $$
 - **Assumes:** 2 <= number of clusters <= n - 1; distinct centroids
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points — the ratio the index is built from)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-clusters)
+![6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points, the ratio the index is built from)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-clusters)
 
-*6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points — the ratio the index is built from). Returned Davies–Bouldin index 0.374734 (lower is better).*
+*6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points, the ratio the index is built from). Returned Davies–Bouldin index 0.374734 (lower is better).*
 
 ```python
 data_science_ml_ai999x.solve('ml_davies_bouldin_index', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5]], labels=[0, 0, 1, 1, 1, 1])
@@ -2879,7 +2879,7 @@ data_science_ml_ai999x.solve('ml_davies_bouldin_index', X=[[0], [1], [5], [6], [
 
 <a id="ml_calinski_harabasz_index"></a>
 
-### Calinski-Harabasz index — `ml_calinski_harabasz_index`
+### Calinski-Harabasz index: `ml_calinski_harabasz_index`
 
 The Calinski-Harabasz (variance ratio) index of a clustering: between-cluster over within-cluster dispersion, scaled by $(n - K)/(K - 1)$ (higher is better).
 
@@ -2927,7 +2927,7 @@ data_science_ml_ai999x.solve('ml_calinski_harabasz_index', X=[[0], [1], [5], [6]
 
 <a id="ml_kmeans_step"></a>
 
-### One k-means iteration (assignment and update) — `ml_kmeans_step`
+### One k-means iteration (assignment and update), `ml_kmeans_step`
 
 One Lloyd iteration of k-means from given centroids: assign every point to its nearest centroid, give the inertia of that assignment and the updated centroids (the means of the assigned points).
 
@@ -2976,7 +2976,7 @@ data_science_ml_ai999x.solve('ml_kmeans_step', X=[[0], [1], [5], [6], [11]], C=[
 
 <a id="ml_kmeans"></a>
 
-### k-means clustering from given initial centroids — `ml_kmeans`
+### k-means clustering from given initial centroids, `ml_kmeans`
 
 Lloyd's k-means algorithm run to convergence from stated initial centroids: the final centroids, the cluster of each point and the inertia (within-cluster sum of squares).
 
@@ -3028,7 +3028,7 @@ data_science_ml_ai999x.solve('ml_kmeans', X=[[0], [1], [5], [6], [11], [12]], C=
 
 <a id="ml_knn_classify"></a>
 
-### k-nearest-neighbour classification of a query point — `ml_knn_classify`
+### k-nearest-neighbour classification of a query point, `ml_knn_classify`
 
 Classify a query point by majority vote among its k nearest training points (stated metric), with the neighbours and their distances.
 
@@ -3085,7 +3085,7 @@ data_science_ml_ai999x.solve('ml_knn_classify', X=[[0], [1], [2], [6], [7], [8]]
 
 <a id="ml_knn_regress"></a>
 
-### k-nearest-neighbour regression of a query point — `ml_knn_regress`
+### k-nearest-neighbour regression of a query point, `ml_knn_regress`
 
 Predict a value at a query point as the mean (uniform) or inverse-distance-weighted mean of the targets of its k nearest training points.
 
@@ -3137,7 +3137,7 @@ data_science_ml_ai999x.solve('ml_knn_regress', X=[[1, 1], [2, 1], [4, 3], [5, 4]
 
 <a id="ml_gaussian_naive_bayes"></a>
 
-### Gaussian naive Bayes prediction — `ml_gaussian_naive_bayes`
+### Gaussian naive Bayes prediction: `ml_gaussian_naive_bayes`
 
 Fit a Gaussian naive Bayes classifier (class frequencies as priors, per-class feature means and population variances) and give the predicted class and posterior probabilities of a query point.
 
@@ -3187,7 +3187,7 @@ data_science_ml_ai999x.solve('ml_gaussian_naive_bayes', X=[[1.0], [1.2], [0.8], 
 
 <a id="ml_multinomial_naive_bayes"></a>
 
-### Multinomial naive Bayes prediction (word counts) — `ml_multinomial_naive_bayes`
+### Multinomial naive Bayes prediction (word counts), `ml_multinomial_naive_bayes`
 
 Fit a multinomial naive Bayes classifier on count features (such as word counts) with additive (Laplace/Lidstone) smoothing alpha and give the predicted class and posteriors of a query count vector.
 
@@ -3242,7 +3242,7 @@ data_science_ml_ai999x.solve('ml_multinomial_naive_bayes', X=[[3, 0, 1], [2, 1, 
 
 <a id="ml_bernoulli_naive_bayes"></a>
 
-### Bernoulli naive Bayes prediction (binary features) — `ml_bernoulli_naive_bayes`
+### Bernoulli naive Bayes prediction (binary features), `ml_bernoulli_naive_bayes`
 
 Fit a Bernoulli naive Bayes classifier on $0/1$ features with additive smoothing alpha (absent features count too) and give the predicted class and posteriors of a query vector.
 
@@ -3292,7 +3292,7 @@ data_science_ml_ai999x.solve('ml_bernoulli_naive_bayes', X=[[1, 0], [0, 1], [1, 
 
 <a id="ml_decision_stump_classification"></a>
 
-### Best decision-tree split (classification, Gini or entropy) — `ml_decision_stump_classification`
+### Best decision-tree split (classification, Gini or entropy), `ml_decision_stump_classification`
 
 The best single split $x_j  \leq  t$ of a classification tree's root by Gini impurity or entropy (bits): the feature, the threshold (midway between consecutive values), the impurity decrease and the sizes of both sides.
 
@@ -3320,7 +3320,7 @@ $$
 
 ![The best single split of the 6 stated points (labels [0, 0, 1, 1, 0, 1], gini criterion): the package returns feature 0, threshold 7, 3 points left and 3 right, impurity decrease 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-split)
 
-*The best single split of the 6 stated points (labels [0, 0, 1, 1, 0, 1], gini criterion): the package returns feature 0, threshold 7, 3 points left and 3 right, impurity decrease 0.5 — the split separates the classes perfectly.*
+*The best single split of the 6 stated points (labels [0, 0, 1, 1, 0, 1], gini criterion): the package returns feature 0, threshold 7, 3 points left and 3 right, impurity decrease 0.5, the split separates the classes perfectly.*
 
 ```python
 data_science_ml_ai999x.solve('ml_decision_stump_classification', X=[[2, 7], [3, 1], [10, 8], [11, 2], [4, 9], [12, 0]], y=[0, 0, 1, 1, 0, 1], criterion='gini')
@@ -3344,7 +3344,7 @@ data_science_ml_ai999x.solve('ml_decision_stump_classification', X=[[1], [2], [3
 
 <a id="ml_hierarchical_clustering"></a>
 
-### Agglomerative hierarchical clustering merge heights — `ml_hierarchical_clustering`
+### Agglomerative hierarchical clustering merge heights, `ml_hierarchical_clustering`
 
 Agglomerative clustering of points with single, complete, average or Ward linkage (Euclidean distance): the distance at which each of the $n - 1$ merges happens, in order, and the final merge height.
 
@@ -3395,7 +3395,7 @@ data_science_ml_ai999x.solve('ml_hierarchical_clustering', X=[[0, 0], [0, 1], [4
 
 <a id="ml_pca"></a>
 
-### Principal component analysis (explained variance and first component) — `ml_pca`
+### Principal component analysis (explained variance and first component), `ml_pca`
 
 Principal component analysis of a data matrix: the variance explained by every component (sample covariance, n - 1), the explained variance ratios, the first principal direction and the first component score of every sample.
 
@@ -3448,7 +3448,7 @@ data_science_ml_ai999x.solve('ml_pca', X=[[1, 2, 3], [2, 1, 3], [4, 5, 7], [3, 3
 
 <a id="ml_standard_scaler"></a>
 
-### Standardisation (z-scores of features) — `ml_standard_scaler`
+### Standardisation (z-scores of features): `ml_standard_scaler`
 
 Standardise each feature column to mean 0 and unit variance: the column means, the population standard deviations and the scaled matrix (a constant column scales to 0).
 
@@ -3499,7 +3499,7 @@ data_science_ml_ai999x.solve('ml_standard_scaler', X=[[0, 5], [0, 5], [1, 5], [1
 
 <a id="ml_minmax_scaler"></a>
 
-### Min-max scaling to [0, 1] — `ml_minmax_scaler`
+### Min-max scaling to [0, 1], `ml_minmax_scaler`
 
 Scale each feature column linearly to the range [0, 1] using its minimum and maximum (a constant column scales to 0).
 
@@ -3550,7 +3550,7 @@ data_science_ml_ai999x.solve('ml_minmax_scaler', X=[[-3, 7], [0, 7], [9, 7]])
 
 <a id="ml_one_hot_encoding"></a>
 
-### Label encoding and one-hot encoding of categories — `ml_one_hot_encoding`
+### Label encoding and one-hot encoding of categories, `ml_one_hot_encoding`
 
 Encode a list of category values: the categories in sorted order, how often each occurs, the integer code (label encoding) of each value and its one-hot row.
 
@@ -3602,7 +3602,7 @@ data_science_ml_ai999x.solve('ml_one_hot_encoding', categories='low, high, mediu
 
 <a id="ml_train_test_split_sizes"></a>
 
-### Train/test split sizes — `ml_train_test_split_sizes`
+### Train/test split sizes: `ml_train_test_split_sizes`
 
 The number of test and training samples when n samples are split with a given test fraction (the test size is rounded up).
 
@@ -3654,7 +3654,7 @@ data_science_ml_ai999x.solve('ml_train_test_split_sizes', n=47, test_size=0.25)
 
 <a id="ml_kfold_sizes"></a>
 
-### k-fold cross-validation fold sizes — `ml_kfold_sizes`
+### k-fold cross-validation fold sizes, `ml_kfold_sizes`
 
 The test and training set sizes of each fold when n samples are split into k consecutive folds (the first n mod k folds get one extra sample), and the index range of the first test fold.
 
@@ -3703,7 +3703,7 @@ data_science_ml_ai999x.solve('ml_kfold_sizes', n=100, k=5)
 
 <a id="ml_kfold_cv_linear_regression"></a>
 
-### k-fold cross-validated MSE of linear regression — `ml_kfold_cv_linear_regression`
+### k-fold cross-validated MSE of linear regression, `ml_kfold_cv_linear_regression`
 
 The mean squared error of ordinary least squares (with intercept) on each of k consecutive, unshuffled folds, trained on the other folds, and the mean over folds.
 
@@ -3755,7 +3755,7 @@ data_science_ml_ai999x.solve('ml_kfold_cv_linear_regression', X=[[1, 0], [2, 1],
 
 <a id="ml_loocv_linear_regression"></a>
 
-### Leave-one-out cross-validation of linear regression (PRESS) — `ml_loocv_linear_regression`
+### Leave-one-out cross-validation of linear regression (PRESS), `ml_loocv_linear_regression`
 
 The leave-one-out cross-validated MSE and the PRESS statistic of ordinary least squares with intercept, from one fit through the leverage shortcut $e_i / (1 - h_ii)$.
 
@@ -3802,7 +3802,7 @@ data_science_ml_ai999x.solve('ml_loocv_linear_regression', X=[[1, 0], [2, 1], [3
 
 <a id="ml_bias_variance_decomposition"></a>
 
-### Bias-variance decomposition of predictions — `ml_bias_variance_decomposition`
+### Bias-variance decomposition of predictions, `ml_bias_variance_decomposition`
 
 For predictions of several models (one row each, e.g. trained on different samples) at the same test points with known noise-free values: the squared bias, the variance and the expected squared error, which equals their sum.
 
@@ -3850,7 +3850,7 @@ data_science_ml_ai999x.solve('ml_bias_variance_decomposition', P=[[0.9, 2.1, 2.9
 
 <a id="ml_logistic_regression_fit"></a>
 
-### Logistic regression fit (L2, stated C) — `ml_logistic_regression_fit`
+### Logistic regression fit (L2, stated C): `ml_logistic_regression_fit`
 
 Fit binary logistic regression with an L2 penalty: minimise 0.5 ||w||^$2 + C$ sum of log-losses (the intercept is not penalised); give the weights, the intercept, the objective and the training accuracy.
 
@@ -3905,7 +3905,7 @@ data_science_ml_ai999x.solve('ml_logistic_regression_fit', X=[[1, 2], [2, 1], [3
 
 <a id="ml_logistic_regression_predict"></a>
 
-### Logistic regression prediction from given weights — `ml_logistic_regression_predict`
+### Logistic regression prediction from given weights, `ml_logistic_regression_predict`
 
 The logits, predicted probabilities of class 1 and predicted classes of a logistic regression model with given weights and intercept.
 
@@ -3954,7 +3954,7 @@ data_science_ml_ai999x.solve('ml_logistic_regression_predict', w=[2], b=-3, X=[[
 
 <a id="ml_ridge_regression"></a>
 
-### Ridge regression coefficients (stated alpha) — `ml_ridge_regression`
+### Ridge regression coefficients (stated alpha), `ml_ridge_regression`
 
 Fit ridge regression: minimise ||y - X w - b||^$2 + \alpha$ ||w||^2 (the intercept is not penalised); give the coefficients, the intercept and the training MSE.
 
@@ -4008,7 +4008,7 @@ data_science_ml_ai999x.solve('ml_ridge_regression', X=[[1, 0], [2, 1], [3, 1], [
 
 <a id="ml_lasso_regression"></a>
 
-### Lasso regression coefficients (stated alpha) — `ml_lasso_regression`
+### Lasso regression coefficients (stated alpha), `ml_lasso_regression`
 
 Fit lasso regression: minimise ||y - X w - b||^$2 / (2n) + \alpha$ ||w||_1 (the intercept is not penalised); give the coefficients (some exactly zero), the intercept and the number of non-zero coefficients.
 
@@ -4057,7 +4057,7 @@ data_science_ml_ai999x.solve('ml_lasso_regression', X=[[1, 2, 0], [2, 1, 1], [3,
 
 <a id="ml_linear_svm_decision"></a>
 
-### Linear SVM decision values, classes and margin — `ml_linear_svm_decision`
+### Linear SVM decision values, classes and margin, `ml_linear_svm_decision`
 
 For a linear SVM with given weights and bias: the decision value w.x + b of each sample, its class (+1 when the value is positive, else -1), the margin width 2 / ||w|| and each sample's distance to the hyperplane.
 
@@ -4107,7 +4107,7 @@ data_science_ml_ai999x.solve('ml_linear_svm_decision', w=[0.5, 0.5, 1], b=0.25, 
 
 <a id="ml_perceptron_epoch"></a>
 
-### Perceptron training epoch — `ml_perceptron_epoch`
+### Perceptron training epoch: `ml_perceptron_epoch`
 
 One pass of the perceptron learning rule through the samples in order (labels -1/+1): whenever y $(w.x + b)  \leq  0$, update w += lr y x and b += lr y; the final weights, bias and number of updates.
 
@@ -4158,7 +4158,7 @@ data_science_ml_ai999x.solve('ml_perceptron_epoch', X=[[1], [3], [-1], [-2]], y=
 
 <a id="ml_dense_forward_pass"></a>
 
-### Forward pass of a one-hidden-layer dense network — `ml_dense_forward_pass`
+### Forward pass of a one-hidden-layer dense network, `ml_dense_forward_pass`
 
 The forward pass of a dense network x -> activation(W1 x + b1) -> W2 $h + b_{2}$ with an identity, sigmoid or softmax output: the hidden activations and the outputs.
 
@@ -4212,7 +4212,7 @@ data_science_ml_ai999x.solve('ml_dense_forward_pass', x=[0.5, -1, 2], W1=[[0.2, 
 
 <a id="ml_backpropagation"></a>
 
-### Backpropagation gradients of a one-hidden-layer network — `ml_backpropagation`
+### Backpropagation gradients of a one-hidden-layer network, `ml_backpropagation`
 
 One backpropagation pass of a dense network with one hidden layer: the loss (mean squared error with identity outputs, or cross-entropy of softmax outputs against a target distribution) and its gradients with respect to every weight and bias.
 
@@ -4272,7 +4272,7 @@ data_science_ml_ai999x.solve('ml_backpropagation', x=[0.5, -1], t=[0, 1, 0], W1=
 
 <a id="ml_dense_parameter_count"></a>
 
-### Parameter count of a dense (fully connected) network — `ml_dense_parameter_count`
+### Parameter count of a dense (fully connected) network, `ml_dense_parameter_count`
 
 The number of trainable parameters of each dense layer and of the whole network, from the layer sizes (input size first), with or without biases.
 
@@ -4319,7 +4319,7 @@ data_science_ml_ai999x.solve('ml_dense_parameter_count', sizes=[3, 4, 4, 1], bia
 
 <a id="ml_conv_output_size"></a>
 
-### Convolution output size — `ml_conv_output_size`
+### Convolution output size: `ml_conv_output_size`
 
 The output length (per spatial dimension) of a convolution or pooling window from the input size, kernel size, stride, zero padding and dilation.
 
@@ -4376,7 +4376,7 @@ data_science_ml_ai999x.solve('ml_conv_output_size', n=64, kernel=3, stride=1, pa
 
 <a id="ml_conv_parameter_count"></a>
 
-### Parameter count of a 2-D convolution layer — `ml_conv_parameter_count`
+### Parameter count of a 2-D convolution layer, `ml_conv_parameter_count`
 
 The number of weights, biases and total parameters of a $2-D$ convolution layer, including grouped and depthwise convolutions.
 
@@ -4429,7 +4429,7 @@ data_science_ml_ai999x.solve('ml_conv_parameter_count', in_channels=32, out_chan
 
 <a id="ml_conv2d_forward"></a>
 
-### 2-D convolution of an image with a kernel (deep-learning convention) — `ml_conv2d_forward`
+### 2-D convolution of an image with a kernel (deep-learning convention), `ml_conv2d_forward`
 
 The output feature map of a single-channel $2-D$ convolution as computed in deep learning (cross-correlation: the kernel is not flipped), with a stride and zero padding.
 
@@ -4482,7 +4482,7 @@ data_science_ml_ai999x.solve('ml_conv2d_forward', image=[[1, 2, 0], [4, 5, 6], [
 
 <a id="ml_pooling"></a>
 
-### Max pooling and average pooling — `ml_pooling`
+### Max pooling and average pooling: `ml_pooling`
 
 Max pooling and average pooling of a $2-D$ feature map with a square window, a stride and no padding.
 
@@ -4530,7 +4530,7 @@ data_science_ml_ai999x.solve('ml_pooling', X=[[1, 2, 3], [4, 5, 6], [7, 8, 9]], 
 
 <a id="ml_scaled_dot_product_attention"></a>
 
-### Scaled dot-product attention — `ml_scaled_dot_product_attention`
+### Scaled dot-product attention: `ml_scaled_dot_product_attention`
 
 Scaled dot-product attention softmax(Q $K^{T} / sqrt$(d)) V for given query, key and value matrices, optionally with a causal mask (query i sees keys 0..i): the attention weights and the output.
 
@@ -4580,7 +4580,7 @@ data_science_ml_ai999x.solve('ml_scaled_dot_product_attention', Q=[[1, 0], [0, 1
 
 <a id="ml_multihead_attention"></a>
 
-### Multi-head attention (identity projections) — `ml_multihead_attention`
+### Multi-head attention (identity projections), `ml_multihead_attention`
 
 Multi-head attention with identity input and output projections: the model dimension is split into equal heads, scaled dot-product attention runs in each head (scale $1/sqrt$(head size)) and the head outputs are concatenated.
 
@@ -4630,7 +4630,7 @@ data_science_ml_ai999x.solve('ml_multihead_attention', Q=[[0.5, -1], [1, 1]], K=
 
 <a id="ml_batch_norm_forward"></a>
 
-### Batch normalisation forward pass (training mode) — `ml_batch_norm_forward`
+### Batch normalisation forward pass (training mode), `ml_batch_norm_forward`
 
 Batch normalisation of a mini-batch in training mode: each feature is normalised with the batch mean and the biased batch variance plus eps, then scaled by gamma and shifted by beta.
 
@@ -4684,7 +4684,7 @@ data_science_ml_ai999x.solve('ml_batch_norm_forward', X=[[0.5, -1, 2], [1.5, 0, 
 
 <a id="ml_sgd_momentum_step"></a>
 
-### SGD with momentum: one update — `ml_sgd_momentum_step`
+### SGD with momentum: one update, `ml_sgd_momentum_step`
 
 One step of stochastic gradient descent with momentum in PyTorch's form (optional Nesterov and weight decay): $d = g + wd$ w, buf = mu buf + d, $w = w - lr$ (buf, or d + mu buf with Nesterov).
 
@@ -4711,9 +4711,9 @@ $$
 - **Assumes:** $lr > 0$; 0 <= momentum < 1; weight_decay >= 0; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 SGD steps with momentum from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-path)
+![40 SGD steps with momentum from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-path)
 
-*40 SGD steps with momentum from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.02, momentum 0, 0.5 and 0.9, no Nesterov term, no weight decay. Each dot is the w the package returned, its returned buffer fed to the next step. Ends after 40 steps: momentum 0: (0.4457, -0.000265846); momentum 0.5: (0.190098, 2.1663e-06); momentum 0.9: (0.0497158, -0.232059). Momentum speeds the slow w₁ direction and overshoots across the steep w₂ one.*
+*40 SGD steps with momentum from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.1, momentum 0, 0.5, 0.9, Nesterov False, weight decay 0. Each dot is the w the package returned, its returned buffer fed to the next step. Ends after 40 steps: momentum 0.9 (example): (0.116015, -0.251647); momentum 0: (0.0147809, 0); momentum 0.5: (-3.0529e-07, -8.9382e-08). Momentum speeds the slow w₁ direction and overshoots across the steep w₂ one.*
 
 ```python
 data_science_ml_ai999x.solve('ml_sgd_momentum_step', w=[1, -2], grad=[0.5, -1], buf=[0.1, 0.2], lr=0.1, momentum=0.9, nesterov=False, weight_decay=0)
@@ -4736,7 +4736,7 @@ data_science_ml_ai999x.solve('ml_sgd_momentum_step', w=[0.3], grad=[0.2], buf=[0
 
 <a id="ml_adam_step"></a>
 
-### Adam optimizer: one update — `ml_adam_step`
+### Adam optimizer: one update, `ml_adam_step`
 
 One Adam update: the new first and second moment estimates and the parameters after the bias-corrected step w - lr m_hat / (sqrt(v_hat) + eps).
 
@@ -4766,9 +4766,9 @@ $$
 - **Assumes:** $t  \geq  1$; $0  \leq  beta1$, $beta2 < 1$; $v  \geq  0$; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 Adam steps from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-path)
+![40 Adam steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-path)
 
-*40 Adam steps from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); β₁ = 0.9, β₂ = 0.999, ε = 1e-8, learning rates 0.1 and 0.03. Each dot is the w the package returned, its returned moments m and v fed to the next step. Marked: after 40 steps at lr = 0.1, w = (0.100785, 0.233784). Adam moves each coordinate by about lr per step whatever the gradient's scale.*
+*40 Adam steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); β₁ = 0.9, β₂ = 0.999, ε = 1.0000e-08, learning rates 0.001 (the worked example's) and 0.01. Each dot is the w the package returned, its returned moments m and v fed to the next step. Marked: after 40 steps at lr = 0.001, w = (0.960168, -1.96008). Adam moves each coordinate by about lr per step whatever the gradient's scale.*
 
 ```python
 data_science_ml_ai999x.solve('ml_adam_step', w=[1, -2], grad=[0.5, -1], m=[0, 0], v=[0, 0], t=1, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-08)
@@ -4791,7 +4791,7 @@ data_science_ml_ai999x.solve('ml_adam_step', w=[0.3, 0.1], grad=[0.2, -0.05], m=
 
 <a id="ml_adamw_step"></a>
 
-### AdamW optimizer (decoupled weight decay): one update — `ml_adamw_step`
+### AdamW optimizer (decoupled weight decay): one update, `ml_adamw_step`
 
 One AdamW update: the parameters first decay by the factor (1 - lr weight_decay), then take the bias-corrected Adam step.
 
@@ -4822,9 +4822,9 @@ $$
 - **Assumes:** $t  \geq  1$; $0  \leq  beta1$, $beta2 < 1$; $v  \geq  0$; weight_decay >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 AdamW steps from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-path)
+![40 AdamW steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-path)
 
-*40 AdamW steps from w = (1, −2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.1, β₁ = 0.9, β₂ = 0.999, ε = 1e-8, decoupled weight decay 0 and 0.5. Each dot is the w the package returned, its moments fed to the next step. Marked ends: (0.100785, 0.233784) without decay, (0.0219802, 0.0191338) with decay 0.5.*
+*40 AdamW steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.001, β₁ = 0.9, β₂ = 0.999, ε = 1.0000e-08, decoupled weight decay 0 and 0.01 (the worked example's 0.01 among them). Each dot is the w the package returned, its moments fed to the next step. Marked ends: (0.960168, -1.96008) and (0.959777, -1.95929).*
 
 ```python
 data_science_ml_ai999x.solve('ml_adamw_step', w=[1, -2], grad=[0.5, -1], m=[0, 0], v=[0, 0], t=1, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-08, weight_decay=0.01)
@@ -4847,7 +4847,7 @@ data_science_ml_ai999x.solve('ml_adamw_step', w=[0.3, 0.1], grad=[0.2, -0.05], m
 
 <a id="ml_step_lr_schedule"></a>
 
-### Step learning-rate schedule — `ml_step_lr_schedule`
+### Step learning-rate schedule: `ml_step_lr_schedule`
 
 The learning rate at a given epoch under step decay: multiplied by gamma every step_size epochs.
 
@@ -4896,7 +4896,7 @@ data_science_ml_ai999x.solve('ml_step_lr_schedule', lr0=0.05, step_size=10, gamm
 
 <a id="ml_cosine_lr_schedule"></a>
 
-### Cosine-annealing learning-rate schedule — `ml_cosine_lr_schedule`
+### Cosine-annealing learning-rate schedule: `ml_cosine_lr_schedule`
 
 The learning rate at a given epoch under cosine annealing from lr_max down to eta_min over T_max epochs.
 
@@ -4921,7 +4921,7 @@ $$
 
 ![Cosine annealing from lr_max = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cosine-lr-schedule-schedule)
 
-*Cosine annealing from lr_max = 0.1 over T_max = 100 epochs to η_min = 0 and 0.02 (51 runs each). Marked: the worked example, epoch 50, lr = 0.05 — halfway down.*
+*Cosine annealing from lr_max = 0.1 over T_max = 100 epochs to η_min = 0 and 0.02 (51 runs each). Marked: the worked example, epoch 50, lr = 0.05, halfway down.*
 
 ```python
 data_science_ml_ai999x.solve('ml_cosine_lr_schedule', lr_max=0.1, eta_min=0, T_max=100, epoch=50)
@@ -4945,7 +4945,7 @@ data_science_ml_ai999x.solve('ml_cosine_lr_schedule', lr_max=0.01, eta_min=0.000
 
 <a id="ml_warmup_cosine_lr_schedule"></a>
 
-### Linear warm-up followed by cosine decay — `ml_warmup_cosine_lr_schedule`
+### Linear warm-up followed by cosine decay: `ml_warmup_cosine_lr_schedule`
 
 The learning rate at a given step of the common transformer schedule: linear warm-up from start_factor lr_max to lr_max over the warm-up steps, then cosine decay to eta_min at the last step.
 
@@ -4995,7 +4995,7 @@ data_science_ml_ai999x.solve('ml_warmup_cosine_lr_schedule', lr_max=0.001, start
 
 <a id="ml_transformer_parameter_count"></a>
 
-### Parameter count of a transformer encoder — `ml_transformer_parameter_count`
+### Parameter count of a transformer encoder: `ml_transformer_parameter_count`
 
 The parameters of a standard transformer encoder layer (multi-head self-attention with biases, a two-layer feed-forward block and two layer norms) and of a stack of such layers.
 
@@ -5052,7 +5052,7 @@ data_science_ml_ai999x.solve('ml_transformer_parameter_count', d_model=768, n_he
 
 <a id="ml_rnn_parameter_count"></a>
 
-### Parameter count of an LSTM, GRU or simple RNN — `ml_rnn_parameter_count`
+### Parameter count of an LSTM, GRU or simple RNN, `ml_rnn_parameter_count`
 
 The trainable parameters of each layer and of a stacked recurrent network (LSTM: 4 gates, GRU: 3, simple RNN: 1), with two bias vectors per gate as in PyTorch, optionally bidirectional.
 
@@ -5077,9 +5077,9 @@ $$
 - **Assumes:** positive whole-number sizes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional) — 1, 3 and 4 gate blocks](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-counts)
+![Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional), 1, 3 and 4 gate blocks](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-counts)
 
-*Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional) — 1, 3 and 4 gate blocks.*
+*Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional), 1, 3 and 4 gate blocks.*
 
 ![total (total parameters) against hidden_size (hidden units) from 1 to 256 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-curve)
 
@@ -5106,7 +5106,7 @@ data_science_ml_ai999x.solve('ml_rnn_parameter_count', cell='gru', input_size=32
 
 <a id="ml_receptive_field"></a>
 
-### Receptive field of stacked convolutions — `ml_receptive_field`
+### Receptive field of stacked convolutions: `ml_receptive_field`
 
 The receptive field (how many input positions one output depends on, end to end) and the jump (input distance between adjacent outputs) of a stack of convolution or pooling layers with given kernel sizes, strides and dilations.
 
@@ -5154,7 +5154,7 @@ data_science_ml_ai999x.solve('ml_receptive_field', kernels=[7, 3, 3, 3], strides
 
 <a id="ml_precision_recall_at_k"></a>
 
-### Precision@k and recall@k of a ranking — `ml_precision_recall_at_k`
+### Precision@k and recall@k of a ranking, `ml_precision_recall_at_k`
 
 Precision at k and recall at k of a ranked list (relevance $0/1$ in rank order), with the number of relevant items in the top k and the hit indicator.
 
@@ -5205,7 +5205,7 @@ data_science_ml_ai999x.solve('ml_precision_recall_at_k', rel=[0, 0, 1, 0], n_rel
 
 <a id="ml_mean_average_precision"></a>
 
-### Mean average precision (MAP) of rankings — `ml_mean_average_precision`
+### Mean average precision (MAP) of rankings: `ml_mean_average_precision`
 
 The average precision of each query's ranked list (mean of precision at the rank of each relevant item, over the relevant items in the list) and their mean, MAP.
 
@@ -5252,7 +5252,7 @@ data_science_ml_ai999x.solve('ml_mean_average_precision', R=[[0, 0, 1, 1, 0, 1]]
 
 <a id="ml_ndcg_at_k"></a>
 
-### NDCG@k (normalised discounted cumulative gain) — `ml_ndcg_at_k`
+### NDCG@k (normalised discounted cumulative gain), `ml_ndcg_at_k`
 
 DCG@k of a ranked list with graded relevance (linear gain rel or exponential gain 2^rel - 1, discount $1/log2$(rank + 1)), the ideal DCG@k of the same items sorted by relevance, and NDCG@k = DCG/IDCG.
 
@@ -5302,7 +5302,7 @@ data_science_ml_ai999x.solve('ml_ndcg_at_k', rel=[3, 2, 3, 0, 1, 2], k=3, gain='
 
 <a id="ml_mean_reciprocal_rank"></a>
 
-### Mean reciprocal rank (MRR) — `ml_mean_reciprocal_rank`
+### Mean reciprocal rank (MRR): `ml_mean_reciprocal_rank`
 
 The reciprocal rank of the first relevant item of each query's ranked list (0 when none is relevant) and their mean, the MRR.
 
@@ -5348,7 +5348,7 @@ data_science_ml_ai999x.solve('ml_mean_reciprocal_rank', R=[[0, 0, 0, 1], [0, 0, 
 
 <a id="ml_threshold_metrics"></a>
 
-### Confusion counts, precision and recall at a score threshold — `ml_threshold_metrics`
+### Confusion counts, precision and recall at a score threshold, `ml_threshold_metrics`
 
 Classify by a score threshold (score >= threshold is positive) and give the confusion counts, precision, recall and accuracy.
 
@@ -5401,7 +5401,7 @@ data_science_ml_ai999x.solve('ml_threshold_metrics', y_true=[1, 0, 1, 0, 0, 1], 
 
 <a id="ml_softmax_temperature"></a>
 
-### Softmax with temperature — `ml_softmax_temperature`
+### Softmax with temperature: `ml_softmax_temperature`
 
 The softmax of logits divided by a temperature T (T > 1 flattens, $T < 1$ sharpens the distribution) and the entropy of the result in nats.
 
@@ -5453,7 +5453,7 @@ data_science_ml_ai999x.solve('ml_softmax_temperature', z=[2, 0, -1, 0.5], T=0.5)
 
 <a id="ml_polynomial_kernel"></a>
 
-### Polynomial kernel — `ml_polynomial_kernel`
+### Polynomial kernel: `ml_polynomial_kernel`
 
 The polynomial kernel (gamma x.z + coef0)^degree between two vectors, as used by kernel SVMs.
 
@@ -5502,7 +5502,7 @@ data_science_ml_ai999x.solve('ml_polynomial_kernel', x=[1, -1, 0.5], z=[2, 0, 1]
 
 <a id="ml_triplet_loss"></a>
 
-### Triplet margin loss — `ml_triplet_loss`
+### Triplet margin loss: `ml_triplet_loss`
 
 The triplet margin loss max(0, d(a, p) - d(a, n) + margin) of an anchor, a positive and a negative embedding, with both Euclidean distances.
 
@@ -5556,7 +5556,7 @@ data_science_ml_ai999x.solve('ml_triplet_loss', anchor=[1, 2, 3], positive=[1.5,
 
 <a id="ml_impurity_from_counts"></a>
 
-### Node impurity from class counts (entropy, Gini, misclassification) — `ml_impurity_from_counts`
+### Node impurity from class counts (entropy, Gini, misclassification), `ml_impurity_from_counts`
 
 The impurity of a decision-tree node from its class counts: entropy in bits, Gini impurity and misclassification error.
 
@@ -5604,7 +5604,7 @@ data_science_ml_ai999x.solve('ml_impurity_from_counts', counts=[10, 10, 0])
 
 <a id="ml_robust_scaler"></a>
 
-### Robust scaling (median and interquartile range) — `ml_robust_scaler`
+### Robust scaling (median and interquartile range), `ml_robust_scaler`
 
 Scale each feature by subtracting its median and dividing by its interquartile range (quartiles by linear interpolation), which resists outliers; a column with zero IQR is only centred.
 
@@ -5655,7 +5655,7 @@ data_science_ml_ai999x.solve('ml_robust_scaler', X=[[1, 5], [4, 2], [2, 8], [8, 
 
 <a id="ml_decision_stump_regression"></a>
 
-### Best regression-tree split (squared error) — `ml_decision_stump_regression`
+### Best regression-tree split (squared error), `ml_decision_stump_regression`
 
 The best single split $x_j  \leq  t$ of a regression tree's root by squared error: the feature, the threshold, the decrease of the mean squared error and the mean target on each side.
 

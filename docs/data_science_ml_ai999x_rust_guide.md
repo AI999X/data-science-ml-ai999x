@@ -1,4 +1,4 @@
-# data-science-ml: the Data Science and Machine Learning program — user guide
+# data-science-ml: the Data Science and Machine Learning program, user guide
 
 **data-science-ml-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Data Science and Machine Learning covers evaluation metrics, loss functions and 
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Data Science and Machine Learning | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-data-science-ml-1.4.0-windows-x86_64.zip |
-| Desktop app: Data Science and Machine Learning | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-data-science-ml-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Data Science and Machine Learning | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-data-science-ml-1.5.0-windows-x86_64.zip |
+| Desktop app: Data Science and Machine Learning | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-data-science-ml-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Data Science and Machine Learning in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-data-science-ml-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-data-science-ml.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Data Science and Machine Learning in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-data-science-ml-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-data-science-ml.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-data-science-ml-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-data-science-ml-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-data-science-ml-1.4.0-linux-x86_64.tar.gz
-./ai999x-data-science-ml-1.4.0-linux-x86_64/ai999x-data-science-ml
+tar xzf ai999x-data-science-ml-1.5.0-linux-x86_64.tar.gz
+./ai999x-data-science-ml-1.5.0-linux-x86_64/ai999x-data-science-ml
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `data-science-ml` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 data-science-ml --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 data-science-ml --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ data-science-ml --version
-data-science-ml-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)
+data-science-ml-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Ask in words
@@ -216,41 +216,7 @@ $ data-science-ml solve ml_binary_metrics_from_counts TP=40 FP=10 FN=5
 NEEDS_INPUT: ml_binary_metrics_from_counts needs TN (true negatives). Example: solve('ml_binary_metrics_from_counts', TP=40, FP=10, FN=5, TN=45).
 ```
 
-### 2.9 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ data-science-ml figures ml_binary_metrics_from_counts TP=40 FP=10 FN=5 TN=45 --out .
-[
-  {
-    "slug": "ml-binary-metrics-from-counts-confusion",
-    "title": "The four counts as a confusion matrix",
-    "caption": "The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned F1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-confusion.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-rates",
-    "title": "Rates from a confusion matrix",
-    "caption": "The rates the model returns for TP = 40, FP = 10, FN = 5, TN = 45: acc. 0.85, prec. 0.8, recall 0.8889, spec. 0.8182, F1 0.8421, NPV 0.9, bal.acc 0.8535, Jacc. 0.7273. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-rates.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-live-1",
-    "title": "2 TP / as false negatives varies",
-    "caption": "2 TP / as FN runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your FN = 5 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-live-1.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-live-2",
-    "title": "2 TP / as true positives varies",
-    "caption": "2 TP / as TP runs from 20 to 60, every other input as you entered it (21 solutions). Marked: your TP = 40 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-live-2.svg"
-  }
-]
-```
-
-### 2.10 Many questions at once
+### 2.9 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | data-science-ml batch
 
@@ -323,36 +289,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `data-science-ml figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ data-science-ml figures ml_binary_metrics_from_counts TP=40 FP=10 FN=5 TN=45 --out .
-[
-  {
-    "slug": "ml-binary-metrics-from-counts-confusion",
-    "title": "The four counts as a confusion matrix",
-    "caption": "The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned F1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-confusion.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-rates",
-    "title": "Rates from a confusion matrix",
-    "caption": "The rates the model returns for TP = 40, FP = 10, FN = 5, TN = 45: acc. 0.85, prec. 0.8, recall 0.8889, spec. 0.8182, F1 0.8421, NPV 0.9, bal.acc 0.8535, Jacc. 0.7273. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-rates.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-live-1",
-    "title": "2 TP / as false negatives varies",
-    "caption": "2 TP / as FN runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your FN = 5 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-live-1.svg"
-  },
-  {
-    "slug": "ml-binary-metrics-from-counts-live-2",
-    "title": "2 TP / as true positives varies",
-    "caption": "2 TP / as TP runs from 20 to 60, every other input as you entered it (21 solutions). Marked: your TP = 40 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
-    "file": ".\\ml-binary-metrics-from-counts-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `data_science_ml_ai999x.wasm` (https://www.ai999x.com/compute/rust/data_science_ml_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -376,7 +312,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="ml_hierarchical_clustering"></a>
 
-#### Agglomerative hierarchical clustering merge heights — `ml_hierarchical_clustering`
+#### Agglomerative hierarchical clustering merge heights, `ml_hierarchical_clustering`
 
 Agglomerative clustering of points with single, complete, average or Ward linkage (Euclidean distance): the distance at which each of the n - 1 merges happens, in order, and the final merge height.
 
@@ -386,10 +322,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample (2 to 40) | — |
-| `method` | in | linkage: single, complete, average or ward | — |
-| `heights` | out | merge distances in merge order (ascending) | — |
-| `final_height` | out | height of the last merge | — |
+| `X` | in | points: one row per sample (2 to 40) | - |
+| `method` | in | linkage: single, complete, average or ward | - |
+| `heights` | out | merge distances in merge order (ascending) | - |
+| `final_height` | out | height of the last merge | - |
 
 **Applies when:** 2 to 40 points; no tied merge distances (complete, average, ward).
 
@@ -406,7 +342,7 @@ final_height = 10.40432602
 
 <a id="ml_bernoulli_naive_bayes"></a>
 
-#### Bernoulli naive Bayes prediction (binary features) — `ml_bernoulli_naive_bayes`
+#### Bernoulli naive Bayes prediction (binary features), `ml_bernoulli_naive_bayes`
 
 Fit a Bernoulli naive Bayes classifier on 0/1 features with additive smoothing alpha (absent features count too) and give the predicted class and posteriors of a query vector.
 
@@ -416,13 +352,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | training features (0 or 1) | — |
-| `y` | in | training labels (whole numbers) | — |
-| `x` | in | query features (0 or 1) | — |
-| `alpha` | in | additive smoothing (> 0) | — |
-| `prediction` | out | class with the largest posterior | — |
-| `classes` | out | classes in sorted order | — |
-| `posteriors` | out | posterior probability of each class | — |
+| `X` | in | training features (0 or 1) | - |
+| `y` | in | training labels (whole numbers) | - |
+| `x` | in | query features (0 or 1) | - |
+| `alpha` | in | additive smoothing (> 0) | - |
+| `prediction` | out | class with the largest posterior | - |
+| `classes` | out | classes in sorted order | - |
+| `posteriors` | out | posterior probability of each class | - |
 
 **Applies when:** features 0 or 1; alpha > 0; at least two classes.
 
@@ -440,7 +376,7 @@ posteriors = [0.860022396417,0.139977603583]
 
 <a id="ml_decision_stump_classification"></a>
 
-#### Best decision-tree split (classification, Gini or entropy) — `ml_decision_stump_classification`
+#### Best decision-tree split (classification, Gini or entropy), `ml_decision_stump_classification`
 
 The best single split x_j <= t of a classification tree's root by Gini impurity or entropy (bits): the feature, the threshold (midway between consecutive values), the impurity decrease and the sizes of both sides.
 
@@ -450,14 +386,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample (whole numbers) | — |
-| `y` | in | class labels (whole numbers) | — |
-| `criterion` | in | split criterion: gini or entropy | — |
-| `feature` | out | index (0-based column of X) of the best feature | — |
-| `threshold` | out | threshold t (go left when x_j <= t) | — |
-| `impurity_decrease` | out | parent impurity minus the size-weighted child impurities | — |
-| `n_left` | out | samples going left | — |
-| `n_right` | out | samples going right | — |
+| `X` | in | features: one row per sample (whole numbers) | - |
+| `y` | in | class labels (whole numbers) | - |
+| `criterion` | in | split criterion: gini or entropy | - |
+| `feature` | out | index (0-based column of X) of the best feature | - |
+| `threshold` | out | threshold t (go left when x_j <= t) | - |
+| `impurity_decrease` | out | parent impurity minus the size-weighted child impurities | - |
+| `n_left` | out | samples going left | - |
+| `n_right` | out | samples going right | - |
 
 **Applies when:** at least two classes; whole-number features; a unique best split.
 
@@ -477,7 +413,7 @@ n_right = 3
 
 <a id="ml_decision_stump_regression"></a>
 
-#### Best regression-tree split (squared error) — `ml_decision_stump_regression`
+#### Best regression-tree split (squared error), `ml_decision_stump_regression`
 
 The best single split x_j <= t of a regression tree's root by squared error: the feature, the threshold, the decrease of the mean squared error and the mean target on each side.
 
@@ -487,13 +423,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features (whole numbers) | — |
-| `y` | in | targets | — |
-| `feature` | out | index of the best feature | — |
-| `threshold` | out | threshold t (left when x_j <= t) | — |
-| `mse_decrease` | out | decrease of the node's mean squared error | — |
-| `left_mean` | out | mean target on the left | — |
-| `right_mean` | out | mean target on the right | — |
+| `X` | in | features (whole numbers) | - |
+| `y` | in | targets | - |
+| `feature` | out | index of the best feature | - |
+| `threshold` | out | threshold t (left when x_j <= t) | - |
+| `mse_decrease` | out | decrease of the node's mean squared error | - |
+| `left_mean` | out | mean target on the left | - |
+| `right_mean` | out | mean target on the right | - |
 
 **Applies when:** whole-number features; targets not all equal; a unique best split.
 
@@ -512,7 +448,7 @@ right_mean = 5
 
 <a id="ml_distance_metrics"></a>
 
-#### Distances and cosine similarity between two vectors — `ml_distance_metrics`
+#### Distances and cosine similarity between two vectors, `ml_distance_metrics`
 
 The Euclidean, Manhattan and Chebyshev distances between two feature vectors, and their cosine similarity and cosine distance.
 
@@ -522,13 +458,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | first vector | — |
-| `z` | in | second vector | — |
-| `euclidean` | out | sqrt(sum (x - z)^2) | — |
-| `manhattan` | out | sum \|x - z\| | — |
-| `chebyshev` | out | max \|x - z\| | — |
-| `cosine_similarity` | out | x.z / (\|x\| \|z\|) | — |
-| `cosine_distance` | out | 1 - cosine similarity | — |
+| `x` | in | first vector | - |
+| `z` | in | second vector | - |
+| `euclidean` | out | sqrt(sum (x - z)^2) | - |
+| `manhattan` | out | sum \|x - z\| | - |
+| `chebyshev` | out | max \|x - z\| | - |
+| `cosine_similarity` | out | x.z / (\|x\| \|z\|) | - |
+| `cosine_distance` | out | 1 - cosine similarity | - |
 
 **Applies when:** equal lengths; non-zero vectors.
 
@@ -547,7 +483,7 @@ cosine_distance = 0.1445176115
 
 <a id="ml_gaussian_naive_bayes"></a>
 
-#### Gaussian naive Bayes prediction — `ml_gaussian_naive_bayes`
+#### Gaussian naive Bayes prediction: `ml_gaussian_naive_bayes`
 
 Fit a Gaussian naive Bayes classifier (class frequencies as priors, per-class feature means and population variances) and give the predicted class and posterior probabilities of a query point.
 
@@ -557,12 +493,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | training features: one row per sample | — |
-| `y` | in | training labels (whole numbers) | — |
-| `x` | in | query point | — |
-| `prediction` | out | class with the largest posterior | — |
-| `classes` | out | classes in sorted order | — |
-| `posteriors` | out | posterior probability of each class | — |
+| `X` | in | training features: one row per sample | - |
+| `y` | in | training labels (whole numbers) | - |
+| `x` | in | query point | - |
+| `prediction` | out | class with the largest posterior | - |
+| `classes` | out | classes in sorted order | - |
+| `posteriors` | out | posterior probability of each class | - |
 
 **Applies when:** at least two classes; positive within-class variance of every feature.
 
@@ -579,7 +515,7 @@ posteriors = [1.54428667821e-7,0.999999845571]
 
 <a id="ml_kmeans"></a>
 
-#### k-means clustering from given initial centroids — `ml_kmeans`
+#### k-means clustering from given initial centroids, `ml_kmeans`
 
 Lloyd's k-means algorithm run to convergence from stated initial centroids: the final centroids, the cluster of each point and the inertia (within-cluster sum of squares).
 
@@ -589,11 +525,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample | — |
-| `C` | in | initial centroids: one row per cluster | — |
-| `centroids` | out | final centroids | — |
-| `labels` | out | cluster (0-based row of C) of each point | — |
-| `inertia` | out | sum of squared distances to the final centroids | — |
+| `X` | in | points: one row per sample | - |
+| `C` | in | initial centroids: one row per cluster | - |
+| `centroids` | out | final centroids | - |
+| `labels` | out | cluster (0-based row of C) of each point | - |
+| `inertia` | out | sum of squared distances to the final centroids | - |
 
 **Applies when:** no exact distance tie; no empty cluster during the iterations; convergence within 100 iterations.
 
@@ -610,7 +546,7 @@ inertia = 8.525
 
 <a id="ml_knn_classify"></a>
 
-#### k-nearest-neighbour classification of a query point — `ml_knn_classify`
+#### k-nearest-neighbour classification of a query point, `ml_knn_classify`
 
 Classify a query point by majority vote among its k nearest training points (stated metric), with the neighbours and their distances.
 
@@ -620,15 +556,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | training points: one row per sample | — |
-| `y` | in | training labels (whole numbers) | — |
-| `x` | in | query point | — |
-| `k` | in | number of neighbours | — |
-| `metric` | in | distance: euclidean or manhattan | — |
-| `prediction` | out | majority class among the k neighbours | — |
-| `votes` | out | number of neighbours of that class | — |
-| `neighbors` | out | indices (0-based rows of X) of the k nearest points, ascending | — |
-| `neighbor_distances` | out | their distances, ascending | — |
+| `X` | in | training points: one row per sample | - |
+| `y` | in | training labels (whole numbers) | - |
+| `x` | in | query point | - |
+| `k` | in | number of neighbours | - |
+| `metric` | in | distance: euclidean or manhattan | - |
+| `prediction` | out | majority class among the k neighbours | - |
+| `votes` | out | number of neighbours of that class | - |
+| `neighbors` | out | indices (0-based rows of X) of the k nearest points, ascending | - |
+| `neighbor_distances` | out | their distances, ascending | - |
 
 **Applies when:** no distance tie at the k-th neighbour; no tied vote; 1 <= k <= n.
 
@@ -647,7 +583,7 @@ neighbor_distances = [1.28062484749,1.56204993518,2.00997512422]
 
 <a id="ml_knn_regress"></a>
 
-#### k-nearest-neighbour regression of a query point — `ml_knn_regress`
+#### k-nearest-neighbour regression of a query point, `ml_knn_regress`
 
 Predict a value at a query point as the mean (uniform) or inverse-distance-weighted mean of the targets of its k nearest training points.
 
@@ -657,15 +593,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | training points | — |
-| `y` | in | training targets | — |
-| `x` | in | query point | — |
-| `k` | in | number of neighbours | — |
-| `metric` | in | distance: euclidean or manhattan | — |
-| `weights` | in | uniform mean or inverse-distance weights | — |
-| `prediction` | out | predicted value | — |
-| `neighbors` | out | indices of the k nearest points, ascending | — |
-| `neighbor_distances` | out | their distances, ascending | — |
+| `X` | in | training points | - |
+| `y` | in | training targets | - |
+| `x` | in | query point | - |
+| `k` | in | number of neighbours | - |
+| `metric` | in | distance: euclidean or manhattan | - |
+| `weights` | in | uniform mean or inverse-distance weights | - |
+| `prediction` | out | predicted value | - |
+| `neighbors` | out | indices of the k nearest points, ascending | - |
+| `neighbor_distances` | out | their distances, ascending | - |
 
 **Applies when:** no distance tie at the k-th neighbour; distance weights: the query is not a training point.
 
@@ -675,8 +611,8 @@ prediction = 2.75
 neighbors = [1,2]
 neighbor_distances = [0.4,0.6]
   by: k-nearest-neighbour regression of a query point  (exact distances, stable sort, (weighted) mean)
-  weights = uniform
   metric = euclidean
+  weights = uniform
   assumes: no distance tie at the k-th neighbour; distance weights: the query is not a training point
 ```
 
@@ -684,7 +620,7 @@ neighbor_distances = [0.4,0.6]
 
 <a id="ml_multinomial_naive_bayes"></a>
 
-#### Multinomial naive Bayes prediction (word counts) — `ml_multinomial_naive_bayes`
+#### Multinomial naive Bayes prediction (word counts), `ml_multinomial_naive_bayes`
 
 Fit a multinomial naive Bayes classifier on count features (such as word counts) with additive (Laplace/Lidstone) smoothing alpha and give the predicted class and posteriors of a query count vector.
 
@@ -694,13 +630,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | training counts: one row per document, one column per term | — |
-| `y` | in | training labels (whole numbers) | — |
-| `x` | in | query counts | — |
-| `alpha` | in | additive smoothing (> 0; 1 = Laplace) | — |
-| `prediction` | out | class with the largest posterior | — |
-| `classes` | out | classes in sorted order | — |
-| `posteriors` | out | posterior probability of each class | — |
+| `X` | in | training counts: one row per document, one column per term | - |
+| `y` | in | training labels (whole numbers) | - |
+| `x` | in | query counts | - |
+| `alpha` | in | additive smoothing (> 0; 1 = Laplace) | - |
+| `prediction` | out | class with the largest posterior | - |
+| `classes` | out | classes in sorted order | - |
+| `posteriors` | out | posterior probability of each class | - |
 
 **Applies when:** alpha > 0; counts >= 0; at least two classes.
 
@@ -718,7 +654,7 @@ posteriors = [0.529780564263,0.470219435737]
 
 <a id="ml_kmeans_step"></a>
 
-#### One k-means iteration (assignment and update) — `ml_kmeans_step`
+#### One k-means iteration (assignment and update), `ml_kmeans_step`
 
 One Lloyd iteration of k-means from given centroids: assign every point to its nearest centroid, give the inertia of that assignment and the updated centroids (the means of the assigned points).
 
@@ -728,11 +664,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample | — |
-| `C` | in | current (or initial) centroids: one row per cluster | — |
-| `labels` | out | index (0-based row of C) of the nearest centroid of each point | — |
-| `new_centroids` | out | mean of the points assigned to each centroid | — |
-| `inertia` | out | sum of squared distances of the points to their assigned (current) centroids | — |
+| `X` | in | points: one row per sample | - |
+| `C` | in | current (or initial) centroids: one row per cluster | - |
+| `labels` | out | index (0-based row of C) of the nearest centroid of each point | - |
+| `new_centroids` | out | mean of the points assigned to each centroid | - |
+| `inertia` | out | sum of squared distances of the points to their assigned (current) centroids | - |
 
 **Applies when:** no exact distance tie; no empty cluster; 2 <= k <= n.
 
@@ -749,7 +685,7 @@ inertia = 19.25
 
 <a id="ml_polynomial_kernel"></a>
 
-#### Polynomial kernel — `ml_polynomial_kernel`
+#### Polynomial kernel: `ml_polynomial_kernel`
 
 The polynomial kernel (gamma x.z + coef0)^degree between two vectors, as used by kernel SVMs.
 
@@ -759,12 +695,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | first vector | — |
-| `z` | in | second vector | — |
-| `gamma` | in | scale of the dot product | — |
-| `coef0` | in | constant term | — |
-| `degree` | in | degree (1 to 10) | — |
-| `kernel` | out | (gamma x.z + coef0)^degree | — |
+| `x` | in | first vector | - |
+| `z` | in | second vector | - |
+| `gamma` | in | scale of the dot product | - |
+| `coef0` | in | constant term | - |
+| `degree` | in | degree (1 to 10) | - |
+| `kernel` | out | (gamma x.z + coef0)^degree | - |
 
 **Applies when:** degree 1 to 10; equal lengths.
 
@@ -781,7 +717,7 @@ kernel = 144
 
 <a id="ml_rbf_kernel_matrix"></a>
 
-#### RBF (Gaussian) kernel matrix — `ml_rbf_kernel_matrix`
+#### RBF (Gaussian) kernel matrix: `ml_rbf_kernel_matrix`
 
 The Gram matrix of the radial basis function kernel exp(-gamma ||x_i - x_j||^2) for a set of points, and the mean off-diagonal similarity.
 
@@ -791,10 +727,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per point (at least two) | — |
-| `gamma` | in | kernel width parameter (> 0) | — |
-| `K` | out | kernel matrix K_ij = exp(-gamma \|\|x_i - x_j\|\|^2) | — |
-| `mean_offdiagonal` | out | mean of the off-diagonal entries | — |
+| `X` | in | points: one row per point (at least two) | - |
+| `gamma` | in | kernel width parameter (> 0) | - |
+| `K` | out | kernel matrix K_ij = exp(-gamma \|\|x_i - x_j\|\|^2) | - |
+| `mean_offdiagonal` | out | mean of the off-diagonal entries | - |
 
 **Applies when:** gamma > 0; at least two points.
 
@@ -813,7 +749,7 @@ mean_offdiagonal = 0.2746503139
 
 <a id="ml_average_precision"></a>
 
-#### Average precision and precision-recall AUC — `ml_average_precision`
+#### Average precision and precision-recall AUC, `ml_average_precision`
 
 Average precision (the step-wise area under the precision-recall curve, sum of (R_k - R_{k-1}) P_k over distinct score thresholds) and the trapezoidal area under the precision-recall curve.
 
@@ -823,10 +759,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `scores` | in | classifier scores | — |
-| `average_precision` | out | average precision | — |
-| `pr_auc_trapezoid` | out | trapezoidal area under the precision-recall curve, from (recall 0, precision 1) | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `scores` | in | classifier scores | - |
+| `average_precision` | out | average precision | - |
+| `pr_auc_trapezoid` | out | trapezoidal area under the precision-recall curve, from (recall 0, precision 1) | - |
 
 **Applies when:** labels 0 or 1; at least one positive.
 
@@ -842,7 +778,7 @@ pr_auc_trapezoid = 0.9027777778
 
 <a id="ml_precision_recall_f1_averaged"></a>
 
-#### Averaged precision, recall and F1 (multi-class) — `ml_precision_recall_f1_averaged`
+#### Averaged precision, recall and F1 (multi-class), `ml_precision_recall_f1_averaged`
 
 Multi-class precision, recall and F1 averaged over classes: macro (unweighted), weighted (by support) or micro (pooled counts).
 
@@ -852,12 +788,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class labels (whole numbers) | — |
-| `y_pred` | in | predicted class labels (whole numbers) | — |
-| `average` | in | averaging: macro, weighted or micro | — |
-| `precision` | out | averaged precision | — |
-| `recall` | out | averaged recall | — |
-| `f1` | out | averaged F1 (macro and weighted: the average of the per-class F1) | — |
+| `y_true` | in | true class labels (whole numbers) | - |
+| `y_pred` | in | predicted class labels (whole numbers) | - |
+| `average` | in | averaging: macro, weighted or micro | - |
+| `precision` | out | averaged precision | - |
+| `recall` | out | averaged recall | - |
+| `f1` | out | averaged F1 (macro and weighted: the average of the per-class F1) | - |
 
 **Applies when:** labels are whole numbers; equal lengths.
 
@@ -875,7 +811,7 @@ f1 = 0.7777777778
 
 <a id="ml_balanced_accuracy"></a>
 
-#### Balanced accuracy (multi-class) — `ml_balanced_accuracy`
+#### Balanced accuracy (multi-class): `ml_balanced_accuracy`
 
 Balanced accuracy, the mean recall over the classes present in the true labels, and its chance-adjusted form.
 
@@ -885,10 +821,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class labels (whole numbers) | — |
-| `y_pred` | in | predicted class labels (whole numbers) | — |
-| `balanced_accuracy` | out | mean per-class recall over the true classes | — |
-| `adjusted` | out | (balanced accuracy - 1/K) / (1 - 1/K), K = number of true classes | — |
+| `y_true` | in | true class labels (whole numbers) | - |
+| `y_pred` | in | predicted class labels (whole numbers) | - |
+| `balanced_accuracy` | out | mean per-class recall over the true classes | - |
+| `adjusted` | out | (balanced accuracy - 1/K) / (1 - 1/K), K = number of true classes | - |
 
 **Applies when:** at least two true classes; equal lengths.
 
@@ -904,7 +840,7 @@ adjusted = 0.5
 
 <a id="ml_balanced_class_weights"></a>
 
-#### Balanced class weights — `ml_balanced_class_weights`
+#### Balanced class weights: `ml_balanced_class_weights`
 
 Class weights that balance an imbalanced training set: n / (K n_c) for each class c.
 
@@ -914,9 +850,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | training labels (whole numbers) | — |
-| `classes` | out | classes in sorted order | — |
-| `weights` | out | weight of each class, n / (K n_c) | — |
+| `y` | in | training labels (whole numbers) | - |
+| `classes` | out | classes in sorted order | - |
+| `weights` | out | weight of each class, n / (K n_c) | - |
 
 **Applies when:** labels are whole numbers.
 
@@ -932,7 +868,7 @@ In the worked example, y = [0, 0, 0, 0, 0, 0, 1, 1] go through the equation abov
 
 <a id="ml_binary_metrics_from_counts"></a>
 
-#### Binary classification metrics from confusion counts — `ml_binary_metrics_from_counts`
+#### Binary classification metrics from confusion counts, `ml_binary_metrics_from_counts`
 
 Accuracy, precision, recall (sensitivity), specificity, F1, negative predictive value, balanced accuracy, false positive and false negative rates and the Jaccard index from TP, FP, FN, TN.
 
@@ -942,20 +878,20 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `TP` | in | true positives | — |
-| `FP` | in | false positives | — |
-| `FN` | in | false negatives | — |
-| `TN` | in | true negatives | — |
-| `accuracy` | out | (TP + TN) / n | — |
-| `precision` | out | TP / (TP + FP) | — |
-| `recall` | out | TP / (TP + FN), the sensitivity | — |
-| `specificity` | out | TN / (TN + FP) | — |
-| `f1` | out | 2 TP / (2 TP + FP + FN) | — |
-| `npv` | out | TN / (TN + FN) | — |
-| `balanced_accuracy` | out | (recall + specificity) / 2 | — |
-| `fpr` | out | FP / (FP + TN) | — |
-| `fnr` | out | FN / (FN + TP) | — |
-| `jaccard` | out | TP / (TP + FP + FN) | — |
+| `TP` | in | true positives | - |
+| `FP` | in | false positives | - |
+| `FN` | in | false negatives | - |
+| `TN` | in | true negatives | - |
+| `accuracy` | out | (TP + TN) / n | - |
+| `precision` | out | TP / (TP + FP) | - |
+| `recall` | out | TP / (TP + FN), the sensitivity | - |
+| `specificity` | out | TN / (TN + FP) | - |
+| `f1` | out | 2 TP / (2 TP + FP + FN) | - |
+| `npv` | out | TN / (TN + FN) | - |
+| `balanced_accuracy` | out | (recall + specificity) / 2 | - |
+| `fpr` | out | FP / (FP + TN) | - |
+| `fnr` | out | FN / (FN + TP) | - |
+| `jaccard` | out | TP / (TP + FP + FN) | - |
 
 **Applies when:** counts are whole numbers >= 0; every ratio is defined (TP + FP, TP + FN, TN + FP, TN + FN > 0).
 
@@ -979,7 +915,7 @@ jaccard = 0.7272727273
 
 <a id="ml_binary_confusion_matrix"></a>
 
-#### Binary confusion matrix from labels — `ml_binary_confusion_matrix`
+#### Binary confusion matrix from labels: `ml_binary_confusion_matrix`
 
 Count true positives, false positives, false negatives and true negatives from true and predicted 0/1 labels, with the accuracy and error rate.
 
@@ -989,14 +925,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1, 1 = positive) | — |
-| `y_pred` | in | predicted labels (0 or 1) | — |
-| `TP` | out | true positives | — |
-| `FP` | out | false positives | — |
-| `FN` | out | false negatives | — |
-| `TN` | out | true negatives | — |
-| `accuracy` | out | (TP + TN) / n | — |
-| `error_rate` | out | (FP + FN) / n | — |
+| `y_true` | in | true labels (0 or 1, 1 = positive) | - |
+| `y_pred` | in | predicted labels (0 or 1) | - |
+| `TP` | out | true positives | - |
+| `FP` | out | false positives | - |
+| `FN` | out | false negatives | - |
+| `TN` | out | true negatives | - |
+| `accuracy` | out | (TP + TN) / n | - |
+| `error_rate` | out | (FP + FN) / n | - |
 
 **Applies when:** labels are 0 or 1; y_true and y_pred have the same length.
 
@@ -1016,7 +952,7 @@ error_rate = 0.25
 
 <a id="ml_log_loss_binary"></a>
 
-#### Binary log loss (cross-entropy) — `ml_log_loss_binary`
+#### Binary log loss (cross-entropy): `ml_log_loss_binary`
 
 The mean binary cross-entropy (log loss) of predicted probabilities of the positive class, in nats and in bits.
 
@@ -1026,10 +962,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `p` | in | predicted probability of class 1 for each sample (0 < p < 1) | — |
-| `log_loss` | out | mean log loss in nats | — |
-| `log_loss_bits` | out | mean log loss in bits | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `p` | in | predicted probability of class 1 for each sample (0 < p < 1) | - |
+| `log_loss` | out | mean log loss in nats | - |
+| `log_loss_bits` | out | mean log loss in bits | - |
 
 **Applies when:** labels 0 or 1; 0 < p < 1.
 
@@ -1045,7 +981,7 @@ log_loss_bits = 0.4313674888
 
 <a id="ml_brier_score"></a>
 
-#### Brier score — `ml_brier_score`
+#### Brier score: `ml_brier_score`
 
 The Brier score, the mean squared difference between predicted probabilities of the positive class and the 0/1 outcomes.
 
@@ -1055,9 +991,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `p` | in | predicted probability of class 1 (0 to 1) | — |
-| `brier` | out | mean squared error of the probabilities | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `p` | in | predicted probability of class 1 (0 to 1) | - |
+| `brier` | out | mean squared error of the probabilities | - |
 
 **Applies when:** labels 0 or 1; 0 <= p <= 1.
 
@@ -1072,7 +1008,7 @@ brier = 0.075
 
 <a id="ml_cohen_kappa"></a>
 
-#### Cohen's kappa (unweighted, linear or quadratic) — `ml_cohen_kappa`
+#### Cohen's kappa (unweighted, linear or quadratic), `ml_cohen_kappa`
 
 Cohen's kappa, the agreement between two raters (or a classifier and the truth) corrected for chance, optionally weighted by the distance between classes.
 
@@ -1082,10 +1018,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y1` | in | labels of the first rater (whole numbers) | — |
-| `y2` | in | labels of the second rater (whole numbers) | — |
-| `weights` | in | disagreement weights: none, linear or quadratic (distance between class positions in sorted order) | — |
-| `kappa` | out | Cohen's kappa | — |
+| `y1` | in | labels of the first rater (whole numbers) | - |
+| `y2` | in | labels of the second rater (whole numbers) | - |
+| `weights` | in | disagreement weights: none, linear or quadratic (distance between class positions in sorted order) | - |
+| `kappa` | out | Cohen's kappa | - |
 
 **Applies when:** labels are whole numbers; at least two classes; equal lengths.
 
@@ -1101,7 +1037,7 @@ kappa = 0.619047619
 
 <a id="ml_threshold_metrics"></a>
 
-#### Confusion counts, precision and recall at a score threshold — `ml_threshold_metrics`
+#### Confusion counts, precision and recall at a score threshold, `ml_threshold_metrics`
 
 Classify by a score threshold (score >= threshold is positive) and give the confusion counts, precision, recall and accuracy.
 
@@ -1111,16 +1047,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `scores` | in | classifier scores | — |
-| `threshold` | in | decision threshold (a score at or above it is positive) | — |
-| `TP` | out | true positives | — |
-| `FP` | out | false positives | — |
-| `FN` | out | false negatives | — |
-| `TN` | out | true negatives | — |
-| `precision` | out | TP / (TP + FP) | — |
-| `recall` | out | TP / (TP + FN) | — |
-| `accuracy` | out | (TP + TN) / n | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `scores` | in | classifier scores | - |
+| `threshold` | in | decision threshold (a score at or above it is positive) | - |
+| `TP` | out | true positives | - |
+| `FP` | out | false positives | - |
+| `FN` | out | false negatives | - |
+| `TN` | out | true negatives | - |
+| `precision` | out | TP / (TP + FP) | - |
+| `recall` | out | TP / (TP + FN) | - |
+| `accuracy` | out | (TP + TN) / n | - |
 
 **Applies when:** labels 0 or 1; at least one score reaches the threshold; at least one positive.
 
@@ -1142,7 +1078,7 @@ accuracy = 0.6
 
 <a id="ml_expected_calibration_error"></a>
 
-#### Expected calibration error — `ml_expected_calibration_error`
+#### Expected calibration error: `ml_expected_calibration_error`
 
 The expected calibration error (support-weighted mean gap between accuracy and mean confidence over equal-width probability bins) and the maximum calibration error.
 
@@ -1152,12 +1088,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `p` | in | predicted probability of class 1 | — |
-| `n_bins` | in | number of equal-width bins on [0, 1] | — |
-| `ece` | out | expected calibration error | — |
-| `mce` | out | maximum calibration error over non-empty bins | — |
-| `n_nonempty_bins` | out | number of non-empty bins | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `p` | in | predicted probability of class 1 | - |
+| `n_bins` | in | number of equal-width bins on [0, 1] | - |
+| `ece` | out | expected calibration error | - |
+| `mce` | out | maximum calibration error over non-empty bins | - |
+| `n_nonempty_bins` | out | number of non-empty bins | - |
 
 **Applies when:** labels 0 or 1; 0 <= p <= 1; bins are [b/n, (b+1)/n); a probability on a bin edge goes to the upper bin.
 
@@ -1174,7 +1110,7 @@ n_nonempty_bins = 5
 
 <a id="ml_fbeta_score"></a>
 
-#### F-beta score — `ml_fbeta_score`
+#### F-beta score: `ml_fbeta_score`
 
 The F-beta score, the weighted harmonic mean of precision and recall in which recall counts beta times as much as precision.
 
@@ -1184,13 +1120,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `TP` | in | true positives | — |
-| `FP` | in | false positives | — |
-| `FN` | in | false negatives | — |
-| `beta` | in | weight of recall relative to precision (beta > 0; 1 gives F1, 2 favours recall) | — |
-| `precision` | out | TP / (TP + FP) | — |
-| `recall` | out | TP / (TP + FN) | — |
-| `fbeta` | out | F-beta score | — |
+| `TP` | in | true positives | - |
+| `FP` | in | false positives | - |
+| `FN` | in | false negatives | - |
+| `beta` | in | weight of recall relative to precision (beta > 0; 1 gives F1, 2 favours recall) | - |
+| `precision` | out | TP / (TP + FP) | - |
+| `recall` | out | TP / (TP + FN) | - |
+| `fbeta` | out | F-beta score | - |
 
 **Applies when:** beta > 0; TP > 0.
 
@@ -1208,7 +1144,7 @@ fbeta = 0.8695652174
 
 <a id="ml_hamming_loss"></a>
 
-#### Hamming loss and subset accuracy (multi-label) — `ml_hamming_loss`
+#### Hamming loss and subset accuracy (multi-label), `ml_hamming_loss`
 
 For multi-label predictions (0/1 indicator matrices): the Hamming loss (fraction of wrong labels) and the subset accuracy (fraction of samples with every label right).
 
@@ -1218,11 +1154,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Y_true` | in | true label indicators: one row per sample, one column per label (0 or 1) | — |
-| `Y_pred` | in | predicted label indicators, same shape | — |
-| `hamming_loss` | out | wrong label entries / (samples x labels) | — |
-| `subset_accuracy` | out | fraction of rows predicted exactly | — |
-| `n_mismatches` | out | number of wrong label entries | — |
+| `Y_true` | in | true label indicators: one row per sample, one column per label (0 or 1) | - |
+| `Y_pred` | in | predicted label indicators, same shape | - |
+| `hamming_loss` | out | wrong label entries / (samples x labels) | - |
+| `subset_accuracy` | out | fraction of rows predicted exactly | - |
+| `n_mismatches` | out | number of wrong label entries | - |
 
 **Applies when:** entries 0 or 1; same shape.
 
@@ -1239,7 +1175,7 @@ n_mismatches = 1
 
 <a id="ml_matthews_correlation"></a>
 
-#### Matthews correlation coefficient — `ml_matthews_correlation`
+#### Matthews correlation coefficient: `ml_matthews_correlation`
 
 The Matthews correlation coefficient (phi coefficient) of a binary confusion matrix, a balanced measure between -1 and 1.
 
@@ -1249,11 +1185,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `TP` | in | true positives | — |
-| `FP` | in | false positives | — |
-| `FN` | in | false negatives | — |
-| `TN` | in | true negatives | — |
-| `mcc` | out | Matthews correlation coefficient | — |
+| `TP` | in | true positives | - |
+| `FP` | in | false positives | - |
+| `FN` | in | false negatives | - |
+| `TN` | in | true negatives | - |
+| `mcc` | out | Matthews correlation coefficient | - |
 
 **Applies when:** no empty row or column of the confusion matrix.
 
@@ -1268,7 +1204,7 @@ mcc = 0.7035264707
 
 <a id="ml_multiclass_confusion_matrix"></a>
 
-#### Multi-class confusion matrix — `ml_multiclass_confusion_matrix`
+#### Multi-class confusion matrix: `ml_multiclass_confusion_matrix`
 
 The confusion matrix of a multi-class classifier (true classes in rows, predicted in columns) with the number correct and the accuracy.
 
@@ -1278,12 +1214,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class labels (whole numbers) | — |
-| `y_pred` | in | predicted class labels (whole numbers) | — |
-| `classes` | out | classes in sorted order (the union of both label lists) | — |
-| `matrix` | out | confusion matrix: row = true class, column = predicted class | — |
-| `n_correct` | out | number of correct predictions (the trace) | — |
-| `accuracy` | out | fraction correct | — |
+| `y_true` | in | true class labels (whole numbers) | - |
+| `y_pred` | in | predicted class labels (whole numbers) | - |
+| `classes` | out | classes in sorted order (the union of both label lists) | - |
+| `matrix` | out | confusion matrix: row = true class, column = predicted class | - |
+| `n_correct` | out | number of correct predictions (the trace) | - |
+| `accuracy` | out | fraction correct | - |
 
 **Applies when:** labels are whole numbers; equal lengths.
 
@@ -1301,7 +1237,7 @@ accuracy = 0.75
 
 <a id="ml_log_loss_multiclass"></a>
 
-#### Multi-class log loss (categorical cross-entropy) — `ml_log_loss_multiclass`
+#### Multi-class log loss (categorical cross-entropy), `ml_log_loss_multiclass`
 
 The mean categorical cross-entropy of predicted class probabilities (rows of P), with the perplexity exp(loss).
 
@@ -1311,10 +1247,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class index of each sample (0 to K-1) | — |
-| `P` | in | predicted probabilities: one row per sample, one column per class, rows sum to 1 | — |
-| `log_loss` | out | mean log loss in nats | — |
-| `perplexity` | out | exp(log loss) | — |
+| `y_true` | in | true class index of each sample (0 to K-1) | - |
+| `P` | in | predicted probabilities: one row per sample, one column per class, rows sum to 1 | - |
+| `log_loss` | out | mean log loss in nats | - |
+| `perplexity` | out | exp(log loss) | - |
 
 **Applies when:** labels are column indices of P; rows of P sum to 1; P[i, y_i] > 0.
 
@@ -1330,7 +1266,7 @@ perplexity = 1.682390866
 
 <a id="ml_classification_report"></a>
 
-#### Per-class precision, recall, F1 and support — `ml_classification_report`
+#### Per-class precision, recall, F1 and support, `ml_classification_report`
 
 A classification report: precision, recall, F1 and support for every class, with the macro-averaged F1.
 
@@ -1340,14 +1276,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class labels (whole numbers) | — |
-| `y_pred` | in | predicted class labels (whole numbers) | — |
-| `classes` | out | classes in sorted order | — |
-| `precision` | out | precision of each class | — |
-| `recall` | out | recall of each class | — |
-| `f1` | out | F1 of each class | — |
-| `support` | out | number of true members of each class | — |
-| `macro_f1` | out | mean of the per-class F1 | — |
+| `y_true` | in | true class labels (whole numbers) | - |
+| `y_pred` | in | predicted class labels (whole numbers) | - |
+| `classes` | out | classes in sorted order | - |
+| `precision` | out | precision of each class | - |
+| `recall` | out | recall of each class | - |
+| `f1` | out | F1 of each class | - |
+| `support` | out | number of true members of each class | - |
+| `macro_f1` | out | mean of the per-class F1 | - |
 
 **Applies when:** labels are whole numbers; equal lengths.
 
@@ -1367,7 +1303,7 @@ macro_f1 = 0.7777777778
 
 <a id="ml_roc_auc"></a>
 
-#### ROC AUC from scores — `ml_roc_auc`
+#### ROC AUC from scores: `ml_roc_auc`
 
 The area under the ROC curve from 0/1 labels and classifier scores: the probability that a random positive scores above a random negative (ties count one half), with the Gini coefficient 2 AUC - 1.
 
@@ -1377,12 +1313,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `scores` | in | classifier scores (higher = more likely positive) | — |
-| `auc` | out | area under the ROC curve | — |
-| `gini` | out | 2 AUC - 1 | — |
-| `n_pos` | out | number of positives | — |
-| `n_neg` | out | number of negatives | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `scores` | in | classifier scores (higher = more likely positive) | - |
+| `auc` | out | area under the ROC curve | - |
+| `gini` | out | 2 AUC - 1 | - |
+| `n_pos` | out | number of positives | - |
+| `n_neg` | out | number of negatives | - |
 
 **Applies when:** labels 0 or 1; at least one positive and one negative.
 
@@ -1400,7 +1336,7 @@ n_neg = 2
 
 <a id="ml_roc_curve"></a>
 
-#### ROC curve points — `ml_roc_curve`
+#### ROC curve points: `ml_roc_curve`
 
 The ROC curve of a scored classifier: the false and true positive rates at every distinct score threshold (a score at or above the threshold is positive), and the trapezoidal area under it.
 
@@ -1410,12 +1346,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (0 or 1) | — |
-| `scores` | in | classifier scores | — |
-| `thresholds` | out | distinct scores, descending (one per curve point after the origin) | — |
-| `fpr` | out | false positive rates, starting at 0 | — |
-| `tpr` | out | true positive rates, starting at 0 | — |
-| `auc` | out | trapezoidal area under the curve | — |
+| `y_true` | in | true labels (0 or 1) | - |
+| `scores` | in | classifier scores | - |
+| `thresholds` | out | distinct scores, descending (one per curve point after the origin) | - |
+| `fpr` | out | false positive rates, starting at 0 | - |
+| `tpr` | out | true positive rates, starting at 0 | - |
+| `auc` | out | trapezoidal area under the curve | - |
 
 **Applies when:** labels 0 or 1; at least one positive and one negative.
 
@@ -1433,7 +1369,7 @@ auc = 0.8333333333
 
 <a id="ml_top_k_accuracy"></a>
 
-#### Top-k accuracy — `ml_top_k_accuracy`
+#### Top-k accuracy: `ml_top_k_accuracy`
 
 The fraction of samples whose true class is among the k highest-scored classes.
 
@@ -1443,11 +1379,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class index of each sample (0 to K-1) | — |
-| `S` | in | class scores: one row per sample, one column per class (K >= 3) | — |
-| `k` | in | number of top classes that count as a hit | — |
-| `top_k_accuracy` | out | fraction of samples with the true class in the top k | — |
-| `n_hits` | out | number of such samples | — |
+| `y_true` | in | true class index of each sample (0 to K-1) | - |
+| `S` | in | class scores: one row per sample, one column per class (K >= 3) | - |
+| `k` | in | number of top classes that count as a hit | - |
+| `top_k_accuracy` | out | fraction of samples with the true class in the top k | - |
+| `n_hits` | out | number of such samples | - |
 
 **Applies when:** K >= 3 classes; 1 <= k < K; distinct scores within each row.
 
@@ -1465,7 +1401,7 @@ n_hits = 3
 
 <a id="ml_adjusted_mutual_information"></a>
 
-#### Adjusted mutual information of two clusterings — `ml_adjusted_mutual_information`
+#### Adjusted mutual information of two clusterings, `ml_adjusted_mutual_information`
 
 The adjusted mutual information between two clusterings: the mutual information corrected for chance by its expected value under random labellings with the same cluster sizes (hypergeometric model).
 
@@ -1475,12 +1411,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `labels_true` | in | reference labels (whole numbers) | — |
-| `labels_pred` | in | cluster labels (whole numbers) | — |
-| `method` | in | normaliser: arithmetic, geometric, min or max of the two entropies | — |
-| `ami` | out | (I - E[I]) / (normaliser - E[I]) | — |
-| `expected_mi` | out | E[I] in nats | — |
-| `mutual_information` | out | I in nats | — |
+| `labels_true` | in | reference labels (whole numbers) | - |
+| `labels_pred` | in | cluster labels (whole numbers) | - |
+| `method` | in | normaliser: arithmetic, geometric, min or max of the two entropies | - |
+| `ami` | out | (I - E[I]) / (normaliser - E[I]) | - |
+| `expected_mi` | out | E[I] in nats | - |
+| `mutual_information` | out | I in nats | - |
 
 **Applies when:** each labelling has at least two clusters.
 
@@ -1498,7 +1434,7 @@ mutual_information = 0.6365141683
 
 <a id="ml_calinski_harabasz_index"></a>
 
-#### Calinski-Harabasz index — `ml_calinski_harabasz_index`
+#### Calinski-Harabasz index: `ml_calinski_harabasz_index`
 
 The Calinski-Harabasz (variance ratio) index of a clustering: between-cluster over within-cluster dispersion, scaled by (n - K)/(K - 1) (higher is better).
 
@@ -1508,11 +1444,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample | — |
-| `labels` | in | cluster label of each point (whole numbers) | — |
-| `calinski_harabasz` | out | CH index | — |
-| `between` | out | between-cluster dispersion B | — |
-| `within` | out | within-cluster dispersion W | — |
+| `X` | in | points: one row per sample | - |
+| `labels` | in | cluster label of each point (whole numbers) | - |
+| `calinski_harabasz` | out | CH index | - |
+| `between` | out | between-cluster dispersion B | - |
+| `within` | out | within-cluster dispersion W | - |
 
 **Applies when:** 2 <= number of clusters <= n - 1.
 
@@ -1529,7 +1465,7 @@ within = 7.875
 
 <a id="ml_davies_bouldin_index"></a>
 
-#### Davies-Bouldin index — `ml_davies_bouldin_index`
+#### Davies-Bouldin index: `ml_davies_bouldin_index`
 
 The Davies-Bouldin index of a clustering: the mean over clusters of the worst ratio of within-cluster scatter to between-centroid distance (lower is better).
 
@@ -1539,9 +1475,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample | — |
-| `labels` | in | cluster label of each point (whole numbers) | — |
-| `davies_bouldin` | out | Davies-Bouldin index | — |
+| `X` | in | points: one row per sample | - |
+| `labels` | in | cluster label of each point (whole numbers) | - |
+| `davies_bouldin` | out | Davies-Bouldin index | - |
 
 **Applies when:** 2 <= number of clusters <= n - 1; distinct centroids.
 
@@ -1556,7 +1492,7 @@ davies_bouldin = 0.3747335771
 
 <a id="ml_homogeneity_completeness_v_measure"></a>
 
-#### Homogeneity, completeness and V-measure — `ml_homogeneity_completeness_v_measure`
+#### Homogeneity, completeness and V-measure: `ml_homogeneity_completeness_v_measure`
 
 Entropy-based clustering scores against true classes: homogeneity (each cluster holds one class), completeness (each class sits in one cluster) and their weighted harmonic mean, the V-measure.
 
@@ -1566,12 +1502,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `labels_true` | in | true class labels (whole numbers) | — |
-| `labels_pred` | in | cluster labels (whole numbers) | — |
-| `beta` | in | weight of completeness relative to homogeneity in the V-measure (1 = equal) | — |
-| `homogeneity` | out | 1 - H(C \| K) / H(C) = I / H(C) | — |
-| `completeness` | out | I / H(K) | — |
-| `v_measure` | out | (1 + beta) h c / (beta h + c) | — |
+| `labels_true` | in | true class labels (whole numbers) | - |
+| `labels_pred` | in | cluster labels (whole numbers) | - |
+| `beta` | in | weight of completeness relative to homogeneity in the V-measure (1 = equal) | - |
+| `homogeneity` | out | 1 - H(C \| K) / H(C) = I / H(C) | - |
+| `completeness` | out | I / H(K) | - |
+| `v_measure` | out | (1 + beta) h c / (beta h + c) | - |
 
 **Applies when:** each labelling has at least two clusters; beta > 0.
 
@@ -1589,7 +1525,7 @@ v_measure = 0.7336804367
 
 <a id="ml_normalized_mutual_information"></a>
 
-#### Normalised mutual information of two clusterings — `ml_normalized_mutual_information`
+#### Normalised mutual information of two clusterings, `ml_normalized_mutual_information`
 
 The normalised mutual information between two clusterings (or a clustering and the true classes), with the stated normaliser of the two entropies, and the mutual information in nats.
 
@@ -1599,11 +1535,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `labels_true` | in | reference labels (whole numbers) | — |
-| `labels_pred` | in | cluster labels (whole numbers) | — |
-| `method` | in | normaliser: arithmetic, geometric, min or max of the two entropies | — |
-| `nmi` | out | I / normaliser(H_true, H_pred) | — |
-| `mutual_information` | out | I in nats | — |
+| `labels_true` | in | reference labels (whole numbers) | - |
+| `labels_pred` | in | cluster labels (whole numbers) | - |
+| `method` | in | normaliser: arithmetic, geometric, min or max of the two entropies | - |
+| `nmi` | out | I / normaliser(H_true, H_pred) | - |
+| `mutual_information` | out | I in nats | - |
 
 **Applies when:** each labelling has at least two clusters.
 
@@ -1620,7 +1556,7 @@ mutual_information = 0.6365141683
 
 <a id="ml_rand_index"></a>
 
-#### Rand index, adjusted Rand index and Fowlkes-Mallows index — `ml_rand_index`
+#### Rand index, adjusted Rand index and Fowlkes-Mallows index, `ml_rand_index`
 
 Pair-counting agreement between two clusterings: the Rand index, the adjusted Rand index (corrected for chance) and the Fowlkes-Mallows index.
 
@@ -1630,11 +1566,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `labels_true` | in | reference labels (whole numbers) | — |
-| `labels_pred` | in | cluster labels (whole numbers) | — |
-| `rand_index` | out | fraction of sample pairs on which the two labellings agree | — |
-| `adjusted_rand_index` | out | ARI | — |
-| `fowlkes_mallows` | out | TP / sqrt((TP + FP)(TP + FN)) over pairs | — |
+| `labels_true` | in | reference labels (whole numbers) | - |
+| `labels_pred` | in | cluster labels (whole numbers) | - |
+| `rand_index` | out | fraction of sample pairs on which the two labellings agree | - |
+| `adjusted_rand_index` | out | ARI | - |
+| `fowlkes_mallows` | out | TP / sqrt((TP + FP)(TP + FN)) over pairs | - |
 
 **Applies when:** at least one within-cluster pair in each labelling.
 
@@ -1651,7 +1587,7 @@ fowlkes_mallows = 0.6546536707
 
 <a id="ml_silhouette_score"></a>
 
-#### Silhouette score — `ml_silhouette_score`
+#### Silhouette score: `ml_silhouette_score`
 
 The mean silhouette coefficient of a clustering (Euclidean distance) and the silhouette of each sample: (b - a) / max(a, b), a = mean distance within its cluster, b = mean distance to the nearest other cluster.
 
@@ -1661,10 +1597,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | points: one row per sample | — |
-| `labels` | in | cluster label of each point (whole numbers) | — |
-| `silhouette` | out | mean silhouette coefficient | — |
-| `samples` | out | silhouette of each sample (0 for a point alone in its cluster) | — |
+| `X` | in | points: one row per sample | - |
+| `labels` | in | cluster label of each point (whole numbers) | - |
+| `silhouette` | out | mean silhouette coefficient | - |
+| `samples` | out | silhouette of each sample (0 for a point alone in its cluster) | - |
 
 **Applies when:** 2 <= number of clusters <= n - 1.
 
@@ -1682,7 +1618,7 @@ samples = [0.785495870518,0.728161920035,0.287385025256,0.591063503361,0.6300782
 
 <a id="ml_pca"></a>
 
-#### Principal component analysis (explained variance and first component) — `ml_pca`
+#### Principal component analysis (explained variance and first component), `ml_pca`
 
 Principal component analysis of a data matrix: the variance explained by every component (sample covariance, n - 1), the explained variance ratios, the first principal direction and the first component score of every sample.
 
@@ -1692,11 +1628,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | data: one row per sample, one column per feature (more samples than features, at most 8 features) | — |
-| `explained_variance` | out | eigenvalues of the sample covariance, descending | — |
-| `explained_variance_ratio` | out | each eigenvalue / their sum | — |
-| `component_1` | out | first principal direction (unit length, largest-magnitude entry positive) | — |
-| `scores_1` | out | projection of each centred sample on component_1 | — |
+| `X` | in | data: one row per sample, one column per feature (more samples than features, at most 8 features) | - |
+| `explained_variance` | out | eigenvalues of the sample covariance, descending | - |
+| `explained_variance_ratio` | out | each eigenvalue / their sum | - |
+| `component_1` | out | first principal direction (unit length, largest-magnitude entry positive) | - |
+| `scores_1` | out | projection of each centred sample on component_1 | - |
 
 **Applies when:** n > number of features; full rank; a unique first component.
 
@@ -1716,7 +1652,7 @@ scores_1 = [0.827970186201,-1.77758032528,0.992197494415,0.274210415975,1.675801
 
 <a id="ml_logistic_loss_gradient"></a>
 
-#### Logistic regression loss and gradient (L2-regularised) — `ml_logistic_loss_gradient`
+#### Logistic regression loss and gradient (L2-regularised), `ml_logistic_loss_gradient`
 
 The mean logistic (binary cross-entropy) loss of a linear model with an L2 penalty (lam / 2) ||w||^2 and its gradient with respect to the weights and the bias.
 
@@ -1726,14 +1662,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | feature matrix | — |
-| `y` | in | labels (0 or 1) | — |
-| `w` | in | weights | — |
-| `b` | in | bias | — |
-| `lam` | in | L2 regularisation strength (>= 0; the bias is not penalised) | — |
-| `loss` | out | mean log loss + (lam/2)\|\|w\|\|^2 | — |
-| `grad_w` | out | X^T (sigma(Xw + b) - y) / n + lam w | — |
-| `grad_b` | out | mean of sigma(Xw + b) - y | — |
+| `X` | in | feature matrix | - |
+| `y` | in | labels (0 or 1) | - |
+| `w` | in | weights | - |
+| `b` | in | bias | - |
+| `lam` | in | L2 regularisation strength (>= 0; the bias is not penalised) | - |
+| `loss` | out | mean log loss + (lam/2)\|\|w\|\|^2 | - |
+| `grad_w` | out | X^T (sigma(Xw + b) - y) / n + lam w | - |
+| `grad_b` | out | mean of sigma(Xw + b) - y | - |
 
 **Applies when:** labels 0 or 1; lam >= 0.
 
@@ -1752,7 +1688,7 @@ grad_b = -0.02462884252
 
 <a id="ml_mse_gradient"></a>
 
-#### Mean squared error loss and gradient of a linear model — `ml_mse_gradient`
+#### Mean squared error loss and gradient of a linear model, `ml_mse_gradient`
 
 The mean squared error of a linear model y_hat = X w + b and its gradient with respect to the weights and the bias.
 
@@ -1762,13 +1698,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | feature matrix: one row per sample | — |
-| `y` | in | targets, one per row | — |
-| `w` | in | weights, one per column of X | — |
-| `b` | in | bias (intercept) | — |
-| `loss` | out | mean (X w + b - y)^2 | — |
-| `grad_w` | out | dL/dw = (2/n) X^T (X w + b - y) | — |
-| `grad_b` | out | dL/db = (2/n) sum of residuals | — |
+| `X` | in | feature matrix: one row per sample | - |
+| `y` | in | targets, one per row | - |
+| `w` | in | weights, one per column of X | - |
+| `b` | in | bias (intercept) | - |
+| `loss` | out | mean (X w + b - y)^2 | - |
+| `grad_w` | out | dL/dw = (2/n) X^T (X w + b - y) | - |
+| `grad_b` | out | dL/db = (2/n) sum of residuals | - |
 
 **Applies when:** dimensions agree.
 
@@ -1786,7 +1722,7 @@ grad_b = -1.8
 
 <a id="ml_gradient_descent_step_linear"></a>
 
-#### One gradient-descent step for linear regression — `ml_gradient_descent_step_linear`
+#### One gradient-descent step for linear regression, `ml_gradient_descent_step_linear`
 
 One full-batch gradient-descent step on the mean squared error of a linear model: the new weights and bias and the loss before and after the step.
 
@@ -1796,15 +1732,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | feature matrix: one row per sample | — |
-| `y` | in | targets, one per row | — |
-| `w` | in | weights, one per column of X | — |
-| `b` | in | bias (intercept) | — |
-| `lr` | in | learning rate (> 0) | — |
-| `w_new` | out | w - lr dL/dw | — |
-| `b_new` | out | b - lr dL/db | — |
-| `loss_before` | out | MSE before the step | — |
-| `loss_after` | out | MSE after the step | — |
+| `X` | in | feature matrix: one row per sample | - |
+| `y` | in | targets, one per row | - |
+| `w` | in | weights, one per column of X | - |
+| `b` | in | bias (intercept) | - |
+| `lr` | in | learning rate (> 0) | - |
+| `w_new` | out | w - lr dL/dw | - |
+| `b_new` | out | b - lr dL/db | - |
+| `loss_before` | out | MSE before the step | - |
+| `loss_after` | out | MSE after the step | - |
 
 **Applies when:** lr > 0; dimensions agree.
 
@@ -1826,7 +1762,7 @@ loss_after = 1.69
 
 <a id="ml_gini_split"></a>
 
-#### Gini impurity decrease of a split — `ml_gini_split`
+#### Gini impurity decrease of a split: `ml_gini_split`
 
 The Gini impurity of a node, the size-weighted Gini impurity of its children after a split, and the decrease (the CART split criterion).
 
@@ -1836,11 +1772,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | class labels (whole numbers) | — |
-| `g` | in | child (group) each sample goes to (whole numbers) | — |
-| `gini_parent` | out | Gini impurity before the split | — |
-| `gini_children` | out | weighted Gini impurity of the children | — |
-| `gini_decrease` | out | parent minus children | — |
+| `y` | in | class labels (whole numbers) | - |
+| `g` | in | child (group) each sample goes to (whole numbers) | - |
+| `gini_parent` | out | Gini impurity before the split | - |
+| `gini_children` | out | weighted Gini impurity of the children | - |
+| `gini_decrease` | out | parent minus children | - |
 
 **Applies when:** at least two groups.
 
@@ -1857,7 +1793,7 @@ gini_decrease = 0.125
 
 <a id="ml_information_gain"></a>
 
-#### Information gain and gain ratio of a split — `ml_information_gain`
+#### Information gain and gain ratio of a split, `ml_information_gain`
 
 The information gain (in bits) of splitting class labels y by a discrete feature x, with the parent and conditional entropies, the split information and the gain ratio (C4.5).
 
@@ -1867,13 +1803,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | class labels (whole numbers) | — |
-| `x` | in | feature value of each sample (whole numbers; each value is one branch) | — |
-| `parent_entropy` | out | H(y) in bits | — |
-| `conditional_entropy` | out | H(y \| x) in bits | — |
-| `information_gain` | out | H(y) - H(y \| x) in bits | — |
-| `split_info` | out | H(x) in bits | — |
-| `gain_ratio` | out | information gain / split information | — |
+| `y` | in | class labels (whole numbers) | - |
+| `x` | in | feature value of each sample (whole numbers; each value is one branch) | - |
+| `parent_entropy` | out | H(y) in bits | - |
+| `conditional_entropy` | out | H(y \| x) in bits | - |
+| `information_gain` | out | H(y) - H(y \| x) in bits | - |
+| `split_info` | out | H(x) in bits | - |
+| `gain_ratio` | out | information gain / split information | - |
 
 **Applies when:** the feature takes at least two values.
 
@@ -1892,7 +1828,7 @@ gain_ratio = 0.146213576
 
 <a id="ml_joint_conditional_entropy"></a>
 
-#### Joint, marginal and conditional entropy and mutual information — `ml_joint_conditional_entropy`
+#### Joint, marginal and conditional entropy and mutual information, `ml_joint_conditional_entropy`
 
 From a joint probability table of X (rows) and Y (columns): the joint entropy, both marginal entropies, both conditional entropies and the mutual information.
 
@@ -1902,14 +1838,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `P` | in | joint probabilities P(X = i, Y = j): rows are values of X, columns values of Y; sums to 1 | — |
-| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | — |
-| `H_XY` | out | joint entropy | — |
-| `H_X` | out | entropy of X | — |
-| `H_Y` | out | entropy of Y | — |
-| `H_Y_given_X` | out | H(Y \| X) = H(X, Y) - H(X) | — |
-| `H_X_given_Y` | out | H(X \| Y) | — |
-| `mutual_information` | out | I(X; Y) = sum P log P / (P_X P_Y) | — |
+| `P` | in | joint probabilities P(X = i, Y = j): rows are values of X, columns values of Y; sums to 1 | - |
+| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | - |
+| `H_XY` | out | joint entropy | - |
+| `H_X` | out | entropy of X | - |
+| `H_Y` | out | entropy of Y | - |
+| `H_Y_given_X` | out | H(Y \| X) = H(X, Y) - H(X) | - |
+| `H_X_given_Y` | out | H(X \| Y) | - |
+| `mutual_information` | out | I(X; Y) = sum P log P / (P_X P_Y) | - |
 
 **Applies when:** probabilities >= 0 summing to 1.
 
@@ -1930,7 +1866,7 @@ mutual_information = 0.3112781245
 
 <a id="ml_kl_divergence_discrete"></a>
 
-#### KL divergence, Jensen-Shannon divergence and cross-entropy of discrete distributions — `ml_kl_divergence_discrete`
+#### KL divergence, Jensen-Shannon divergence and cross-entropy of discrete distributions, `ml_kl_divergence_discrete`
 
 The Kullback-Leibler divergence of two discrete distributions in both directions, the Jensen-Shannon divergence, the cross-entropy H(p, q) and the entropy H(p).
 
@@ -1940,14 +1876,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `p` | in | first distribution (positive, sums to 1) | — |
-| `q` | in | second distribution (positive, sums to 1) | — |
-| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | — |
-| `kl_pq` | out | KL(p \|\| q) | — |
-| `kl_qp` | out | KL(q \|\| p) | — |
-| `js_divergence` | out | Jensen-Shannon divergence | — |
-| `cross_entropy` | out | H(p, q) = -sum p log q | — |
-| `entropy_p` | out | H(p) | — |
+| `p` | in | first distribution (positive, sums to 1) | - |
+| `q` | in | second distribution (positive, sums to 1) | - |
+| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | - |
+| `kl_pq` | out | KL(p \|\| q) | - |
+| `kl_qp` | out | KL(q \|\| p) | - |
+| `js_divergence` | out | Jensen-Shannon divergence | - |
+| `cross_entropy` | out | H(p, q) = -sum p log q | - |
+| `entropy_p` | out | H(p) | - |
 
 **Applies when:** positive probabilities summing to 1; same length.
 
@@ -1967,7 +1903,7 @@ entropy_p = 1
 
 <a id="ml_mutual_information_labels"></a>
 
-#### Mutual information between two label sequences — `ml_mutual_information_labels`
+#### Mutual information between two label sequences, `ml_mutual_information_labels`
 
 The mutual information between two discrete variables observed together (two label lists), with both entropies and the conditional entropy H(x | y), from the empirical joint distribution.
 
@@ -1977,13 +1913,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | values of the first variable (whole numbers) | — |
-| `y` | in | values of the second variable (whole numbers) | — |
-| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | — |
-| `mutual_information` | out | I(x; y) | — |
-| `H_x` | out | entropy of x | — |
-| `H_y` | out | entropy of y | — |
-| `H_x_given_y` | out | H(x \| y) = H(x) - I | — |
+| `x` | in | values of the first variable (whole numbers) | - |
+| `y` | in | values of the second variable (whole numbers) | - |
+| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | - |
+| `mutual_information` | out | I(x; y) | - |
+| `H_x` | out | entropy of x | - |
+| `H_y` | out | entropy of y | - |
+| `H_x_given_y` | out | H(x \| y) = H(x) - I | - |
 
 **Applies when:** labels are whole numbers; equal lengths.
 
@@ -2002,7 +1938,7 @@ H_x_given_y = 0.6666666667
 
 <a id="ml_impurity_from_counts"></a>
 
-#### Node impurity from class counts (entropy, Gini, misclassification) — `ml_impurity_from_counts`
+#### Node impurity from class counts (entropy, Gini, misclassification), `ml_impurity_from_counts`
 
 The impurity of a decision-tree node from its class counts: entropy in bits, Gini impurity and misclassification error.
 
@@ -2012,10 +1948,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `counts` | in | number of samples of each class in the node (whole numbers) | — |
-| `entropy_bits` | out | entropy in bits | — |
-| `gini` | out | 1 - sum p_k^2 | — |
-| `misclassification` | out | 1 - max p_k | — |
+| `counts` | in | number of samples of each class in the node (whole numbers) | - |
+| `entropy_bits` | out | entropy in bits | - |
+| `gini` | out | 1 - sum p_k^2 | - |
+| `misclassification` | out | 1 - max p_k | - |
 
 **Applies when:** counts >= 0 with a positive total.
 
@@ -2032,7 +1968,7 @@ In the worked example, counts = [9, 5] go through the equation above and give en
 
 <a id="ml_entropy"></a>
 
-#### Shannon entropy and perplexity of a distribution — `ml_entropy`
+#### Shannon entropy and perplexity of a distribution, `ml_entropy`
 
 The Shannon entropy of a discrete probability distribution in the stated unit, its perplexity (e^H in nats = 2^H in bits), the maximum entropy log K and the normalised entropy H / log K.
 
@@ -2042,12 +1978,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `p` | in | probabilities (>= 0, sum to 1) | — |
-| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | — |
-| `entropy` | out | H(p) in the stated unit | — |
-| `perplexity` | out | exp(H in nats) | — |
-| `max_entropy` | out | log K in the stated unit | — |
-| `normalized_entropy` | out | H / log K (0 for K = 1) | — |
+| `p` | in | probabilities (>= 0, sum to 1) | - |
+| `unit` | in | unit of information: nats (natural log), bits (log base 2) or bans (log base 10) | - |
+| `entropy` | out | H(p) in the stated unit | - |
+| `perplexity` | out | exp(H in nats) | - |
+| `max_entropy` | out | log K in the stated unit | - |
+| `normalized_entropy` | out | H / log K (0 for K = 1) | - |
 
 **Applies when:** probabilities >= 0 summing to 1.
 
@@ -2068,7 +2004,7 @@ normalized_entropy = 0.9463946304
 
 <a id="ml_lasso_regression"></a>
 
-#### Lasso regression coefficients (stated alpha) — `ml_lasso_regression`
+#### Lasso regression coefficients (stated alpha), `ml_lasso_regression`
 
 Fit lasso regression: minimise ||y - X w - b||^2 / (2n) + alpha ||w||_1 (the intercept is not penalised); give the coefficients (some exactly zero), the intercept and the number of non-zero coefficients.
 
@@ -2078,12 +2014,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample | — |
-| `y` | in | targets | — |
-| `alpha` | in | L1 penalty strength (> 0) | — |
-| `w` | out | coefficients | — |
-| `b` | out | intercept | — |
-| `n_nonzero` | out | number of non-zero coefficients | — |
+| `X` | in | features: one row per sample | - |
+| `y` | in | targets | - |
+| `alpha` | in | L1 penalty strength (> 0) | - |
+| `w` | out | coefficients | - |
+| `b` | out | intercept | - |
+| `n_nonzero` | out | number of non-zero coefficients | - |
 
 **Applies when:** alpha > 0; non-constant features; a non-degenerate solution.
 
@@ -2101,7 +2037,7 @@ n_nonzero = 1
 
 <a id="ml_linear_svm_decision"></a>
 
-#### Linear SVM decision values, classes and margin — `ml_linear_svm_decision`
+#### Linear SVM decision values, classes and margin, `ml_linear_svm_decision`
 
 For a linear SVM with given weights and bias: the decision value w.x + b of each sample, its class (+1 when the value is positive, else -1), the margin width 2 / ||w|| and each sample's distance to the hyperplane.
 
@@ -2111,13 +2047,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | weights | — |
-| `b` | in | bias | — |
-| `X` | in | samples: one row each | — |
-| `decision` | out | w.x + b | — |
-| `classes` | out | +1 if w.x + b > 0, else -1 | — |
-| `margin_width` | out | 2 / \|\|w\|\| | — |
-| `distances` | out | \|w.x + b\| / \|\|w\|\| | — |
+| `w` | in | weights | - |
+| `b` | in | bias | - |
+| `X` | in | samples: one row each | - |
+| `decision` | out | w.x + b | - |
+| `classes` | out | +1 if w.x + b > 0, else -1 | - |
+| `margin_width` | out | 2 / \|\|w\|\| | - |
+| `distances` | out | \|w.x + b\| / \|\|w\|\| | - |
 
 **Applies when:** w is not zero.
 
@@ -2136,7 +2072,7 @@ distances = [0.4472135955,0.894427191,0.4472135955]
 
 <a id="ml_logistic_regression_fit"></a>
 
-#### Logistic regression fit (L2, stated C) — `ml_logistic_regression_fit`
+#### Logistic regression fit (L2, stated C): `ml_logistic_regression_fit`
 
 Fit binary logistic regression with an L2 penalty: minimise 0.5 ||w||^2 + C sum of log-losses (the intercept is not penalised); give the weights, the intercept, the objective and the training accuracy.
 
@@ -2146,13 +2082,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample | — |
-| `y` | in | labels (0 and 1) | — |
-| `C` | in | inverse regularisation strength (> 0) | — |
-| `w` | out | fitted weights | — |
-| `b` | out | fitted intercept | — |
-| `objective` | out | minimised objective | — |
-| `train_accuracy` | out | fraction of training samples classified correctly (z > 0 -> 1) | — |
+| `X` | in | features: one row per sample | - |
+| `y` | in | labels (0 and 1) | - |
+| `C` | in | inverse regularisation strength (> 0) | - |
+| `w` | out | fitted weights | - |
+| `b` | out | fitted intercept | - |
+| `objective` | out | minimised objective | - |
+| `train_accuracy` | out | fraction of training samples classified correctly (z > 0 -> 1) | - |
 
 **Applies when:** labels 0 and 1, both present; C > 0; Newton's method converges.
 
@@ -2171,7 +2107,7 @@ train_accuracy = 0.75
 
 <a id="ml_logistic_regression_predict"></a>
 
-#### Logistic regression prediction from given weights — `ml_logistic_regression_predict`
+#### Logistic regression prediction from given weights, `ml_logistic_regression_predict`
 
 The logits, predicted probabilities of class 1 and predicted classes of a logistic regression model with given weights and intercept.
 
@@ -2181,12 +2117,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | weights | — |
-| `b` | in | intercept | — |
-| `X` | in | samples to predict: one row each | — |
-| `probabilities` | out | sigma(w.x + b) for each sample | — |
-| `classes` | out | 1 when w.x + b > 0, else 0 | — |
-| `logits` | out | w.x + b | — |
+| `w` | in | weights | - |
+| `b` | in | intercept | - |
+| `X` | in | samples to predict: one row each | - |
+| `probabilities` | out | sigma(w.x + b) for each sample | - |
+| `classes` | out | 1 when w.x + b > 0, else 0 | - |
+| `logits` | out | w.x + b | - |
 
 **Applies when:** w has one weight per feature.
 
@@ -2204,7 +2140,7 @@ logits = [-0.2,1.8,-0.2]
 
 <a id="ml_perceptron_epoch"></a>
 
-#### Perceptron training epoch — `ml_perceptron_epoch`
+#### Perceptron training epoch: `ml_perceptron_epoch`
 
 One pass of the perceptron learning rule through the samples in order (labels -1/+1): whenever y (w.x + b) <= 0, update w += lr y x and b += lr y; the final weights, bias and number of updates.
 
@@ -2214,14 +2150,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | samples in presentation order | — |
-| `y` | in | labels (-1 or +1) | — |
-| `w` | in | initial weights | — |
-| `b` | in | initial bias | — |
-| `lr` | in | learning rate (> 0) | — |
-| `w_new` | out | weights after the epoch | — |
-| `b_new` | out | bias after the epoch | — |
-| `n_updates` | out | number of updates (mistakes, including y f = 0) | — |
+| `X` | in | samples in presentation order | - |
+| `y` | in | labels (-1 or +1) | - |
+| `w` | in | initial weights | - |
+| `b` | in | initial bias | - |
+| `lr` | in | learning rate (> 0) | - |
+| `w_new` | out | weights after the epoch | - |
+| `b_new` | out | bias after the epoch | - |
+| `n_updates` | out | number of updates (mistakes, including y f = 0) | - |
 
 **Applies when:** labels -1 and +1; lr > 0.
 
@@ -2240,7 +2176,7 @@ n_updates = 1
 
 <a id="ml_ridge_regression"></a>
 
-#### Ridge regression coefficients (stated alpha) — `ml_ridge_regression`
+#### Ridge regression coefficients (stated alpha), `ml_ridge_regression`
 
 Fit ridge regression: minimise ||y - X w - b||^2 + alpha ||w||^2 (the intercept is not penalised); give the coefficients, the intercept and the training MSE.
 
@@ -2250,12 +2186,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample | — |
-| `y` | in | targets | — |
-| `alpha` | in | L2 penalty strength (>= 0; 0 is least squares) | — |
-| `w` | out | coefficients | — |
-| `b` | out | intercept | — |
-| `train_mse` | out | training mean squared error | — |
+| `X` | in | features: one row per sample | - |
+| `y` | in | targets | - |
+| `alpha` | in | L2 penalty strength (>= 0; 0 is least squares) | - |
+| `w` | out | coefficients | - |
+| `b` | out | intercept | - |
+| `train_mse` | out | training mean squared error | - |
 
 **Applies when:** alpha >= 0; a non-singular system (alpha > 0 always is).
 
@@ -2275,7 +2211,7 @@ train_mse = 0.03492892562
 
 <a id="ml_bce_with_logits"></a>
 
-#### Binary cross-entropy with logits and its gradient — `ml_bce_with_logits`
+#### Binary cross-entropy with logits and its gradient, `ml_bce_with_logits`
 
 The mean binary cross-entropy computed directly from logits (stable for large |z|; soft targets allowed) and its gradient with respect to each logit.
 
@@ -2285,10 +2221,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | targets between 0 and 1 | — |
-| `z` | in | logits | — |
-| `loss` | out | mean of max(z, 0) - z y + log(1 + e^-\|z\|) | — |
-| `gradient` | out | dL/dz_i = (sigma(z_i) - y_i) / n | — |
+| `y` | in | targets between 0 and 1 | - |
+| `z` | in | logits | - |
+| `loss` | out | mean of max(z, 0) - z y + log(1 + e^-\|z\|) | - |
+| `gradient` | out | dL/dz_i = (sigma(z_i) - y_i) / n | - |
 
 **Applies when:** 0 <= y <= 1.
 
@@ -2304,7 +2240,7 @@ gradient = [-0.0397343073407,0.0896471404567,-0.207486443734]
 
 <a id="ml_focal_loss"></a>
 
-#### Binary focal loss and its gradient — `ml_focal_loss`
+#### Binary focal loss and its gradient: `ml_focal_loss`
 
 The mean binary focal loss -alpha_t (1 - p_t)^gamma log p_t from logits (it down-weights easy examples) and its gradient with respect to each logit.
 
@@ -2314,12 +2250,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | labels (0 or 1) | — |
-| `z` | in | logits | — |
-| `gamma` | in | focusing parameter (>= 0; 0 gives weighted cross-entropy) | — |
-| `alpha` | in | weight of the positive class (0 to 1; negatives get 1 - alpha) | — |
-| `loss` | out | mean focal loss | — |
-| `gradient` | out | dL/dz_i | — |
+| `y` | in | labels (0 or 1) | - |
+| `z` | in | logits | - |
+| `gamma` | in | focusing parameter (>= 0; 0 gives weighted cross-entropy) | - |
+| `alpha` | in | weight of the positive class (0 to 1; negatives get 1 - alpha) | - |
+| `loss` | out | mean focal loss | - |
+| `gradient` | out | dL/dz_i | - |
 
 **Applies when:** labels 0 or 1; gamma >= 0; 0 <= alpha <= 1.
 
@@ -2337,7 +2273,7 @@ gradient = [-0.000405911682949,0.0131452824944,-0.0438459851562]
 
 <a id="ml_cross_entropy_logits"></a>
 
-#### Cross-entropy loss from logits and its gradient — `ml_cross_entropy_logits`
+#### Cross-entropy loss from logits and its gradient, `ml_cross_entropy_logits`
 
 The cross-entropy loss of one sample from its logits and true class, the predicted probability of that class, and the gradient of the loss with respect to the logits (softmax minus one-hot).
 
@@ -2347,11 +2283,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | logits of the classes | — |
-| `y` | in | index of the true class (0 to K-1) | — |
-| `loss` | out | logsumexp(z) - z_y | — |
-| `probability` | out | softmax probability of the true class | — |
-| `gradient` | out | dL/dz = softmax(z) - onehot(y) | — |
+| `z` | in | logits of the classes | - |
+| `y` | in | index of the true class (0 to K-1) | - |
+| `loss` | out | logsumexp(z) - z_y | - |
+| `probability` | out | softmax probability of the true class | - |
+| `gradient` | out | dL/dz = softmax(z) - onehot(y) | - |
 
 **Applies when:** y is a class index.
 
@@ -2368,7 +2304,7 @@ gradient = [-0.340998861114,0.242432970705,0.0985658904093]
 
 <a id="ml_label_smoothing_cross_entropy"></a>
 
-#### Cross-entropy with label smoothing — `ml_label_smoothing_cross_entropy`
+#### Cross-entropy with label smoothing: `ml_label_smoothing_cross_entropy`
 
 The cross-entropy of logits against a smoothed target (1 - epsilon on the true class plus epsilon spread evenly over all K classes) and its gradient with respect to the logits.
 
@@ -2378,11 +2314,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | logits | — |
-| `y` | in | index of the true class (0 to K-1) | — |
-| `epsilon` | in | smoothing amount (0 <= epsilon < 1) | — |
-| `loss` | out | -sum_j q_j log softmax(z)_j | — |
-| `gradient` | out | softmax(z) - q | — |
+| `z` | in | logits | - |
+| `y` | in | index of the true class (0 to K-1) | - |
+| `epsilon` | in | smoothing amount (0 <= epsilon < 1) | - |
+| `loss` | out | -sum_j q_j log softmax(z)_j | - |
+| `gradient` | out | softmax(z) - q | - |
 
 **Applies when:** 0 <= epsilon < 1; y is a class index.
 
@@ -2399,7 +2335,7 @@ gradient = [-0.274332194447,0.209099637371,0.065232557076]
 
 <a id="ml_hinge_loss"></a>
 
-#### Hinge and squared hinge loss — `ml_hinge_loss`
+#### Hinge and squared hinge loss: `ml_hinge_loss`
 
 The mean hinge loss max(0, 1 - y f) of a margin classifier with labels -1/+1, the mean squared hinge loss and the number of margin violations.
 
@@ -2409,11 +2345,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true labels (-1 or +1) | — |
-| `scores` | in | decision values f(x) | — |
-| `hinge` | out | mean max(0, 1 - y f) | — |
-| `squared_hinge` | out | mean max(0, 1 - y f)^2 | — |
-| `n_violations` | out | samples with y f < 1 | — |
+| `y_true` | in | true labels (-1 or +1) | - |
+| `scores` | in | decision values f(x) | - |
+| `hinge` | out | mean max(0, 1 - y f) | - |
+| `squared_hinge` | out | mean max(0, 1 - y f)^2 | - |
+| `n_violations` | out | samples with y f < 1 | - |
 
 **Applies when:** labels -1 or +1, both present.
 
@@ -2430,7 +2366,7 @@ n_violations = 3
 
 <a id="ml_huber_loss"></a>
 
-#### Huber, smooth L1 and pseudo-Huber loss — `ml_huber_loss`
+#### Huber, smooth L1 and pseudo-Huber loss: `ml_huber_loss`
 
 The mean Huber loss with threshold delta (quadratic for small errors, linear for large), the smooth L1 loss (Huber / delta) and the pseudo-Huber loss.
 
@@ -2440,12 +2376,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values | — |
-| `y_pred` | in | predicted values | — |
-| `delta` | in | threshold between the quadratic and linear parts (delta > 0) | — |
-| `huber` | out | mean Huber loss | — |
-| `smooth_l1` | out | mean smooth L1 loss with beta = delta | — |
-| `pseudo_huber` | out | mean pseudo-Huber loss | — |
+| `y_true` | in | true values | - |
+| `y_pred` | in | predicted values | - |
+| `delta` | in | threshold between the quadratic and linear parts (delta > 0) | - |
+| `huber` | out | mean Huber loss | - |
+| `smooth_l1` | out | mean smooth L1 loss with beta = delta | - |
+| `pseudo_huber` | out | mean pseudo-Huber loss | - |
 
 **Applies when:** delta > 0.
 
@@ -2463,7 +2399,7 @@ pseudo_huber = 0.162570385
 
 <a id="ml_log_softmax"></a>
 
-#### Log-softmax — `ml_log_softmax`
+#### Log-softmax: `ml_log_softmax`
 
 The log-softmax of logits, z_i - log sum exp(z), computed stably even for very large logits.
 
@@ -2473,9 +2409,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | logits | — |
-| `log_probabilities` | out | z_i - logsumexp(z) | — |
-| `log_sum_exp` | out | logsumexp(z) | — |
+| `z` | in | logits | - |
+| `log_probabilities` | out | z_i - logsumexp(z) | - |
+| `log_sum_exp` | out | logsumexp(z) | - |
 
 **Applies when:** at least two logits.
 
@@ -2491,7 +2427,7 @@ log_sum_exp = 3.407605964
 
 <a id="ml_multiclass_hinge_loss"></a>
 
-#### Multi-class hinge loss (Crammer-Singer and Weston-Watkins) — `ml_multiclass_hinge_loss`
+#### Multi-class hinge loss (Crammer-Singer and Weston-Watkins), `ml_multiclass_hinge_loss`
 
 The multi-class hinge losses of a decision matrix: Crammer-Singer max(0, 1 - f_y + max_{j != y} f_j) and Weston-Watkins sum_{j != y} max(0, 1 - f_y + f_j) / K, averaged over samples.
 
@@ -2501,10 +2437,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true class index of each sample (0 to K-1) | — |
-| `D` | in | decision values: one row per sample, one column per class (K >= 3) | — |
-| `crammer_singer` | out | mean Crammer-Singer hinge loss | — |
-| `weston_watkins` | out | mean Weston-Watkins hinge loss (sum over wrong classes divided by K) | — |
+| `y_true` | in | true class index of each sample (0 to K-1) | - |
+| `D` | in | decision values: one row per sample, one column per class (K >= 3) | - |
+| `crammer_singer` | out | mean Crammer-Singer hinge loss | - |
+| `weston_watkins` | out | mean Weston-Watkins hinge loss (sum over wrong classes divided by K) | - |
 
 **Applies when:** K >= 3 classes; labels are column indices.
 
@@ -2520,7 +2456,7 @@ weston_watkins = 0.2
 
 <a id="ml_quantile_loss"></a>
 
-#### Quantile (pinball) loss — `ml_quantile_loss`
+#### Quantile (pinball) loss: `ml_quantile_loss`
 
 The mean pinball loss of predictions of the alpha-quantile: under-predictions cost alpha per unit, over-predictions 1 - alpha.
 
@@ -2530,10 +2466,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values | — |
-| `y_pred` | in | predicted quantiles | — |
-| `alpha` | in | quantile level (0 < alpha < 1) | — |
-| `pinball` | out | mean pinball loss | — |
+| `y_true` | in | true values | - |
+| `y_pred` | in | predicted quantiles | - |
+| `alpha` | in | quantile level (0 < alpha < 1) | - |
+| `pinball` | out | mean pinball loss | - |
 
 **Applies when:** 0 < alpha < 1.
 
@@ -2549,7 +2485,7 @@ pinball = 0.03333333333
 
 <a id="ml_sigmoid"></a>
 
-#### Sigmoid (logistic function) and its derivative — `ml_sigmoid`
+#### Sigmoid (logistic function) and its derivative, `ml_sigmoid`
 
 The logistic sigmoid 1 / (1 + e^-z), its derivative sigma(1 - sigma) and log sigma(z), computed stably for large |z|.
 
@@ -2559,10 +2495,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | input (logit) | — |
-| `sigmoid` | out | 1 / (1 + exp(-z)) | — |
-| `derivative` | out | sigma(z)(1 - sigma(z)) | — |
-| `log_sigmoid` | out | log sigma(z) | — |
+| `z` | in | input (logit) | - |
+| `sigmoid` | out | 1 / (1 + exp(-z)) | - |
+| `derivative` | out | sigma(z)(1 - sigma(z)) | - |
+| `log_sigmoid` | out | log sigma(z) | - |
 
 **Applies when:** finite z.
 
@@ -2580,7 +2516,7 @@ log_sigmoid = -0.6931471806
 
 <a id="ml_softmax"></a>
 
-#### Softmax — `ml_softmax`
+#### Softmax: `ml_softmax`
 
 The softmax of a vector of logits (numerically stable: the largest logit is subtracted first), with log-sum-exp.
 
@@ -2590,9 +2526,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | logits (at least two) | — |
-| `probabilities` | out | softmax probabilities exp(z_i) / sum exp(z_j) | — |
-| `log_sum_exp` | out | log sum exp(z_j) | — |
+| `z` | in | logits (at least two) | - |
+| `probabilities` | out | softmax probabilities exp(z_i) / sum exp(z_j) | - |
+| `log_sum_exp` | out | log sum exp(z_j) | - |
 
 **Applies when:** at least two logits.
 
@@ -2608,7 +2544,7 @@ log_sum_exp = 3.407605964
 
 <a id="ml_softmax_temperature"></a>
 
-#### Softmax with temperature — `ml_softmax_temperature`
+#### Softmax with temperature: `ml_softmax_temperature`
 
 The softmax of logits divided by a temperature T (T > 1 flattens, T < 1 sharpens the distribution) and the entropy of the result in nats.
 
@@ -2618,10 +2554,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | logits | — |
-| `T` | in | temperature (T > 0) | — |
-| `probabilities` | out | softmax(z / T) | — |
-| `entropy` | out | entropy of the distribution in nats | — |
+| `z` | in | logits | - |
+| `T` | in | temperature (T > 0) | - |
+| `probabilities` | out | softmax(z / T) | - |
+| `entropy` | out | entropy of the distribution in nats | - |
 
 **Applies when:** T > 0.
 
@@ -2638,7 +2574,7 @@ entropy = 1.020191337
 
 <a id="ml_triplet_loss"></a>
 
-#### Triplet margin loss — `ml_triplet_loss`
+#### Triplet margin loss: `ml_triplet_loss`
 
 The triplet margin loss max(0, d(a, p) - d(a, n) + margin) of an anchor, a positive and a negative embedding, with both Euclidean distances.
 
@@ -2648,13 +2584,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `anchor` | in | anchor embedding | — |
-| `positive` | in | embedding of the same identity | — |
-| `negative` | in | embedding of a different identity | — |
-| `margin` | in | margin (>= 0) | — |
-| `loss` | out | max(0, d_ap - d_an + margin) | — |
-| `d_ap` | out | anchor-positive distance | — |
-| `d_an` | out | anchor-negative distance | — |
+| `anchor` | in | anchor embedding | - |
+| `positive` | in | embedding of the same identity | - |
+| `negative` | in | embedding of a different identity | - |
+| `margin` | in | margin (>= 0) | - |
+| `loss` | out | max(0, d_ap - d_an + margin) | - |
+| `d_ap` | out | anchor-positive distance | - |
+| `d_an` | out | anchor-negative distance | - |
 
 **Applies when:** equal lengths; margin >= 0.
 
@@ -2674,7 +2610,7 @@ d_an = 2
 
 <a id="ml_bias_variance_decomposition"></a>
 
-#### Bias-variance decomposition of predictions — `ml_bias_variance_decomposition`
+#### Bias-variance decomposition of predictions, `ml_bias_variance_decomposition`
 
 For predictions of several models (one row each, e.g. trained on different samples) at the same test points with known noise-free values: the squared bias, the variance and the expected squared error, which equals their sum.
 
@@ -2684,11 +2620,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `P` | in | predictions: one row per trained model, one column per test point (at least two rows) | — |
-| `f` | in | true (noise-free) value at each test point | — |
-| `bias_squared` | out | mean over points of (mean prediction - f)^2 | — |
-| `variance` | out | mean over points of the variance of the predictions (divide by the number of models) | — |
-| `expected_mse` | out | mean squared error over models and points = bias^2 + variance | — |
+| `P` | in | predictions: one row per trained model, one column per test point (at least two rows) | - |
+| `f` | in | true (noise-free) value at each test point | - |
+| `bias_squared` | out | mean over points of (mean prediction - f)^2 | - |
+| `variance` | out | mean over points of the variance of the predictions (divide by the number of models) | - |
+| `expected_mse` | out | mean squared error over models and points = bias^2 + variance | - |
 
 **Applies when:** at least two models.
 
@@ -2705,7 +2641,7 @@ expected_mse = 0.6666666667
 
 <a id="ml_kfold_cv_linear_regression"></a>
 
-#### k-fold cross-validated MSE of linear regression — `ml_kfold_cv_linear_regression`
+#### k-fold cross-validated MSE of linear regression, `ml_kfold_cv_linear_regression`
 
 The mean squared error of ordinary least squares (with intercept) on each of k consecutive, unshuffled folds, trained on the other folds, and the mean over folds.
 
@@ -2715,11 +2651,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample | — |
-| `y` | in | targets | — |
-| `k` | in | number of folds | — |
-| `fold_mse` | out | test MSE of each fold | — |
-| `mean_mse` | out | mean of the fold MSEs | — |
+| `X` | in | features: one row per sample | - |
+| `y` | in | targets | - |
+| `k` | in | number of folds | - |
+| `fold_mse` | out | test MSE of each fold | - |
+| `mean_mse` | out | mean of the fold MSEs | - |
 
 **Applies when:** every training set has at least d + 2 samples and full rank.
 
@@ -2735,7 +2671,7 @@ mean_mse = 0.04509319493
 
 <a id="ml_kfold_sizes"></a>
 
-#### k-fold cross-validation fold sizes — `ml_kfold_sizes`
+#### k-fold cross-validation fold sizes, `ml_kfold_sizes`
 
 The test and training set sizes of each fold when n samples are split into k consecutive folds (the first n mod k folds get one extra sample), and the index range of the first test fold.
 
@@ -2745,11 +2681,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | number of samples | — |
-| `k` | in | number of folds | — |
-| `test_sizes` | out | size of each test fold | — |
-| `train_sizes` | out | size of each training set | — |
-| `first_test_fold` | out | first and last index (0-based) of the first test fold | — |
+| `n` | in | number of samples | - |
+| `k` | in | number of folds | - |
+| `test_sizes` | out | size of each test fold | - |
+| `train_sizes` | out | size of each training set | - |
+| `first_test_fold` | out | first and last index (0-based) of the first test fold | - |
 
 **Applies when:** 2 <= k <= n.
 
@@ -2766,7 +2702,7 @@ first_test_fold = [0,3]
 
 <a id="ml_loocv_linear_regression"></a>
 
-#### Leave-one-out cross-validation of linear regression (PRESS) — `ml_loocv_linear_regression`
+#### Leave-one-out cross-validation of linear regression (PRESS), `ml_loocv_linear_regression`
 
 The leave-one-out cross-validated MSE and the PRESS statistic of ordinary least squares with intercept, from one fit through the leverage shortcut e_i / (1 - h_ii).
 
@@ -2776,10 +2712,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | features: one row per sample | — |
-| `y` | in | targets | — |
-| `press` | out | sum of squared leave-one-out errors | — |
-| `loocv_mse` | out | PRESS / n | — |
+| `X` | in | features: one row per sample | - |
+| `y` | in | targets | - |
+| `press` | out | sum of squared leave-one-out errors | - |
+| `loocv_mse` | out | PRESS / n | - |
 
 **Applies when:** at least d + 3 samples; no leverage equal to 1.
 
@@ -2795,7 +2731,7 @@ loocv_mse = 0.03515181483
 
 <a id="ml_train_test_split_sizes"></a>
 
-#### Train/test split sizes — `ml_train_test_split_sizes`
+#### Train/test split sizes: `ml_train_test_split_sizes`
 
 The number of test and training samples when n samples are split with a given test fraction (the test size is rounded up).
 
@@ -2805,10 +2741,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | number of samples | — |
-| `test_size` | in | fraction of the samples used for testing (0 to 1, or a percentage) | — |
-| `n_test` | out | ceil(test_size * n) | — |
-| `n_train` | out | n - n_test | — |
+| `n` | in | number of samples | - |
+| `test_size` | in | fraction of the samples used for testing (0 to 1, or a percentage) | - |
+| `n_test` | out | ceil(test_size * n) | - |
+| `n_train` | out | n - n_test | - |
 
 **Applies when:** 0 < test_size < 1; a non-empty training set.
 
@@ -2827,7 +2763,7 @@ n_train = 80
 
 <a id="ml_conv2d_forward"></a>
 
-#### 2-D convolution of an image with a kernel (deep-learning convention) — `ml_conv2d_forward`
+#### 2-D convolution of an image with a kernel (deep-learning convention), `ml_conv2d_forward`
 
 The output feature map of a single-channel 2-D convolution as computed in deep learning (cross-correlation: the kernel is not flipped), with a stride and zero padding.
 
@@ -2837,12 +2773,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `image` | in | input image (rows of pixel values) | — |
-| `kernel` | in | kernel (filter) weights | — |
-| `stride` | in | stride | — |
-| `padding` | in | zero padding on each side | — |
-| `output` | out | output feature map | — |
-| `output_sum` | out | sum of all outputs | — |
+| `image` | in | input image (rows of pixel values) | - |
+| `kernel` | in | kernel (filter) weights | - |
+| `stride` | in | stride | - |
+| `padding` | in | zero padding on each side | - |
+| `output` | out | output feature map | - |
+| `output_sum` | out | sum of all outputs | - |
 
 **Applies when:** the kernel fits in the padded image.
 
@@ -2858,7 +2794,7 @@ output_sum = 52
 
 <a id="ml_backpropagation"></a>
 
-#### Backpropagation gradients of a one-hidden-layer network — `ml_backpropagation`
+#### Backpropagation gradients of a one-hidden-layer network, `ml_backpropagation`
 
 One backpropagation pass of a dense network with one hidden layer: the loss (mean squared error with identity outputs, or cross-entropy of softmax outputs against a target distribution) and its gradients with respect to every weight and bias.
 
@@ -2868,19 +2804,19 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | input vector | — |
-| `t` | in | target: values for mse, a probability distribution for cross-entropy | — |
-| `W1` | in | hidden-layer weights (rows = hidden units, columns = inputs) | — |
-| `b1` | in | hidden-layer biases | — |
-| `activation` | in | hidden activation: relu, tanh or sigmoid | — |
-| `W2` | in | output-layer weights (rows = outputs, columns = hidden units) | — |
-| `b2` | in | output biases | — |
-| `loss` | in | loss: mse (identity outputs, mean over outputs) or cross_entropy (softmax outputs) | — |
-| `loss` | out | loss value | — |
-| `dW1` | out | dL/dW1 | — |
-| `db1` | out | dL/db1 | — |
-| `dW2` | out | dL/dW2 | — |
-| `db2` | out | dL/db2 | — |
+| `x` | in | input vector | - |
+| `t` | in | target: values for mse, a probability distribution for cross-entropy | - |
+| `W1` | in | hidden-layer weights (rows = hidden units, columns = inputs) | - |
+| `b1` | in | hidden-layer biases | - |
+| `activation` | in | hidden activation: relu, tanh or sigmoid | - |
+| `W2` | in | output-layer weights (rows = outputs, columns = hidden units) | - |
+| `b2` | in | output biases | - |
+| `loss` | in | loss: mse (identity outputs, mean over outputs) or cross_entropy (softmax outputs) | - |
+| `loss` | out | loss value | - |
+| `dW1` | out | dL/dW1 | - |
+| `db1` | out | dL/db1 | - |
+| `dW2` | out | dL/dW2 | - |
+| `db2` | out | dL/db2 | - |
 
 **Applies when:** shapes agree; no ReLU pre-activation exactly 0; cross-entropy: target sums to 1, at least two outputs.
 
@@ -2901,7 +2837,7 @@ db2 = [-1.7]
 
 <a id="ml_batch_norm_forward"></a>
 
-#### Batch normalisation forward pass (training mode) — `ml_batch_norm_forward`
+#### Batch normalisation forward pass (training mode), `ml_batch_norm_forward`
 
 Batch normalisation of a mini-batch in training mode: each feature is normalised with the batch mean and the biased batch variance plus eps, then scaled by gamma and shifted by beta.
 
@@ -2911,13 +2847,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | mini-batch: one row per sample, one column per feature (at least two rows) | — |
-| `gamma` | in | scale per feature | — |
-| `beta` | in | shift per feature | — |
-| `eps` | in | small constant added to the variance (e.g. 1e-5) | — |
-| `output` | out | gamma (x - mean)/sqrt(var + eps) + beta | — |
-| `batch_mean` | out | batch mean of each feature | — |
-| `batch_var` | out | biased batch variance of each feature | — |
+| `X` | in | mini-batch: one row per sample, one column per feature (at least two rows) | - |
+| `gamma` | in | scale per feature | - |
+| `beta` | in | shift per feature | - |
+| `eps` | in | small constant added to the variance (e.g. 1e-5) | - |
+| `output` | out | gamma (x - mean)/sqrt(var + eps) + beta | - |
+| `batch_mean` | out | batch mean of each feature | - |
+| `batch_var` | out | biased batch variance of each feature | - |
 
 **Applies when:** at least two samples; var + eps > 0.
 
@@ -2935,7 +2871,7 @@ batch_var = [2.66666666667,10.6666666667]
 
 <a id="ml_conv_output_size"></a>
 
-#### Convolution output size — `ml_conv_output_size`
+#### Convolution output size: `ml_conv_output_size`
 
 The output length (per spatial dimension) of a convolution or pooling window from the input size, kernel size, stride, zero padding and dilation.
 
@@ -2945,13 +2881,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | input size | — |
-| `kernel` | in | kernel size | — |
-| `stride` | in | stride | — |
-| `padding` | in | zero padding on each side | — |
-| `dilation` | in | dilation (1 = ordinary) | — |
-| `output_size` | out | floor((n + 2p - d(k - 1) - 1) / s) + 1 | — |
-| `effective_kernel` | out | d(k - 1) + 1 | — |
+| `n` | in | input size | - |
+| `kernel` | in | kernel size | - |
+| `stride` | in | stride | - |
+| `padding` | in | zero padding on each side | - |
+| `dilation` | in | dilation (1 = ordinary) | - |
+| `output_size` | out | floor((n + 2p - d(k - 1) - 1) / s) + 1 | - |
+| `effective_kernel` | out | d(k - 1) + 1 | - |
 
 **Applies when:** the dilated kernel fits in the padded input.
 
@@ -2967,7 +2903,7 @@ effective_kernel = 3
 
 <a id="ml_dense_forward_pass"></a>
 
-#### Forward pass of a one-hidden-layer dense network — `ml_dense_forward_pass`
+#### Forward pass of a one-hidden-layer dense network, `ml_dense_forward_pass`
 
 The forward pass of a dense network x -> activation(W1 x + b1) -> W2 h + b2 with an identity, sigmoid or softmax output: the hidden activations and the outputs.
 
@@ -2977,16 +2913,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | input vector | — |
-| `W1` | in | hidden-layer weights (rows = hidden units, columns = inputs) | — |
-| `b1` | in | hidden-layer biases | — |
-| `activation` | in | hidden activation: relu, tanh or sigmoid | — |
-| `W2` | in | output-layer weights (rows = outputs, columns = hidden units) | — |
-| `b2` | in | output biases | — |
-| `output` | in | output activation: identity, sigmoid or softmax | — |
-| `hidden` | out | hidden activations h | — |
-| `output` | out | network outputs | — |
-| `max_output` | out | largest output | — |
+| `x` | in | input vector | - |
+| `W1` | in | hidden-layer weights (rows = hidden units, columns = inputs) | - |
+| `b1` | in | hidden-layer biases | - |
+| `activation` | in | hidden activation: relu, tanh or sigmoid | - |
+| `W2` | in | output-layer weights (rows = outputs, columns = hidden units) | - |
+| `b2` | in | output biases | - |
+| `output` | in | output activation: identity, sigmoid or softmax | - |
+| `hidden` | out | hidden activations h | - |
+| `output` | out | network outputs | - |
+| `max_output` | out | largest output | - |
 
 **Applies when:** shapes agree (W1: hidden x inputs, W2: outputs x hidden).
 
@@ -3005,7 +2941,7 @@ max_output = -0.35
 
 <a id="ml_pooling"></a>
 
-#### Max pooling and average pooling — `ml_pooling`
+#### Max pooling and average pooling: `ml_pooling`
 
 Max pooling and average pooling of a 2-D feature map with a square window, a stride and no padding.
 
@@ -3015,11 +2951,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | feature map | — |
-| `size` | in | window size | — |
-| `stride` | in | stride | — |
-| `max_pool` | out | maximum of each window | — |
-| `avg_pool` | out | mean of each window | — |
+| `X` | in | feature map | - |
+| `size` | in | window size | - |
+| `stride` | in | stride | - |
+| `max_pool` | out | maximum of each window | - |
+| `avg_pool` | out | mean of each window | - |
 
 **Applies when:** the window fits in the input.
 
@@ -3035,7 +2971,7 @@ avg_pool = [[3.75,2.25],[4.5,4.0]]
 
 <a id="ml_multihead_attention"></a>
 
-#### Multi-head attention (identity projections) — `ml_multihead_attention`
+#### Multi-head attention (identity projections), `ml_multihead_attention`
 
 Multi-head attention with identity input and output projections: the model dimension is split into equal heads, scaled dot-product attention runs in each head (scale 1/sqrt(head size)) and the head outputs are concatenated.
 
@@ -3045,12 +2981,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Q` | in | queries (rows), width = model dimension | — |
-| `K` | in | keys | — |
-| `V` | in | values | — |
-| `heads` | in | number of heads (divides the model dimension) | — |
-| `output` | out | concatenated head outputs | — |
-| `output_sum` | out | sum of all output entries | — |
+| `Q` | in | queries (rows), width = model dimension | - |
+| `K` | in | keys | - |
+| `V` | in | values | - |
+| `heads` | in | number of heads (divides the model dimension) | - |
+| `output` | out | concatenated head outputs | - |
+| `output_sum` | out | sum of all output entries | - |
 
 **Applies when:** equal widths; model dimension divisible by heads.
 
@@ -3066,7 +3002,7 @@ output_sum = 18
 
 <a id="ml_conv_parameter_count"></a>
 
-#### Parameter count of a 2-D convolution layer — `ml_conv_parameter_count`
+#### Parameter count of a 2-D convolution layer, `ml_conv_parameter_count`
 
 The number of weights, biases and total parameters of a 2-D convolution layer, including grouped and depthwise convolutions.
 
@@ -3076,15 +3012,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `in_channels` | in | input channels | — |
-| `out_channels` | in | output channels (filters) | — |
-| `kernel_h` | in | kernel height | — |
-| `kernel_w` | in | kernel width | — |
-| `groups` | in | groups (1 = ordinary; in_channels = depthwise) | — |
-| `bias` | in | whether the layer has a bias per filter | — |
-| `weights` | out | C_out (C_in / g) k_h k_w | — |
-| `biases` | out | C_out or 0 | — |
-| `total` | out | weights + biases | — |
+| `in_channels` | in | input channels | - |
+| `out_channels` | in | output channels (filters) | - |
+| `kernel_h` | in | kernel height | - |
+| `kernel_w` | in | kernel width | - |
+| `groups` | in | groups (1 = ordinary; in_channels = depthwise) | - |
+| `bias` | in | whether the layer has a bias per filter | - |
+| `weights` | out | C_out (C_in / g) k_h k_w | - |
+| `biases` | out | C_out or 0 | - |
+| `total` | out | weights + biases | - |
 
 **Applies when:** channels divisible by groups.
 
@@ -3101,7 +3037,7 @@ total = 1792
 
 <a id="ml_dense_parameter_count"></a>
 
-#### Parameter count of a dense (fully connected) network — `ml_dense_parameter_count`
+#### Parameter count of a dense (fully connected) network, `ml_dense_parameter_count`
 
 The number of trainable parameters of each dense layer and of the whole network, from the layer sizes (input size first), with or without biases.
 
@@ -3111,10 +3047,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `sizes` | in | layer sizes from input to output, e.g. [784, 128, 10] | — |
-| `bias` | in | whether every layer has biases (yes or no) | — |
-| `per_layer` | out | parameters of each layer: n_in n_out (+ n_out biases) | — |
-| `total` | out | total parameters | — |
+| `sizes` | in | layer sizes from input to output, e.g. [784, 128, 10] | - |
+| `bias` | in | whether every layer has biases (yes or no) | - |
+| `per_layer` | out | parameters of each layer: n_in n_out (+ n_out biases) | - |
+| `total` | out | total parameters | - |
 
 **Applies when:** positive whole-number sizes.
 
@@ -3130,7 +3066,7 @@ total = 101770
 
 <a id="ml_transformer_parameter_count"></a>
 
-#### Parameter count of a transformer encoder — `ml_transformer_parameter_count`
+#### Parameter count of a transformer encoder: `ml_transformer_parameter_count`
 
 The parameters of a standard transformer encoder layer (multi-head self-attention with biases, a two-layer feed-forward block and two layer norms) and of a stack of such layers.
 
@@ -3140,15 +3076,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `d_model` | in | model (embedding) dimension | — |
-| `n_heads` | in | attention heads (divide d_model) | — |
-| `d_ff` | in | feed-forward hidden size | — |
-| `n_layers` | in | number of layers | — |
-| `attention` | out | 4 d^2 + 4 d (Q, K, V and output projections with biases) | — |
-| `feed_forward` | out | 2 d d_ff + d_ff + d | — |
-| `layer_norms` | out | 4 d | — |
-| `per_layer` | out | parameters per layer | — |
-| `total` | out | parameters of the stack | — |
+| `d_model` | in | model (embedding) dimension | - |
+| `n_heads` | in | attention heads (divide d_model) | - |
+| `d_ff` | in | feed-forward hidden size | - |
+| `n_layers` | in | number of layers | - |
+| `attention` | out | 4 d^2 + 4 d (Q, K, V and output projections with biases) | - |
+| `feed_forward` | out | 2 d d_ff + d_ff + d | - |
+| `layer_norms` | out | 4 d | - |
+| `per_layer` | out | parameters per layer | - |
+| `total` | out | parameters of the stack | - |
 
 **Applies when:** d_model divisible by n_heads.
 
@@ -3167,7 +3103,7 @@ total = 18914304
 
 <a id="ml_rnn_parameter_count"></a>
 
-#### Parameter count of an LSTM, GRU or simple RNN — `ml_rnn_parameter_count`
+#### Parameter count of an LSTM, GRU or simple RNN, `ml_rnn_parameter_count`
 
 The trainable parameters of each layer and of a stacked recurrent network (LSTM: 4 gates, GRU: 3, simple RNN: 1), with two bias vectors per gate as in PyTorch, optionally bidirectional.
 
@@ -3177,13 +3113,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `cell` | in | cell type: lstm, gru or rnn | — |
-| `input_size` | in | input features | — |
-| `hidden_size` | in | hidden units | — |
-| `num_layers` | in | stacked layers | — |
-| `bidirectional` | in | bidirectional (yes or no) | — |
-| `per_layer` | out | parameters of each layer (both directions) | — |
-| `total` | out | total parameters | — |
+| `cell` | in | cell type: lstm, gru or rnn | - |
+| `input_size` | in | input features | - |
+| `hidden_size` | in | hidden units | - |
+| `num_layers` | in | stacked layers | - |
+| `bidirectional` | in | bidirectional (yes or no) | - |
+| `per_layer` | out | parameters of each layer (both directions) | - |
+| `total` | out | total parameters | - |
 
 **Applies when:** positive whole-number sizes.
 
@@ -3200,7 +3136,7 @@ total = 117760
 
 <a id="ml_receptive_field"></a>
 
-#### Receptive field of stacked convolutions — `ml_receptive_field`
+#### Receptive field of stacked convolutions: `ml_receptive_field`
 
 The receptive field (how many input positions one output depends on, end to end) and the jump (input distance between adjacent outputs) of a stack of convolution or pooling layers with given kernel sizes, strides and dilations.
 
@@ -3210,11 +3146,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `kernels` | in | kernel size of each layer (whole numbers) | — |
-| `strides` | in | stride of each layer | — |
-| `dilations` | in | dilation of each layer (1 = ordinary) | — |
-| `receptive_field` | out | 1 + sum (k_l - 1) d_l prod_{i<l} s_i | — |
-| `jump` | out | product of the strides | — |
+| `kernels` | in | kernel size of each layer (whole numbers) | - |
+| `strides` | in | stride of each layer | - |
+| `dilations` | in | dilation of each layer (1 = ordinary) | - |
+| `receptive_field` | out | 1 + sum (k_l - 1) d_l prod_{i<l} s_i | - |
+| `jump` | out | product of the strides | - |
 
 **Applies when:** one kernel, stride and dilation per layer; at most 20 layers.
 
@@ -3230,7 +3166,7 @@ jump = 1
 
 <a id="ml_scaled_dot_product_attention"></a>
 
-#### Scaled dot-product attention — `ml_scaled_dot_product_attention`
+#### Scaled dot-product attention: `ml_scaled_dot_product_attention`
 
 Scaled dot-product attention softmax(Q K^T / sqrt(d)) V for given query, key and value matrices, optionally with a causal mask (query i sees keys 0..i): the attention weights and the output.
 
@@ -3240,13 +3176,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Q` | in | queries: one row per query | — |
-| `K` | in | keys: one row per key | — |
-| `V` | in | values: one row per key | — |
-| `causal` | in | apply a causal mask (yes or no) | — |
-| `weights` | out | attention weights (rows sum to 1) | — |
-| `output` | out | weights V | — |
-| `output_sum` | out | sum of all output entries | — |
+| `Q` | in | queries: one row per query | - |
+| `K` | in | keys: one row per key | - |
+| `V` | in | values: one row per key | - |
+| `causal` | in | apply a causal mask (yes or no) | - |
+| `weights` | out | attention weights (rows sum to 1) | - |
+| `output` | out | weights V | - |
+| `output_sum` | out | sum of all output entries | - |
 
 **Applies when:** Q and K have the same width; K and V have the same rows; causal: as many queries as keys.
 
@@ -3265,7 +3201,7 @@ output_sum = 14.81334511
 
 <a id="ml_adam_step"></a>
 
-#### Adam optimizer: one update — `ml_adam_step`
+#### Adam optimizer: one update, `ml_adam_step`
 
 One Adam update: the new first and second moment estimates and the parameters after the bias-corrected step w - lr m_hat / (sqrt(v_hat) + eps).
 
@@ -3275,18 +3211,18 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | parameters | — |
-| `grad` | in | gradient | — |
-| `m` | in | first-moment estimate before the step (zeros at the start) | — |
-| `v` | in | second-moment estimate before the step (zeros at the start) | — |
-| `t` | in | step number after this update (1 for the first step) | — |
-| `lr` | in | learning rate | — |
-| `beta1` | in | first-moment decay (e.g. 0.9) | — |
-| `beta2` | in | second-moment decay (e.g. 0.999) | — |
-| `eps` | in | denominator constant (e.g. 1e-8) | — |
-| `m_new` | out | beta1 m + (1 - beta1) g | — |
-| `v_new` | out | beta2 v + (1 - beta2) g^2 | — |
-| `w_new` | out | parameters after the step | — |
+| `w` | in | parameters | - |
+| `grad` | in | gradient | - |
+| `m` | in | first-moment estimate before the step (zeros at the start) | - |
+| `v` | in | second-moment estimate before the step (zeros at the start) | - |
+| `t` | in | step number after this update (1 for the first step) | - |
+| `lr` | in | learning rate | - |
+| `beta1` | in | first-moment decay (e.g. 0.9) | - |
+| `beta2` | in | second-moment decay (e.g. 0.999) | - |
+| `eps` | in | denominator constant (e.g. 1e-8) | - |
+| `m_new` | out | beta1 m + (1 - beta1) g | - |
+| `v_new` | out | beta2 v + (1 - beta2) g^2 | - |
+| `w_new` | out | parameters after the step | - |
 
 **Applies when:** t >= 1; 0 <= beta1, beta2 < 1; v >= 0; equal lengths.
 
@@ -3307,7 +3243,7 @@ w_new = [0.99900000002,-1.99900000001]
 
 <a id="ml_adamw_step"></a>
 
-#### AdamW optimizer (decoupled weight decay): one update — `ml_adamw_step`
+#### AdamW optimizer (decoupled weight decay): one update, `ml_adamw_step`
 
 One AdamW update: the parameters first decay by the factor (1 - lr weight_decay), then take the bias-corrected Adam step.
 
@@ -3317,19 +3253,19 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | parameters | — |
-| `grad` | in | gradient | — |
-| `m` | in | first-moment estimate before the step (zeros at the start) | — |
-| `v` | in | second-moment estimate before the step (zeros at the start) | — |
-| `t` | in | step number after this update (1 for the first step) | — |
-| `lr` | in | learning rate | — |
-| `beta1` | in | first-moment decay (e.g. 0.9) | — |
-| `beta2` | in | second-moment decay (e.g. 0.999) | — |
-| `eps` | in | denominator constant (e.g. 1e-8) | — |
-| `weight_decay` | in | decoupled weight decay (e.g. 0.01) | — |
-| `m_new` | out | beta1 m + (1 - beta1) g | — |
-| `v_new` | out | beta2 v + (1 - beta2) g^2 | — |
-| `w_new` | out | parameters after decay and step | — |
+| `w` | in | parameters | - |
+| `grad` | in | gradient | - |
+| `m` | in | first-moment estimate before the step (zeros at the start) | - |
+| `v` | in | second-moment estimate before the step (zeros at the start) | - |
+| `t` | in | step number after this update (1 for the first step) | - |
+| `lr` | in | learning rate | - |
+| `beta1` | in | first-moment decay (e.g. 0.9) | - |
+| `beta2` | in | second-moment decay (e.g. 0.999) | - |
+| `eps` | in | denominator constant (e.g. 1e-8) | - |
+| `weight_decay` | in | decoupled weight decay (e.g. 0.01) | - |
+| `m_new` | out | beta1 m + (1 - beta1) g | - |
+| `v_new` | out | beta2 v + (1 - beta2) g^2 | - |
+| `w_new` | out | parameters after decay and step | - |
 
 **Applies when:** t >= 1; 0 <= beta1, beta2 < 1; v >= 0; weight_decay >= 0.
 
@@ -3351,7 +3287,7 @@ w_new = [0.99899000002,-1.99898000001]
 
 <a id="ml_cosine_lr_schedule"></a>
 
-#### Cosine-annealing learning-rate schedule — `ml_cosine_lr_schedule`
+#### Cosine-annealing learning-rate schedule: `ml_cosine_lr_schedule`
 
 The learning rate at a given epoch under cosine annealing from lr_max down to eta_min over T_max epochs.
 
@@ -3361,11 +3297,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lr_max` | in | initial (maximum) learning rate | — |
-| `eta_min` | in | final (minimum) learning rate | — |
-| `T_max` | in | length of the schedule in epochs (at most 1000) | — |
-| `epoch` | in | epoch number (0 to T_max) | — |
-| `lr` | out | eta_min + (lr_max - eta_min)(1 + cos(pi t / T_max)) / 2 | — |
+| `lr_max` | in | initial (maximum) learning rate | - |
+| `eta_min` | in | final (minimum) learning rate | - |
+| `T_max` | in | length of the schedule in epochs (at most 1000) | - |
+| `epoch` | in | epoch number (0 to T_max) | - |
+| `lr` | out | eta_min + (lr_max - eta_min)(1 + cos(pi t / T_max)) / 2 | - |
 
 **Applies when:** 0 <= eta_min < lr_max; 0 <= epoch <= T_max <= 1000.
 
@@ -3382,7 +3318,7 @@ lr = 0.05
 
 <a id="ml_warmup_cosine_lr_schedule"></a>
 
-#### Linear warm-up followed by cosine decay — `ml_warmup_cosine_lr_schedule`
+#### Linear warm-up followed by cosine decay: `ml_warmup_cosine_lr_schedule`
 
 The learning rate at a given step of the common transformer schedule: linear warm-up from start_factor lr_max to lr_max over the warm-up steps, then cosine decay to eta_min at the last step.
 
@@ -3392,13 +3328,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lr_max` | in | peak learning rate | — |
-| `start_factor` | in | fraction of lr_max at step 0 (0 < f <= 1) | — |
-| `warmup` | in | warm-up steps | — |
-| `total` | in | total steps (at most 1000) | — |
-| `eta_min` | in | final learning rate | — |
-| `step` | in | step number (0 to total) | — |
-| `lr` | out | learning rate at the step | — |
+| `lr_max` | in | peak learning rate | - |
+| `start_factor` | in | fraction of lr_max at step 0 (0 < f <= 1) | - |
+| `warmup` | in | warm-up steps | - |
+| `total` | in | total steps (at most 1000) | - |
+| `eta_min` | in | final learning rate | - |
+| `step` | in | step number (0 to total) | - |
+| `lr` | out | learning rate at the step | - |
 
 **Applies when:** 1 <= warmup < total <= 1000; 0 <= step <= total.
 
@@ -3416,7 +3352,7 @@ lr = 0.00055
 
 <a id="ml_sgd_momentum_step"></a>
 
-#### SGD with momentum: one update — `ml_sgd_momentum_step`
+#### SGD with momentum: one update, `ml_sgd_momentum_step`
 
 One step of stochastic gradient descent with momentum in PyTorch's form (optional Nesterov and weight decay): d = g + wd w, buf = mu buf + d, w = w - lr (buf, or d + mu buf with Nesterov).
 
@@ -3426,15 +3362,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | parameters | — |
-| `grad` | in | gradient | — |
-| `buf` | in | momentum buffer before the step (zeros at the start) | — |
-| `lr` | in | learning rate | — |
-| `momentum` | in | momentum mu (0 <= mu < 1) | — |
-| `nesterov` | in | use Nesterov momentum (yes or no) | — |
-| `weight_decay` | in | L2 weight decay (>= 0) | — |
-| `buf_new` | out | momentum buffer after the step | — |
-| `w_new` | out | parameters after the step | — |
+| `w` | in | parameters | - |
+| `grad` | in | gradient | - |
+| `buf` | in | momentum buffer before the step (zeros at the start) | - |
+| `lr` | in | learning rate | - |
+| `momentum` | in | momentum mu (0 <= mu < 1) | - |
+| `nesterov` | in | use Nesterov momentum (yes or no) | - |
+| `weight_decay` | in | L2 weight decay (>= 0) | - |
+| `buf_new` | out | momentum buffer after the step | - |
+| `w_new` | out | parameters after the step | - |
 
 **Applies when:** lr > 0; 0 <= momentum < 1; weight_decay >= 0; equal lengths.
 
@@ -3453,7 +3389,7 @@ w_new = [0.941,-1.918]
 
 <a id="ml_step_lr_schedule"></a>
 
-#### Step learning-rate schedule — `ml_step_lr_schedule`
+#### Step learning-rate schedule: `ml_step_lr_schedule`
 
 The learning rate at a given epoch under step decay: multiplied by gamma every step_size epochs.
 
@@ -3463,12 +3399,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lr0` | in | initial learning rate | — |
-| `step_size` | in | epochs between decays | — |
-| `gamma` | in | decay factor (0 < gamma <= 1) | — |
-| `epoch` | in | epoch number (0 = start, at most 1000) | — |
-| `lr` | out | lr0 gamma^floor(epoch / step_size) | — |
-| `decays` | out | number of decays so far | — |
+| `lr0` | in | initial learning rate | - |
+| `step_size` | in | epochs between decays | - |
+| `gamma` | in | decay factor (0 < gamma <= 1) | - |
+| `epoch` | in | epoch number (0 = start, at most 1000) | - |
+| `lr` | out | lr0 gamma^floor(epoch / step_size) | - |
+| `decays` | out | number of decays so far | - |
 
 **Applies when:** lr0 > 0; 0 < gamma <= 1; 0 <= epoch <= 1000.
 
@@ -3488,7 +3424,7 @@ decays = 2
 
 <a id="ml_one_hot_encoding"></a>
 
-#### Label encoding and one-hot encoding of categories — `ml_one_hot_encoding`
+#### Label encoding and one-hot encoding of categories, `ml_one_hot_encoding`
 
 Encode a list of category values: the categories in sorted order, how often each occurs, the integer code (label encoding) of each value and its one-hot row.
 
@@ -3498,11 +3434,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `categories` | in | category values, written as a bracketed list of words: [red, green, red] | — |
-| `categories` | out | distinct categories, sorted | — |
-| `counts` | out | occurrences of each category | — |
-| `codes` | out | label code of each value (position of its category) | — |
-| `one_hot` | out | one-hot row of each value | — |
+| `categories` | in | category values, written as a bracketed list of words: [red, green, red] | - |
+| `categories` | out | distinct categories, sorted | - |
+| `counts` | out | occurrences of each category | - |
+| `codes` | out | label code of each value (position of its category) | - |
+| `one_hot` | out | one-hot row of each value | - |
 
 **Applies when:** non-empty category words.
 
@@ -3521,7 +3457,7 @@ one_hot = [[0,0,1],[0,1,0],[0,0,1],[1,0,0],[0,1,0],[0,0,1]]
 
 <a id="ml_minmax_scaler"></a>
 
-#### Min-max scaling to [0, 1] — `ml_minmax_scaler`
+#### Min-max scaling to [0, 1], `ml_minmax_scaler`
 
 Scale each feature column linearly to the range [0, 1] using its minimum and maximum (a constant column scales to 0).
 
@@ -3531,10 +3467,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | data: one row per sample, one column per feature | — |
-| `mins` | out | column minima | — |
-| `maxs` | out | column maxima | — |
-| `scaled` | out | (x - min) / (max - min) | — |
+| `X` | in | data: one row per sample, one column per feature | - |
+| `mins` | out | column minima | - |
+| `maxs` | out | column maxima | - |
+| `scaled` | out | (x - min) / (max - min) | - |
 
 **Applies when:** a constant column scales to 0.
 
@@ -3551,7 +3487,7 @@ In the worked example, X = [1 10; 2 20; 3 40; 5 30] go through the equation abov
 
 <a id="ml_robust_scaler"></a>
 
-#### Robust scaling (median and interquartile range) — `ml_robust_scaler`
+#### Robust scaling (median and interquartile range), `ml_robust_scaler`
 
 Scale each feature by subtracting its median and dividing by its interquartile range (quartiles by linear interpolation), which resists outliers; a column with zero IQR is only centred.
 
@@ -3561,10 +3497,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | data: one row per sample, one column per feature | — |
-| `medians` | out | column medians | — |
-| `iqr` | out | column interquartile ranges Q3 - Q1 | — |
-| `scaled` | out | (x - median) / IQR | — |
+| `X` | in | data: one row per sample, one column per feature | - |
+| `medians` | out | column medians | - |
+| `iqr` | out | column interquartile ranges Q3 - Q1 | - |
+| `scaled` | out | (x - median) / IQR | - |
 
 **Applies when:** zero IQR: centred only.
 
@@ -3581,7 +3517,7 @@ scaled = [[-1.0],[-0.5],[0.0],[0.5],[48.5]]
 
 <a id="ml_standard_scaler"></a>
 
-#### Standardisation (z-scores of features) — `ml_standard_scaler`
+#### Standardisation (z-scores of features): `ml_standard_scaler`
 
 Standardise each feature column to mean 0 and unit variance: the column means, the population standard deviations and the scaled matrix (a constant column scales to 0).
 
@@ -3591,10 +3527,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `X` | in | data: one row per sample, one column per feature | — |
-| `means` | out | column means | — |
-| `stds` | out | population standard deviations (divide by n) | — |
-| `scaled` | out | (x - mean) / std | — |
+| `X` | in | data: one row per sample, one column per feature | - |
+| `means` | out | column means | - |
+| `stds` | out | population standard deviations (divide by n) | - |
+| `scaled` | out | (x - mean) / std | - |
 
 **Applies when:** a constant column scales to 0.
 
@@ -3613,7 +3549,7 @@ scaled = [[-1.3416407865,-1.3416407865],[-0.4472135955,-0.4472135955],[0.4472135
 
 <a id="ml_mean_average_precision"></a>
 
-#### Mean average precision (MAP) of rankings — `ml_mean_average_precision`
+#### Mean average precision (MAP) of rankings: `ml_mean_average_precision`
 
 The average precision of each query's ranked list (mean of precision at the rank of each relevant item, over the relevant items in the list) and their mean, MAP.
 
@@ -3623,9 +3559,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `R` | in | relevance (0 or 1) in rank order: one row per query, rows of equal length | — |
-| `average_precision` | out | AP of each query | — |
-| `map` | out | mean of the APs | — |
+| `R` | in | relevance (0 or 1) in rank order: one row per query, rows of equal length | - |
+| `average_precision` | out | AP of each query | - |
+| `map` | out | mean of the APs | - |
 
 **Applies when:** relevance 0 or 1; every query has a relevant item.
 
@@ -3641,7 +3577,7 @@ map = 0.6416666667
 
 <a id="ml_mean_reciprocal_rank"></a>
 
-#### Mean reciprocal rank (MRR) — `ml_mean_reciprocal_rank`
+#### Mean reciprocal rank (MRR): `ml_mean_reciprocal_rank`
 
 The reciprocal rank of the first relevant item of each query's ranked list (0 when none is relevant) and their mean, the MRR.
 
@@ -3651,9 +3587,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `R` | in | relevance (0 or 1) in rank order: one row per query | — |
-| `reciprocal_ranks` | out | 1 / rank of the first relevant item of each query | — |
-| `mrr` | out | mean reciprocal rank | — |
+| `R` | in | relevance (0 or 1) in rank order: one row per query | - |
+| `reciprocal_ranks` | out | 1 / rank of the first relevant item of each query | - |
+| `mrr` | out | mean reciprocal rank | - |
 
 **Applies when:** relevance 0 or 1.
 
@@ -3669,7 +3605,7 @@ mrr = 0.6111111111
 
 <a id="ml_ndcg_at_k"></a>
 
-#### NDCG@k (normalised discounted cumulative gain) — `ml_ndcg_at_k`
+#### NDCG@k (normalised discounted cumulative gain), `ml_ndcg_at_k`
 
 DCG@k of a ranked list with graded relevance (linear gain rel or exponential gain 2^rel - 1, discount 1/log2(rank + 1)), the ideal DCG@k of the same items sorted by relevance, and NDCG@k = DCG/IDCG.
 
@@ -3679,12 +3615,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `rel` | in | relevance grade of each item in rank order (>= 0) | — |
-| `k` | in | cut-off rank | — |
-| `gain` | in | gain: linear (rel) or exponential (2^rel - 1) | — |
-| `dcg` | out | DCG@k | — |
-| `idcg` | out | ideal DCG@k | — |
-| `ndcg` | out | DCG@k / IDCG@k | — |
+| `rel` | in | relevance grade of each item in rank order (>= 0) | - |
+| `k` | in | cut-off rank | - |
+| `gain` | in | gain: linear (rel) or exponential (2^rel - 1) | - |
+| `dcg` | out | DCG@k | - |
+| `idcg` | out | ideal DCG@k | - |
+| `ndcg` | out | DCG@k / IDCG@k | - |
 
 **Applies when:** grades >= 0; 1 <= k <= list length; at least one relevant item.
 
@@ -3702,7 +3638,7 @@ ndcg = 0.9608081943
 
 <a id="ml_precision_recall_at_k"></a>
 
-#### Precision@k and recall@k of a ranking — `ml_precision_recall_at_k`
+#### Precision@k and recall@k of a ranking, `ml_precision_recall_at_k`
 
 Precision at k and recall at k of a ranked list (relevance 0/1 in rank order), with the number of relevant items in the top k and the hit indicator.
 
@@ -3712,13 +3648,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `rel` | in | relevance of each ranked item, in rank order (0 or 1) | — |
-| `n_relevant` | in | total number of relevant items for the query | — |
-| `k` | in | cut-off rank | — |
-| `precision_at_k` | out | relevant in top k / k | — |
-| `recall_at_k` | out | relevant in top k / n_relevant | — |
-| `hits` | out | relevant items in the top k | — |
-| `hit_rate` | out | 1 if any relevant item is in the top k | — |
+| `rel` | in | relevance of each ranked item, in rank order (0 or 1) | - |
+| `n_relevant` | in | total number of relevant items for the query | - |
+| `k` | in | cut-off rank | - |
+| `precision_at_k` | out | relevant in top k / k | - |
+| `recall_at_k` | out | relevant in top k / n_relevant | - |
+| `hits` | out | relevant items in the top k | - |
+| `hit_rate` | out | 1 if any relevant item is in the top k | - |
 
 **Applies when:** relevance 0 or 1; 1 <= k <= list length; n_relevant >= relevant items in the list.
 
@@ -3738,7 +3674,7 @@ hit_rate = 1
 
 <a id="ml_adjusted_r2"></a>
 
-#### Adjusted R^2 — `ml_adjusted_r2`
+#### Adjusted R^2, `ml_adjusted_r2`
 
 R^2 and the adjusted R^2 that penalises the number of predictors p of the model.
 
@@ -3748,11 +3684,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values | — |
-| `y_pred` | in | fitted values | — |
-| `p` | in | number of predictors (excluding the intercept) | — |
-| `r2` | out | R^2 | — |
-| `adjusted_r2` | out | 1 - (1 - R^2)(n - 1)/(n - p - 1) | — |
+| `y_true` | in | true values | - |
+| `y_pred` | in | fitted values | - |
+| `p` | in | number of predictors (excluding the intercept) | - |
+| `r2` | out | R^2 | - |
+| `adjusted_r2` | out | 1 - (1 - R^2)(n - 1)/(n - p - 1) | - |
 
 **Applies when:** n - p - 1 > 0; true values not all equal.
 
@@ -3768,7 +3704,7 @@ adjusted_r2 = 0.96
 
 <a id="ml_mape"></a>
 
-#### Mean absolute percentage error — `ml_mape`
+#### Mean absolute percentage error: `ml_mape`
 
 The mean absolute percentage error of predictions, as a fraction and in per cent.
 
@@ -3778,10 +3714,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values (none equal to 0) | — |
-| `y_pred` | in | predicted values | — |
-| `mape` | out | mean of \|y - y_hat\| / \|y\| (a fraction) | — |
-| `mape_percent` | out | the same in per cent | — |
+| `y_true` | in | true values (none equal to 0) | - |
+| `y_pred` | in | predicted values | - |
+| `mape` | out | mean of \|y - y_hat\| / \|y\| (a fraction) | - |
+| `mape_percent` | out | the same in per cent | - |
 
 **Applies when:** no true value equal to 0.
 
@@ -3797,7 +3733,7 @@ mape_percent = 8.333333333
 
 <a id="ml_mean_squared_log_error"></a>
 
-#### Mean squared logarithmic error — `ml_mean_squared_log_error`
+#### Mean squared logarithmic error: `ml_mean_squared_log_error`
 
 The mean squared logarithmic error ln(1 + y) - ln(1 + y_hat) and its square root (RMSLE), for non-negative targets such as counts and prices.
 
@@ -3807,10 +3743,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values (>= 0) | — |
-| `y_pred` | in | predicted values (>= 0) | — |
-| `msle` | out | mean squared log error | — |
-| `rmsle` | out | root mean squared log error | — |
+| `y_true` | in | true values (>= 0) | - |
+| `y_pred` | in | predicted values (>= 0) | - |
+| `msle` | out | mean squared log error | - |
+| `rmsle` | out | root mean squared log error | - |
 
 **Applies when:** values >= 0.
 
@@ -3826,7 +3762,7 @@ rmsle = 0.1993241656
 
 <a id="ml_tweedie_deviance"></a>
 
-#### Mean Tweedie deviance (normal, Poisson, gamma, compound Poisson-gamma) — `ml_tweedie_deviance`
+#### Mean Tweedie deviance (normal, Poisson, gamma, compound Poisson-gamma), `ml_tweedie_deviance`
 
 The mean Tweedie deviance of predictions for a stated power: 0 squared error, 1 Poisson, 2 gamma, 3 inverse Gaussian, between 1 and 2 compound Poisson-gamma.
 
@@ -3836,10 +3772,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values | — |
-| `y_pred` | in | predicted means (positive for power > 0) | — |
-| `power` | in | Tweedie power p (0, or p >= 1) | — |
-| `deviance` | out | mean Tweedie deviance | — |
+| `y_true` | in | true values | - |
+| `y_pred` | in | predicted means (positive for power > 0) | - |
+| `power` | in | Tweedie power p (0, or p >= 1) | - |
+| `deviance` | out | mean Tweedie deviance | - |
 
 **Applies when:** power 0 or >= 1; positive predictions (power > 0); y >= 0 (1 <= p < 2) or y > 0 (p >= 2).
 
@@ -3855,7 +3791,7 @@ deviance = 1.426015132
 
 <a id="ml_regression_metrics"></a>
 
-#### Regression metrics (MAE, MSE, RMSE, R^2, explained variance) — `ml_regression_metrics`
+#### Regression metrics (MAE, MSE, RMSE, R^2, explained variance), `ml_regression_metrics`
 
 The standard regression error metrics of predictions against true values: mean absolute error, mean squared error, root mean squared error, R^2, explained variance, median absolute error and maximum error.
 
@@ -3865,15 +3801,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y_true` | in | true values | — |
-| `y_pred` | in | predicted values | — |
-| `mae` | out | mean absolute error | — |
-| `mse` | out | mean squared error | — |
-| `rmse` | out | root mean squared error | — |
-| `r2` | out | coefficient of determination 1 - SS_res / SS_tot | — |
-| `explained_variance` | out | 1 - Var(y - y_hat) / Var(y) | — |
-| `median_ae` | out | median absolute error | — |
-| `max_error` | out | largest absolute error | — |
+| `y_true` | in | true values | - |
+| `y_pred` | in | predicted values | - |
+| `mae` | out | mean absolute error | - |
+| `mse` | out | mean squared error | - |
+| `rmse` | out | root mean squared error | - |
+| `r2` | out | coefficient of determination 1 - SS_res / SS_tot | - |
+| `explained_variance` | out | 1 - Var(y - y_hat) / Var(y) | - |
+| `median_ae` | out | median absolute error | - |
+| `max_error` | out | largest absolute error | - |
 
 **Applies when:** at least two values; the true values are not all equal.
 
@@ -3892,4 +3828,4 @@ max_error = 1
 
 **What the worked example means:** This calculation evaluates regression performance by comparing predicted values against true values. The mean absolute error, shown as 0.5, represents the average magnitude of errors in the predictions without considering direction. The root mean squared error is 0.612372, which penalizes larger errors more heavily due to squaring. An R-squared value of 0.948608 indicates the proportion of variance in the dependent variable that is predictable from the independent variables. Additionally, the median absolute error is 0.5, providing a robust measure less sensitive to outliers than the mean.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.
