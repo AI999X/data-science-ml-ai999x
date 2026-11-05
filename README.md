@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/AI999X/data-science-ml-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/data-science-ml-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/data-science-ml-ai999x)](https://pypi.org/project/data-science-ml-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/data-science-ml-ai999x)
 
-**[Install](https://pypi.org/project/data-science-ml-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
+**[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/data-science-ml-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/data-science-ml-ai999x/)** · **[Guides](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/data-science-ml-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
 License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
@@ -12,7 +12,313 @@ data-science-ml-ai999x is an offline, deterministic Python solver that answers d
 
 **data-science-ml-ai999x** is a compact, deterministic data science and machine learning engine for Python. It reads a question in plain English (or a typed call), picks a certified data science and machine learning capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
+
+**Run it your way.** data-science-ml-ai999x comes as the AI999X desktop app and as the command-line program `data-science-ml` for Windows and Linux, runs in your browser as WebAssembly, and installs as a Python package. The desktop app, the command line and the browser run the same compiled Rust program on your own device: offline, no Python needed.
+
+## Get it
+
+| Way to run it | For | Get it |
+|---|---|---|
+| **AI999X Data Science and Machine Learning desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-data-science-ml-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
+| **Command line** (`data-science-ml`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/data-science-ml-ai999x/#try) |
+| **Python** | Python 3.10+ | `pip install data-science-ml-ai999x` |
+
+Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+
+## Rust versions
+
+Data Science and Machine Learning also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/data-science-ml-ai999x/releases/tag/v1.0.3) and on the website.
+
+| Program | System | File | Size | Download | Use |
+|---|---|---|---|---|---|
+| Desktop app (Data Science and Machine Learning) | Windows x86-64 | `ai999x-data-science-ml-1.2.0-windows-x86_64.zip` | 7.8 MB | [Hub](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/rust/ai999x-data-science-ml-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/data-science-ml-ai999x/releases/download/v1.0.3/ai999x-data-science-ml-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-data-science-ml-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-data-science-ml.exe` (no installer) |
+| Desktop app (Data Science and Machine Learning) | Linux x86-64 | `ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz` | 8.7 MB | [Hub](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/rust/ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/data-science-ml-ai999x/releases/download/v1.0.3/ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-data-science-ml` (X11 or Wayland desktop) |
+| Command line (`data-science-ml`) | Windows x86-64 | `ai999x-data-science-ml-cli-1.2.0-windows-x86_64.zip` | 3.4 MB | [Hub](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/rust/ai999x-data-science-ml-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/data-science-ml-ai999x/releases/download/v1.0.3/ai999x-data-science-ml-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `data-science-ml.exe ask "<question>"` or `data-science-ml.exe solve <capability> name=value` |
+| Command line (`data-science-ml`) | Linux x86-64 | `ai999x-data-science-ml-cli-1.2.0-linux-x86_64.tar.gz` | 3.4 MB | [Hub](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/rust/ai999x-data-science-ml-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/data-science-ml-ai999x/releases/download/v1.0.3/ai999x-data-science-ml-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./data-science-ml ask "<question>"` or `./data-science-ml solve <capability> name=value` |
+
+The command-line archive holds `data-science-ml` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+
+## Quick start
+
+### Desktop app
+
+Download **AI999X Data Science and Machine Learning** for your system (above), unpack it and start it; type a question in words or pick a capability, fill in the form and press Compute. Figures and an explanation of the answer appear beside it. The AI999X desktop app has the same, with Data Science and Machine Learning among all AI999X models.
+
+Linux, from a terminal:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-data-science-ml-1.2.0-linux-x86_64.tar.gz
+./ai999x-data-science-ml-1.2.0-linux-x86_64/ai999x-data-science-ml
+```
+
+### Command line
+
+Linux:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+data-science-ml --version
+```
+
+Windows (PowerShell):
+
+```powershell
+$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+(Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
+Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
+data-science-ml --version
+```
+
+Every command below was run as shown; the text under it is what the program printed.
+
+**Ask in words** — Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
+
+```console
+$ data-science-ml ask "Binary metrics from counts: TP = 40, FP = 10, FN = 5, TN = 45"
+Read as: Binary classification metrics from confusion counts
+accuracy = 0.85
+precision = 0.8
+recall = 0.8888888889
+specificity = 0.8181818182
+f1 = 0.8421052632
+npv = 0.9
+balanced_accuracy = 0.8535353535
+fpr = 0.1818181818
+fnr = 0.1111111111
+jaccard = 0.7272727273
+  by: Binary classification metrics from confusion counts  (exact rational arithmetic on the four counts)
+  assumes: counts are whole numbers >= 0; every ratio is defined (TP + FP, TP + FN, TN + FP, TN + FN > 0)
+```
+
+**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+
+```console
+$ data-science-ml info ml_binary_metrics_from_counts
+Binary classification metrics from confusion counts
+  exact rational arithmetic on the four counts
+  in   TP       true positives (integer) [1]
+  in   FP       false positives (integer) [1]
+  in   FN       false negatives (integer) [1]
+  in   TN       true negatives (integer) [1]
+  out  accuracy (TP + TN) / n [1]
+  out  precision TP / (TP + FP) [1]
+  out  recall   TP / (TP + FN), the sensitivity [1]
+  out  specificity TN / (TN + FP) [1]
+  out  f1       2 TP / (2 TP + FP + FN) [1]
+  out  npv      TN / (TN + FN) [1]
+  out  balanced_accuracy (recall + specificity) / 2 [1]
+  out  fpr      FP / (FP + TN) [1]
+  out  fnr      FN / (FN + TP) [1]
+  out  jaccard  TP / (TP + FP + FN) [1]
+```
+
+**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+
+```console
+$ data-science-ml solve ml_binary_metrics_from_counts TP=40 FP=10 FN=5 TN=45
+accuracy = 0.85
+precision = 0.8
+recall = 0.8888888889
+specificity = 0.8181818182
+f1 = 0.8421052632
+npv = 0.9
+balanced_accuracy = 0.8535353535
+fpr = 0.1818181818
+fnr = 0.1111111111
+jaccard = 0.7272727273
+  by: Binary classification metrics from confusion counts  (exact rational arithmetic on the four counts)
+  assumes: counts are whole numbers >= 0; every ratio is defined (TP + FP, TP + FN, TN + FP, TN + FN > 0)
+```
+
+**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
+
+```console
+$ data-science-ml figures ml_binary_metrics_from_counts TP=40 FP=10 FN=5 TN=45 --out .
+[
+  {
+    "slug": "ml-binary-metrics-from-counts-live-1",
+    "title": "2 TP / as false negatives varies",
+    "caption": "2 TP / as FN runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your FN = 5 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
+    "file": "./ml-binary-metrics-from-counts-live-1.svg"
+  },
+  {
+    "slug": "ml-binary-metrics-from-counts-live-2",
+    "title": "2 TP / as true positives varies",
+    "caption": "2 TP / as TP runs from 20 to 60, every other input as you entered it (21 solutions). Marked: your TP = 40 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.",
+    "file": "./ml-binary-metrics-from-counts-live-2.svg"
+  }
+]
+```
+
+**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | data-science-ml batch
+
+`cases.jsonl`:
+
+```json
+{"key": "ml_binary_metrics_from_counts", "inputs": {"TP": "40", "FP": "10", "FN": "5", "TN": "45"}}
+{"key": "ml_roc_auc", "inputs": {"y_true": "[0, 1, 1, 0, 1]", "scores": "[0.1, 0.9, 0.8, 0.3, 0.2]"}}
+```
+
+```console
+$ data-science-ml batch < cases.jsonl
+{"outcome":"SOLVED","message":"","value":0.842105263158,"unit":"","solved_for":"f1","values":[["accuracy",0.85,""],["precision",0.8,""],["recall",0.888888888889,""],["specificity",0.818181818182,""],["f1",0.842105263158,""],["npv",0.9,""],["balanced_accuracy",0.853535353535,""],["fpr",0.181818181818,""],["fnr",0.111111111111,""],["jaccard",0.727272727273,""]],"target":"f1","phrase":"(TP + TN) / n","assumptions":["counts are whole numbers >= 0","every ratio is defined (TP + FP, TP + FN, TN + FP, TN + FN > 0)"],"name":"Binary classification metrics from confusion counts","equation":"exact rational arithmetic on the four counts"}
+{"outcome":"SOLVED","message":"","value":0.833333333333,"unit":"","solved_for":"auc","values":[["auc",0.833333333333,""],["gini",0.666666666667,""],["n_pos",3,""],["n_neg",2,""]],"target":"auc","phrase":"area under the ROC curve","assumptions":["labels 0 or 1","at least one positive and one negative"],"name":"ROC AUC from scores","equation":"exact count over all positive-negative pairs (Mann-Whitney), ties counted 1/2"}
+```
+
+### In your browser
+
+Open [Data Science and Machine Learning on ai999x.com](https://www.ai999x.com/models/data-science-ml-ai999x/#try), choose a capability and press **Compute**: the model runs on your own device as WebAssembly; nothing is sent anywhere. Change any input (any unit of the right kind) and the answer, its explanation and the figures follow.
+
+In your own page: `data_science_ml_ai999x.wasm` and the loader `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js).
+
+### Python
+
+```bash
+pip install data-science-ml-ai999x
+```
+
+## Worked examples in every form
+
+The same worked example from the command line, from Python and in the browser. Each command-line output is what the program printed.
+
+### Agglomerative hierarchical clustering merge heights
+
+Agglomerative clustering of points with single, complete, average or Ward linkage (Euclidean distance): the distance at which each of the n - 1 merges happens, in order, and the final merge height.
+
+Command line:
+
+```console
+$ data-science-ml solve ml_hierarchical_clustering "X=[[0, 0], [0, 1], [4, 0], [4, 1.5], [10, 10]]" method=single
+heights = [1.0,1.5,4.0,10.4043260233]
+final_height = 10.40432602
+  by: Agglomerative hierarchical clustering merge heights  (repeatedly merge the closest pair; Lance-Williams updates of the cluster distances)
+  method = single
+  assumes: 2 to 40 points; no tied merge distances (complete, average, ward)
+```
+
+Python:
+
+```python
+import data_science_ml_ai999x as m
+
+a = m.solve("ml_hierarchical_clustering", X=[[0, 0], [0, 1], [4, 0], [4, 1.5], [10, 10]], method="single")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/data-science-ml-ai999x/#cap-ml_hierarchical_clustering) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the hierarchical structure of the data by repeatedly merging the closest clusters. Using the specified linkage method, it records the distance at which each merge occurs, resulting in a sequence of heights [1, 1.5, 4, 10.4043]. The last value in this sequence represents the final merge height 10.4043, indicating the maximum dissimilarity required to combine all points into a single cluster.
+
+### Bernoulli naive Bayes prediction (binary features)
+
+Fit a Bernoulli naive Bayes classifier on 0/1 features with additive smoothing alpha (absent features count too) and give the predicted class and posteriors of a query vector.
+
+Command line:
+
+```console
+$ data-science-ml solve ml_bernoulli_naive_bayes "X=[[1, 0, 1], [1, 1, 0], [0, 1, 1], [0, 0, 1], [1, 1, 1]]" "y=[0, 0, 1, 1, 0]" "x=[1, 0, 0]" alpha=1
+prediction = 0
+classes = [0,1]
+posteriors = [0.860022396417,0.139977603583]
+  by: Bernoulli naive Bayes prediction (binary features)  (p_cj = (N_cj + alpha)/(N_c + 2 alpha); log prior + sum of log p or log(1 - p))
+  alpha = 1
+  assumes: features 0 or 1; alpha > 0; at least two classes
+```
+
+Python:
+
+```python
+import data_science_ml_ai999x as m
+
+a = m.solve("ml_bernoulli_naive_bayes", X=[[1, 0, 1], [1, 1, 0], [0, 1, 1], [0, 0, 1], [1, 1, 1]], y=[0, 0, 1, 1, 0], x=[1, 0, 0], alpha="1")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/data-science-ml-ai999x/#cap-ml_bernoulli_naive_bayes) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the most likely class for a set of binary features using Bernoulli naive Bayes. It computes the likelihood of observing the specific pattern of present and absent features for each class, incorporating additive smoothing to handle zero counts. The final prediction is the class label 0 that maximizes the posterior probability, while [0.860022, 0.139978] lists the normalized probabilities for all classes in sorted order.
+
+### Best decision-tree split (classification, Gini or entropy)
+
+The best single split x_j <= t of a classification tree's root by Gini impurity or entropy (bits): the feature, the threshold (midway between consecutive values), the impurity decrease and the sizes of both sides.
+
+Command line:
+
+```console
+$ data-science-ml solve ml_decision_stump_classification "X=[[2, 7], [3, 1], [10, 8], [11, 2], [4, 9], [12, 0]]" "y=[0, 0, 1, 1, 0, 1]" criterion=gini
+feature = 0
+threshold = 7
+impurity_decrease = 0.5
+n_left = 3
+n_right = 3
+  by: Best decision-tree split (classification, Gini or entropy)  (scan every feature and every midpoint between consecutive distinct values; exact fractions for Gini)
+  criterion = gini
+  assumes: at least two classes; whole-number features; a unique best split
+```
+
+Python:
+
+```python
+import data_science_ml_ai999x as m
+
+a = m.solve("ml_decision_stump_classification", X=[[2, 7], [3, 1], [10, 8], [11, 2], [4, 9], [12, 0]], y=[0, 0, 1, 1, 0, 1], criterion="gini")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/data-science-ml-ai999x/#cap-ml_decision_stump_classification) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the optimal binary partition for a decision tree's root node by scanning all features and midpoints between distinct values. Using the specified criterion, it computes the impurity decrease to identify the split that most effectively separates classes. The result indicates that splitting on feature index 0 at threshold 7 provides the maximum gain, dividing the dataset into 3 samples on the left and 3 samples on the right.
+
+### Best regression-tree split (squared error)
+
+The best single split x_j <= t of a regression tree's root by squared error: the feature, the threshold, the decrease of the mean squared error and the mean target on each side.
+
+Command line:
+
+```console
+$ data-science-ml solve ml_decision_stump_regression "X=[[1], [2], [3], [10], [11], [12]]" "y=[1, 1.2, 0.8, 5, 5.4, 4.6]"
+feature = 0
+threshold = 6.5
+mse_decrease = 4
+left_mean = 1
+right_mean = 5
+  by: Best regression-tree split (squared error)  (scan every feature and midpoint; exact sums of squares)
+  assumes: whole-number features; targets not all equal; a unique best split
+```
+
+Python:
+
+```python
+import data_science_ml_ai999x as m
+
+a = m.solve("ml_decision_stump_regression", X=[[1], [2], [3], [10], [11], [12]], y=[1, 1.2, 0.8, 5, 5.4, 4.6])
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/data-science-ml-ai999x/#cap-ml_decision_stump_regression) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the optimal single partition for a regression tree root by evaluating every possible midpoint between unique whole-number feature values. It computes the reduction in sum of squared errors achieved by splitting the data into two groups based on the selected feature and threshold. The result indicates that choosing feature 0 and setting the cutoff at 6.5 yields the greatest improvement, decreasing the node's mean squared error by 4. The average target value in the left subset is 1, while the right subset averages 5.
+
+## Documentation
+
+- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/data-science-ml-ai999x/blob/main/docs/data_science_ml_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/data-science-ml-ai999x/blob/main/docs/data_science_ml_ai999x_rust_guide.md)
+- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/data-science-ml-ai999x/blob/main/docs/data_science_ml_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/data-science-ml-ai999x/blob/main/docs/data_science_ml_ai999x_capabilities.md)
+- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/data-science-ml-ai999x/
 
 ## Highlights
 
@@ -20,6 +326,7 @@ data-science-ml-ai999x is an offline, deterministic Python solver that answers d
 - **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 711 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `data-science-ml` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** classification and regression metrics, loss functions and gradients, information theory, clustering, classical machine-learning algorithms, neural-network arithmetic and ranking metrics.
 
@@ -38,7 +345,7 @@ data-science-ml-ai999x is an offline, deterministic Python solver that answers d
 | Creator / engineer | Ibnul Jaif Farabi |
 | Organization | AI999X |
 
-## Quickstart
+## Python quick start
 
 ```bash
 pip install data-science-ml-ai999x
@@ -61,7 +368,7 @@ data_science_ml.ask("Who created you?").message
 # -> data-science-ml-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `data-science-ml-ai999x "<question>"`, `data-science-ml-ai999x --capabilities`. The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.3.
+The Python package also installs a Python command, `data-science-ml-ai999x "<question>"`; for the native program use `data-science-ml` (above). The outputs above were produced by running this exact code on data-science-ml-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -83,7 +390,7 @@ data_science_ml.search("Solve x^2 - 5x + 6 = 0", k=2)
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
-## Worked examples
+## Python worked examples, with their steps
 
 Each question was put to `data-science-ml-ai999x`; the answer is the one it returned, with the steps it took.
 

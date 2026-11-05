@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "data-science-ml-ai999x"
-version = "1.0.3"
+version = "1.1.0"
 description = "Offline data science and machine learning solver: evaluation metrics, loss functions and gradients, classical machine-learning algorithms (k-means, kNN, naive Bayes, decision-tree splits, linear and logistic models with regularisation), dimensionality reduction, cross-validation, information theory and neural-network arithmetic, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
-authors = [{name = "Ibnul Jaif Farabi"}]
-maintainers = [{name = "AI999X"}]
+authors = [{name = "AI999X Labs", email = "support@ai999x.com"}, {name = "Ibnul Jaif Farabi", email = "ibnuljaiffarabi@ai999x.com"}]
+maintainers = [{name = "AI999X Labs", email = "support@ai999x.com"}]
 keywords = ["data science", "machine learning", "evaluation metrics", "classification metrics", "regression metrics", "loss functions", "information theory", "clustering", "neural networks", "optimizers", "ranking metrics", "ai999x", "offline", "cpu", "step-by-step", "latex"]
 classifiers = ["License :: OSI Approved :: Apache Software License", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Operating System :: OS Independent", "Intended Audience :: Education", "Intended Audience :: Science/Research", "Intended Audience :: Developers", "Topic :: Scientific/Engineering", "Topic :: Education", "Development Status :: 5 - Production/Stable"]
 dependencies = ["sympy>=1.12", "mpmath>=1.3"]

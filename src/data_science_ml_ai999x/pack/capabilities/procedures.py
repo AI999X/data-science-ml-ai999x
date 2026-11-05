@@ -4802,6 +4802,8 @@ def conv2d(image, kernel, stride, padding):
     I, K = _mat("image", image), _mat("kernel", kernel)
     _need(isinstance(stride, int) and stride >= 1, "stride must be a whole number >= 1")
     _need(isinstance(padding, int) and padding >= 0, "padding must be a whole number >= 0")
+    # the padded image is built in full: padding 1000000 is a 2-million-square matrix (out of memory, 2026-10-29)
+    _need(padding <= 100, "padding must be at most 100")
     H, W, kh, kw = len(I), len(I[0]), len(K), len(K[0])
     _need(H + 2 * padding >= kh and W + 2 * padding >= kw, "the kernel is larger than the padded image")
     P = [[Fraction(0)] * (W + 2 * padding) for _ in range(H + 2 * padding)]
@@ -5332,6 +5334,9 @@ _add("ml_transformer_parameter_count",
 
 def rnn_params(cell, input_size, hidden_size, num_layers, bidirectional):
     _need(all(isinstance(v, int) and v >= 1 for v in (input_size, hidden_size, num_layers)), "sizes must be whole numbers >= 1")
+    # one entry per layer: a million layers took seconds and a list no model has (as transformer_params, 2026-10-29)
+    _need(num_layers <= 200 and input_size <= 1000000 and hidden_size <= 65536,
+          "num_layers must be at most 200, input_size at most 1000000 and hidden_size at most 65536")
     G = {"lstm": 4, "gru": 3, "rnn": 1}[cell]
     dirs = 2 if bidirectional else 1
     per = []
