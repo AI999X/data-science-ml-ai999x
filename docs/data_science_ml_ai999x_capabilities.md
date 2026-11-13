@@ -4661,7 +4661,7 @@ $$
 
 ![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-matrix)
 
-*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned). Other inputs: gamma = [1, 1], beta = [0, 0], eps = 0.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned). Other inputs: gamma = [1, 1], beta = [0, 0], eps = 0.0.*
 
 ```python
 data_science_ml_ai999x.solve('ml_batch_norm_forward', X=[[1, 2], [3, 6], [5, 10]], gamma=[1, 1], beta=[0, 0], eps=0)
