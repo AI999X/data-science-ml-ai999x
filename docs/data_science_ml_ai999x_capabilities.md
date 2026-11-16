@@ -1354,9 +1354,9 @@ $$
 - **Assumes:** $\delta > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1, 61 runs each): quadratic inside ±δ, linear outside](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-loss)
+![Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-loss)
 
-*Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1, 61 runs each): quadratic inside ±δ, linear outside. Worked example y_true = [3, -0.5, 2, 7], y_pred = [2.5, 0, 2, 8]: returned Huber 0.1875, smooth L1 0.1875, pseudo-Huber 0.16257.*
+*Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1.0, 61 runs each): quadratic inside ±δ, linear outside. Worked example y_true = [3, -0.5, 2, 7], y_pred = [2.5, 0, 2, 8]: returned Huber 0.1875, smooth L1 0.1875, pseudo-Huber 0.16257.*
 
 ![huber (mean Huber loss) against delta (threshold between the quadratic and linear parts (delta > 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-curve)
 
@@ -1456,7 +1456,7 @@ $$
 
 ![Tweedie deviance of one sample with true value 2 as the prediction runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-tweedie-deviance-loss)
 
-*Tweedie deviance of one sample with true value 2 as the prediction runs from 0.25 to 6, for powers 0 (squared error), 1 (Poisson), 1.5 and 2 (gamma), 47 runs each: all vanish at ŷ = y, higher powers forgive over-prediction more. Worked example (power 1): returned 1.42602.*
+*Tweedie deviance of one sample with true value 2 as the prediction runs from 0.25 to 6, for powers 0 (squared error), 1 (Poisson), 1.5 and 2 (gamma), 47 runs each: all vanish at ŷ = y, higher powers forgive over-prediction more. Worked example (power 1.0): returned 1.42602.*
 
 ```python
 data_science_ml_ai999x.solve('ml_tweedie_deviance', y_true=[2, 0, 1, 4], y_pred=[0.5, 0.5, 2, 2], power=1)
@@ -2169,9 +2169,9 @@ $$
 - **Assumes:** $lr > 0$; dimensions agree
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1 (lr = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-fit)
+![Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-fit)
 
-*Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1 (lr = 0.1), each a run of the package from the w, b the previous run returned; MSE after each step: 1.69, 0.87035, 0.495762, 0.321386, 0.237267.*
+*Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1.0 (lr = 0.1), each a run of the package from the w, b the previous run returned; MSE after each step: 1.69, 0.87035, 0.495762, 0.321386, 0.237267.*
 
 ```python
 data_science_ml_ai999x.solve('ml_gradient_descent_step_linear', X=[[1], [2], [3], [4]], y=[2, 4, 6, 8], w=[1], b=1, lr=0.1)
@@ -2754,7 +2754,7 @@ $$
 
 ![Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: homogeneity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-contingency)
 
-*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: homogeneity 0.57938 (cluster 1 mixes two classes), completeness 1 (each class sits in one cluster), V-measure 0.73368 (β = 1).*
+*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: homogeneity 0.57938 (cluster 1 mixes two classes), completeness 1 (each class sits in one cluster), V-measure 0.73368 (β = 1.0).*
 
 ![v_measure ((1 + beta) h c / (beta h + c)) against beta (weight of completeness relative to homogeneity in the V-measure (1 = equal)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-curve)
 
@@ -3214,7 +3214,7 @@ $$
 
 ![The stated training rows (labelled with their class y = [0, 0, 1, 1]) and the query x = [1, 0, 1, 0]; returned posteriors class 0: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-data)
 
-*The stated training rows (labelled with their class y = [0, 0, 1, 1]) and the query x = [1, 0, 1, 0]; returned posteriors class 0: 0.529781, class 1: 0.470219, prediction class 0 (smoothing α = 1).*
+*The stated training rows (labelled with their class y = [0, 0, 1, 1]) and the query x = [1, 0, 1, 0]; returned posteriors class 0: 0.529781, class 1: 0.470219, prediction class 0 (smoothing α = 1.0).*
 
 ![Posterior probability of class 0 for the query x = [1, 0, 1, 0] as the smoothing α runs over 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-curve)
 
@@ -3269,7 +3269,7 @@ $$
 
 ![The stated training rows (labelled with their class y = [0, 0, 1, 1, 0]) and the query x = [1, 0, 0]; returned posteriors class 0: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bernoulli-naive-bayes-data)
 
-*The stated training rows (labelled with their class y = [0, 0, 1, 1, 0]) and the query x = [1, 0, 0]; returned posteriors class 0: 0.860022, class 1: 0.139978, prediction class 0 (smoothing α = 1).*
+*The stated training rows (labelled with their class y = [0, 0, 1, 1, 0]) and the query x = [1, 0, 0]; returned posteriors class 0: 0.860022, class 1: 0.139978, prediction class 0 (smoothing α = 1.0).*
 
 ```python
 data_science_ml_ai999x.solve('ml_bernoulli_naive_bayes', X=[[1, 0, 1], [1, 1, 0], [0, 1, 1], [0, 0, 1], [1, 1, 1]], y=[0, 0, 1, 1, 0], x=[1, 0, 0], alpha=1)
@@ -4133,9 +4133,9 @@ $$
 - **Assumes:** labels -1 and +1; $lr > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0, lr = 1): each epoch is one run of the package from the w, b the previous run returned; the line w·x + b = 0 after each: epoch 1: w = (2, 1), b = 1; epoch 2: w = (2, 1), b = 1; epoch 3: w = (2, 1), b = 1; epoch 4: w = (2, 1), b = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-boundary)
+![Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-boundary)
 
-*Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0, lr = 1): each epoch is one run of the package from the w, b the previous run returned; the line w·x + b = 0 after each: epoch 1: w = (2, 1), b = 1; epoch 2: w = (2, 1), b = 1; epoch 3: w = (2, 1), b = 1; epoch 4: w = (2, 1), b = 1.*
+*Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0.0, lr = 1.0): each epoch is one run of the package from the w, b the previous run returned; the line w·x + b = 0 after each: epoch 1: w = (2, 1), b = 1; epoch 2: w = (2, 1), b = 1; epoch 3: w = (2, 1), b = 1; epoch 4: w = (2, 1), b = 1.*
 
 ```python
 data_science_ml_ai999x.solve('ml_perceptron_epoch', X=[[2, 1], [-1, -2], [1, -1], [-2, 1]], y=[1, -1, 1, -1], w=[0, 0], b=0, lr=1)
@@ -4655,9 +4655,9 @@ $$
 - **Assumes:** at least two samples; var + eps > 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0): every feature is shifted by its returned batch mean [3](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-normalise)
+![Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-normalise)
 
-*Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0): every feature is shifted by its returned batch mean [3.0, 6.0] and divided by the root of its batch variance ['2.66667', '10.6667'].*
+*Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0.0): every feature is shifted by its returned batch mean [3.0, 6.0] and divided by the root of its batch variance ['2.66667', '10.6667'].*
 
 ![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-matrix)
 
@@ -4972,7 +4972,7 @@ $$
 
 ![Linear warm-up from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-warmup-cosine-lr-schedule-schedule)
 
-*Linear warm-up from 0.1 × lr_max to lr_max = 0.001, then cosine decay to 0 at step 100, for warm-ups of 10 and 25 steps (101 runs each). Marked: the worked example, step 5, lr = 0.00055.*
+*Linear warm-up from 0.1 × lr_max to lr_max = 0.001, then cosine decay to 0.0 at step 100, for warm-ups of 10 and 25 steps (101 runs each). Marked: the worked example, step 5, lr = 0.00055.*
 
 ```python
 data_science_ml_ai999x.solve('ml_warmup_cosine_lr_schedule', lr_max=0.001, start_factor=0.1, warmup=10, total=100, eta_min=0, step=5)
@@ -5527,9 +5527,9 @@ $$
 - **Assumes:** equal lengths; margin >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1: the returned distances d(a, p) = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-geometry)
+![Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-geometry)
 
-*Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1: the returned distances d(a, p) = 1.41421 and d(a, n) = 2. The loss is zero only if the negative lies outside the outer circle (radius d(a, p) + margin, sum shown here); here it lies inside, and the returned loss is 0.414214.*
+*Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1.0: the returned distances d(a, p) = 1.41421 and d(a, n) = 2. The loss is zero only if the negative lies outside the outer circle (radius d(a, p) + margin, sum shown here); here it lies inside, and the returned loss is 0.414214.*
 
 ![loss (max(0, d_ap - d_an + margin)) against margin (margin (>= 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-curve)
 
