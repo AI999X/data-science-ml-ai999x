@@ -207,9 +207,9 @@ $$
 - **Assumes:** labels are 0 or 1; y_true and y_pred have the same length
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The confusion matrix TP = 3, FN = 1, FP = 1, TN = 3 (rows the actual class, columns the predicted); returned accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-confusion-matrix-confusion)
+![The 2 × 2 confusion matrix the package returns for y_true = [1, 0, 1, 1, 0, 0, 1, 0] and y_pred = [1, 0, 0, 1, 0, 1, 1, 0]: TP = 3, FN = 1, FP = 1, TN = 3; accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-confusion-matrix-confusion)
 
-*The confusion matrix TP = 3, FN = 1, FP = 1, TN = 3 (rows the actual class, columns the predicted); returned accuracy 0.75. Your inputs: y_true = 1, 0, 1, 1, 0, 0, 1, 0, y_pred = 1, 0, 0, 1, 0, 1, 1, 0.*
+*The 2 × 2 confusion matrix the package returns for y_true = [1, 0, 1, 1, 0, 0, 1, 0] and y_pred = [1, 0, 0, 1, 0, 1, 1, 0]: TP = 3, FN = 1, FP = 1, TN = 3; accuracy 0.75, error rate 0.25.*
 
 ```python
 data_science_ml_ai999x.solve('ml_binary_confusion_matrix', y_true=[1, 0, 1, 1, 0, 0, 1, 0], y_pred=[1, 0, 0, 1, 0, 1, 1, 0])
@@ -266,21 +266,17 @@ $$
 - **Assumes:** counts are whole numbers >= 0; every ratio is defined (TP + FP, TP + FN, TN + FP, TN + FN > 0)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned F1 = 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-binary-metrics-from-counts-confusion.svg)
+![The stated counts TP = 40, FP = 10, FN = 5, TN = 45 laid out as a confusion matrix](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-confusion)
 
-*The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned F1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
+*The stated counts TP = 40, FP = 10, FN = 5, TN = 45 laid out as a confusion matrix.*
 
-![The rates the model returns for TP = 40, FP = 10, FN = 5, TN = 45: acc](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-rates)
+![The rates the package returns for TP = 40, FP = 10, FN = 5, TN = 45: accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-rates)
 
-*The rates the model returns for TP = 40, FP = 10, FN = 5, TN = 45: acc. 0.85, prec. 0.8, recall 0.8889, spec. 0.8182, F1 0.8421, NPV 0.9, bal.acc 0.8535, Jacc. 0.7273. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
+*The rates the package returns for TP = 40, FP = 10, FN = 5, TN = 45: accuracy 0.85, precision 0.8, recall 0.888889, specificity 0.818182, f1 0.842105, npv 0.9, balanced accuracy 0.853535, jaccard 0.727273.*
 
-![F1 as FN runs from 1 to 9, every other input as you entered it (9 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-live-1)
+![f1 (2 TP / (2 TP + FP + FN)) against TP (true positives) from 1 to 80 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-curve)
 
-*F1 as FN runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your FN = 5 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
-
-![F1 as TP runs from 20 to 60, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-binary-metrics-from-counts-live-2)
-
-*F1 as TP runs from 20 to 60, every other input as you entered it (21 solutions). Marked: your TP = 40 gives f1 = 0.8421. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
+*f1 (2 TP / (2 TP + FP + FN)) against TP (true positives) from 1 to 80 on a logarithmic axis. One curve for each value of FP (false positives): 10, 5, 20. Other inputs as in the worked example: FN = 5, TN = 45. 30 points per curve computed by data-science-ml-ai999x; marked: the worked example, TP = 40, f1 = 0.842105.*
 
 ```python
 data_science_ml_ai999x.solve('ml_binary_metrics_from_counts', TP=40, FP=10, FN=5, TN=45)
@@ -329,13 +325,9 @@ $$
 - **Assumes:** $\beta > 0$; $TP > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![F-beta score as TP runs from 20 to 60, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-fbeta-score-live-1)
+![fbeta (F-beta score) against beta (weight of recall relative to precision (beta > 0; 1 gives F1, 2 favours recall)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-fbeta-score-curve)
 
-*F-beta score as TP runs from 20 to 60, every other input as you entered it (41 solutions). Marked: your TP = 40 gives fbeta = 0.8696. Your inputs: TP = 40, FP = 10, FN = 5, beta = 2.*
-
-![F-beta score as FP runs from 0 to 30, every other input as you entered it (16 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-fbeta-score-live-2)
-
-*F-beta score as FP runs from 0 to 30, every other input as you entered it (16 solutions). Marked: your FP = 10 gives fbeta = 0.8696. Your inputs: TP = 40, FP = 10, FN = 5, beta = 2.*
+*fbeta (F-beta score) against beta (weight of recall relative to precision (beta > 0; 1 gives F1, 2 favours recall)) from 0.2 to 20 on a logarithmic axis. One curve for each value of TP (true positives): 40, 20, 80. Other inputs as in the worked example: FP = 10, FN = 5. 41 points per curve computed by data-science-ml-ai999x; marked: the worked example, beta = 2, fbeta = 0.869565.*
 
 ```python
 data_science_ml_ai999x.solve('ml_fbeta_score', TP=40, FP=10, FN=5, beta=2)
@@ -382,17 +374,13 @@ $$
 - **Assumes:** no empty row or column of the confusion matrix
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned MCC = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-matthews-correlation-confusion)
+![The stated counts TP = 40, FP = 10, FN = 5, TN = 45 as a confusion matrix; returned Matthews correlation coefficient 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-matthews-correlation-confusion)
 
-*The confusion matrix TP = 40, FN = 5, FP = 10, TN = 45 (rows the actual class, columns the predicted); returned MCC = 0.7035. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
+*The stated counts TP = 40, FP = 10, FN = 5, TN = 45 as a confusion matrix; returned Matthews correlation coefficient 0.703526.*
 
-![Matthews correlation coefficient as TP runs from 20 to 60, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-matthews-correlation-live-1)
+![mcc (Matthews correlation coefficient) against TP (true positives) from 1 to 80 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-matthews-correlation-curve)
 
-*Matthews correlation coefficient as TP runs from 20 to 60, every other input as you entered it (41 solutions). Marked: your TP = 40 gives mcc = 0.7035. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
-
-![Matthews correlation coefficient as TN runs from 25 to 65, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-matthews-correlation-live-2)
-
-*Matthews correlation coefficient as TN runs from 25 to 65, every other input as you entered it (21 solutions). Marked: your TN = 45 gives mcc = 0.7035. Your inputs: TP = 40, FP = 10, FN = 5, TN = 45.*
+*mcc (Matthews correlation coefficient) against TP (true positives) from 1 to 80 on a logarithmic axis. One curve for each value of TN (true negatives): 45, 22, 90. Other inputs as in the worked example: FP = 10, FN = 5. 30 points per curve computed by data-science-ml-ai999x; marked: the worked example, TP = 40, mcc = 0.703526.*
 
 ```python
 data_science_ml_ai999x.solve('ml_matthews_correlation', TP=40, FP=10, FN=5, TN=45)
@@ -440,21 +428,13 @@ $$
 - **Assumes:** labels are whole numbers; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The confusion matrix the model returns for true labels 0, 1, 2, 2, 1, 0, 2, 1 and predictions 0, 2, 2, 2, 1, 0, 1, 1: rows the true classes, columns the predicted ones; 6 on the diagonal, accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-confusion-matrix-heatmap)
+![The confusion matrix the package returns for true labels [0, 1, 2, 2, 1, 0, 2, 1] and predictions [0, 2, 2, 2, 1, 0, 1, 1]: rows are the true classes 0, 1, 2, columns the predicted ones; 6 of 8 on the diagonal, accuracy 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-multiclass-confusion-matrix-heatmap.svg)
 
-*The confusion matrix the model returns for true labels 0, 1, 2, 2, 1, 0, 2, 1 and predictions 0, 2, 2, 2, 1, 0, 1, 1: rows the true classes, columns the predicted ones; 6 on the diagonal, accuracy 0.75. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
+*The confusion matrix the package returns for true labels [0, 1, 2, 2, 1, 0, 2, 1] and predictions [0, 2, 2, 2, 1, 0, 1, 1]: rows are the true classes 0, 1, 2, columns the predicted ones; 6 of 8 on the diagonal, accuracy 0.75.*
 
-![The confusion matrix the model returns, each row divided by its total (so the diagonal is each class's recall); accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-confusion-matrix-normalised)
+![The confusion matrix the package returns for y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1], each row divided by its total here (so the diagonal is each class's recall); accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-confusion-matrix-normalised)
 
-*The confusion matrix the model returns, each row divided by its total (so the diagonal is each class's recall); accuracy 0.75, 6 correct. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
-
-![Every entry of classes as computed for your inputs (3 entries: 0, 1, 2)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-confusion-matrix-live-1)
-
-*Every entry of classes as computed for your inputs (3 entries: 0, 1, 2). Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
-
-![Each cell is one entry of matrix for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-confusion-matrix-live-2)
-
-*Each cell is one entry of matrix for your inputs (row by row; shade by size and sign). Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
+*The confusion matrix the package returns for y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1], each row divided by its total here (so the diagonal is each class's recall); accuracy 0.75, 6 correct.*
 
 ```python
 data_science_ml_ai999x.solve('ml_multiclass_confusion_matrix', y_true=[0, 1, 2, 2, 1, 0, 2, 1], y_pred=[0, 2, 2, 2, 1, 0, 1, 1])
@@ -502,17 +482,13 @@ $$
 - **Assumes:** labels are whole numbers; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Precision, recall and F1 of the stated labels under each averaging, one run each: macro: P 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-f1-averaged-averages)
+![Precision, recall and F1 of y_true = [0, 1, 2, 2, 1, 0, 2, 1] against y_pred = [0, 2, 2, 2, 1, 0, 1, 1] under each averaging, one run each: macro: P 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-f1-averaged-averages)
 
-*Precision, recall and F1 of the stated labels under each averaging, one run each: macro: P 0.7778, R 0.7778, F1 0.7778; weighted: P 0.75, R 0.75, F1 0.75; micro: P 0.75, R 0.75, F1 0.75. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1, average = macro.*
+*Precision, recall and F1 of y_true = [0, 1, 2, 2, 1, 0, 2, 1] against y_pred = [0, 2, 2, 2, 1, 0, 1, 1] under each averaging, one run each: macro: P 0.777778, R 0.777778, F1 0.777778; weighted: P 0.75, R 0.75, F1 0.75; micro: P 0.75, R 0.75, F1 0.75.*
 
-![The confusion matrix of y_true = 0, 1, 2, 2, 1, 0, 2, 1 and y_pred = 0, 2, 2, 2, 1, 0, 1, 1 (from the model's confusion-matrix capability): precision is read down each column, recall along each row](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-f1-averaged-confusion)
+![The confusion matrix of y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1] (from the package): precision is read down each column, recall along each row](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-f1-averaged-confusion)
 
-*The confusion matrix of y_true = 0, 1, 2, 2, 1, 0, 2, 1 and y_pred = 0, 2, 2, 2, 1, 0, 1, 1 (from the model's confusion-matrix capability): precision is read down each column, recall along each row. In SI units: f1 = 0.7778. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1, average = macro.*
-
-![Averaged F1 (macro and weighted: the average](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-f1-averaged-live-1)
-
-*Averaged F1 (macro and weighted: the average... for every choice of average, every other input as you entered it (highlighted: your choice). macro: 0.7778; weighted: 0.75; micro: 0.75. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1, average = macro.*
+*The confusion matrix of y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1] (from the package): precision is read down each column, recall along each row.*
 
 ```python
 data_science_ml_ai999x.solve('ml_precision_recall_f1_averaged', y_true=[0, 1, 2, 2, 1, 0, 2, 1], y_pred=[0, 2, 2, 2, 1, 0, 1, 1], average='macro')
@@ -568,13 +544,9 @@ $$
 - **Assumes:** labels are whole numbers; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Per-class precision, recall and F1 the model returns for y_true = 0, 1, 2, 2, 1, 0, 2, 1 and y_pred = 0, 2, 2, 2, 1, 0, 1, 1 (support 2, 3, 3); macro F1 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-classification-report-report)
+![Per-class precision, recall and F1 the package returns for y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1] (support 2, 3, 3); macro F1 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-classification-report-report)
 
-*Per-class precision, recall and F1 the model returns for y_true = 0, 1, 2, 2, 1, 0, 2, 1 and y_pred = 0, 2, 2, 2, 1, 0, 1, 1 (support 2, 3, 3); macro F1 0.7778. Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
-
-![Every entry of classes as computed for your inputs (3 entries: 0, 1, 2)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-classification-report-live-1)
-
-*Every entry of classes as computed for your inputs (3 entries: 0, 1, 2). Your inputs: y_true = 0, 1, 2, 2, 1, 0, 2, 1, y_pred = 0, 2, 2, 2, 1, 0, 1, 1.*
+*Per-class precision, recall and F1 the package returns for y_true = [0, 1, 2, 2, 1, 0, 2, 1] and y_pred = [0, 2, 2, 2, 1, 0, 1, 1] (support 2, 3, 3); macro F1 0.777778.*
 
 ```python
 data_science_ml_ai999x.solve('ml_classification_report', y_true=[0, 1, 2, 2, 1, 0, 2, 1], y_pred=[0, 2, 2, 2, 1, 0, 1, 1])
@@ -619,17 +591,13 @@ $$
 - **Assumes:** labels are whole numbers; at least two classes; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (rater 1, rater 2) (rows rater 1, columns rater 2) tallied from the stated labels rater 1 = 0, 1, 2, 2, 1, 0, 2, 1 and rater 2 = 0, 2, 2, 2, 1, 0, 1, 1; returned: kappa 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cohen-kappa-contingency)
+![Counts of each pair (rater 1, rater 2) tallied from the stated labels rater 1 = [0, 1, 2, 2, 1, 0, 2, 1] and rater 2 = [0, 2, 2, 2, 1, 0, 1, 1]; 6 of 8 items on the diagonal; returned Cohen's κ = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cohen-kappa-contingency)
 
-*Counts of each pair (rater 1, rater 2) (rows rater 1, columns rater 2) tallied from the stated labels rater 1 = 0, 1, 2, 2, 1, 0, 2, 1 and rater 2 = 0, 2, 2, 2, 1, 0, 1, 1; returned: kappa 0.619. Your inputs: y1 = 0, 1, 2, 2, 1, 0, 2, 1, y2 = 0, 2, 2, 2, 1, 0, 1, 1, weights = none.*
+*Counts of each pair (rater 1, rater 2) tallied from the stated labels rater 1 = [0, 1, 2, 2, 1, 0, 2, 1] and rater 2 = [0, 2, 2, 2, 1, 0, 1, 1]; 6 of 8 items on the diagonal; returned Cohen's κ = 0.619048 (weights: none).*
 
-![The Cohen's κ of the stated labels with each weights, one run each: none 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cohen-kappa-scores)
+![Cohen's κ of y1 = [0, 1, 2, 2, 1, 0, 2, 1] and y2 = [0, 2, 2, 2, 1, 0, 1, 1] with each disagreement weighting, one run each: none 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cohen-kappa-scores)
 
-*The Cohen's κ of the stated labels with each weights, one run each: none 0.619, linear 0.7037, quadratic 0.7949; the visitor's choice in the first colour. Your inputs: y1 = 0, 1, 2, 2, 1, 0, 2, 1, y2 = 0, 2, 2, 2, 1, 0, 1, 1, weights = none.*
-
-![Cohen's kappa for every choice of weights, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cohen-kappa-live-1)
-
-*Cohen's kappa for every choice of weights, every other input as you entered it (highlighted: your choice). none: 0.619; linear: 0.7037; quadratic: 0.7949. Your inputs: y1 = 0, 1, 2, 2, 1, 0, 2, 1, y2 = 0, 2, 2, 2, 1, 0, 1, 1, weights = none.*
+*Cohen's κ of y1 = [0, 1, 2, 2, 1, 0, 2, 1] and y2 = [0, 2, 2, 2, 1, 0, 1, 1] with each disagreement weighting, one run each: none 0.619048, linear 0.703704, quadratic 0.794872.*
 
 ```python
 data_science_ml_ai999x.solve('ml_cohen_kappa', y1=[0, 1, 2, 2, 1, 0, 2, 1], y2=[0, 2, 2, 2, 1, 0, 1, 1], weights='none')
@@ -674,9 +642,9 @@ $$
 - **Assumes:** at least two true classes; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![For y_true = 0, 0, 0, 0, 0, 0, 1, 1 and y_pred = 0, 0, 0, 0, 0, 0, 0, 1: the recall of each class (from the model's classification report: 1, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-accuracy-recalls)
+![For y_true = [0, 0, 0, 0, 0, 0, 1, 1] and y_pred = [0, 0, 0, 0, 0, 0, 0, 1]: the recall of each class (from the package's classification report: class 0 1, class 1 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-accuracy-recalls)
 
-*For y_true = 0, 0, 0, 0, 0, 0, 1, 1 and y_pred = 0, 0, 0, 0, 0, 0, 0, 1: the recall of each class (from the model's classification report: 1, 0.5); their mean is the returned balanced accuracy 0.75 (adjusted 0.5). Your inputs: y_true = 0, 0, 0, 0, 0, 0, 1, 1, y_pred = 0, 0, 0, 0, 0, 0, 0, 1.*
+*For y_true = [0, 0, 0, 0, 0, 0, 1, 1] and y_pred = [0, 0, 0, 0, 0, 0, 0, 1]: the recall of each class (from the package's classification report: class 0 1, class 1 0.5); their mean is the returned balanced accuracy 0.75 (adjusted 0.5), against the plain accuracy 0.875 that the majority class inflates.*
 
 ```python
 data_science_ml_ai999x.solve('ml_balanced_accuracy', y_true=[0, 0, 0, 0, 0, 0, 1, 1], y_pred=[0, 0, 0, 0, 0, 0, 0, 1])
@@ -722,17 +690,9 @@ $$
 - **Assumes:** labels 0 or 1; $0 < p < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The loss of one sample as its predicted probability runs over the axis, for y_true = 1 and y_true = 0 (49 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-binary-loss)
+![Log loss of one sample as its predicted probability runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-binary-loss)
 
-*The loss of one sample as its predicted probability runs over the axis, for y_true = 1 and y_true = 0 (49 runs each). Marked: the visitor's samples (y_true 1, 0, 1, 1, p 0.9, 0.2, 0.7, 0.6), one run each; their mean is the returned value 0.299. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
-
-![Mean log loss in nats as p[0] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-binary-live-1)
-
-*Mean log loss in nats as p[0] runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your p[0] = 0.9 gives log_loss = 0.299. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
-
-![Mean log loss in nats as p[2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-binary-live-2)
-
-*Mean log loss in nats as p[2] runs from 0.175 to 1, every other input as you entered it (23 solutions). Marked: your p[2] = 0.7 gives log_loss = 0.299. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
+*Log loss of one sample as its predicted probability runs from 0.02 to 0.98, for y = 1 and y = 0 (49 runs each). Marked: the worked example's samples (y_true [1, 0, 1, 1], p [0.9, 0.2, 0.7, 0.6]), one run each; returned mean 0.299001 nats (0.431367 bits).*
 
 ```python
 data_science_ml_ai999x.solve('ml_log_loss_binary', y_true=[1, 0, 1, 1], p=[0.9, 0.2, 0.7, 0.6])
@@ -778,13 +738,13 @@ $$
 - **Assumes:** labels are column indices of P; rows of P sum to 1; P[i, y_i] > 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The matrices as heat maps, side by side (each cell shaded by its value): P (input)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-multiclass-matrix)
+![Log loss of each sample of the stated probabilities P = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-multiclass-per-sample)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): P (input). Returned with them: log_loss = 0.5202, perplexity = 1.682. Your inputs: y_true = 0, 2, 1, P = 0.7 0.2 0.1; 0.1 0.3....*
+*Log loss of each sample of the stated probabilities P = [[0.7, 0.2, 0.1], [0.1, 0.3, 0.6], [0.25, 0.5, 0.25]] with true classes [0, 2, 1], one run per sample (−ln of the probability given to the true class); mean = returned log loss 0.520216, perplexity 1.68239.*
 
-![Log loss of each sample of the stated probabilities with true classes 0, 2, 1, one run per sample (-ln of the probability given to the true class); mean = returned log loss 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-multiclass-per-sample)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): P (input)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-loss-multiclass-matrix)
 
-*Log loss of each sample of the stated probabilities with true classes 0, 2, 1, one run per sample (-ln of the probability given to the true class); mean = returned log loss 0.5202, perplexity 1.682. Your inputs: y_true = 0, 2, 1, P = 0.7 0.2 0.1; 0.1 0.3....*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): P (input). Returned with them by data-science-ml-ai999x: log_loss = 0.520216, perplexity = 1.68239. Other inputs: y_true = [0, 2, 1].*
 
 ```python
 data_science_ml_ai999x.solve('ml_log_loss_multiclass', y_true=[0, 2, 1], P=[[0.7, 0.2, 0.1], [0.1, 0.3, 0.6], [0.25, 0.5, 0.25]])
@@ -829,17 +789,9 @@ $$
 - **Assumes:** labels 0 or 1; $0  \leq  p  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The loss of one sample as its predicted probability runs over the axis, for y_true = 1 and y_true = 0 (41 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-brier-score-loss)
+![Brier score of one sample as its predicted probability runs from 0 to 1, for y = 1 and y = 0 (41 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-brier-score-loss)
 
-*The loss of one sample as its predicted probability runs over the axis, for y_true = 1 and y_true = 0 (41 runs each). Marked: the visitor's samples (y_true 1, 0, 1, 1, p 0.9, 0.2, 0.7, 0.6), one run each; their mean is the returned value 0.075. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
-
-![Mean squared error of the probabilities as p[4] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-brier-score-live-1)
-
-*Mean squared error of the probabilities as p[4] runs from 0.15 to 0.9825, every other input as you entered it (38 solutions). Marked: your p[4] = 0.6 gives brier = 0.075. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
-
-![Mean squared error of the probabilities as p[3] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-brier-score-live-2)
-
-*Mean squared error of the probabilities as p[3] runs from 0.175 to 1, every other input as you entered it (23 solutions). Marked: your p[3] = 0.7 gives brier = 0.075. Your inputs: y_true = 1, 0, 1, 1, p = 0.9, 0.2, 0.7, 0.6.*
+*Brier score of one sample as its predicted probability runs from 0 to 1, for y = 1 and y = 0 (41 runs each). Marked: the worked example's samples (y_true [1, 0, 1, 1], p [0.9, 0.2, 0.7, 0.6]), one run each; their mean is the returned Brier score 0.075.*
 
 ```python
 data_science_ml_ai999x.solve('ml_brier_score', y_true=[1, 0, 1, 1], p=[0.9, 0.2, 0.7, 0.6])
@@ -887,17 +839,9 @@ $$
 - **Assumes:** labels 0 or 1; at least one positive and one negative
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The ROC curve of labels 0, 1, 1, 0, 1 with scores 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-roc-auc-roc.svg)
+![The ROC curve of labels [0, 1, 1, 0, 1] with scores [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-auc-roc)
 
-*The ROC curve of labels 0, 1, 1, 0, 1 with scores 0.1, 0.9, 0.8, 0.3, 0.2 (points from the model's ROC capability): true against false positive rate at each threshold; the shaded area is the returned AUC 0.8333 (Gini 0.6667; 3 positives, 2 negatives). Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Area under the ROC curve as scores[2] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-auc-live-1)
-
-*Area under the ROC curve as scores[2] runs from -0.9 to 2.7, every other input as you entered it (35 solutions). Marked: your scores[2] = 0.9 gives auc = 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Area under the ROC curve as scores[3] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-auc-live-2)
-
-*Area under the ROC curve as scores[3] runs from -0.8 to 2.4, every other input as you entered it (29 solutions). Marked: your scores[3] = 0.8 gives auc = 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
+*The ROC curve of labels [0, 1, 1, 0, 1] with scores [0.1, 0.9, 0.8, 0.3, 0.2] (points from the package's ROC capability); the shaded area is the returned AUC 0.833333 (Gini 0.666667; 3 positives, 2 negatives).*
 
 ```python
 data_science_ml_ai999x.solve('ml_roc_auc', y_true=[0, 1, 1, 0, 1], scores=[0.1, 0.9, 0.8, 0.3, 0.2])
@@ -951,25 +895,13 @@ $$
 - **Assumes:** labels 0 or 1; at least one positive and one negative
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The ROC curve of labels 0, 1, 1, 0, 1 with scores 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-roc)
+![The ROC curve the package returns for 12 scored examples (labels 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0; scores 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-roc-curve-roc.svg)
 
-*The ROC curve of labels 0, 1, 1, 0, 1 with scores 0.1, 0.9, 0.8, 0.3, 0.2 (points from the model's ROC capability): true against false positive rate at each threshold; the shaded area is the returned AUC 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
+*The ROC curve the package returns for 12 scored examples (labels 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0; scores 0.95, 0.9, 0.85, 0.8, 0.7, 0.65, 0.6, 0.5, 0.4, 0.35, 0.3, 0.1): true against false positive rate at each of its thresholds, with area under the curve 0.777778.*
 
-![The stated scores 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-thresholds)
+![The stated scores [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-thresholds)
 
-*The stated scores 0.1, 0.9, 0.8, 0.3, 0.2 on one axis, coloured by label (0, 1, 1, 0, 1); dashed: the returned thresholds 0.9, 0.8, 0.3, 0.2, 0.1, each labelled with the (false, true) positive rate the model returns when everything at or above it is called positive; AUC 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Trapezoidal area under the curve as scores[2] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-live-1)
-
-*Trapezoidal area under the curve as scores[2] runs from -0.9 to 2.7, every other input as you entered it (35 solutions). Marked: your scores[2] = 0.9 gives auc = 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Every entry of thresholds as computed for your inputs (5 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-live-2)
-
-*Every entry of thresholds as computed for your inputs (5 entries: 0.9, 0.8, 0.3, 0.2, 0.1). Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Trapezoidal area under the curve as scores[3] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-roc-curve-live-3)
-
-*Trapezoidal area under the curve as scores[3] runs from -0.8 to 2.4, every other input as you entered it (29 solutions). Marked: your scores[3] = 0.8 gives auc = 0.8333. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
+*The stated scores [0.1, 0.9, 0.8, 0.3, 0.2] on one axis, coloured by label [0, 1, 1, 0, 1]; dashed: the returned thresholds 0.9, 0.8, 0.3, 0.2, 0.1, each labelled with the (false, true) positive rate the package returns when everything at or above it is called positive; AUC 0.833333.*
 
 ```python
 data_science_ml_ai999x.solve('ml_roc_curve', y_true=[0, 1, 1, 0, 1], scores=[0.1, 0.9, 0.8, 0.3, 0.2])
@@ -1014,17 +946,9 @@ $$
 - **Assumes:** labels 0 or 1; at least one positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Precision-recall points of labels 0, 1, 1, 0, 1 with scores 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-average-precision-pr)
+![Precision–recall points of labels [0, 1, 1, 0, 1] with scores [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-average-precision-pr)
 
-*Precision-recall points of labels 0, 1, 1, 0, 1 with scores 0.1, 0.9, 0.8, 0.3, 0.2, one per score used as the threshold (from the model's threshold metrics); the shaded steps are the returned average precision 0.9167, the dashed path its trapezoid area 0.9028. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Average precision as scores[2] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-average-precision-live-1)
-
-*Average precision as scores[2] runs from -0.9 to 2.7, every other input as you entered it (35 solutions). Marked: your scores[2] = 0.9 gives average_precision = 0.9167. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
-
-![Average precision as scores[3] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-average-precision-live-2)
-
-*Average precision as scores[3] runs from -0.8 to 2.4, every other input as you entered it (29 solutions). Marked: your scores[3] = 0.8 gives average_precision = 0.9167. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2.*
+*Precision–recall points of labels [0, 1, 1, 0, 1] with scores [0.1, 0.9, 0.8, 0.3, 0.2], one per score used as the threshold (from the package's threshold metrics); the shaded steps are the returned average precision 0.916667, the dashed path its trapezoid area 0.902778.*
 
 ```python
 data_science_ml_ai999x.solve('ml_average_precision', y_true=[0, 1, 1, 0, 1], scores=[0.1, 0.9, 0.8, 0.3, 0.2])
@@ -1070,13 +994,9 @@ $$
 - **Assumes:** $K  \geq  3$ classes; $1  \leq  k < K$; distinct scores within each row
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated scores S, one row per sample, labelled with its true class y = 0, 1, 2, 2; returned top-2 accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-top-k-accuracy-scores)
+![The stated scores S, one row per sample, labelled with its true class y = [0, 1, 2, 2]; returned top-2 accuracy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-top-k-accuracy-scores)
 
-*The stated scores S, one row per sample, labelled with its true class y = 0, 1, 2, 2; returned top-2 accuracy 0.75 (3 hits). Your inputs: y_true = 0, 1, 2, 2, S = 0.5 0.2 0.2001; 0.3 0.4..., k = 2.*
-
-![Fraction of samples with the true class in](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-top-k-accuracy-live-1)
-
-*Fraction of samples with the true class in... as k runs from 1 to 2, every other input as you entered it (2 solutions). Marked: your k = 2 gives top_k_accuracy = 0.75. Your inputs: y_true = 0, 1, 2, 2, S = 0.5 0.2 0.2001; 0.3 0.4..., k = 2.*
+*The stated scores S, one row per sample, labelled with its true class y = [0, 1, 2, 2]; returned top-2 accuracy 0.75 (3 hits).*
 
 ```python
 data_science_ml_ai999x.solve('ml_top_k_accuracy', y_true=[0, 1, 2, 2], S=[[0.5, 0.2, 0.2001], [0.3, 0.4, 0.2], [0.2, 0.4, 0.3], [0.7, 0.2, 0.1]], k=2)
@@ -1123,9 +1043,9 @@ $$
 - **Assumes:** entries 0 or 1; same shape
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Stated true and predicted label sets of each sample (Y_true = [[1, 0, 1], [0, 1, 0]], Y_pred = [[1, 0, 0], [0, 1, 0]]) and their mismatches; returned Hamming loss 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hamming-loss-labels)
+![Stated true and predicted label sets of each sample: Y_true = [[1, 0, 1], [0, 1, 0]], Y_pred = [[1, 0, 0], [0, 1, 0]]; returned Hamming loss 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hamming-loss-labels)
 
-*Stated true and predicted label sets of each sample (Y_true = [[1, 0, 1], [0, 1, 0]], Y_pred = [[1, 0, 0], [0, 1, 0]]) and their mismatches; returned Hamming loss 0.1667 (1 mismatched entries), subset accuracy 0.5. Your inputs: Y_true = 1 0 1; 0 1 0, Y_pred = 1 0 0; 0 1 0.*
+*Stated true and predicted label sets of each sample: Y_true = [[1, 0, 1], [0, 1, 0]], Y_pred = [[1, 0, 0], [0, 1, 0]]; returned Hamming loss 0.166667 (1 mismatched entry of 6), subset accuracy 0.5.*
 
 ```python
 data_science_ml_ai999x.solve('ml_hamming_loss', Y_true=[[1, 0, 1], [0, 1, 0]], Y_pred=[[1, 0, 0], [0, 1, 0]])
@@ -1170,13 +1090,13 @@ $$
 - **Assumes:** labels are whole numbers
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Class counts tallied from y = 0, 0, 0, 0, 0, 0, 1, 1 (class 0: 6, class 1: 2) and the returned balanced weights 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-weights)
+![Class counts tallied from y = [0, 0, 0, 0, 0, 0, 1, 1] (class 0: 6, class 1: 2) and the returned balanced weights 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-weights)
 
-*Class counts tallied from y = 0, 0, 0, 0, 0, 0, 1, 1 (class 0: 6, class 1: 2) and the returned balanced weights 0.6667, 2: weight × count is the same for every class. Your inputs: y = 0, 0, 0, 0, 0, 0, 1, 1.*
+*Class counts tallied from y = [0, 0, 0, 0, 0, 0, 1, 1] (class 0: 6, class 1: 2) and the returned balanced weights 0.666667, 2: weight × count is the same for every class.*
 
-![Every entry of classes as computed for your inputs (2 entries: 0, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-live-1)
+![Balanced weights of a two-class label list of 8 samples (the worked example's size) with k samples of class 1, k = 1 … 7 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = n/2 both are 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-balanced-class-weights-curve)
 
-*Every entry of classes as computed for your inputs (2 entries: 0, 1). Your inputs: y = 0, 0, 0, 0, 0, 0, 1, 1.*
+*Balanced weights of a two-class label list of 8 samples (the worked example's size) with k samples of class 1, k = 1 … 7 (one run each; logarithmic axis): the rare class's weight grows as n / (2 k); at k = n/2 both are 1. Marked: the worked example, k = 2: weights 0.6667 and 2.*
 
 ```python
 data_science_ml_ai999x.solve('ml_balanced_class_weights', y=[0, 0, 0, 0, 0, 0, 1, 1])
@@ -1223,17 +1143,13 @@ $$
 - **Assumes:** labels 0 or 1; $0  \leq  p  \leq  1$; bins are [b/n, (b+1)/n); a probability on a bin edge goes to the upper bin
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Reliability diagram of the stated predictions p = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-expected-calibration-error-reliability)
+![Reliability diagram of the stated predictions p = [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-expected-calibration-error-reliability)
 
-*Reliability diagram of the stated predictions p = 0.92, 0.13, 0.67, 0.81, 0.36, 0.08, 0.44, 0.58 for labels 1, 0, 1, 1, 0, 0, 1, 0 in 5 equal-width bins: the observed frequency of class 1 (bars) and the mean prediction of each bin (dots), tallied from the stated lists; the dashed diagonal is perfect calibration. Returned: expected calibration error 0.1487, maximum 0.36, 5 non-empty bins. Your inputs: y_true = 1, 0, 1, 1, 0, 0, 1, 0, p = 0.92, 0.13, 0.67, 0.81..., n_bins = 5.*
+*Reliability diagram of the stated predictions p = [0.92, 0.13, 0.67, 0.81, 0.36, 0.08, 0.44, 0.58] for labels [1, 0, 1, 1, 0, 0, 1, 0] in 5 equal-width bins: the observed frequency of class 1 and the mean prediction of each bin, tallied here from the stated lists. Returned: expected calibration error 0.14875, maximum 0.36, 5 non-empty bins.*
 
-![Expected calibration error as n_bins runs from 1 to 9, every other input as you entered it (9 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-expected-calibration-error-live-1)
+![ece (expected calibration error) against n_bins (number of equal-width bins on [0, 1]) from 1 to 13](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-expected-calibration-error-curve)
 
-*Expected calibration error as n_bins runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your n_bins = 5 gives ece = 0.1487. Your inputs: y_true = 1, 0, 1, 1, 0, 0, 1, 0, p = 0.92, 0.13, 0.67, 0.81..., n_bins = 5.*
-
-![Expected calibration error as p[3] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-expected-calibration-error-live-2)
-
-*Expected calibration error as p[3] runs from 0.1675 to 0.993, every other input as you entered it (24 solutions). Marked: your p[3] = 0.67 gives ece = 0.1487. Your inputs: y_true = 1, 0, 1, 1, 0, 0, 1, 0, p = 0.92, 0.13, 0.67, 0.81..., n_bins = 5.*
+*ece (expected calibration error) against n_bins (number of equal-width bins on [0, 1]) from 1 to 13. Other inputs as in the worked example: y_true = [1, 0, 1, 1, 0, 0, 1, 0], p = [0.92, 0.13, 0.67, 0.81, 0.36, 0.08, 0.44, 0.58]. 13 points computed by data-science-ml-ai999x; marked: the worked example, n_bins = 5, ece = 0.14875.*
 
 ```python
 data_science_ml_ai999x.solve('ml_expected_calibration_error', y_true=[1, 0, 1, 1, 0, 0, 1, 0], p=[0.92, 0.13, 0.67, 0.81, 0.36, 0.08, 0.44, 0.58], n_bins=5)
@@ -1283,13 +1199,13 @@ $$
 - **Assumes:** at least two values; the true values are not all equal
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Predicted against true values (y_true 3, -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-regression-metrics-parity)
+![Predicted against true values (y_true [3, -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-regression-metrics-parity)
 
-*Predicted against true values (y_true 3, -0.5, 2, 7, y_pred 2.5, 0, 2, 8); each vertical segment is a residual, the dashed line a perfect prediction. Returned: R² 0.9486, RMSE 0.6124. Your inputs: y_true = 3, -0.5, 2, 7, y_pred = 2.5, 0, 2, 8.*
+*Predicted against true values (y_true [3, -0.5, 2, 7], y_pred [2.5, 0, 2, 8]); each vertical segment is a residual. Returned: MAE 0.5, MSE 0.375, RMSE 0.612372, R² 0.948608, explained variance 0.957173, median absolute error 0.5, max error 1.*
 
-![The values the model returns for the stated inputs: mae 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-regression-metrics-scores)
+![The seven metrics the package returns for y_true [3, -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-regression-metrics-scores)
 
-*The values the model returns for the stated inputs: mae 0.5, mse 0.375, rmse 0.6124, r2 0.9486, explained_variance 0.9572, median_ae 0.5, max_error 1. Your inputs: y_true = 3, -0.5, 2, 7, y_pred = 2.5, 0, 2, 8.*
+*The seven metrics the package returns for y_true [3, -0.5, 2, 7] and y_pred [2.5, 0, 2, 8]: MAE 0.5, MSE 0.375, RMSE 0.612372, median AE 0.5, max error 1, R² 0.948608, expl. var. 0.957173.*
 
 ```python
 data_science_ml_ai999x.solve('ml_regression_metrics', y_true=[3, -0.5, 2, 7], y_pred=[2.5, 0, 2, 8])
@@ -1335,9 +1251,9 @@ $$
 - **Assumes:** no true value equal to 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Absolute percentage error of each sample (y_true 100, 200, 300, y_pred 110, 190, 330), each one run of the model on that sample alone; their mean is the returned MAPE 8](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mape-per-sample)
+![Absolute percentage error of each sample (y_true [100, 200, 300], y_pred [110, 190, 330]), each one run of the package on that sample alone; their mean is the returned MAPE 8](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mape-per-sample)
 
-*Absolute percentage error of each sample (y_true 100, 200, 300, y_pred 110, 190, 330), each one run of the model on that sample alone; their mean is the returned MAPE 8.333 %. In SI units: mape = 0.08333. Your inputs: y_true = 100, 200, 300, y_pred = 110, 190, 330.*
+*Absolute percentage error of each sample (y_true [100, 200, 300], y_pred [110, 190, 330]), each one run of the package on that sample alone; their mean is the returned MAPE 8.33333 %.*
 
 ```python
 data_science_ml_ai999x.solve('ml_mape', y_true=[100, 200, 300], y_pred=[110, 190, 330])
@@ -1384,17 +1300,13 @@ $$
 - **Assumes:** $n - p - 1 > 0$; true values not all equal
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Predicted against true values (y_true 10, 20, 30, 40, 50, y_pred 12, 18, 33, 37, 52); each vertical segment is a residual, the dashed line a perfect prediction](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-r2-parity)
+![Predicted against true values (y_true [10, 20, 30, 40, 50], y_pred [12, 18, 33, 37, 52]); returned R² 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-r2-parity)
 
-*Predicted against true values (y_true 10, 20, 30, 40, 50, y_pred 12, 18, 33, 37, 52); each vertical segment is a residual, the dashed line a perfect prediction. Returned: R² 0.97, adjusted 0.96. Your inputs: y_true = 10, 20, 30, 40, 50, y_pred = 12, 18, 33, 37, 52, p = 1.*
+*Predicted against true values (y_true [10, 20, 30, 40, 50], y_pred [12, 18, 33, 37, 52]); returned R² 0.97 and adjusted R² 0.96 for p = 1 predictor.*
 
 ![Adjusted R² of the same predictions (n = 5 samples, R² = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-r2-penalty)
 
-*Adjusted R² of the same predictions (n = 5 samples, R² = 0.97) charged for p = 1 to 3 predictors, one run each: 0.96, 0.94, 0.88; the visitor's p = 1 in the first colour. Your inputs: y_true = 10, 20, 30, 40, 50, y_pred = 12, 18, 33, 37, 52, p = 1.*
-
-![Adjusted r2 as p runs from 1 to 3, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-r2-live-1)
-
-*Adjusted r2 as p runs from 1 to 3, every other input as you entered it (3 solutions). Marked: your p = 1 gives adjusted_r2 = 0.96. Your inputs: y_true = 10, 20, 30, 40, 50, y_pred = 12, 18, 33, 37, 52, p = 1.*
+*Adjusted R² of the same predictions (n = 5 samples, R² = 0.97) charged for p = 1, 2, 3 predictors, one run each: 0.96, 0.94, 0.88.*
 
 ```python
 data_science_ml_ai999x.solve('ml_adjusted_r2', y_true=[10, 20, 30, 40, 50], y_pred=[12, 18, 33, 37, 52], p=1)
@@ -1442,13 +1354,13 @@ $$
 - **Assumes:** $\delta > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Huber and pseudo-Huber loss of one sample as the residual y - ŷ runs from -3 to 3 (δ = 1, 61 runs each): quadratic inside ±δ, linear outside](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-loss)
+![Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-loss)
 
-*Huber and pseudo-Huber loss of one sample as the residual y - ŷ runs from -3 to 3 (δ = 1, 61 runs each): quadratic inside ±δ, linear outside. The visitor's samples give Huber 0.1875, smooth L1 0.1875, pseudo-Huber 0.1626. Your inputs: y_true = 3, -0.5, 2, 7, y_pred = 2.5, 0, 2, 8, delta = 1.*
+*Huber and pseudo-Huber loss of one sample as the residual runs from −3 to 3 (δ = 1.0, 61 runs each): quadratic inside ±δ, linear outside. Worked example y_true = [3, -0.5, 2, 7], y_pred = [2.5, 0, 2, 8]: returned Huber 0.1875, smooth L1 0.1875, pseudo-Huber 0.16257.*
 
-![Mean Huber loss as δ runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-live-1)
+![huber (mean Huber loss) against delta (threshold between the quadratic and linear parts (delta > 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-huber-loss-curve)
 
-*Mean Huber loss as δ runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your δ = 1 gives huber = 0.1875. Your inputs: y_true = 3, -0.5, 2, 7, y_pred = 2.5, 0, 2, 8, delta = 1.*
+*huber (mean Huber loss) against delta (threshold between the quadratic and linear parts (delta > 0)) from 0.1 to 10 on a logarithmic axis. Other inputs as in the worked example: y_true = [3, -0.5, 2, 7], y_pred = [2.5, 0, 2, 8]. 41 points computed by data-science-ml-ai999x; marked: the worked example, delta = 1, huber = 0.1875.*
 
 ```python
 data_science_ml_ai999x.solve('ml_huber_loss', y_true=[3, -0.5, 2, 7], y_pred=[2.5, 0, 2, 8], delta=1)
@@ -1494,13 +1406,9 @@ $$
 - **Assumes:** $0 < \alpha < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pinball (quantile) loss of one sample against the residual y - ŷ from -2 to 2, for several α (41 runs each): under-prediction costs α per unit, over-prediction 1 - α](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-quantile-loss-loss)
+![Pinball (quantile) loss of one sample against the residual y − ŷ from −2 to 2, for α = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-quantile-loss-loss)
 
-*Pinball (quantile) loss of one sample against the residual y - ŷ from -2 to 2, for several α (41 runs each): under-prediction costs α per unit, over-prediction 1 - α. The visitor's samples (α = 0.1) give the returned 0.03333. Your inputs: y_true = 1, 2, 3, y_pred = 0, 2, 3, alpha = 0.1.*
-
-![Mean pinball loss as α runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-quantile-loss-live-1)
-
-*Mean pinball loss as α runs from 0.025 to 0.175, every other input as you entered it (41 solutions). Marked: your α = 0.1 gives pinball = 0.03333. Your inputs: y_true = 1, 2, 3, y_pred = 0, 2, 3, alpha = 0.1.*
+*Pinball (quantile) loss of one sample against the residual y − ŷ from −2 to 2, for α = 0.1, 0.5, 0.9 (41 runs each): under-prediction costs α per unit, over-prediction 1 − α. Worked example (α = 0.1): returned 0.0333333.*
 
 ```python
 data_science_ml_ai999x.solve('ml_quantile_loss', y_true=[1, 2, 3], y_pred=[0, 2, 3], alpha=0.1)
@@ -1548,11 +1456,7 @@ $$
 
 ![Tweedie deviance of one sample with true value 2 as the prediction runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-tweedie-deviance-loss)
 
-*Tweedie deviance of one sample with true value 2 as the prediction runs from 0.5 to 6, for powers 0 (squared error), 1 (Poisson), 1.5 and 2 (gamma), 40 runs each: all vanish at ŷ = y. The visitor's samples (power 1) give the returned 1.426. Your inputs: y_true = 2, 0, 1, 4, y_pred = 0.5, 0.5, 2, 2, power = 1.*
-
-![Mean Tweedie deviance as power runs from 1 to 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-tweedie-deviance-live-1)
-
-*Mean Tweedie deviance as power runs from 1 to 1.75, every other input as you entered it (21 solutions). Marked: your power = 1 gives deviance = 1.426. Your inputs: y_true = 2, 0, 1, 4, y_pred = 0.5, 0.5, 2, 2, power = 1.*
+*Tweedie deviance of one sample with true value 2 as the prediction runs from 0.25 to 6, for powers 0 (squared error), 1 (Poisson), 1.5 and 2 (gamma), 47 runs each: all vanish at ŷ = y, higher powers forgive over-prediction more. Worked example (power 1.0): returned 1.42602.*
 
 ```python
 data_science_ml_ai999x.solve('ml_tweedie_deviance', y_true=[2, 0, 1, 4], y_pred=[0.5, 0.5, 2, 2], power=1)
@@ -1604,9 +1508,9 @@ $$
 - **Assumes:** values >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Squared log error of each sample (y_true 3, 5, 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-squared-log-error-per-sample)
+![Squared log error of each sample (y_true [3, 5, 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-squared-log-error-per-sample)
 
-*Squared log error of each sample (y_true 3, 5, 2.5, 7, y_pred 2.5, 5, 4, 8), one run per sample; their mean is the returned MSLE 0.03973 (RMSLE 0.1993). Your inputs: y_true = 3, 5, 2.5, 7, y_pred = 2.5, 5, 4, 8.*
+*Squared log error of each sample (y_true [3, 5, 2.5, 7], y_pred [2.5, 5, 4, 8]), one run per sample; their mean is the returned MSLE 0.0397301 (RMSLE 0.199324). Under-predicting 2.5 as 4 costs more than over-predicting 7 as 8.*
 
 ```python
 data_science_ml_ai999x.solve('ml_mean_squared_log_error', y_true=[3, 5, 2.5, 7], y_pred=[2.5, 5, 4, 8])
@@ -1651,21 +1555,9 @@ $$
 - **Assumes:** at least two logits
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Softmax of the logits z = (1, 2, 3): returned probabilities 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-probabilities)
+![Softmax of the logits z = [1, 2, 3]: returned probabilities 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-probabilities)
 
-*Softmax of the logits z = (1, 2, 3): returned probabilities 0.09003, 0.2447, 0.6652 (log-sum-exp 3.408); each unit of z multiplies the probability by e. Your inputs: z = 1, 2, 3.*
-
-![Log sum exp(z_j) as z[3] runs from 0 to 7, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-live-1)
-
-*Log sum exp(z_j) as z[3] runs from 0 to 7, every other input as you entered it (8 solutions). Marked: your z[3] = 3 gives log_sum_exp = 3.408. Your inputs: z = 1, 2, 3.*
-
-![Every entry of probabilities as computed for your inputs (3 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-live-2)
-
-*Every entry of probabilities as computed for your inputs (3 entries: 0.09003, 0.2447, 0.6652). Your inputs: z = 1, 2, 3.*
-
-![Log sum exp(z_j) as z[2] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-live-3)
-
-*Log sum exp(z_j) as z[2] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your z[2] = 2 gives log_sum_exp = 3.408. Your inputs: z = 1, 2, 3.*
+*Softmax of the logits z = [1, 2, 3]: returned probabilities 0.0900306, 0.244728, 0.665241 (log-sum-exp 3.40761); each unit of z multiplies the probability by e.*
 
 ```python
 data_science_ml_ai999x.solve('ml_softmax', z=[1, 2, 3])
@@ -1709,17 +1601,9 @@ $$
 - **Assumes:** at least two logits
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Logsumexp(z) as z[3] runs from 0 to 7, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-softmax-live-1)
+![z_i - logsumexp(z) (log_probabilities) returned by data-science-ml-ai999x for the worked example, one value for each z (logits) (3 values, first -2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-softmax-series)
 
-*Logsumexp(z) as z[3] runs from 0 to 7, every other input as you entered it (8 solutions). Marked: your z[3] = 3 gives log_sum_exp = 3.408. Your inputs: z = 1, 2, 3.*
-
-![Every entry of log_probabilities as computed for your inputs (3 entries: -2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-softmax-live-2)
-
-*Every entry of log_probabilities as computed for your inputs (3 entries: -2.408, -1.408, -0.4076). Your inputs: z = 1, 2, 3.*
-
-![Logsumexp(z) as z[2] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-log-softmax-live-3)
-
-*Logsumexp(z) as z[2] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your z[2] = 2 gives log_sum_exp = 3.408. Your inputs: z = 1, 2, 3.*
+*z_i - logsumexp(z) (log_probabilities) returned by data-science-ml-ai999x for the worked example, one value for each z (logits) (3 values, first -2.40761, last -0.407606, largest -0.407606). Inputs: z = [1, 2, 3].*
 
 ```python
 data_science_ml_ai999x.solve('ml_log_softmax', z=[1, 2, 3])
@@ -1764,9 +1648,9 @@ $$
 - **Assumes:** finite z
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Sigmoid as z runs from -1 to 1, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sigmoid-live-1)
+![The logistic sigmoid and its derivative for z from -6 to 6 (61 runs)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sigmoid-curve)
 
-*Sigmoid as z runs from -1 to 1, every other input as you entered it (41 solutions). Marked: your z = 0 gives sigmoid = 0.5. Your inputs: z = 0.*
+*The logistic sigmoid and its derivative for z from -6 to 6 (61 runs). Marked: the worked example z = 0, σ = 0.5, σ′ = 0.25 (the derivative peaks at z = 0).*
 
 ```python
 data_science_ml_ai999x.solve('ml_sigmoid', z=0)
@@ -1818,21 +1702,9 @@ $$
 - **Assumes:** y is a class index
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Logits z = (2, 1, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cross-entropy-logits-logits)
+![Logits z = [2, 1, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cross-entropy-logits-logits)
 
-*Logits z = (2, 1, 0.1) with true class 0: the softmax probabilities (from the model's softmax: 0.659, 0.2424, 0.09857) and the returned gradient of the loss, probability minus one-hot (-0.341, 0.2424, 0.09857); returned loss 0.417. Your inputs: z = 2, 1, 0.1, y = 0.*
-
-![Logsumexp(z) - z_y as y runs from 0 to 2, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cross-entropy-logits-live-1)
-
-*Logsumexp(z) - z_y as y runs from 0 to 2, every other input as you entered it (3 solutions). Marked: your y = 0 gives loss = 0.417. Your inputs: z = 2, 1, 0.1, y = 0.*
-
-![Every entry of gradient as computed for your inputs (3 entries: -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cross-entropy-logits-live-2)
-
-*Every entry of gradient as computed for your inputs (3 entries: -0.341, 0.2424, 0.09857). Your inputs: z = 2, 1, 0.1, y = 0.*
-
-![Logsumexp(z) - z_y as z[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cross-entropy-logits-live-3)
-
-*Logsumexp(z) - z_y as z[1] runs from 0.5 to 3.5, every other input as you entered it (29 solutions). Marked: your z[1] = 2 gives loss = 0.417. Your inputs: z = 2, 1, 0.1, y = 0.*
+*Logits z = [2, 1, 0.1] with true class 0 (✓): the softmax probabilities (from the package's softmax: 0.659001, 0.242433, 0.0985659) and the returned gradient of the loss, probability minus one-hot (-0.340999, 0.242433, 0.0985659); returned loss 0.41703 = −ln 0.659001.*
 
 ```python
 data_science_ml_ai999x.solve('ml_cross_entropy_logits', z=[2, 1, 0.1], y=0)
@@ -1878,13 +1750,9 @@ $$
 - **Assumes:** $0  \leq  y  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The loss of one sample as its logit runs over the axis, for y = 1 and y = 0 (61 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bce-with-logits-loss)
+![Binary cross-entropy of one sample as its logit z runs from −5 to 5, for y = 1 and y = 0 (81 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bce-with-logits-loss)
 
-*The loss of one sample as its logit runs over the axis, for y = 1 and y = 0 (61 runs each). Marked: the visitor's samples (y 1, 0, 1, z 2, -1, -0.5), one run each; their mean is the returned value 0.4714. Your inputs: y = 1, 0, 1, z = 2, -1, -0.5.*
-
-![Every entry of gradient as computed for your inputs (3 entries: -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bce-with-logits-live-1)
-
-*Every entry of gradient as computed for your inputs (3 entries: -0.03973, 0.08965, -0.2075). Your inputs: y = 1, 0, 1, z = 2, -1, -0.5.*
+*Binary cross-entropy of one sample as its logit z runs from −5 to 5, for y = 1 and y = 0 (81 runs each). Marked: the worked example's samples (y, z) = [(1, 2), (0, -1), (1, -0.5)], each one run; their mean is the returned loss 0.471422.*
 
 ```python
 data_science_ml_ai999x.solve('ml_bce_with_logits', y=[1, 0, 1], z=[2, -1, -0.5])
@@ -1931,17 +1799,9 @@ $$
 - **Assumes:** labels -1 $or +1$, both present
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Hinge and squared hinge loss of one sample against its signed margin from -2 to 3 (51 runs each; each run holds a +1 and a -1 sample at the same margin, since both classes must occur)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hinge-loss-loss)
+![Hinge and squared hinge loss of one sample against its signed margin y·f(x) from −2 to 3 (51 runs each; each run holds a +1 and a −1 sample at the same margin, since both classes must occur, so the mean is the loss of one sample)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hinge-loss-loss)
 
-*Hinge and squared hinge loss of one sample against its signed margin from -2 to 3 (51 runs each; each run holds a +1 and a -1 sample at the same margin, since both classes must occur). Marked: the visitor's samples (labels 1, -1, 1, -1, scores 2, -0.5, 0.3, 0.8) at their margins; returned means: hinge 0.75, squared hinge 0.995. Your inputs: y_true = 1, -1, 1, -1, scores = 2, -0.5, 0.3, 0.8.*
-
-![Mean max(0, 1 - y f) as scores[1] runs from -2 to 6, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hinge-loss-live-1)
-
-*Mean max(0, 1 - y f) as scores[1] runs from -2 to 6, every other input as you entered it (41 solutions). Marked: your scores[1] = 2 gives hinge = 0.75. Your inputs: y_true = 1, -1, 1, -1, scores = 2, -0.5, 0.3, 0.8.*
-
-![Mean max(0, 1 - y f) as scores[4] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hinge-loss-live-2)
-
-*Mean max(0, 1 - y f) as scores[4] runs from 0.2 to 1.4, every other input as you entered it (29 solutions). Marked: your scores[4] = 0.8 gives hinge = 0.75. Your inputs: y_true = 1, -1, 1, -1, scores = 2, -0.5, 0.3, 0.8.*
+*Hinge and squared hinge loss of one sample against its signed margin y·f(x) from −2 to 3 (51 runs each; each run holds a +1 and a −1 sample at the same margin, since both classes must occur, so the mean is the loss of one sample). Marked: the worked example's samples (labels [1, -1, 1, -1], scores [2, -0.5, 0.3, 0.8]) at their margins, each one run; returned means: hinge 0.75, squared hinge 0.995, 3 samples inside the margin.*
 
 ```python
 data_science_ml_ai999x.solve('ml_hinge_loss', y_true=[1, -1, 1, -1], scores=[2, -0.5, 0.3, 0.8])
@@ -1987,21 +1847,13 @@ $$
 - **Assumes:** $K  \geq  3$ classes; labels are column indices
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The matrices as heat maps, side by side (each cell shaded by its value): D (input)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-matrix)
+![Multiclass hinge loss of each sample of the decision values D = [[1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-per-sample)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): D (input). Returned with them: crammer_singer = 0.4333, weston_watkins = 0.2. Your inputs: y_true = 0, 1, 2, D = 1.2 0.3 -0.5; 0.4 0.9....*
+*Multiclass hinge loss of each sample of the decision values D = [[1.2, 0.3, -0.5], [0.4, 0.9, 1.1], [-0.2, 0.1, 2.0]] with true classes [0, 1, 2], one run per sample; returned means: Crammer–Singer 0.433333, Weston–Watkins 0.2. Sample 2's true score barely beats one rival and loses to another.*
 
-![Multiclass hinge loss of each sample of the decision values with true classes 0, 1, 2, one run per sample; returned means: Crammer-Singer 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-per-sample)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): D (input)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-matrix)
 
-*Multiclass hinge loss of each sample of the decision values with true classes 0, 1, 2, one run per sample; returned means: Crammer-Singer 0.4333, Weston-Watkins 0.2. Your inputs: y_true = 0, 1, 2, D = 1.2 0.3 -0.5; 0.4 0.9....*
-
-![Mean Crammer-Singer hinge loss as D[1,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-live-1)
-
-*Mean Crammer-Singer hinge loss as D[1,1] runs from 0.3 to 2.1, every other input as you entered it (41 solutions). Marked: your D[1,1] = 1.2 gives crammer_singer = 0.4333. Your inputs: y_true = 0, 1, 2, D = 1.2 0.3 -0.5; 0.4 0.9....*
-
-![Mean Crammer-Singer hinge loss as D[1,3] runs from -1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multiclass-hinge-loss-live-2)
-
-*Mean Crammer-Singer hinge loss as D[1,3] runs from -1.5 to 0.5, every other input as you entered it (29 solutions). Marked: your D[1,3] = -0.5 gives crammer_singer = 0.4333. Your inputs: y_true = 0, 1, 2, D = 1.2 0.3 -0.5; 0.4 0.9....*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): D (input). Returned with them by data-science-ml-ai999x: crammer_singer = 0.433333, weston_watkins = 0.2. Other inputs: y_true = [0, 1, 2].*
 
 ```python
 data_science_ml_ai999x.solve('ml_multiclass_hinge_loss', y_true=[0, 1, 2], D=[[1.2, 0.3, -0.5], [0.4, 0.9, 1.1], [-0.2, 0.1, 2.0]])
@@ -2050,9 +1902,13 @@ $$
 - **Assumes:** positive probabilities summing to 1; same length
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated distributions p = (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kl-divergence-discrete-distributions)
+![The stated distributions p = [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kl-divergence-discrete-distributions)
 
-*The stated distributions p = (0.5, 0.5) and q = (0.9, 0.1): returned KL(p‖q) = 0.737, KL(q‖p) = 0.531 (not symmetric), Jensen-Shannon 0.1468, cross-entropy 1.737 = H(p) 1 + KL(p‖q), in bits. Your inputs: p = 0.5, 0.5, q = 0.9, 0.1, unit = bits.*
+*The stated distributions p = [0.5, 0.5] and q = [0.9, 0.1]: returned KL(p‖q) = 0.736966, KL(q‖p) = 0.531004 (not symmetric), Jensen–Shannon 0.146793, cross-entropy 1.73697 = H(p) 1 + KL(p‖q), in bits.*
+
+![Divergences between the worked example's p = ['0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kl-divergence-discrete-curve)
+
+*Divergences between the worked example's p = ['0.5', '0.5'] and a q moved from p towards and past its q = ['0.9', '0.1'] (49 runs each): both KL directions vanish at q = p and grow, at different rates, as q moves away; Jensen–Shannon stays below 1 bit. Marked: the worked example, KL(p‖q) = 0.736966, KL(q‖p) = 0.531004, JS = 0.146793 bits.*
 
 ```python
 data_science_ml_ai999x.solve('ml_kl_divergence_discrete', p=[0.5, 0.5], q=[0.9, 0.1], unit='bits')
@@ -2099,21 +1955,13 @@ $$
 - **Assumes:** 0 <= epsilon < 1; y is a class index
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gradient of the loss for logits z = (2, 1, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-gradients)
+![Gradient of the loss for logits z = [2, 1, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-gradients)
 
-*Gradient of the loss for logits z = (2, 1, 0.1), true class 0: plain cross-entropy (the model's cross-entropy, loss 0.417) against label smoothing with ε = 0.1 (returned loss 0.5137); smoothing shrinks the push on the true class and on the others. Your inputs: z = 2, 1, 0.1, y = 0, epsilon = 0.1.*
+*Gradient of the loss for logits z = [2, 1, 0.1], true class 0 (✓): plain cross-entropy (loss 0.41703) against label smoothing with ε = 0.1 (returned loss 0.513697); smoothing shrinks the push on the true class and on the others.*
 
-![-sum_j q_j log softmax(z)_j as y runs from 0 to 2, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-live-1)
+![loss (-sum_j q_j log softmax(z)_j) against epsilon (smoothing amount (0 <= epsilon < 1)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-curve)
 
-*-sum_j q_j log softmax(z)_j as y runs from 0 to 2, every other input as you entered it (3 solutions). Marked: your y = 0 gives loss = 0.5137. Your inputs: z = 2, 1, 0.1, y = 0, epsilon = 0.1.*
-
-![Every entry of gradient as computed for your inputs (3 entries: -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-live-2)
-
-*Every entry of gradient as computed for your inputs (3 entries: -0.2743, 0.2091, 0.06523). Your inputs: z = 2, 1, 0.1, y = 0, epsilon = 0.1.*
-
-![-sum_j q_j log softmax(z)_j as z[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-label-smoothing-cross-entropy-live-3)
-
-*-sum_j q_j log softmax(z)_j as z[1] runs from 0.5 to 3.5, every other input as you entered it (29 solutions). Marked: your z[1] = 2 gives loss = 0.5137. Your inputs: z = 2, 1, 0.1, y = 0, epsilon = 0.1.*
+*loss (-sum_j q_j log softmax(z)_j) against epsilon (smoothing amount (0 <= epsilon < 1)) from 0.05 to 0.15. One curve for each value of y (index of the true class (0 to K-1)): 0, 1, 2. Other inputs as in the worked example: z = [2, 1, 0.1]. 31 points per curve computed by data-science-ml-ai999x; marked: the worked example, epsilon = 0.1, loss = 0.513697.*
 
 ```python
 data_science_ml_ai999x.solve('ml_label_smoothing_cross_entropy', z=[2, 1, 0.1], y=0, epsilon=0.1)
@@ -2161,21 +2009,13 @@ $$
 - **Assumes:** labels 0 or 1; $\gamma  \geq  0$; $0  \leq  \alpha  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Focal loss of one positive sample (y = 1) as its logit z runs from -4 to 4, for several focusing parameters γ with α = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-loss)
+![Focal loss of one positive sample (y = 1) as its logit z runs from −4 to 4, for focusing parameters γ = 0, 1, 2, 5 with α = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-loss)
 
-*Focal loss of one positive sample (y = 1) as its logit z runs from -4 to 4, for several focusing parameters γ with α = 0.25 (41 runs each): larger γ silences the well-classified samples. The visitor's samples give the returned loss 0.03727. Your inputs: y = 1, 0, 1, z = 2, -1, -0.5, gamma = 2, alpha = 0.25.*
+*Focal loss of one positive sample (y = 1) as its logit z runs from −4 to 4, for focusing parameters γ = 0, 1, 2, 5 with α = 0.25 (65 runs each): larger γ silences the well-classified samples (large z). γ = 0 is the α-weighted cross-entropy.*
 
-![Mean focal loss as γ runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-live-1)
+![loss (mean focal loss) against gamma (focusing parameter (>= 0; 0 gives weighted cross-entropy)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-curve)
 
-*Mean focal loss as γ runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your γ = 2 gives loss = 0.03727. Your inputs: y = 1, 0, 1, z = 2, -1, -0.5, gamma = 2, alpha = 0.25.*
-
-![Every entry of gradient as computed for your inputs (3 entries: -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-live-2)
-
-*Every entry of gradient as computed for your inputs (3 entries: -0.0004059, 0.01315, -0.04385). Your inputs: y = 1, 0, 1, z = 2, -1, -0.5, gamma = 2, alpha = 0.25.*
-
-![Mean focal loss as α runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-focal-loss-live-3)
-
-*Mean focal loss as α runs from 0.0625 to 0.4375, every other input as you entered it (29 solutions). Marked: your α = 0.25 gives loss = 0.03727. Your inputs: y = 1, 0, 1, z = 2, -1, -0.5, gamma = 2, alpha = 0.25.*
+*loss (mean focal loss) against gamma (focusing parameter (>= 0; 0 gives weighted cross-entropy)) from 0.2 to 20 on a logarithmic axis. One curve for each value of alpha (weight of the positive class (0 to 1; negatives get 1 - alpha)): 0.25, 0.74. Other inputs as in the worked example: y = [1, 0, 1], z = [2, -1, -0.5]. 41 points per curve computed by data-science-ml-ai999x; marked: the worked example, gamma = 2, loss = 0.0372658.*
 
 ```python
 data_science_ml_ai999x.solve('ml_focal_loss', y=[1, 0, 1], z=[2, -1, -0.5], gamma=2, alpha=0.25)
@@ -2226,19 +2066,7 @@ $$
 
 ![The mean squared error over weights (w₁, w₂) within ±1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mse-gradient-landscape)
 
-*The mean squared error over weights (w₁, w₂) within ±1.5 of the visitor's w = (0.1, 0.2), other inputs as given (225 runs, darker = higher). Marked: the visitor's w, returned loss 0.9167; the arrow points along the returned negative gradient -(-6.467, -8.267), drawn 0.8 long. Your inputs: X = 1 2; 3 4; 5 6, y = 1, 2, 3, w = 0.1, 0.2, b = 0.*
-
-![Mean (X w + b - y)^2 as b runs from -1 to 1, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mse-gradient-live-1)
-
-*Mean (X w + b - y)^2 as b runs from -1 to 1, every other input as you entered it (41 solutions). Marked: your b = 0 gives loss = 0.9167. Your inputs: X = 1 2; 3 4; 5 6, y = 1, 2, 3, w = 0.1, 0.2, b = 0.*
-
-![The 3 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mse-gradient-live-2)
-
-*The 3 rows of X as points (first column across, second up), coloured by y. Line: where w.x + b = 0. Your inputs: X = 1 2; 3 4; 5 6, y = 1, 2, 3, w = 0.1, 0.2, b = 0.*
-
-![Every entry of grad_w as computed for your inputs (2 entries: -6](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mse-gradient-live-3)
-
-*Every entry of grad_w as computed for your inputs (2 entries: -6.467, -8.267). Your inputs: X = 1 2; 3 4; 5 6, y = 1, 2, 3, w = 0.1, 0.2, b = 0.*
+*The mean squared error over weights (w₁, w₂) within ±1.5 of the worked example's w = [0.1, 0.2], other inputs as in the worked example (400 runs, darker = higher). Marked: the worked example, returned loss 0.916667; the arrow points along the returned negative gradient −(-6.46667, -8.26667), drawn 0.8 long.*
 
 ```python
 data_science_ml_ai999x.solve('ml_mse_gradient', X=[[1, 2], [3, 4], [5, 6]], y=[1, 2, 3], w=[0.1, 0.2], b=0)
@@ -2290,19 +2118,7 @@ $$
 
 ![The mean logistic loss over weights (w₁, w₂) within ±1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-loss-gradient-landscape)
 
-*The mean logistic loss over weights (w₁, w₂) within ±1.5 of the visitor's w = (0.5, -0.25), other inputs as given (225 runs, darker = higher). Marked: the visitor's w, returned loss 0.4854; the arrow points along the returned negative gradient -(-0.3241, -0.04926), drawn 0.8 long. Your inputs: X = 1 2; 2 1; 3 3, y = 0, 1, 1, w = 0.5, -0.25, b = 0.1, lam = 0.*
-
-![Loss as w[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-loss-gradient-live-1)
-
-*Loss as w[1] runs from 0.125 to 0.875, every other input as you entered it (41 solutions). Marked: your w[1] = 0.5 gives loss = 0.4854. Your inputs: X = 1 2; 2 1; 3 3, y = 0, 1, 1, w = 0.5, -0.25, b = 0.1, lam = 0.*
-
-![The 3 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-loss-gradient-live-2)
-
-*The 3 rows of X as points (first column across, second up), coloured by y. Line: where w.x + b = 0. Your inputs: X = 1 2; 2 1; 3 3, y = 0, 1, 1, w = 0.5, -0.25, b = 0.1, lam = 0.*
-
-![Every entry of grad_w as computed for your inputs (2 entries: -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-loss-gradient-live-3)
-
-*Every entry of grad_w as computed for your inputs (2 entries: -0.3241, -0.04926). Your inputs: X = 1 2; 2 1; 3 3, y = 0, 1, 1, w = 0.5, -0.25, b = 0.1, lam = 0.*
+*The mean logistic loss over weights (w₁, w₂) within ±1.5 of the worked example's w = [0.5, -0.25], other inputs as in the worked example (400 runs, darker = higher). Marked: the worked example, returned loss 0.485376; the arrow points along the returned negative gradient −(-0.324062, -0.0492577), drawn 0.8 long.*
 
 ```python
 data_science_ml_ai999x.solve('ml_logistic_loss_gradient', X=[[1, 2], [2, 1], [3, 3]], y=[0, 1, 1], w=[0.5, -0.25], b=0.1, lam=0)
@@ -2353,17 +2169,9 @@ $$
 - **Assumes:** $lr > 0$; dimensions agree
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Five gradient-descent steps for a line through x = 1, 2, 3, 4, y = 2, 4, 6, 8 from w = 1, b = 1 (lr = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-fit)
+![Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-fit)
 
-*Five gradient-descent steps for a line through x = 1, 2, 3, 4, y = 2, 4, 6, 8 from w = 1, b = 1 (lr = 0.1), each a run of the model from the w, b the previous run returned; MSE after each step: 1.69, 0.8703, 0.4958, 0.3214, 0.2373. Your inputs: X = 1; 2; 3; 4, y = 2, 4, 6, 8, w = 1, b = 1, lr = 0.1.*
-
-![MSE after the step as lr runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-live-1)
-
-*MSE after the step as lr runs from 0.025 to 0.175, every other input as you entered it (41 solutions). Marked: your lr = 0.1 gives loss_after = 1.69. Your inputs: X = 1; 2; 3; 4, y = 2, 4, 6, 8, w = 1, b = 1, lr = 0.1.*
-
-![MSE after the step as w[1] runs from 0 to 5, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gradient-descent-step-linear-live-2)
-
-*MSE after the step as w[1] runs from 0 to 5, every other input as you entered it (6 solutions). Marked: your w[1] = 1 gives loss_after = 1.69. Your inputs: X = 1; 2; 3; 4, y = 2, 4, 6, 8, w = 1, b = 1, lr = 0.1.*
+*Five gradient-descent steps for a line through x = [1, 2, 3, 4], y = [2, 4, 6, 8] from w = [1], b = 1.0 (lr = 0.1), each a run of the package from the w, b the previous run returned; MSE after each step: 1.69, 0.87035, 0.495762, 0.321386, 0.237267.*
 
 ```python
 data_science_ml_ai999x.solve('ml_gradient_descent_step_linear', X=[[1], [2], [3], [4]], y=[2, 4, 6, 8], w=[1], b=1, lr=0.1)
@@ -2411,17 +2219,9 @@ $$
 - **Assumes:** equal lengths; non-zero vectors
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The distances the model returns between x = (1, 2, 3) and z = (4, 6, 3) (3 dimensions; drawn in the first two, the legs those of the first two coordinates): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-geometry)
+![The distances the package returns between the worked example's points x and z (3 dimensions; drawn in the first two, the others shown in the labels): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-geometry)
 
-*The distances the model returns between x = (1, 2, 3) and z = (4, 6, 3) (3 dimensions; drawn in the first two, the legs those of the first two coordinates): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0.8555 (distance 0.1445). Your inputs: x = 1, 2, 3, z = 4, 6, 3.*
-
-![Euclidean as x[3] runs from 0 to 7, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-live-1)
-
-*Euclidean as x[3] runs from 0 to 7, every other input as you entered it (8 solutions). Marked: your x[3] = 3 gives euclidean = 5. Your inputs: x = 1, 2, 3, z = 4, 6, 3.*
-
-![Euclidean as x[2] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-distance-metrics-live-2)
-
-*Euclidean as x[2] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your x[2] = 2 gives euclidean = 5. Your inputs: x = 1, 2, 3, z = 4, 6, 3.*
+*The distances the package returns between the worked example's points x and z (3 dimensions; drawn in the first two, the others shown in the labels): straight line 5, city-block path 7, largest coordinate gap 4, cosine similarity 0.855482 (distance 0.144518). The legs drawn are those of the first two coordinates.*
 
 ```python
 data_science_ml_ai999x.solve('ml_distance_metrics', x=[1, 2, 3], z=[4, 6, 3])
@@ -2467,17 +2267,13 @@ $$
 - **Assumes:** $\gamma > 0$; at least two points
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mean of the off-diagonal entries as γ runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rbf-kernel-matrix-live-1)
+![Off-diagonal entries of the RBF kernel matrix of the stated points X = [[0, 0], [1, 0], [0, 2]] as γ runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rbf-kernel-matrix-curve)
 
-*Mean of the off-diagonal entries as γ runs from 0.125 to 0.875, every other input as you entered it (41 solutions). Marked: your γ = 0.5 gives mean_offdiagonal = 0.2747. Your inputs: X = 0 0; 1 0; 0 2, gamma = 0.5.*
+*Off-diagonal entries of the RBF kernel matrix of the stated points X = [[0, 0], [1, 0], [0, 2]] as γ runs from 0.05 to 50 (25 runs): exp(−γ d²) falls fastest for the farthest pair; the worked example uses γ = 0.5.*
 
-![The 3 rows of X as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rbf-kernel-matrix-live-2)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); K (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rbf-kernel-matrix-matrix)
 
-*The 3 rows of X as points (first column across, second up). Your inputs: X = 0 0; 1 0; 0 2, gamma = 0.5.*
-
-![Each cell is one entry of K for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rbf-kernel-matrix-live-3)
-
-*Each cell is one entry of K for your inputs (row by row; shade by size and sign). Your inputs: X = 0 0; 1 0; 0 2, gamma = 0.5.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); K (returned). Returned with them by data-science-ml-ai999x: mean_offdiagonal = 0.27465. Other inputs: gamma = 0.5.*
 
 ```python
 data_science_ml_ai999x.solve('ml_rbf_kernel_matrix', X=[[0, 0], [1, 0], [0, 2]], gamma=0.5)
@@ -2525,9 +2321,13 @@ $$
 - **Assumes:** probabilities >= 0 summing to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated distribution p = (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-distribution)
+![The stated distribution p = [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-distribution)
 
-*The stated distribution p = (0.5, 0.25, 0.25): returned entropy 1.5 bits (maximum 1.585 for 3 outcomes, normalised 0.9464), perplexity 2.828: as uncertain as 2.828 equally likely outcomes. Your inputs: p = 0.5, 0.25, 0.25, unit = bits.*
+*The stated distribution p = [0.5, 0.25, 0.25]: returned entropy 1.5 bits (maximum 1.58496 for three outcomes, normalised 0.946395), perplexity 2.82843, as uncertain as 2.82843 equally likely outcomes.*
+
+![Shannon entropy (bits) of the worked example's distribution p = ['0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-entropy-curve)
+
+*Shannon entropy (bits) of the worked example's distribution p = ['0.5', '0.25', '0.25'] blended step by step with the uniform distribution over its 3 outcomes (51 runs): entropy rises to its largest value, 1.58496, when every outcome is equally likely. Marked: the worked example itself, H = 1.5.*
 
 ```python
 data_science_ml_ai999x.solve('ml_entropy', p=[0.5, 0.25, 0.25], unit='bits')
@@ -2583,13 +2383,13 @@ $$
 - **Assumes:** probabilities >= 0 summing to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Information diagram of the stated joint distribution (rows X, columns Y): H(X) = 1 and H(Y) = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-joint-conditional-entropy-diagram)
+![Information diagram of the joint distribution P = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-joint-conditional-entropy-diagram)
 
-*Information diagram of the stated joint distribution (rows X, columns Y): H(X) = 1 and H(Y) = 0.8113 drawn as overlapping bars; the overlap is the mutual information 0.3113, the rest the conditional entropies H(X|Y) = 0.6887 and H(Y|X) = 0.5; the line spans H(X, Y) = 1.5 bits, all returned values. Your inputs: P = 0.25 0.25; 0.5 0, unit = bits.*
+*Information diagram of the joint distribution P = [[0.25, 0.25], [0.5, 0]] (rows X, columns Y): H(X) = 1 and H(Y) = 0.811278 drawn as overlapping bars; the overlap is the mutual information 0.311278, the rest the conditional entropies H(X|Y) = 0.688722 and H(Y|X) = 0.5; the line spans H(X, Y) = 1.5 bits, all returned values.*
 
 ![The stated joint distribution P(X, Y) = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-joint-conditional-entropy-joint)
 
-*The stated joint distribution P(X, Y) = [[0.25, 0.25], [0.5, 0]], rows the values of X and columns the values of Y. In SI units: mutual_information = 0.3113. Your inputs: P = 0.25 0.25; 0.5 0, unit = bits.*
+*The stated joint distribution P(X, Y) = [[0.25, 0.25], [0.5, 0]], rows the values of X and columns the values of Y.*
 
 ```python
 data_science_ml_ai999x.solve('ml_joint_conditional_entropy', P=[[0.25, 0.25], [0.5, 0]], unit='bits')
@@ -2638,13 +2438,13 @@ $$
 - **Assumes:** labels are whole numbers; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (x, y) (rows x, columns y) tallied from the stated labels x = 0, 0, 1, 1, 2, 2 and y = 0, 0, 1, 1, 1, 1; returned: mutual_information 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mutual-information-labels-contingency)
+![Counts of each pair (x, y) tallied from the stated labels x = [0, 0, 1, 1, 2, 2] and y = [0, 0, 1, 1, 1, 1]; returned (bits): H(x) = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mutual-information-labels-contingency)
 
-*Counts of each pair (x, y) (rows x, columns y) tallied from the stated labels x = 0, 0, 1, 1, 2, 2 and y = 0, 0, 1, 1, 1, 1; returned: mutual_information 0.9183, H_x 1.585, H_y 0.9183, H_x_given_y 0.6667. Your inputs: x = 0, 0, 1, 1, 2, 2, y = 0, 0, 1, 1, 1, 1, unit = bits.*
+*Counts of each pair (x, y) tallied from the stated labels x = [0, 0, 1, 1, 2, 2] and y = [0, 0, 1, 1, 1, 1]; returned (bits): H(x) = 1.58496, H(y) = 0.918296, H(x | y) = 0.666667, mutual information 0.918296.*
 
-![The values the model returns for the stated inputs: mutual_information 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mutual-information-labels-scores)
+![Entropies the package returns for x = [0, 0, 1, 1, 2, 2] and y = [0, 0, 1, 1, 1, 1] (in bits): H(x) = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mutual-information-labels-scores)
 
-*The values the model returns for the stated inputs: mutual_information 0.9183, H_x 1.585, H_y 0.9183, H_x_given_y 0.6667. Your inputs: x = 0, 0, 1, 1, 2, 2, y = 0, 0, 1, 1, 1, 1, unit = bits.*
+*Entropies the package returns for x = [0, 0, 1, 1, 2, 2] and y = [0, 0, 1, 1, 1, 1] (in bits): H(x) = 1.58496, H(y) = 0.918296, H(x | y) = 0.666667, I(x; y) = 0.918296; I(x; y) = H(x) − H(x | y).*
 
 ```python
 data_science_ml_ai999x.solve('ml_mutual_information_labels', x=[0, 0, 1, 1, 2, 2], y=[0, 0, 1, 1, 1, 1], unit='bits')
@@ -2692,21 +2492,13 @@ $$
 - **Assumes:** the feature takes at least two values
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (x, y) (rows x, columns y) tallied from the stated labels x = 0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2 and y = 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0; returned: parent_entropy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-contingency)
+![Counts of each pair (x, y) tallied from the stated labels x = [0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2] and y = [1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0]; returned: parent entropy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-contingency)
 
-*Counts of each pair (x, y) (rows x, columns y) tallied from the stated labels x = 0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2 and y = 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0; returned: parent_entropy 0.8631, conditional_entropy 0.6325, information_gain 0.2306, split_info 1.577, gain_ratio 0.1462. Your inputs: y = 1, 1, 0, 0, 1, 1, 0, 1..., x = 0, 0, 1, 2, 2, 2, 1, 0....*
+*Counts of each pair (x, y) tallied from the stated labels x = [0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2] and y = [1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0]; returned: parent entropy 0.863121, conditional entropy 0.632482, information gain 0.230638 bits, split information 1.57741, gain ratio 0.146214.*
 
-![The values the model returns for the stated inputs: parent_entropy 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-scores)
+![The values the package returns for splitting y = [1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0] on x = [0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2]: H(y) 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-scores)
 
-*The values the model returns for the stated inputs: parent_entropy 0.8631, conditional_entropy 0.6325, information_gain 0.2306, split_info 1.577, gain_ratio 0.1462. Your inputs: y = 1, 1, 0, 0, 1, 1, 0, 1..., x = 0, 0, 1, 2, 2, 2, 1, 0....*
-
-![Information gain as x[2] runs from 0 to 5, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-live-1)
-
-*Information gain as x[2] runs from 0 to 5, every other input as you entered it (6 solutions). Marked: your x[2] = 1 gives information_gain = 0.2306. Your inputs: y = 1, 1, 0, 0, 1, 1, 0, 1..., x = 0, 0, 1, 2, 2, 2, 1, 0....*
-
-![Information gain as x[3] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-information-gain-live-2)
-
-*Information gain as x[3] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your x[3] = 2 gives information_gain = 0.2306. Your inputs: y = 1, 1, 0, 0, 1, 1, 0, 1..., x = 0, 0, 1, 2, 2, 2, 1, 0....*
+*The values the package returns for splitting y = [1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0] on x = [0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2]: H(y) 0.863121, H(y | x) 0.632482, gain 0.230638, split info 1.57741, gain ratio 0.146214; gain = H(y) − H(y | x), ratio = gain / split info.*
 
 ```python
 data_science_ml_ai999x.solve('ml_information_gain', y=[1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0], x=[0, 0, 1, 2, 2, 2, 1, 0, 0, 2, 0, 1, 1, 2])
@@ -2753,17 +2545,9 @@ $$
 - **Assumes:** at least two groups
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gini impurity of the parent y = 0, 0, 0, 1, 1, 1, 1, 0 and of the children given by g = 0, 0, 0, 0, 1, 1, 1, 1: class counts per child tallied from the stated lists (child 0: [3, 1]; child 1: [1, 3]), each child's Gini from the model's impurity capability; returned: parent 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gini-split-impurity)
+![Gini impurity of the parent y = [0, 0, 0, 1, 1, 1, 1, 0] and of the children given by g = [0, 0, 0, 0, 1, 1, 1, 1]: class counts per child tallied from the stated lists (child 0: [3, 1]; child 1: [1, 3]), each child's Gini from the package's impurity capability; returned: parent 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gini-split-impurity)
 
-*Gini impurity of the parent y = 0, 0, 0, 1, 1, 1, 1, 0 and of the children given by g = 0, 0, 0, 0, 1, 1, 1, 1: class counts per child tallied from the stated lists (child 0: [3, 1]; child 1: [1, 3]), each child's Gini from the model's impurity capability; returned: parent 0.5, weighted children 0.375, decrease 0.125. Your inputs: y = 0, 0, 0, 1, 1, 1, 1, 0, g = 0, 0, 0, 0, 1, 1, 1, 1.*
-
-![Parent minus children as g[0] runs from 0 to 4, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gini-split-live-1)
-
-*Parent minus children as g[0] runs from 0 to 4, every other input as you entered it (5 solutions). Marked: your g[0] = 0 gives gini_decrease = 0.125. Your inputs: y = 0, 0, 0, 1, 1, 1, 1, 0, g = 0, 0, 0, 0, 1, 1, 1, 1.*
-
-![Parent minus children as g[1] runs from 0 to 4, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gini-split-live-2)
-
-*Parent minus children as g[1] runs from 0 to 4, every other input as you entered it (5 solutions). Marked: your g[1] = 0 gives gini_decrease = 0.125. Your inputs: y = 0, 0, 0, 1, 1, 1, 1, 0, g = 0, 0, 0, 0, 1, 1, 1, 1.*
+*Gini impurity of the parent y = [0, 0, 0, 1, 1, 1, 1, 0] and of the children given by g = [0, 0, 0, 0, 1, 1, 1, 1]: class counts per child tallied from the stated lists (child 0: [3, 1]; child 1: [1, 3]), each child's Gini from the package's impurity capability; returned: parent 0.5, weighted children 0.375, decrease 0.125.*
 
 ```python
 data_science_ml_ai999x.solve('ml_gini_split', y=[0, 0, 0, 1, 1, 1, 1, 0], g=[0, 0, 0, 0, 1, 1, 1, 1])
@@ -2809,17 +2593,13 @@ $$
 - **Assumes:** each labelling has at least two clusters
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: nmi 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-normalized-mutual-information-contingency)
+![Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: mutual information 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-normalized-mutual-information-contingency)
 
-*Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: nmi 0.7337, mutual_information 0.6365. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
+*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: mutual information 0.636514, normalised mutual information 0.73368 (arithmetic normaliser).*
 
-![The normalised mutual information of the stated labels with each method, one run each: arithmetic 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-normalized-mutual-information-scores)
+![Normalised mutual information of labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1] with each normaliser, one run each: arithmetic 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-normalized-mutual-information-scores)
 
-*The normalised mutual information of the stated labels with each method, one run each: arithmetic 0.7337, geometric 0.7612, min 1, max 0.5794; the visitor's choice in the first colour. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
-
-![Nmi for every choice of method, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-normalized-mutual-information-live-1)
-
-*Nmi for every choice of method, every other input as you entered it (highlighted: your choice). arithmetic: 0.7337; geometric: 0.7612; min: 1; max: 0.5794. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
+*Normalised mutual information of labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1] with each normaliser, one run each: arithmetic 0.73368, geometric 0.76117, min 1, max 0.57938; the min normaliser gives 1 here because the clustering is a coarsening of the reference.*
 
 ```python
 data_science_ml_ai999x.solve('ml_normalized_mutual_information', labels_true=[0, 0, 1, 1, 2, 2], labels_pred=[0, 0, 1, 1, 1, 1], method='arithmetic')
@@ -2867,17 +2647,13 @@ $$
 - **Assumes:** each labelling has at least two clusters
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: ami 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-adjusted-mutual-information-contingency.svg)
+![Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: mutual information 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-mutual-information-contingency)
 
-*Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: ami 0.6154, expected_mi 0.2668, mutual_information 0.6365. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
+*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: mutual information 0.636514, its expected value under chance 0.266836, adjusted mutual information 0.615385 (arithmetic normaliser).*
 
-![The adjusted mutual information of the stated labels with each method, one run each: arithmetic 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-mutual-information-scores)
+![Adjusted mutual information of labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1] with each normaliser, one run each: arithmetic 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-mutual-information-scores)
 
-*The adjusted mutual information of the stated labels with each method, one run each: arithmetic 0.6154, geometric 0.6492, min 1, max 0.4444; the visitor's choice in the first colour. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
-
-![Ami for every choice of method, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adjusted-mutual-information-live-1)
-
-*Ami for every choice of method, every other input as you entered it (highlighted: your choice). arithmetic: 0.6154; geometric: 0.6492; min: 1; max: 0.4444. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, method = arithmetic.*
+*Adjusted mutual information of labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1] with each normaliser, one run each: arithmetic 0.615385, geometric 0.649248, min 1, max 0.444444.*
 
 ```python
 data_science_ml_ai999x.solve('ml_adjusted_mutual_information', labels_true=[0, 0, 1, 1, 2, 2], labels_pred=[0, 0, 1, 1, 1, 1], method='arithmetic')
@@ -2923,13 +2699,13 @@ $$
 - **Assumes:** at least one within-cluster pair in each labelling
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: rand_index 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rand-index-contingency)
+![Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: Rand index 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rand-index-contingency)
 
-*Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: rand_index 0.7333, adjusted_rand_index 0.4444, fowlkes_mallows 0.6547. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1.*
+*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: Rand index 0.733333, adjusted Rand index 0.444444, Fowlkes–Mallows 0.654654.*
 
-![The values the model returns for the stated inputs: rand_index 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rand-index-scores)
+![The three pair-counting scores the package returns for labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1]: Rand index 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rand-index-scores)
 
-*The values the model returns for the stated inputs: rand_index 0.7333, adjusted_rand_index 0.4444, fowlkes_mallows 0.6547. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1.*
+*The three pair-counting scores the package returns for labels_true = [0, 0, 1, 1, 2, 2] and labels_pred = [0, 0, 1, 1, 1, 1]: Rand index 0.733333, adjusted Rand index 0.444444 (corrected for chance), Fowlkes–Mallows 0.654654.*
 
 ```python
 data_science_ml_ai999x.solve('ml_rand_index', labels_true=[0, 0, 1, 1, 2, 2], labels_pred=[0, 0, 1, 1, 1, 1])
@@ -2976,13 +2752,13 @@ $$
 - **Assumes:** each labelling has at least two clusters; $\beta > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: homogeneity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-contingency)
+![Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: homogeneity 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-contingency)
 
-*Counts of each pair (true, cluster) (rows true, columns cluster) tallied from the stated labels true = 0, 0, 1, 1, 2, 2 and cluster = 0, 0, 1, 1, 1, 1; returned: homogeneity 0.5794, completeness 1, v_measure 0.7337. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, beta = 1.*
+*Counts of each pair (true, cluster) tallied from the stated labels true = [0, 0, 1, 1, 2, 2] and cluster = [0, 0, 1, 1, 1, 1]; returned: homogeneity 0.57938 (cluster 1 mixes two classes), completeness 1 (each class sits in one cluster), V-measure 0.73368 (β = 1.0).*
 
-![V measure as β runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-live-1)
+![v_measure ((1 + beta) h c / (beta h + c)) against beta (weight of completeness relative to homogeneity in the V-measure (1 = equal)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-homogeneity-completeness-v-measure-curve)
 
-*V measure as β runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your β = 1 gives v_measure = 0.7337. Your inputs: labels_true = 0, 0, 1, 1, 2, 2, labels_pred = 0, 0, 1, 1, 1, 1, beta = 1.*
+*v_measure ((1 + beta) h c / (beta h + c)) against beta (weight of completeness relative to homogeneity in the V-measure (1 = equal)) from 0.1 to 10 on a logarithmic axis. Other inputs as in the worked example: labels_true = [0, 0, 1, 1, 2, 2], labels_pred = [0, 0, 1, 1, 1, 1]. 41 points computed by data-science-ml-ai999x; marked: the worked example, beta = 1, v_measure = 0.73368.*
 
 ```python
 data_science_ml_ai999x.solve('ml_homogeneity_completeness_v_measure', labels_true=[0, 0, 1, 1, 2, 2], labels_pred=[0, 0, 1, 1, 1, 1], beta=1)
@@ -3027,25 +2803,13 @@ $$
 - **Assumes:** 2 <= number of clusters <= n - 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The 6 stated points coloured by label, each labelled with its returned silhouette; mean 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-clusters)
-
-*The 6 stated points coloured by label, each labelled with its returned silhouette; mean 0.6138. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
 ![The silhouette of each of the 6 stated points (returned: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-silhouette)
 
-*The silhouette of each of the 6 stated points (returned: 0.7855, 0.7282, 0.2874, 0.5911, 0.6301, 0.6607), grouped by cluster label and sorted; the dashed line is the returned mean silhouette 0.6138. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
+*The silhouette of each of the 6 stated points (returned: 0.785496, 0.728162, 0.287385, 0.591064, 0.630078, 0.660705), grouped by cluster label [0, 0, 1, 1, 1, 1] and sorted; the dashed line is the returned mean silhouette 0.613815. Point 3 sits closest to the other cluster.*
 
-![Mean silhouette coefficient as X[2,2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-live-1)
+![The 6 stated points coloured by label [0, 0, 1, 1, 1, 1], each labelled with its returned silhouette; mean 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-clusters)
 
-*Mean silhouette coefficient as X[2,2] runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your X[2,2] = 2 gives silhouette = 0.6138. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![The 6 rows of X as points (first column across, second up), coloured by samples](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-live-2)
-
-*The 6 rows of X as points (first column across, second up), coloured by samples. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![Every entry of samples as computed for your inputs (6 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-silhouette-score-live-3)
-
-*Every entry of samples as computed for your inputs (6 entries: 0.7855, 0.7282, 0.2874, 0.5911, 0.6301, 0.6607). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
+*The 6 stated points coloured by label [0, 0, 1, 1, 1, 1], each labelled with its returned silhouette; mean 0.613815.*
 
 ```python
 data_science_ml_ai999x.solve('ml_silhouette_score', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5]], labels=[0, 0, 1, 1, 1, 1])
@@ -3090,21 +2854,9 @@ $$
 - **Assumes:** 2 <= number of clusters <= n - 1; distinct centroids
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![6 stated points coloured by their labels; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all from the stated points, the ratio the index is built from)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-clusters)
+![6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points, the ratio the index is built from)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-clusters)
 
-*6 stated points coloured by their labels; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all from the stated points, the ratio the index is built from). Returned Davies-Bouldin index 0.3747 (lower is better). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![Davies-Bouldin index as X[2,2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-live-1)
-
-*Davies-Bouldin index as X[2,2] runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your X[2,2] = 2 gives davies_bouldin = 0.3747. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![The 6 rows of X as points (first column across, second up), coloured by labels](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-live-2)
-
-*The 6 rows of X as points (first column across, second up), coloured by labels. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![Davies-Bouldin index as X[2,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-davies-bouldin-index-live-3)
-
-*Davies-Bouldin index as X[2,1] runs from 0.375 to 2.625, every other input as you entered it (29 solutions). Marked: your X[2,1] = 1.5 gives davies_bouldin = 0.3747. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
+*6 stated points with labels [0, 0, 1, 1, 1, 1]; black dots: cluster means, dashed circles: each cluster's mean distance to its mean, dashed line: the distance between the means (all computed here from the stated points, the ratio the index is built from). Returned Davies–Bouldin index 0.374734 (lower is better).*
 
 ```python
 data_science_ml_ai999x.solve('ml_davies_bouldin_index', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5]], labels=[0, 0, 1, 1, 1, 1])
@@ -3150,21 +2902,9 @@ $$
 - **Assumes:** 2 <= number of clusters <= n - 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![6 stated points with their cluster labels; black dots: each cluster's mean (from the stated points), grey: the within-cluster spread](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-calinski-harabasz-index-clusters)
+![6 stated points with their cluster labels [0, 0, 1, 1, 1, 1]; black dots: each cluster's mean (computed here from the stated points), grey: the within-cluster spread](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-calinski-harabasz-index-clusters)
 
-*6 stated points with their cluster labels; black dots: each cluster's mean (from the stated points), grey: the within-cluster spread. Returned: between-cluster dispersion 28.83, within 7.875, index 14.65. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![CH index as X[2,2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-calinski-harabasz-index-live-1)
-
-*CH index as X[2,2] runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your X[2,2] = 2 gives calinski_harabasz = 14.65. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![The 6 rows of X as points (first column across, second up), coloured by labels](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-calinski-harabasz-index-live-2)
-
-*The 6 rows of X as points (first column across, second up), coloured by labels. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
-
-![CH index as X[2,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-calinski-harabasz-index-live-3)
-
-*CH index as X[2,1] runs from 0.375 to 2.625, every other input as you entered it (29 solutions). Marked: your X[2,1] = 1.5 gives calinski_harabasz = 14.65. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., labels = 0, 0, 1, 1, 1, 1.*
+*6 stated points with their cluster labels [0, 0, 1, 1, 1, 1]; black dots: each cluster's mean (computed here from the stated points), grey: the within-cluster spread. Returned: between-cluster dispersion 28.8333, within 7.875, Calinski–Harabasz index 14.6455.*
 
 ```python
 data_science_ml_ai999x.solve('ml_calinski_harabasz_index', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5]], labels=[0, 0, 1, 1, 1, 1])
@@ -3210,21 +2950,9 @@ $$
 - **Assumes:** no exact distance tie; no empty cluster; $2  \leq  k  \leq  n$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![One k-means step on the 7 stated points: each point joined to its nearest current centre (grey; returned labels 0, 0, 1, 1, 1, 1, 1); arrows move each centre to the mean of its points, the returned new centroids (black)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-step-step)
+![One k-means step on the 7 stated points: each point joined to its nearest current centre [[1, 1], [5, 6]] (returned labels [0, 0, 1, 1, 1, 1, 1]); arrows move each centre to the mean of its points, the returned new centroids (black)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-step-step)
 
-*One k-means step on the 7 stated points: each point joined to its nearest current centre (grey; returned labels 0, 0, 1, 1, 1, 1, 1); arrows move each centre to the mean of its points, the returned new centroids (black). Inertia before the move 19.25. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![Sum of squared distances of the points to](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-step-live-1)
-
-*Sum of squared distances of the points to... as C[2,2] runs from 1.5 to 10.5, every other input as you entered it (41 solutions). Marked: your C[2,2] = 6 gives inertia = 19.25. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![The 7 rows of X as points (first column across, second up), coloured by labels](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-step-live-2)
-
-*The 7 rows of X as points (first column across, second up), coloured by labels. Squares: new_centroids (2 points). Squares: C (2 points). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![Every entry of labels as computed for your inputs (7 entries: 0, 0, 1, 1, 1, 1, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-step-live-3)
-
-*Every entry of labels as computed for your inputs (7 entries: 0, 0, 1, 1, 1, 1, 1). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
+*One k-means step on the 7 stated points: each point joined to its nearest current centre [[1, 1], [5, 6]] (returned labels [0, 0, 1, 1, 1, 1, 1]); arrows move each centre to the mean of its points, the returned new centroids (black). Inertia before the move 19.25.*
 
 ```python
 data_science_ml_ai999x.solve('ml_kmeans_step', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5], [3.5, 4.5]], C=[[1, 1], [5, 6]])
@@ -3271,25 +2999,13 @@ $$
 - **Assumes:** no exact distance tie; no empty cluster during the iterations; convergence within 100 iterations
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![k-means on 7 points from the starting centres (grey): the model's final centroids (black, labelled; arrows from the starting centres), the points coloured by the returned labels, inertia 8](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-kmeans-clusters.svg)
+![k-means on 7 points from the starting centres [[1, 1], [5, 6]]: the package's final centroids (1](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-kmeans-clusters.svg)
 
-*k-means on 7 points from the starting centres (grey): the model's final centroids (black, labelled; arrows from the starting centres), the points coloured by the returned labels, inertia 8.525. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
+*k-means on 7 points from the starting centres [[1, 1], [5, 6]]: the package's final centroids (1.25, 1.5), (3.9, 5.1) (marked; arrows from the starting centres), cluster labels 1, 1, 2, 2, 2, 2, 2 and inertia 8.525.*
 
-![k-means on the 7 stated points: the returned centroids (marked) and the plane split by nearest centroid, each of 480 cells assigned by one run of the model's assignment step](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-regions)
+![k-means on the 7 stated points from the starting centres [[1, 1], [5, 6]]: the returned centroids (black, labelled) and labels; the shaded regions are the plane split by nearest centroid, each of 720 cells assigned by the package's assignment step](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-regions)
 
-*k-means on the 7 stated points: the returned centroids (marked) and the plane split by nearest centroid, each of 480 cells assigned by one run of the model's assignment step. Inertia 8.525. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![Sum of squared distances to the final centroids as X[2,2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-live-1)
-
-*Sum of squared distances to the final centroids as X[2,2] runs from 0.5 to 3.5, every other input as you entered it (33 solutions). Marked: your X[2,2] = 2 gives inertia = 8.525. Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![The 7 rows of X as points (first column across, second up), coloured by labels](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-live-2)
-
-*The 7 rows of X as points (first column across, second up), coloured by labels. Squares: centroids (2 points). Squares: C (2 points). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
-
-![Every entry of labels as computed for your inputs (7 entries: 0, 0, 1, 1, 1, 1, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kmeans-live-3)
-
-*Every entry of labels as computed for your inputs (7 entries: 0, 0, 1, 1, 1, 1, 1). Your inputs: X = 1 1; 1.5 2; 3 4; 5 7..., C = 1 1; 5 6.*
+*k-means on the 7 stated points from the starting centres [[1, 1], [5, 6]]: the returned centroids (black, labelled) and labels; the shaded regions are the plane split by nearest centroid, each of 720 cells assigned by the package's assignment step. Inertia 8.525.*
 
 ```python
 data_science_ml_ai999x.solve('ml_kmeans', X=[[1, 1], [1.5, 2], [3, 4], [5, 7], [3.5, 5], [4.5, 5], [3.5, 4.5]], C=[[1, 1], [5, 6]])
@@ -3339,25 +3055,13 @@ $$
 - **Assumes:** no distance tie at the k-th neighbour; no tied vote; $1  \leq  k  \leq  n$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![k-nearest-neighbour classification of the query point (3, 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-neighbours)
+![k-nearest-neighbour classification of the query point (3, 2](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-knn-classify-neighbours.svg)
 
-*k-nearest-neighbour classification of the query point (3, 2.2) among 6 labelled points (k = 3, euclidean distance): the model's nearest neighbours are points 1, 2, 4 (0-based) at distances 1.281, 1.562, 2.01 (dashed lines); the prediction is class 0 with 2 votes. Your inputs: X = 1 1; 2 1; 4 3; 5 4; 1 2; 6 5, y = 0, 0, 1, 1, 0, 1, x = 3, 2.2, k = 3, metric = euclidean.*
+*k-nearest-neighbour classification of the query point (3, 2.2) among 6 labelled points (k = 3, euclidean distance): the package's 3 nearest neighbours are points 2, 3, 5 at distances 1.28062, 1.56205, 2.00998 (dashed lines; the circle reaches the farthest of them); 2 of 3 votes give class 0.*
 
-![The k-nearest-neighbour vote over the plane: each of 70 cells is coloured by the class the model predicts at its centre, from the 6 stated labelled points; 0 cells the model refuses (a tie) are left blank](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-regions)
+![The 3-nearest-neighbour vote (euclidean distance) over the plane: each of 616 cells is coloured by the class the package predicts at its centre, from the 6 stated labelled points](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-regions)
 
-*The k-nearest-neighbour vote over the plane: each of 70 cells is coloured by the class the model predicts at its centre, from the 6 stated labelled points; 0 cells the model refuses (a tie) are left blank. Marked: the visitor's query (3, 2.2) → class 0. Your inputs: X = 1 1; 2 1; 4 3; 5 4; 1 2; 6 5, y = 0, 0, 1, 1, 0, 1, x = 3, 2.2, k = 3, metric = euclidean.*
-
-![Number of neighbours of that class as x[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-live-1)
-
-*Number of neighbours of that class as x[1] runs from 0.75 to 5.25, every other input as you entered it (40 solutions). Values in this range where the inputs admit no answer (1 of 41) are left out. Marked: your x[1] = 3 gives votes = 2. Your inputs: X = 1 1; 2 1; 4 3; 5 4; 1 2; 6 5, y = 0, 0, 1, 1, 0, 1, x = 3, 2.2, k = 3, metric = euclidean.*
-
-![The 6 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-live-2)
-
-*The 6 rows of X as points (first column across, second up), coloured by y. Star: x = (3, 2.2). Your inputs: X = 1 1; 2 1; 4 3; 5 4; 1 2; 6 5, y = 0, 0, 1, 1, 0, 1, x = 3, 2.2, k = 3, metric = euclidean.*
-
-![Every entry of neighbors as computed for your inputs (3 entries: 1, 2, 4)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-classify-live-3)
-
-*Every entry of neighbors as computed for your inputs (3 entries: 1, 2, 4). Your inputs: X = 1 1; 2 1; 4 3; 5 4; 1 2; 6 5, y = 0, 0, 1, 1, 0, 1, x = 3, 2.2, k = 3, metric = euclidean.*
+*The 3-nearest-neighbour vote (euclidean distance) over the plane: each of 616 cells is coloured by the class the package predicts at its centre, from the 6 stated labelled points. 3 cells where the k-th and (k+1)-th neighbours tie are refused and left blank. Marked: the worked example's query [3, 2.2] → class 0.*
 
 ```python
 data_science_ml_ai999x.solve('ml_knn_classify', X=[[1, 1], [2, 1], [4, 3], [5, 4], [1, 2], [6, 5]], y=[0, 0, 1, 1, 0, 1], x=[3, 2.2], k=3, metric='euclidean')
@@ -3408,21 +3112,9 @@ $$
 - **Assumes:** no distance tie at the k-th neighbour; distance weights: the query is not a training point
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![k-nearest-neighbour regression (k = 2) through the stated points x = 1, 2, 3, 10, y = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-regress-fit)
+![k-nearest-neighbour regression (k = 2) through the stated points x = [1, 2, 3, 10], y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-regress-fit)
 
-*k-nearest-neighbour regression (k = 2) through the stated points x = 1, 2, 3, 10, y = 1.5, 2.5, 3, 9: the prediction at 41 query points for uniform and distance weights (one run each). Marked: the visitor's x = 2.4, ŷ = 2.75. Your inputs: X = 1; 2; 3; 10, y = 1.5, 2.5, 3, 9, x = 2.4, k = 2, metric = euclidean, weights = uniform.*
-
-![Predicted value as x[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-regress-live-1)
-
-*Predicted value as x[1] runs from 0.6 to 4.2, every other input as you entered it (35 solutions). Marked: your x[1] = 2.4 gives prediction = 2.75. Your inputs: X = 1; 2; 3; 10, y = 1.5, 2.5, 3, 9, x = 2.4, k = 2, metric = euclidean, weights = uniform.*
-
-![Predicted value for every choice of weights, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-regress-live-2)
-
-*Predicted value for every choice of weights, every other input as you entered it (highlighted: your choice). uniform: 2.75; distance: 2.7. Your inputs: X = 1; 2; 3; 10, y = 1.5, 2.5, 3, 9, x = 2.4, k = 2, metric = euclidean, weights = uniform.*
-
-![Every entry of neighbors as computed for your inputs (2 entries: 1, 2)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-knn-regress-live-3)
-
-*Every entry of neighbors as computed for your inputs (2 entries: 1, 2). Your inputs: X = 1; 2; 3; 10, y = 1.5, 2.5, 3, 9, x = 2.4, k = 2, metric = euclidean, weights = uniform.*
+*k-nearest-neighbour regression (k = 2) through the stated points x = [1, 2, 3, 10], y = [1.5, 2.5, 3.0, 9.0]: the prediction at 121 query points for uniform and distance weights (one run each). Marked: the worked example x = 2.4, ŷ = 2.75 (neighbours [1, 2]).*
 
 ```python
 data_science_ml_ai999x.solve('ml_knn_regress', X=[[1], [2], [3], [10]], y=[1.5, 2.5, 3.0, 9.0], x=[2.4], k=2, metric='euclidean', weights='uniform')
@@ -3469,17 +3161,9 @@ $$
 - **Assumes:** at least two classes; positive within-class variance of every feature
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated training rows split by class (y = 0, 0, 0, 0, 1, 1, 1, 1; one colour per class), one axis per feature, with the query x = (6, 130, 8) as the vertical line](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gaussian-naive-bayes-features)
+![The stated training rows split by class (y = [0, 0, 0, 0, 1, 1, 1, 1]), one axis per feature, with the query x = [6, 130, 8] as the vertical line: the second and third features place it among class 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gaussian-naive-bayes-features)
 
-*The stated training rows split by class (y = 0, 0, 0, 0, 1, 1, 1, 1; one colour per class), one axis per feature, with the query x = (6, 130, 8) as the vertical line. Returned posteriors: class 0 1.544e-07, class 1 1; prediction 1. Your inputs: X = 6 180 12; 5.92 190 11..., y = 0, 0, 0, 0, 1, 1, 1, 1, x = 6, 130, 8.*
-
-![Class with the largest posterior as x[3] runs from 2 to 14, every other input as you entered it (13 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gaussian-naive-bayes-live-1)
-
-*Class with the largest posterior as x[3] runs from 2 to 14, every other input as you entered it (13 solutions). Marked: your x[3] = 8 gives prediction = 1. Your inputs: X = 6 180 12; 5.92 190 11..., y = 0, 0, 0, 0, 1, 1, 1, 1, x = 6, 130, 8.*
-
-![Every entry of classes as computed for your inputs (2 entries: 0, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-gaussian-naive-bayes-live-2)
-
-*Every entry of classes as computed for your inputs (2 entries: 0, 1). Your inputs: X = 6 180 12; 5.92 190 11..., y = 0, 0, 0, 0, 1, 1, 1, 1, x = 6, 130, 8.*
+*The stated training rows split by class (y = [0, 0, 0, 0, 1, 1, 1, 1]), one axis per feature, with the query x = [6, 130, 8] as the vertical line: the second and third features place it among class 1. Returned posteriors: class 0 1.5443e-07, class 1 1; prediction 1.*
 
 ```python
 data_science_ml_ai999x.solve('ml_gaussian_naive_bayes', X=[[6, 180, 12], [5.92, 190, 11], [5.58, 170, 12], [5.92, 165, 10], [5, 100, 6], [5.5, 150, 8], [5.42, 130, 7], [5.75, 150, 9]], y=[0, 0, 0, 0, 1, 1, 1, 1], x=[6, 130, 8])
@@ -3528,21 +3212,13 @@ $$
 - **Assumes:** $\alpha > 0$; counts >= 0; at least two classes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated training rows (labelled with their class) and the query x = (1, 0, 1, 0) outlined; returned posteriors class 0 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-data)
+![The stated training rows (labelled with their class y = [0, 0, 1, 1]) and the query x = [1, 0, 1, 0]; returned posteriors class 0: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-data)
 
-*The stated training rows (labelled with their class) and the query x = (1, 0, 1, 0) outlined; returned posteriors class 0 0.5298, class 1 0.4702, prediction class 0 (smoothing α = 1). Your inputs: X = 2 1 0 0; 1 1 0 1; 0 0 3..., y = 0, 0, 1, 1, x = 1, 0, 1, 0, alpha = 1.*
+*The stated training rows (labelled with their class y = [0, 0, 1, 1]) and the query x = [1, 0, 1, 0]; returned posteriors class 0: 0.529781, class 1: 0.470219, prediction class 0 (smoothing α = 1.0).*
 
-![Class with the largest posterior as α runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-live-1)
+![Posterior probability of class 0 for the query x = [1, 0, 1, 0] as the smoothing α runs over 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-curve)
 
-*Class with the largest posterior as α runs from 0.1 to 10, every other input as you entered it (37 solutions). Marked: your α = 1 gives prediction = 0. Your inputs: X = 2 1 0 0; 1 1 0 1; 0 0 3..., y = 0, 0, 1, 1, x = 1, 0, 1, 0, alpha = 1.*
-
-![Every entry of classes as computed for your inputs (2 entries: 0, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-live-2)
-
-*Every entry of classes as computed for your inputs (2 entries: 0, 1). Your inputs: X = 2 1 0 0; 1 1 0 1; 0 0 3..., y = 0, 0, 1, 1, x = 1, 0, 1, 0, alpha = 1.*
-
-![Class with the largest posterior as x[1] runs from 0 to 5, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multinomial-naive-bayes-live-3)
-
-*Class with the largest posterior as x[1] runs from 0 to 5, every other input as you entered it (6 solutions). Marked: your x[1] = 1 gives prediction = 0. Your inputs: X = 2 1 0 0; 1 1 0 1; 0 0 3..., y = 0, 0, 1, 1, x = 1, 0, 1, 0, alpha = 1.*
+*Posterior probability of class 0 for the query x = [1, 0, 1, 0] as the smoothing α runs over 0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30 (one run each, same training rows): the query's third word never occurs in class 0, so little smoothing hands it to class 1; more smoothing pulls both posteriors toward 0.5.*
 
 ```python
 data_science_ml_ai999x.solve('ml_multinomial_naive_bayes', X=[[2, 1, 0, 0], [1, 1, 0, 1], [0, 0, 3, 1], [0, 1, 2, 2]], y=[0, 0, 1, 1], x=[1, 0, 1, 0], alpha=1)
@@ -3591,17 +3267,9 @@ $$
 - **Assumes:** features 0 or 1; $\alpha > 0$; at least two classes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated training rows (labelled with their class) and the query x = (1, 0, 0) outlined; returned posteriors class 0 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bernoulli-naive-bayes-data)
+![The stated training rows (labelled with their class y = [0, 0, 1, 1, 0]) and the query x = [1, 0, 0]; returned posteriors class 0: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bernoulli-naive-bayes-data)
 
-*The stated training rows (labelled with their class) and the query x = (1, 0, 0) outlined; returned posteriors class 0 0.86, class 1 0.14, prediction class 0 (smoothing α = 1). Your inputs: X = 1 0 1; 1 1 0; 0 1 1; 0 0..., y = 0, 0, 1, 1, 0, x = 1, 0, 0, alpha = 1.*
-
-![Class with the largest posterior as x[1] runs from 0 to 1, every other input as you entered it (2 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bernoulli-naive-bayes-live-1)
-
-*Class with the largest posterior as x[1] runs from 0 to 1, every other input as you entered it (2 solutions). Marked: your x[1] = 1 gives prediction = 0. Your inputs: X = 1 0 1; 1 1 0; 0 1 1; 0 0..., y = 0, 0, 1, 1, 0, x = 1, 0, 0, alpha = 1.*
-
-![Every entry of classes as computed for your inputs (2 entries: 0, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bernoulli-naive-bayes-live-2)
-
-*Every entry of classes as computed for your inputs (2 entries: 0, 1). Your inputs: X = 1 0 1; 1 1 0; 0 1 1; 0 0..., y = 0, 0, 1, 1, 0, x = 1, 0, 0, alpha = 1.*
+*The stated training rows (labelled with their class y = [0, 0, 1, 1, 0]) and the query x = [1, 0, 0]; returned posteriors class 0: 0.860022, class 1: 0.139978, prediction class 0 (smoothing α = 1.0).*
 
 ```python
 data_science_ml_ai999x.solve('ml_bernoulli_naive_bayes', X=[[1, 0, 1], [1, 1, 0], [0, 1, 1], [0, 0, 1], [1, 1, 1]], y=[0, 0, 1, 1, 0], x=[1, 0, 0], alpha=1)
@@ -3650,21 +3318,9 @@ $$
 - **Assumes:** at least two classes; whole-number features; a unique best split
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The best single split of the 6 stated points (labels 0, 0, 1, 1, 0, 1, gini criterion): the model returns feature 0 (0-based), threshold 7, 3 points left and 3 right, impurity decrease 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-split)
+![The best single split of the 6 stated points (labels [0, 0, 1, 1, 0, 1], gini criterion): the package returns feature 0, threshold 7, 3 points left and 3 right, impurity decrease 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-split)
 
-*The best single split of the 6 stated points (labels 0, 0, 1, 1, 0, 1, gini criterion): the model returns feature 0 (0-based), threshold 7, 3 points left and 3 right, impurity decrease 0.5. Your inputs: X = 2 7; 3 1; 10 8; 11 2; 4..., y = 0, 0, 1, 1, 0, 1, criterion = gini.*
-
-![Threshold t as X[2,1] runs from -3 to 9, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-live-1)
-
-*Threshold t as X[2,1] runs from -3 to 9, every other input as you entered it (3 solutions). Values in this range where the inputs admit no answer (56 of 59) are left out. Marked: your X[2,1] = 3 gives threshold = 7. Your inputs: X = 2 7; 3 1; 10 8; 11 2; 4..., y = 0, 0, 1, 1, 0, 1, criterion = gini.*
-
-![Parent impurity minus the size-weighted](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-live-2)
-
-*Parent impurity minus the size-weighted... for every choice of criterion, every other input as you entered it (highlighted: your choice). gini: 0.5; entropy: 1. Your inputs: X = 2 7; 3 1; 10 8; 11 2; 4..., y = 0, 0, 1, 1, 0, 1, criterion = gini.*
-
-![The 6 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-classification-live-3)
-
-*The 6 rows of X as points (first column across, second up), coloured by y. Your inputs: X = 2 7; 3 1; 10 8; 11 2; 4..., y = 0, 0, 1, 1, 0, 1, criterion = gini.*
+*The best single split of the 6 stated points (labels [0, 0, 1, 1, 0, 1], gini criterion): the package returns feature 0, threshold 7, 3 points left and 3 right, impurity decrease 0.5, the split separates the classes perfectly.*
 
 ```python
 data_science_ml_ai999x.solve('ml_decision_stump_classification', X=[[2, 7], [3, 1], [10, 8], [11, 2], [4, 9], [12, 0]], y=[0, 0, 1, 1, 0, 1], criterion='gini')
@@ -3710,21 +3366,13 @@ $$
 - **Assumes:** 2 to 40 points; no tied merge distances (complete, average, ward)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The merge heights the model returns for the 5 stated points under four linkages, one run each: single: 1, 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-heights)
+![The merge heights the package returns for the 5 stated points X = [[0, 0], [0, 1], [4, 0], [4, 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-heights)
 
-*The merge heights the model returns for the 5 stated points under four linkages, one run each: single: 1, 1.5, 4, 10.4; complete: 1, 1.5, 4.272, 14.14; average: 1, 1.5, 4.107, 12.42; ward: 1, 1.5, 5.668, 15.59. Your inputs: X = 0 0; 0 1; 4 0; 4 1.5; 10 10, method = single.*
+*The merge heights the package returns for the 5 stated points X = [[0, 0], [0, 1], [4, 0], [4, 1.5], [10, 10]] under four linkages, one run each: single: 1, 1.5, 4, 10.4043; complete: 1, 1.5, 4.272, 14.1421; average: 1, 1.5, 4.10656, 12.4155; ward: 1, 1.5, 5.66789, 15.5893. The last merge joins the far point (10, 10).*
 
-![Height of the last merge for every choice of method, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-live-1)
+![The stated points with dashed circles of radius half of each of the first three returned single-linkage merge heights (1, 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-points)
 
-*Height of the last merge for every choice of method, every other input as you entered it (highlighted: your choice). single: 10.4; complete: 14.14; average: 12.42; ward: 15.59. Your inputs: X = 0 0; 0 1; 4 0; 4 1.5; 10 10, method = single.*
-
-![The 5 rows of X as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-live-2)
-
-*The 5 rows of X as points (first column across, second up). Your inputs: X = 0 0; 0 1; 4 0; 4 1.5; 10 10, method = single.*
-
-![Every entry of heights as computed for your inputs (4 entries: 1, 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-hierarchical-clustering-live-3)
-
-*Every entry of heights as computed for your inputs (4 entries: 1, 1.5, 4, 10.4). Your inputs: X = 0 0; 0 1; 4 0; 4 1.5; 10 10, method = single.*
+*The stated points with dashed circles of radius half of each of the first three returned single-linkage merge heights (1, 1.5, 4): two points merge at a height when their circles touch; the far point joins last at 10.4043.*
 
 ```python
 data_science_ml_ai999x.solve('ml_hierarchical_clustering', X=[[0, 0], [0, 1], [4, 0], [4, 1.5], [10, 10]], method='single')
@@ -3770,21 +3418,13 @@ $$
 - **Assumes:** n > number of features; full rank; a unique first component
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Principal components of 10 points: the model's first component (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pca-pca)
+![Principal components of 10 points: the package's first component (0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-pca-pca.svg)
 
-*Principal components of 10 points: the model's first component (0.6779, 0.7352) through the mean of the points explains 96.32 % of the variance (variance 1.284 against 0.04908); each point is joined to its projection at the score the model returns; the short arrow is two standard deviations (0.4431) along the second component. Your inputs: X = 2.5 2.4; 0.5 0.7; 2.2....*
+*Principal components of 10 points: the package's first component (0.677873, 0.735179) through the mean of the points explains 96.3181 % of the variance (variance 1.28403 against 0.0490834); each point is joined to its projection at the score the package returns; the short arrow is two standard deviations (0.443095) along the second component.*
 
-![Explained_variance[1] and explained_variance[2] as X[1,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pca-live-1)
+![projection of each centred sample on component_1 (scores_1) returned by data-science-ml-ai999x for the worked example, one value for each position in the list (10 values, first 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pca-series)
 
-*Explained_variance[1] and explained_variance[2] as X[1,1] runs from 0.625 to 4.375, every other input as you entered it (41 solutions). Marked: your X[1,1] = 2.5 gives explained_variance[1] = 1.284. Your inputs: X = 2.5 2.4; 0.5 0.7; 2.2....*
-
-![The 10 rows of X as points (first column across, second up), coloured by scores_1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pca-live-2)
-
-*The 10 rows of X as points (first column across, second up), coloured by scores_1. Your inputs: X = 2.5 2.4; 0.5 0.7; 2.2....*
-
-![Every entry of explained_variance, explained_variance_ratio as computed for your inputs (2 entries, explained_variance first: 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pca-live-3)
-
-*Every entry of explained_variance, explained_variance_ratio as computed for your inputs (2 entries, explained_variance first: 1.284, 0.04908). Your inputs: X = 2.5 2.4; 0.5 0.7; 2.2....*
+*projection of each centred sample on component_1 (scores_1) returned by data-science-ml-ai999x for the worked example, one value for each position in the list (10 values, first 0.82797, last -1.22382, largest 1.6758). Inputs: X = [[2.5, 2.4], [0.5, 0.7], [2.2, 2.9], [1.9, 2.….*
 
 ```python
 data_science_ml_ai999x.solve('ml_pca', X=[[2.5, 2.4], [0.5, 0.7], [2.2, 2.9], [1.9, 2.2], [3.1, 3.0], [2.3, 2.7], [2, 1.6], [1, 1.1], [1.5, 1.6], [1.1, 0.9]])
@@ -3830,25 +3470,13 @@ $$
 - **Assumes:** a constant column scales to 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each feature of X = [[1, 10], [2, 20], [3, 30], [4, 40]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: means (2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-before-after)
+![Each feature of X = [[1, 10], [2, 20], [3, 30], [4, 40]] before (top dots) and after (bottom dots) standardising to mean 0, standard deviation 1, the scaled values as returned; also returned: means ['2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-before-after)
 
-*Each feature of X = [[1, 10], [2, 20], [3, 30], [4, 40]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: means (2.5, 25), stds (1.118, 11.18). Your inputs: X = 1 10; 2 20; 3 30; 4 40.*
+*Each feature of X = [[1, 10], [2, 20], [3, 30], [4, 40]] before (top dots) and after (bottom dots) standardising to mean 0, standard deviation 1, the scaled values as returned; also returned: means ['2.5', '25'], stds ['1.11803', '11.1803'].*
 
-![The matrices as heat maps, side by side (each cell shaded by its value): X (input); scaled (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-matrix)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-matrix)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): X (input); scaled (returned). Your inputs: X = 1 10; 2 20; 3 30; 4 40.*
-
-![Column means, entry 1 as X[2,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-live-1)
-
-*Column means, entry 1 as X[2,1] runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your X[2,1] = 2 gives means[1] = 2.5. Your inputs: X = 1 10; 2 20; 3 30; 4 40.*
-
-![The 4 rows of X as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-live-2)
-
-*The 4 rows of X as points (first column across, second up). Squares: scaled (4 points). Your inputs: X = 1 10; 2 20; 3 30; 4 40.*
-
-![Every entry of means as computed for your inputs (2 entries: 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-standard-scaler-live-3)
-
-*Every entry of means as computed for your inputs (2 entries: 2.5, 25). Your inputs: X = 1 10; 2 20; 3 30; 4 40.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned).*
 
 ```python
 data_science_ml_ai999x.solve('ml_standard_scaler', X=[[1, 10], [2, 20], [3, 30], [4, 40]])
@@ -3893,25 +3521,13 @@ $$
 - **Assumes:** a constant column scales to 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each feature of X = [[1, 10], [2, 20], [3, 40], [5, 30]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: mins (1, 10), maxs (5, 40)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-before-after)
+![Each feature of X = [[1, 10], [2, 20], [3, 40], [5, 30]] before (top dots) and after (bottom dots) min–max scaling to [0, 1], the scaled values as returned; also returned: maxs ['5', '40'], mins ['1', '10']](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-before-after)
 
-*Each feature of X = [[1, 10], [2, 20], [3, 40], [5, 30]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: mins (1, 10), maxs (5, 40). Your inputs: X = 1 10; 2 20; 3 40; 5 30.*
+*Each feature of X = [[1, 10], [2, 20], [3, 40], [5, 30]] before (top dots) and after (bottom dots) min–max scaling to [0, 1], the scaled values as returned; also returned: maxs ['5', '40'], mins ['1', '10'].*
 
-![The matrices as heat maps, side by side (each cell shaded by its value): X (input); scaled (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-matrix)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-matrix)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): X (input); scaled (returned). Your inputs: X = 1 10; 2 20; 3 40; 5 30.*
-
-![Column minima, entry 1 as X[2,1] runs from -2 to 6, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-live-1)
-
-*Column minima, entry 1 as X[2,1] runs from -2 to 6, every other input as you entered it (41 solutions). Marked: your X[2,1] = 2 gives mins[1] = 1. Your inputs: X = 1 10; 2 20; 3 40; 5 30.*
-
-![The 4 rows of X as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-live-2)
-
-*The 4 rows of X as points (first column across, second up). Squares: scaled (4 points). Your inputs: X = 1 10; 2 20; 3 40; 5 30.*
-
-![Every entry of mins as computed for your inputs (2 entries: 1, 10)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-minmax-scaler-live-3)
-
-*Every entry of mins as computed for your inputs (2 entries: 1, 10). Your inputs: X = 1 10; 2 20; 3 40; 5 30.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned).*
 
 ```python
 data_science_ml_ai999x.solve('ml_minmax_scaler', X=[[1, 10], [2, 20], [3, 40], [5, 30]])
@@ -3957,17 +3573,13 @@ $$
 - **Assumes:** non-empty category words
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The categories in sorted order with their returned codes and counts (blue: 1, green: 2, red: 3); each becomes one column of the one-hot matrix](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-one-hot-encoding-counts)
+![The categories of 'red, green, red, blue, green, red' in sorted order with their returned codes and counts (blue: 1, green: 2, red: 3); each becomes one column of the one-hot matrix](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-one-hot-encoding-counts)
 
-*The categories in sorted order with their returned codes and counts (blue: 1, green: 2, red: 3); each becomes one column of the one-hot matrix. Your inputs: categories = red, green, red, blue....*
+*The categories of 'red, green, red, blue, green, red' in sorted order with their returned codes and counts (blue: 1, green: 2, red: 3); each becomes one column of the one-hot matrix.*
 
-![Every entry of counts as computed for your inputs (3 entries: 1, 2, 3)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-one-hot-encoding-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): one_hot (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-one-hot-encoding-matrix)
 
-*Every entry of counts as computed for your inputs (3 entries: 1, 2, 3). Your inputs: categories = red, green, red, blue....*
-
-![Each cell is one entry of one_hot for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-one-hot-encoding-live-2)
-
-*Each cell is one entry of one_hot for your inputs (row by row; shade by size and sign). Your inputs: categories = red, green, red, blue....*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): one_hot (returned). Other inputs: categories = red, green, red, blue, green, red.*
 
 ```python
 data_science_ml_ai999x.solve('ml_one_hot_encoding', categories='red, green, red, blue, green, red')
@@ -4012,21 +3624,13 @@ $$
 - **Assumes:** 0 < test_size < 1; a non-empty training set
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![n_test over the test fraction from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-field)
+![Train and test sizes of 100 samples for test fractions 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-sizes)
 
-*n_test over the test fraction from 0.02 to 0.98 and n from 1 to 200: each of the 21 × 15 cells is one run of the model, shaded by its value; blank cells are inputs the capability refuses. Marked: the visitor's n = 100, test_size = 0.2: n_test = 20, n_train = 80. Your inputs: n = 100, test_size = 0.2.*
+*Train and test sizes of 100 samples for test fractions 0.1, 0.2, 0.25, 0.3, 0.5, one run each: 0.1: 90 / 10; 0.2: 80 / 20; 0.25: 75 / 25; 0.3: 70 / 30; 0.5: 50 / 50.*
 
-![Train and test sizes of 100 samples for several test fractions, one run each (train / test): 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-sizes)
+![n_test (ceil(test_size * n)) over test_size (fraction of the samples used for testing (0 to 1, or a percentage)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-field)
 
-*Train and test sizes of 100 samples for several test fractions, one run each (train / test): 0.1: 90 / 10; 0.2 (yours): 80 / 20; 0.25: 75 / 25; 0.3: 70 / 30; 0.5: 50 / 50. Your inputs: n = 100, test_size = 0.2.*
-
-![N test as test_size runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-live-1)
-
-*N test as test_size runs from 0.05 to 0.35, every other input as you entered it (41 solutions). Marked: your test_size = 0.2 gives n_test = 20. Your inputs: n = 100, test_size = 0.2.*
-
-![N test as n runs from 80 to 120, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-train-test-split-sizes-live-2)
-
-*N test as n runs from 80 to 120, every other input as you entered it (21 solutions). Marked: your n = 100 gives n_test = 20. Your inputs: n = 100, test_size = 0.2.*
+*n_test (ceil(test_size * n)) over test_size (fraction of the samples used for testing (0 to 1, or a percentage)) from 0.02 to 0.98 and n (number of samples) from 1 to 200 (logarithmic vertical axis): each of the 21 × 15 cells is one run of data-science-ml-ai999x, shaded by its value (light 1 to dark 196); iso-lines at n_test = 50, 100, 150; blank cells: inputs the capability refuses. Marked: the worked example, test_size = 0.2, n = 100, n_test = 20.*
 
 ```python
 data_science_ml_ai999x.solve('ml_train_test_split_sizes', n=100, test_size=0.2)
@@ -4073,21 +3677,9 @@ $$
 - **Assumes:** $2  \leq  k  \leq  n$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![10 samples split into 3 folds: each row is one fold, its test samples dark, training samples light, the test blocks consecutive with the returned sizes [4, 3, 3] (train [6, 7, 7])](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-sizes-folds)
+![10 samples split into 3 folds: each row is one fold, its test samples dark, training samples light, the test blocks consecutive with the returned sizes [4, 3, 3] (train [6, 7, 7]; first test fold covers samples 0 … 3)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-sizes-folds)
 
-*10 samples split into 3 folds: each row is one fold, its test samples dark, training samples light, the test blocks consecutive with the returned sizes [4, 3, 3] (train [6, 7, 7]). Your inputs: n = 10, k = 3.*
-
-![Test_sizes[1], test_sizes[2] and test_sizes[3] as n runs from 3 to 30, every other input as you entered it (28 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-sizes-live-1)
-
-*Test_sizes[1], test_sizes[2] and test_sizes[3] as n runs from 3 to 30, every other input as you entered it (28 solutions). Marked: your n = 10 gives test_sizes[1] = 4. Your inputs: n = 10, k = 3.*
-
-![Every entry of test_sizes, train_sizes as computed for your inputs (3 entries, test_sizes first: 4, 3, 3)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-sizes-live-2)
-
-*Every entry of test_sizes, train_sizes as computed for your inputs (3 entries, test_sizes first: 4, 3, 3). Your inputs: n = 10, k = 3.*
-
-![Test_sizes[1], test_sizes[2] and test_sizes[3] as k runs from 2 to 7, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-sizes-live-3)
-
-*Test_sizes[1], test_sizes[2] and test_sizes[3] as k runs from 2 to 7, every other input as you entered it (6 solutions). Marked: your k = 3 gives test_sizes[1] = 4. Your inputs: n = 10, k = 3.*
+*10 samples split into 3 folds: each row is one fold, its test samples dark, training samples light, the test blocks consecutive with the returned sizes [4, 3, 3] (train [6, 7, 7]; first test fold covers samples 0 … 3).*
 
 ```python
 data_science_ml_ai999x.solve('ml_kfold_sizes', n=10, k=3)
@@ -4134,25 +3726,13 @@ $$
 - **Assumes:** every training set has at least $d + 2$ samples and full rank
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated data x = 1, 2, 3, 4, 5, 6, y = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-data)
+![The stated data x = [1, 2, 3, 4, 5, 6], y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-data)
 
-*The stated data x = 1, 2, 3, 4, 5, 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8 coloured by test fold, the folds being consecutive blocks of the sizes the model's fold-size capability returns (2, 2, 2); each fold's points are predicted by a line fitted to the others. In SI units: mean_mse = 0.04509. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8, k = 3.*
+*The stated data x = [1, 2, 3, 4, 5, 6], y = [1.1, 1.9, 3.2, 3.9, 5.1, 5.8] coloured by test fold, the folds being consecutive blocks of the sizes the package's fold-size capability returns (2, 2, 2); each fold's points are predicted by a line fitted to the others.*
 
-![3-fold cross-validation of a straight-line fit: the returned test MSE of each fold (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-folds)
+![3-fold cross-validation of a straight-line fit to x = [1, 2, 3, 4, 5, 6], y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-folds)
 
-*3-fold cross-validation of a straight-line fit: the returned test MSE of each fold (0.0925, 0.02433, 0.01845) and their mean 0.04509 (dashed). Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8, k = 3.*
-
-![Mean of the fold MSEs as y[6] runs from 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-live-1)
-
-*Mean of the fold MSEs as y[6] runs from 1.45 to 10.15, every other input as you entered it (41 solutions). Marked: your y[6] = 5.8 gives mean_mse = 0.04509. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8, k = 3.*
-
-![Every entry of fold_mse as computed for your inputs (3 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-live-2)
-
-*Every entry of fold_mse as computed for your inputs (3 entries: 0.0925, 0.02433, 0.01845). Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8, k = 3.*
-
-![Mean of the fold MSEs as y[4] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-kfold-cv-linear-regression-live-3)
-
-*Mean of the fold MSEs as y[4] runs from 0.975 to 6.825, every other input as you entered it (29 solutions). Marked: your y[4] = 3.9 gives mean_mse = 0.04509. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8, k = 3.*
+*3-fold cross-validation of a straight-line fit to x = [1, 2, 3, 4, 5, 6], y = [1.1, 1.9, 3.2, 3.9, 5.1, 5.8]: the returned test MSE of each fold (0.0925, 0.0243296, 0.01845) and their mean 0.0450932.*
 
 ```python
 data_science_ml_ai999x.solve('ml_kfold_cv_linear_regression', X=[[1], [2], [3], [4], [5], [6]], y=[1.1, 1.9, 3.2, 3.9, 5.1, 5.8], k=3)
@@ -4197,17 +3777,9 @@ $$
 - **Assumes:** at least $d + 3$ samples; no leverage equal to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cross-validated error of a line fitted to the stated data: k-fold mean MSE from the model's k-fold capability (2-fold 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-loocv-linear-regression-comparison)
+![Cross-validated error of a line fitted to x = [1, 2, 3, 4, 5, 6], y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-loocv-linear-regression-comparison)
 
-*Cross-validated error of a line fitted to the stated data: k-fold mean MSE from the model's k-fold capability (2-fold 0.06083, 3-fold 0.04509, leave-one-out 0.03515) and the returned leave-one-out MSE 0.03515 (PRESS 0.2109); leave-one-out is 6-fold cross-validation. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8.*
-
-![Loocv mse as y[6] runs from 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-loocv-linear-regression-live-1)
-
-*Loocv mse as y[6] runs from 1.45 to 10.15, every other input as you entered it (41 solutions). Marked: your y[6] = 5.8 gives loocv_mse = 0.03515. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8.*
-
-![Loocv mse as y[5] runs from 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-loocv-linear-regression-live-2)
-
-*Loocv mse as y[5] runs from 1.275 to 8.925, every other input as you entered it (29 solutions). Marked: your y[5] = 5.1 gives loocv_mse = 0.03515. Your inputs: X = 1; 2; 3; 4; 5; 6, y = 1.1, 1.9, 3.2, 3.9, 5.1, 5.8.*
+*Cross-validated error of a line fitted to x = [1, 2, 3, 4, 5, 6], y = [1.1, 1.9, 3.2, 3.9, 5.1, 5.8]: k-fold mean MSE for k = 2, 3, 6 (from the package's k-fold capability) and the returned leave-one-out MSE 0.0351518 (PRESS 0.210911); 6-fold is leave-one-out and agrees.*
 
 ```python
 data_science_ml_ai999x.solve('ml_loocv_linear_regression', X=[[1], [2], [3], [4], [5], [6]], y=[1.1, 1.9, 3.2, 3.9, 5.1, 5.8])
@@ -4253,21 +3825,9 @@ $$
 - **Assumes:** at least two models
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Predictions of 3 models (rows of P) at 2 test points with true values f = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bias-variance-decomposition-spread)
+![Predictions of 3 models (rows of P = [[1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bias-variance-decomposition-spread)
 
-*Predictions of 3 models (rows of P) at 2 test points with true values f = 1.5, 2.5: their spread is the variance, their mean's distance from the truth (dashed) the bias. Returned: bias² 0.1389, variance 0.5278, expected MSE 0.6667. Your inputs: P = 1 2; 3 2.5; 2 3.5, f = 1.5, 2.5.*
-
-![Expected mse as f[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bias-variance-decomposition-live-1)
-
-*Expected mse as f[1] runs from 0.375 to 2.625, every other input as you entered it (41 solutions). Marked: your f[1] = 1.5 gives expected_mse = 0.6667. Your inputs: P = 1 2; 3 2.5; 2 3.5, f = 1.5, 2.5.*
-
-![The 3 rows of P as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bias-variance-decomposition-live-2)
-
-*The 3 rows of P as points (first column across, second up). Star: f = (1.5, 2.5). Your inputs: P = 1 2; 3 2.5; 2 3.5, f = 1.5, 2.5.*
-
-![Expected mse as f[2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-bias-variance-decomposition-live-3)
-
-*Expected mse as f[2] runs from 0.625 to 4.375, every other input as you entered it (29 solutions). Marked: your f[2] = 2.5 gives expected_mse = 0.6667. Your inputs: P = 1 2; 3 2.5; 2 3.5, f = 1.5, 2.5.*
+*Predictions of 3 models (rows of P = [[1.0, 2.0], [3.0, 2.5], [2.0, 3.5]]) at 2 test points with true values f = [1.5, 2.5]: their spread is the variance, their mean's distance from the truth the bias. Returned: bias² 0.138889, variance 0.527778, expected MSE 0.666667 = bias² + variance.*
 
 ```python
 data_science_ml_ai999x.solve('ml_bias_variance_decomposition', P=[[1.0, 2.0], [3.0, 2.5], [2.0, 3.5]], f=[1.5, 2.5])
@@ -4315,13 +3875,13 @@ $$
 - **Assumes:** labels 0 and 1, both present; $C > 0$; Newton's method converges
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Logistic regression fitted by the model to x = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-fit-fit)
+![Logistic regression fitted by the package to x = 0](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-logistic-regression-fit-fit.svg)
 
-*Logistic regression fitted by the model to x = 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 with labels 0, 0, 1, 0, 1, 0, 1, 1 (C = 1): weight 0.7388, intercept -1.662, training accuracy 0.75; the curve is the model's predicted probability at 81 points (one run of its predict capability); marked: the decision boundary where P = 0.5. In SI units: objective = 4.653. Your inputs: X = 0.5; 1; 1.5; 2; 2.5; 3..., y = 0, 0, 1, 0, 1, 0, 1, 1, C = 1.*
+*Logistic regression fitted by the package to x = 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 with labels 0, 0, 1, 0, 1, 0, 1, 1 (C = 1): weight 0.738776, intercept -1.66225, training accuracy 0.75; the curve is the package's predicted probability at 81 points; marked: the decision boundary x = 2.25, P = 0.5.*
 
-![Minimised objective as C runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-fit-live-1)
+![objective (minimised objective) against C (inverse regularisation strength (> 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-fit-curve)
 
-*Minimised objective as C runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your C = 1 gives objective = 4.653. Your inputs: X = 0.5; 1; 1.5; 2; 2.5; 3..., y = 0, 0, 1, 0, 1, 0, 1, 1, C = 1.*
+*objective (minimised objective) against C (inverse regularisation strength (> 0)) from 0.5 to 1.5. Other inputs as in the worked example: X = [[0.5], [1.0], [1.5], [2.0], [2.5], [3.0], [3…, y = [0, 0, 1, 0, 1, 0, 1, 1]. 31 points computed by data-science-ml-ai999x; marked: the worked example, C = 1, objective = 4.65311.*
 
 ```python
 data_science_ml_ai999x.solve('ml_logistic_regression_fit', X=[[0.5], [1.0], [1.5], [2.0], [2.5], [3.0], [3.5], [4.0]], y=[0, 0, 1, 0, 1, 0, 1, 1], C=1)
@@ -4369,21 +3929,9 @@ $$
 - **Assumes:** w has one weight per feature
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Predicted probability of class 1 for w = (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-predict-probability)
+![Predicted probability of class 1 for w = [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-predict-probability)
 
-*Predicted probability of class 1 for w = (0.8, -0.4), b = -0.2 over the plane, 750 cells from one run of the model (darker = higher); dashed: the boundary w·x + b = 0 (from the stated w, b). Marked: the stated points with their returned probabilities (0.4502, 0.8581, 0.4502) and classes (0, 1, 0). Your inputs: w = 0.8, -0.4, b = -0.2, X = 1 2; 3 1; 0 0.*
-
-![Probabilities[1] and probabilities[2] as w[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-predict-live-1)
-
-*Probabilities[1] and probabilities[2] as w[1] runs from 0.2 to 1.4, every other input as you entered it (41 solutions). Marked: your w[1] = 0.8 gives probabilities[1] = 0.4502. Your inputs: w = 0.8, -0.4, b = -0.2, X = 1 2; 3 1; 0 0.*
-
-![The 3 rows of X as points (first column across, second up), coloured by probabilities](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-predict-live-2)
-
-*The 3 rows of X as points (first column across, second up), coloured by probabilities. Line: where w.x + b = 0. Your inputs: w = 0.8, -0.4, b = -0.2, X = 1 2; 3 1; 0 0.*
-
-![Every entry of probabilities as computed for your inputs (3 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-logistic-regression-predict-live-3)
-
-*Every entry of probabilities as computed for your inputs (3 entries: 0.4502, 0.8581, 0.4502). Your inputs: w = 0.8, -0.4, b = -0.2, X = 1 2; 3 1; 0 0.*
+*Predicted probability of class 1 for w = [0.8, -0.4], b = -0.2 over the plane, 750 cells from one run of the package; dashed: the boundary w·x + b = 0 (from the stated w, b). Marked: the worked example's points [[1, 2], [3, 1], [0, 0]] with their returned probabilities and classes [0, 1, 0].*
 
 ```python
 data_science_ml_ai999x.solve('ml_logistic_regression_predict', w=[0.8, -0.4], b=-0.2, X=[[1, 2], [3, 1], [0, 0]])
@@ -4430,17 +3978,13 @@ $$
 - **Assumes:** $\alpha  \geq  0$; a non-singular system (alpha > 0 always is)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Ridge lines through x = 1, 2, 3, 4, 5, y = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ridge-regression-fit)
+![Ridge lines through x = [1, 2, 3, 4, 5], y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ridge-regression-fit)
 
-*Ridge lines through x = 1, 2, 3, 4, 5, y = 1.2, 1.9, 3.1, 3.9, 5.2 for several penalties, one run each (α = 0.01: w = 0.999, b = 0.063; α = 1: w = 0.9091, b = 0.3327; α = 10: w = 0.5, b = 1.56; α = 100: w = 0.09091, b = 2.787): the slope shrinks toward zero as α grows. In SI units: train_mse = 0.03493. Your inputs: X = 1; 2; 3; 4; 5, y = 1.2, 1.9, 3.1, 3.9, 5.2, alpha = 1.*
+*Ridge lines through x = [1, 2, 3, 4, 5], y = [1.2, 1.9, 3.1, 3.9, 5.2] for penalties α = 0.01, 1, 10, 100, one run each (α = 0.01: w = 0.999001, b = 0.062997; α = 1: w = 0.909091, b = 0.332727; α = 10: w = 0.5, b = 1.56; α = 100: w = 0.0909091, b = 2.78727): the slope shrinks toward zero as α grows.*
 
-![Training mean squared error as y[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ridge-regression-live-1)
+![train_mse (training mean squared error) against alpha (L2 penalty strength (>= 0; 0 is least squares)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ridge-regression-curve)
 
-*Training mean squared error as y[1] runs from 0.3 to 2.1, every other input as you entered it (41 solutions). Marked: your y[1] = 1.2 gives train_mse = 0.03493. Your inputs: X = 1; 2; 3; 4; 5, y = 1.2, 1.9, 3.1, 3.9, 5.2, alpha = 1.*
-
-![Training mean squared error as y[2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ridge-regression-live-2)
-
-*Training mean squared error as y[2] runs from 0.475 to 3.325, every other input as you entered it (29 solutions). Marked: your y[2] = 1.9 gives train_mse = 0.03493. Your inputs: X = 1; 2; 3; 4; 5, y = 1.2, 1.9, 3.1, 3.9, 5.2, alpha = 1.*
+*train_mse (training mean squared error) against alpha (L2 penalty strength (>= 0; 0 is least squares)) from 0.1 to 10 on a logarithmic axis. Other inputs as in the worked example: X = [[1], [2], [3], [4], [5]], y = [1.2, 1.9, 3.1, 3.9, 5.2]. 41 points computed by data-science-ml-ai999x; marked: the worked example, alpha = 1, train_mse = 0.0349289.*
 
 ```python
 data_science_ml_ai999x.solve('ml_ridge_regression', X=[[1], [2], [3], [4], [5]], y=[1.2, 1.9, 3.1, 3.9, 5.2], alpha=1)
@@ -4490,19 +4034,7 @@ $$
 
 ![Lasso coefficients for the stated X and y as the penalty α runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-lasso-regression-path)
 
-*Lasso coefficients for the stated X and y as the penalty α runs from 0.001 to 5 (7 runs): weights reach exactly zero one after another. Marked: the visitor's α = 0.1, returned w = (0.9143, 0), b = 0.3667, 1 nonzero. Your inputs: X = 1 0.5; 2 1.5; 3 1; 4 3..., y = 1.1, 2.3, 2.9, 4.2, 5.1, 5.8, alpha = 0.1.*
-
-![Intercept as y[2] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-lasso-regression-live-1)
-
-*Intercept as y[2] runs from 0.575 to 4.025, every other input as you entered it (11 solutions). Marked: your y[2] = 2.3 gives b = 0.3667. Your inputs: X = 1 0.5; 2 1.5; 3 1; 4 3..., y = 1.1, 2.3, 2.9, 4.2, 5.1, 5.8, alpha = 0.1.*
-
-![The 6 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-lasso-regression-live-2)
-
-*The 6 rows of X as points (first column across, second up), coloured by y. Your inputs: X = 1 0.5; 2 1.5; 3 1; 4 3..., y = 1.1, 2.3, 2.9, 4.2, 5.1, 5.8, alpha = 0.1.*
-
-![Every entry of w as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-lasso-regression-live-3)
-
-*Every entry of w as computed for your inputs (2 entries: 0.9143, 0). Your inputs: X = 1 0.5; 2 1.5; 3 1; 4 3..., y = 1.1, 2.3, 2.9, 4.2, 5.1, 5.8, alpha = 0.1.*
+*Lasso coefficients for the stated X and y as the penalty α runs from 0.001 to about 4.6 (22 runs): the second feature's weight reaches exactly zero first, then the first's. Marked: the worked example α = 0.1, returned w = (0.914286, 0), b = 0.366667, 1 nonzero.*
 
 ```python
 data_science_ml_ai999x.solve('ml_lasso_regression', X=[[1, 0.5], [2, 1.5], [3, 1.0], [4, 3.0], [5, 2.0], [6, 3.5]], y=[1.1, 2.3, 2.9, 4.2, 5.1, 5.8], alpha=0.1)
@@ -4550,21 +4082,9 @@ $$
 - **Assumes:** w is not zero
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The linear SVM w = (2, -1), b = -1: decision line and the margins w·x + b = ±1 (drawn from the stated w, b; returned margin width 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-linear-svm-decision-boundary)
+![The linear SVM w = [2, -1], b = -1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-linear-svm-decision-boundary)
 
-*The linear SVM w = (2, -1), b = -1: decision line and the margins w·x + b = ±1 (drawn from the stated w, b; returned margin width 0.8944). The stated points are coloured by the returned class (1, -1, 1) and labelled with the returned decision value | distance to the line. Your inputs: w = 2, -1, b = -1, X = 1 0; 0 1; 2 2.*
-
-![Margin width as w[1] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-linear-svm-decision-live-1)
-
-*Margin width as w[1] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your w[1] = 2 gives margin_width = 0.8944. Your inputs: w = 2, -1, b = -1, X = 1 0; 0 1; 2 2.*
-
-![The 3 rows of X as points (first column across, second up), coloured by decision](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-linear-svm-decision-live-2)
-
-*The 3 rows of X as points (first column across, second up), coloured by decision. Line: where w.x + b = 0. Your inputs: w = 2, -1, b = -1, X = 1 0; 0 1; 2 2.*
-
-![Every entry of decision as computed for your inputs (3 entries: 1, -2, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-linear-svm-decision-live-3)
-
-*Every entry of decision as computed for your inputs (3 entries: 1, -2, 1). Your inputs: w = 2, -1, b = -1, X = 1 0; 0 1; 2 2.*
+*The linear SVM w = [2, -1], b = -1.0: decision line and the margins w·x + b = ±1 (drawn from the stated w, b; returned margin width 0.894427). The stated points [[1, 0], [0, 1], [2, 2]] are coloured by the returned class [1, -1, 1] and labelled with the returned decision value and distance to the line.*
 
 ```python
 data_science_ml_ai999x.solve('ml_linear_svm_decision', w=[2, -1], b=-1, X=[[1, 0], [0, 1], [2, 2]])
@@ -4613,21 +4133,9 @@ $$
 - **Assumes:** labels -1 and +1; $lr > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Perceptron epochs on the 4 stated points (labels 1, -1, 1, -1, start w = (0, 0), b = 0, lr = 1): each epoch is one run of the model from the w, b the previous run returned; the line w·x + b = 0 after each (last one solid): epoch 1: w = (2, 1), b = 1, 1 updates; epoch 2: w = (2, 1), b = 1, 0 updates; epoch 3: w = (2, 1), b = 1, 0 updates; epoch 4: w = (2, 1), b = 1, 0 updates](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-boundary)
+![Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-boundary)
 
-*Perceptron epochs on the 4 stated points (labels 1, -1, 1, -1, start w = (0, 0), b = 0, lr = 1): each epoch is one run of the model from the w, b the previous run returned; the line w·x + b = 0 after each (last one solid): epoch 1: w = (2, 1), b = 1, 1 updates; epoch 2: w = (2, 1), b = 1, 0 updates; epoch 3: w = (2, 1), b = 1, 0 updates; epoch 4: w = (2, 1), b = 1, 0 updates. Your inputs: X = 2 1; -1 -2; 1 -1; -2 1, y = 1, -1, 1, -1, w = 0, 0, b = 0, lr = 1.*
-
-![Bias after the epoch as w[1] runs from 0 to 4, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-live-1)
-
-*Bias after the epoch as w[1] runs from 0 to 4, every other input as you entered it (5 solutions). Marked: your w[1] = 0 gives b_new = 1. Your inputs: X = 2 1; -1 -2; 1 -1; -2 1, y = 1, -1, 1, -1, w = 0, 0, b = 0, lr = 1.*
-
-![The 4 rows of X as points (first column across, second up), coloured by y](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-live-2)
-
-*The 4 rows of X as points (first column across, second up), coloured by y. Line: where w.x + b = 0. Your inputs: X = 2 1; -1 -2; 1 -1; -2 1, y = 1, -1, 1, -1, w = 0, 0, b = 0, lr = 1.*
-
-![Every entry of w_new as computed for your inputs (2 entries: 2, 1)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-perceptron-epoch-live-3)
-
-*Every entry of w_new as computed for your inputs (2 entries: 2, 1). Your inputs: X = 2 1; -1 -2; 1 -1; -2 1, y = 1, -1, 1, -1, w = 0, 0, b = 0, lr = 1.*
+*Perceptron epochs on the 4 stated points (labels [1, -1, 1, -1], start w = [0, 0], b = 0.0, lr = 1.0): each epoch is one run of the package from the w, b the previous run returned; the line w·x + b = 0 after each: epoch 1: w = (2, 1), b = 1; epoch 2: w = (2, 1), b = 1; epoch 3: w = (2, 1), b = 1; epoch 4: w = (2, 1), b = 1.*
 
 ```python
 data_science_ml_ai999x.solve('ml_perceptron_epoch', X=[[2, 1], [-1, -2], [1, -1], [-2, 1]], y=[1, -1, 1, -1], w=[0, 0], b=0, lr=1)
@@ -4678,21 +4186,9 @@ $$
 - **Assumes:** shapes agree (W1: hidden x inputs, W2: outputs x hidden)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The 2-2-1 network of the visitor's example (x = (1, 2), relu hidden units, identity output): every edge carries its stated weight; the nodes hold the returned hidden activations (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-forward-pass-network)
+![The 2–2–1 network of the worked example (x = [1, 2], W1 = [[0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-forward-pass-network)
 
-*The 2-2-1 network of the visitor's example (x = (1, 2), relu hidden units, identity output): every edge carries its stated weight; the nodes hold the returned hidden activations (0.1, 0.5) and output (-0.35). Your inputs: x = 1, 2, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, output = identity.*
-
-![Largest output as b2[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-forward-pass-live-1)
-
-*Largest output as b2[1] runs from 0.0125 to 0.0875, every other input as you entered it (41 solutions). Marked: your b2[1] = 0.05 gives max_output = -0.35. Your inputs: x = 1, 2, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, output = identity.*
-
-![Largest output for every choice of activation, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-forward-pass-live-2)
-
-*Largest output for every choice of activation, every other input as you entered it (highlighted: your choice). relu: -0.35; tanh: -0.3124; sigmoid: -0.04748. Your inputs: x = 1, 2, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, output = identity.*
-
-![Every entry of hidden as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-forward-pass-live-3)
-
-*Every entry of hidden as computed for your inputs (2 entries: 0.1, 0.5). Your inputs: x = 1, 2, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, output = identity.*
+*The 2–2–1 network of the worked example (x = [1, 2], W1 = [[0.5, -0.25], [0.1, 0.3]], b1 = [0.1, -0.2], relu hidden units, W2 = [[1, -1]], b2 = [0.05], identity output): every edge carries its stated weight; the boxes hold the returned hidden activations [0.1, 0.5] and output -0.35.*
 
 ```python
 data_science_ml_ai999x.solve('ml_dense_forward_pass', x=[1, 2], W1=[[0.5, -0.25], [0.1, 0.3]], b1=[0.1, -0.2], activation='relu', W2=[[1, -1]], b2=[0.05], output='identity')
@@ -4747,29 +4243,13 @@ $$
 - **Assumes:** shapes agree; no ReLU pre-activation exactly 0; cross-entropy: target sums to 1, at least two outputs
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The matrices as heat maps, side by side (each cell shaded by its value): W1 (input); W2 (input); dW1 (returned); dW2 (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-matrix)
+![The 2–2–1 network of the worked example (x = [1, 2], target [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-network)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): W1 (input); W2 (input); dW1 (returned); dW2 (returned). Returned with them: loss = 0.7225. Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
+*The 2–2–1 network of the worked example (x = [1, 2], target [0.5], relu hidden units, mse loss). Each edge: its stated weight | the returned gradient of the loss with respect to it (dW1 = [[-1.7, -3.4], [1.7, 3.4]], dW2 = [[-0.17, -0.85]]); hidden activations [0.1, 0.5] from the package's forward pass; returned loss 0.7225, bias gradients db1 = [-1.7, 1.7], db2 = [-1.7].*
 
-![The 2-2-1 network of the visitor's example (x = (1, 2), target (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-network)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): W1 (input); W2 (input); dW1 (returned); dW2 (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-matrix)
 
-*The 2-2-1 network of the visitor's example (x = (1, 2), target (0.5), relu hidden units, mse loss). Each edge: its stated weight | the returned gradient of the loss with respect to it; hidden activations (0.1, 0.5) from the model's forward pass; returned loss 0.7225, bias gradients db1 = (-1.7, 1.7), db2 = (-1.7). Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
-
-![Loss value as t[1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-live-1)
-
-*Loss value as t[1] runs from 0.125 to 0.875, every other input as you entered it (41 solutions). Marked: your t[1] = 0.5 gives loss = 0.7225. Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
-
-![Loss value for every choice of activation, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-live-2)
-
-*Loss value for every choice of activation, every other input as you entered it (highlighted: your choice). relu: 0.7225; tanh: 0.6601; sigmoid: 0.2997. Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
-
-![Every entry of db1 as computed for your inputs (2 entries: -1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-live-3)
-
-*Every entry of db1 as computed for your inputs (2 entries: -1.7, 1.7). Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
-
-![Each cell is one entry of dW1 for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-backpropagation-live-4)
-
-*Each cell is one entry of dW1 for your inputs (row by row; shade by size and sign). Your inputs: x = 1, 2, t = 0.5, W1 = 0.5 -0.25; 0.1 0.3, b1 = 0.1, -0.2, activation = relu, W2 = 1 -1, b2 = 0.05, loss = mse.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): W1 (input); W2 (input); dW1 (returned); dW2 (returned). Returned with them by data-science-ml-ai999x: loss = 0.7225. Other inputs: x = [1, 2], t = [0.5], b1 = [0.1, -0.2], activation = relu, b2 = [0.05], loss = mse.*
 
 ```python
 data_science_ml_ai999x.solve('ml_backpropagation', x=[1, 2], t=[0.5], W1=[[0.5, -0.25], [0.1, 0.3]], b1=[0.1, -0.2], activation='relu', W2=[[1, -1]], b2=[0.05], loss='mse')
@@ -4814,21 +4294,9 @@ $$
 - **Assumes:** positive whole-number sizes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Trainable parameters of the dense network with layer sizes 784, 128, 10 (biases: yes): returned per layer 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-parameter-count-counts)
+![Trainable parameters of the dense network with layer sizes [784, 128, 10] (biases: True): returned per layer 100480, 1290, total 101770; the first layer holds almost all](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-parameter-count-counts)
 
-*Trainable parameters of the dense network with layer sizes 784, 128, 10 (biases: yes): returned per layer 1.005e+05, 1290, total 1.018e+05. Your inputs: sizes = 784, 128, 10, bias = true.*
-
-![Total parameters as sizes[2] runs from 64 to 192, every other input as you entered it (33 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-parameter-count-live-1)
-
-*Total parameters as sizes[2] runs from 64 to 192, every other input as you entered it (33 solutions). Marked: your sizes[2] = 128 gives total = 1.018e+05. Your inputs: sizes = 784, 128, 10, bias = true.*
-
-![Total parameters for every choice of bias, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-parameter-count-live-2)
-
-*Total parameters for every choice of bias, every other input as you entered it (highlighted: your choice). true: 1.018e+05; false: 1.016e+05. Your inputs: sizes = 784, 128, 10, bias = true.*
-
-![Every entry of per_layer as computed for your inputs (2 entries: 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-dense-parameter-count-live-3)
-
-*Every entry of per_layer as computed for your inputs (2 entries: 1.005e+05, 1290). Your inputs: sizes = 784, 128, 10, bias = true.*
+*Trainable parameters of the dense network with layer sizes [784, 128, 10] (biases: True): returned per layer 100480, 1290, total 101770; the first layer holds almost all.*
 
 ```python
 data_science_ml_ai999x.solve('ml_dense_parameter_count', sizes=[784, 128, 10], bias=True)
@@ -4876,13 +4344,9 @@ $$
 - **Assumes:** the dilated kernel fits in the padded input
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Output size as stride runs from 1 to 5, every other input as you entered it (5 solutions)](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-conv-output-size-live-1.svg)
+![output_size (floor((n + 2p - d(k - 1) - 1) / s) + 1) against stride (stride) from 1 to 9](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-output-size-curve)
 
-*Output size as stride runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your stride = 1 gives output_size = 32. Your inputs: n = 32, kernel = 3, stride = 1, padding = 1, dilation = 1.*
-
-![Output size as n runs from 12 to 52, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-output-size-live-2)
-
-*Output size as n runs from 12 to 52, every other input as you entered it (21 solutions). Marked: your n = 32 gives output_size = 32. Your inputs: n = 32, kernel = 3, stride = 1, padding = 1, dilation = 1.*
+*output_size (floor((n + 2p - d(k - 1) - 1) / s) + 1) against stride (stride) from 1 to 9. One curve for each value of n (input size): 32, 16, 64. Other inputs as in the worked example: kernel = 3, padding = 1, dilation = 1. 9 points per curve computed by data-science-ml-ai999x; marked: the worked example, stride = 1, output_size = 32.*
 
 ```python
 data_science_ml_ai999x.solve('ml_conv_output_size', n=32, kernel=3, stride=1, padding=1, dilation=1)
@@ -4939,17 +4403,9 @@ $$
 - **Assumes:** channels divisible by groups
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Weights + biases as in_channels runs from 1 to 7, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-parameter-count-live-1)
+![total (weights + biases) against out_channels (output channels (filters)) from 1 to 128 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-parameter-count-curve)
 
-*Weights + biases as in_channels runs from 1 to 7, every other input as you entered it (7 solutions). Marked: your in_channels = 3 gives total = 1792. Your inputs: in_channels = 3, out_channels = 64, kernel_h = 3, kernel_w = 3, groups = 1, bias = true.*
-
-![Weights + biases for every choice of bias, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-parameter-count-live-2)
-
-*Weights + biases for every choice of bias, every other input as you entered it (highlighted: your choice). true: 1792; false: 1728. Your inputs: in_channels = 3, out_channels = 64, kernel_h = 3, kernel_w = 3, groups = 1, bias = true.*
-
-![Weights + biases as kernel_h runs from 1 to 7, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv-parameter-count-live-3)
-
-*Weights + biases as kernel_h runs from 1 to 7, every other input as you entered it (7 solutions). Marked: your kernel_h = 3 gives total = 1792. Your inputs: in_channels = 3, out_channels = 64, kernel_h = 3, kernel_w = 3, groups = 1, bias = true.*
+*total (weights + biases) against out_channels (output channels (filters)) from 1 to 128 on a logarithmic axis. One curve for each value of in_channels (input channels): 3, 4, 5. Other inputs as in the worked example: kernel_h = 3, kernel_w = 3, groups = 1, bias = True. 32 points per curve computed by data-science-ml-ai999x; marked: the worked example, out_channels = 64, total = 1792.*
 
 ```python
 data_science_ml_ai999x.solve('ml_conv_parameter_count', in_channels=3, out_channels=64, kernel_h=3, kernel_w=3, groups=1, bias=True)
@@ -4997,17 +4453,13 @@ $$
 - **Assumes:** the kernel fits in the padded image
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Sum of all outputs as stride runs from 1 to 5, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv2d-forward-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): image (input); kernel (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv2d-forward-matrix)
 
-*Sum of all outputs as stride runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your stride = 1 gives output_sum = 52. Your inputs: image = 1 2 3 0; 0 1 2 3; 3 0 1..., kernel = 2 0 1; 0 1 2; 1 0 2, stride = 1, padding = 0.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): image (input); kernel (input); output (returned). Returned with them by data-science-ml-ai999x: output_sum = 52. Other inputs: stride = 1, padding = 0.*
 
-![Each cell is one entry of output for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv2d-forward-live-2)
+![output_sum (sum of all outputs) against padding (zero padding on each side) from -10 to 10](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv2d-forward-curve)
 
-*Each cell is one entry of output for your inputs (row by row; shade by size and sign). Your inputs: image = 1 2 3 0; 0 1 2 3; 3 0 1..., kernel = 2 0 1; 0 1 2; 1 0 2, stride = 1, padding = 0.*
-
-![Sum of all outputs as padding runs from 0 to 4, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-conv2d-forward-live-3)
-
-*Sum of all outputs as padding runs from 0 to 4, every other input as you entered it (5 solutions). Marked: your padding = 0 gives output_sum = 52. Your inputs: image = 1 2 3 0; 0 1 2 3; 3 0 1..., kernel = 2 0 1; 0 1 2; 1 0 2, stride = 1, padding = 0.*
+*output_sum (sum of all outputs) against padding (zero padding on each side) from -10 to 10. One curve for each value of stride (stride): 1, 2, 3. Other inputs as in the worked example: image = [[1, 2, 3, 0], [0, 1, 2, 3], [3, 0, 1, 2], [2…, kernel = [[2, 0, 1], [0, 1, 2], [1, 0, 2]]. 11 points per curve computed by data-science-ml-ai999x; marked: the worked example, padding = 0, output_sum = 52.*
 
 ```python
 data_science_ml_ai999x.solve('ml_conv2d_forward', image=[[1, 2, 3, 0], [0, 1, 2, 3], [3, 0, 1, 2], [2, 3, 0, 1]], kernel=[[2, 0, 1], [0, 1, 2], [1, 0, 2]], stride=1, padding=0)
@@ -5053,9 +4505,9 @@ $$
 - **Assumes:** the window fits in the input
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each cell is one entry of max_pool for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pooling-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); max_pool (returned); avg_pool (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-pooling-matrix)
 
-*Each cell is one entry of max_pool for your inputs (row by row; shade by size and sign). Your inputs: X = 1 3 2 4; 5 6 1 2; 7 2 9..., size = 2, stride = 2.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); max_pool (returned); avg_pool (returned). Other inputs: size = 2, stride = 2.*
 
 ```python
 data_science_ml_ai999x.solve('ml_pooling', X=[[1, 3, 2, 4], [5, 6, 1, 2], [7, 2, 9, 0], [1, 8, 3, 4]], size=2, stride=2)
@@ -5103,17 +4555,9 @@ $$
 - **Assumes:** Q and K have the same width; K and V have the same rows; causal: as many queries as keys
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Sum of all output entries as Q[1,2] runs from -1 to 1, every other input as you entered it (37 solutions)](https://huggingface.co/AI999X/data-science-ml-ai999x/resolve/main/figures/ml-scaled-dot-product-attention-live-1.svg)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): Q (input); K (input); weights (returned); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-scaled-dot-product-attention-matrix)
 
-*Sum of all output entries as Q[1,2] runs from -1 to 1, every other input as you entered it (37 solutions). Marked: your Q[1,2] = 0 gives output_sum = 14.81. Your inputs: Q = 1 0; 0 1, K = 1 0; 0 1; 1 1, V = 1 2; 3 4; 5 6, causal = false.*
-
-![The 3 rows of K as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-scaled-dot-product-attention-live-2)
-
-*The 3 rows of K as points (first column across, second up). Squares: output (2 points). Squares: Q (2 points). Squares: V (3 points). Your inputs: Q = 1 0; 0 1, K = 1 0; 0 1; 1 1, V = 1 2; 3 4; 5 6, causal = false.*
-
-![Each cell is one entry of weights for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-scaled-dot-product-attention-live-3)
-
-*Each cell is one entry of weights for your inputs (row by row; shade by size and sign). Your inputs: Q = 1 0; 0 1, K = 1 0; 0 1; 1 1, V = 1 2; 3 4; 5 6, causal = false.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): Q (input); K (input); weights (returned); output (returned). Returned with them by data-science-ml-ai999x: output_sum = 14.8133. Other inputs: causal = False.*
 
 ```python
 data_science_ml_ai999x.solve('ml_scaled_dot_product_attention', Q=[[1, 0], [0, 1]], K=[[1, 0], [0, 1], [1, 1]], V=[[1, 2], [3, 4], [5, 6]], causal=False)
@@ -5160,9 +4604,9 @@ $$
 - **Assumes:** equal widths; model dimension divisible by heads
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each cell is one entry of output for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multihead-attention-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): Q (input); K (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-multihead-attention-matrix)
 
-*Each cell is one entry of output for your inputs (row by row; shade by size and sign). Your inputs: Q = 1 0 1 0, K = 1 0 0 1; 0 1 1 0, V = 1 2 3 4; 5 6 7 8, heads = 2.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): Q (input); K (input); output (returned). Returned with them by data-science-ml-ai999x: output_sum = 18. Other inputs: heads = 2.*
 
 ```python
 data_science_ml_ai999x.solve('ml_multihead_attention', Q=[[1, 0, 1, 0]], K=[[1, 0, 0, 1], [0, 1, 1, 0]], V=[[1, 2, 3, 4], [5, 6, 7, 8]], heads=2)
@@ -5211,21 +4655,13 @@ $$
 - **Assumes:** at least two samples; var + eps > 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The matrices as heat maps, side by side (each cell shaded by its value): X (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-matrix)
+![Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-normalise)
 
-*The matrices as heat maps, side by side (each cell shaded by its value): X (input); output (returned). Your inputs: X = 1 2; 3 6; 5 10, gamma = 1, 1, beta = 0, 0, eps = 0.*
+*Each feature of the batch X = [[1, 2], [3, 6], [5, 10]] (top row of dots) and the returned normalised output (bottom row; γ = [1, 1], β = [0, 0], ε = 0.0): every feature is shifted by its returned batch mean [3.0, 6.0] and divided by the root of its batch variance ['2.66667', '10.6667'].*
 
-![Each feature of X = [[1, 2], [3, 6], [5, 10]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: batch mean (3, 6), batch var (2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-normalise)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-matrix)
 
-*Each feature of X = [[1, 2], [3, 6], [5, 10]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: batch mean (3, 6), batch var (2.667, 10.67). Your inputs: X = 1 2; 3 6; 5 10, gamma = 1, 1, beta = 0, 0, eps = 0.*
-
-![The 3 rows of X as points (first column across, second up)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-live-1)
-
-*The 3 rows of X as points (first column across, second up). Squares: output (3 points). Star: gamma = (1, 1). Star: beta = (0, 0). Your inputs: X = 1 2; 3 6; 5 10, gamma = 1, 1, beta = 0, 0, eps = 0.*
-
-![Every entry of batch_mean as computed for your inputs (2 entries: 3, 6)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-batch-norm-forward-live-2)
-
-*Every entry of batch_mean as computed for your inputs (2 entries: 3, 6). Your inputs: X = 1 2; 3 6; 5 10, gamma = 1, 1, beta = 0, 0, eps = 0.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); output (returned). Other inputs: gamma = [1, 1], beta = [0, 0], eps = 0.0.*
 
 ```python
 data_science_ml_ai999x.solve('ml_batch_norm_forward', X=[[1, 2], [3, 6], [5, 10]], gamma=[1, 1], beta=[0, 0], eps=0)
@@ -5275,25 +4711,9 @@ $$
 - **Assumes:** $lr > 0$; 0 <= momentum < 1; weight_decay >= 0; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 SGD with momentum steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for momentum = 0, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-path)
+![40 SGD steps with momentum from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-path)
 
-*40 SGD with momentum steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for momentum = 0, 0.5, 0.9. Each dot is the w the model returned, its returned state fed to the next step. Ends: momentum = 0: (0.01478, 0); momentum = 0.5: (-3.053e-07, -8.938e-08); momentum = 0.9: (0.116, -0.2516). Returned: w new = (0.941, -1.918). Your inputs: w = 1, -2, grad = 0.5, -1, buf = 0.1, 0.2, lr = 0.1, momentum = 0.9, nesterov = false, weight_decay = 0.*
-
-![W_new[1] and w_new[2] as weight_decay runs from 0 to 1, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-live-1)
-
-*W_new[1] and w_new[2] as weight_decay runs from 0 to 1, every other input as you entered it (21 solutions). Marked: your weight_decay = 0 gives w_new[1] = 0.941. Your inputs: w = 1, -2, grad = 0.5, -1, buf = 0.1, 0.2, lr = 0.1, momentum = 0.9, nesterov = false, weight_decay = 0.*
-
-![Parameters after the step, entry 1 for every choice of nesterov, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-live-2)
-
-*Parameters after the step, entry 1 for every choice of nesterov, every other input as you entered it (highlighted: your choice). true: 0.8969; false: 0.941. Your inputs: w = 1, -2, grad = 0.5, -1, buf = 0.1, 0.2, lr = 0.1, momentum = 0.9, nesterov = false, weight_decay = 0.*
-
-![Each vector drawn from the origin: grad = (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-live-3)
-
-*Each vector drawn from the origin: grad = (0.5, -1), buf_new = (0.59, -0.82) (answers drawn bold). Your inputs: w = 1, -2, grad = 0.5, -1, buf = 0.1, 0.2, lr = 0.1, momentum = 0.9, nesterov = false, weight_decay = 0.*
-
-![Every entry of buf_new, w_new as computed for your inputs (2 entries, buf_new first: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-sgd-momentum-step-live-4)
-
-*Every entry of buf_new, w_new as computed for your inputs (2 entries, buf_new first: 0.59, -0.82). Your inputs: w = 1, -2, grad = 0.5, -1, buf = 0.1, 0.2, lr = 0.1, momentum = 0.9, nesterov = false, weight_decay = 0.*
+*40 SGD steps with momentum from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.1, momentum 0, 0.5, 0.9, Nesterov False, weight decay 0. Each dot is the w the package returned, its returned buffer fed to the next step. Ends after 40 steps: momentum 0.9 (example): (0.116015, -0.251647); momentum 0: (0.0147809, 0); momentum 0.5: (-3.0529e-07, -8.9382e-08). Momentum speeds the slow w₁ direction and overshoots across the steep w₂ one.*
 
 ```python
 data_science_ml_ai999x.solve('ml_sgd_momentum_step', w=[1, -2], grad=[0.5, -1], buf=[0.1, 0.2], lr=0.1, momentum=0.9, nesterov=False, weight_decay=0)
@@ -5346,21 +4766,9 @@ $$
 - **Assumes:** $t  \geq  1$; $0  \leq  beta1$, $beta2 < 1$; $v  \geq  0$; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 Adam steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for lr = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-path)
+![40 Adam steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-path)
 
-*40 Adam steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for lr = 0.001, 0.01. Each dot is the w the model returned, its returned state fed to the next step. Ends: lr = 0.001: (0.9602, -1.96); lr = 0.01: (0.6198, -1.609). Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![W_new[1] and w_new[2] as lr runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-live-1)
-
-*W_new[1] and w_new[2] as lr runs from 0.00025 to 0.00175, every other input as you entered it (33 solutions). Marked: your lr = 0.001 gives w_new[1] = 0.999. Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![Every entry of m_new, v_new, w_new as computed for your inputs (2 entries, m_new first: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-live-2)
-
-*Every entry of m_new, v_new, w_new as computed for your inputs (2 entries, m_new first: 0.05, -0.1). Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![W_new[1] and w_new[2] as t runs from 1 to 5, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adam-step-live-3)
-
-*W_new[1] and w_new[2] as t runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your t = 1 gives w_new[1] = 0.999. Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
+*40 Adam steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); β₁ = 0.9, β₂ = 0.999, ε = 1.0000e-08, learning rates 0.001 (the worked example's) and 0.01. Each dot is the w the package returned, its returned moments m and v fed to the next step. Marked: after 40 steps at lr = 0.001, w = (0.960168, -1.96008). Adam moves each coordinate by about lr per step whatever the gradient's scale.*
 
 ```python
 data_science_ml_ai999x.solve('ml_adam_step', w=[1, -2], grad=[0.5, -1], m=[0, 0], v=[0, 0], t=1, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-08)
@@ -5414,21 +4822,9 @@ $$
 - **Assumes:** $t  \geq  1$; $0  \leq  beta1$, $beta2 < 1$; $v  \geq  0$; weight_decay >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![40 AdamW steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for weight_decay = 0, 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-path)
+![40 AdamW steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-path)
 
-*40 AdamW steps from the visitor's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen for this figure (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets), for weight_decay = 0, 0.01. Each dot is the w the model returned, its returned state fed to the next step. Ends: weight_decay = 0: (0.9602, -1.96); weight_decay = 0.01: (0.9598, -1.959). Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![W_new[1] and w_new[2] as lr runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-live-1)
-
-*W_new[1] and w_new[2] as lr runs from 0.00025 to 0.00175, every other input as you entered it (31 solutions). Marked: your lr = 0.001 gives w_new[1] = 0.999. Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![Every entry of m_new, v_new, w_new as computed for your inputs (2 entries, m_new first: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-live-2)
-
-*Every entry of m_new, v_new, w_new as computed for your inputs (2 entries, m_new first: 0.05, -0.1). Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
-
-![W_new[1] and w_new[2] as t runs from 1 to 5, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-adamw-step-live-3)
-
-*W_new[1] and w_new[2] as t runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your t = 1 gives w_new[1] = 0.999. Your inputs: w = 1, -2, grad = 0.5, -1, m = 0, 0, v = 0, 0, t = 1, lr = 0.001, beta1 = 0.9, beta2 = 0.999.*
+*40 AdamW steps from the worked example's start w = (1, -2) on the loss L(w) = ½(w₁² + 10 w₂²) chosen here (its gradient (w₁, 10 w₂) is passed to every step; grey ellipses are its level sets L = 0.5, 2, 5, 10, 20.5); lr = 0.001, β₁ = 0.9, β₂ = 0.999, ε = 1.0000e-08, decoupled weight decay 0 and 0.01 (the worked example's 0.01 among them). Each dot is the w the package returned, its moments fed to the next step. Marked ends: (0.960168, -1.96008) and (0.959777, -1.95929).*
 
 ```python
 data_science_ml_ai999x.solve('ml_adamw_step', w=[1, -2], grad=[0.5, -1], m=[0, 0], v=[0, 0], t=1, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-08, weight_decay=0.01)
@@ -5477,15 +4873,7 @@ $$
 
 ![Step decay from lr0 = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-step-lr-schedule-schedule)
 
-*Step decay from lr0 = 0.1, multiplied by γ every 30 epochs, for γ = 0.1 and 0.5 over 105 epochs (81 runs each). Marked: the visitor's epoch 65, lr = 0.001 after 2 decays. Your inputs: lr0 = 0.1, step_size = 30, gamma = 0.1, epoch = 65.*
-
-![Lr as step_size runs from 10 to 50, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-step-lr-schedule-live-1)
-
-*Lr as step_size runs from 10 to 50, every other input as you entered it (41 solutions). Marked: your step_size = 30 gives lr = 0.001. Your inputs: lr0 = 0.1, step_size = 30, gamma = 0.1, epoch = 65.*
-
-![Lr as epoch runs from 45 to 85, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-step-lr-schedule-live-2)
-
-*Lr as epoch runs from 45 to 85, every other input as you entered it (21 solutions). Marked: your epoch = 65 gives lr = 0.001. Your inputs: lr0 = 0.1, step_size = 30, gamma = 0.1, epoch = 65.*
+*Step decay from lr0 = 0.1, multiplied by γ every 30 epochs, for γ = 0.1 and 0.5 over 100 epochs (101 runs each; logarithmic axis). Marked: the worked example, epoch 65, lr = 0.001 after 2 decays.*
 
 ```python
 data_science_ml_ai999x.solve('ml_step_lr_schedule', lr0=0.1, step_size=30, gamma=0.1, epoch=65)
@@ -5533,15 +4921,7 @@ $$
 
 ![Cosine annealing from lr_max = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cosine-lr-schedule-schedule)
 
-*Cosine annealing from lr_max = 0.1 over T_max = 100 epochs down to η_min = 0 and 0.02 (51 runs each). Marked: the visitor's epoch 50, lr = 0.05. Your inputs: lr_max = 0.1, eta_min = 0, T_max = 100, epoch = 50.*
-
-![Lr as epoch runs from 30 to 70, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cosine-lr-schedule-live-1)
-
-*Lr as epoch runs from 30 to 70, every other input as you entered it (41 solutions). Marked: your epoch = 50 gives lr = 0.05. Your inputs: lr_max = 0.1, eta_min = 0, T_max = 100, epoch = 50.*
-
-![Lr as lr_max runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-cosine-lr-schedule-live-2)
-
-*Lr as lr_max runs from 0.025 to 0.175, every other input as you entered it (29 solutions). Marked: your lr_max = 0.1 gives lr = 0.05. Your inputs: lr_max = 0.1, eta_min = 0, T_max = 100, epoch = 50.*
+*Cosine annealing from lr_max = 0.1 over T_max = 100 epochs to η_min = 0 and 0.02 (51 runs each). Marked: the worked example, epoch 50, lr = 0.05, halfway down.*
 
 ```python
 data_science_ml_ai999x.solve('ml_cosine_lr_schedule', lr_max=0.1, eta_min=0, T_max=100, epoch=50)
@@ -5592,15 +4972,7 @@ $$
 
 ![Linear warm-up from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-warmup-cosine-lr-schedule-schedule)
 
-*Linear warm-up from 0.1 × lr_max to lr_max = 0.001, then cosine decay to 0 at step 100, for warm-ups of 10 and 25 steps (61 runs each). Marked: the visitor's step 5, lr = 0.00055. Your inputs: lr_max = 0.001, start_factor = 0.1, warmup = 10, total = 100, eta_min = 0, step = 5.*
-
-![Learning rate at the step as lr_max runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-warmup-cosine-lr-schedule-live-1)
-
-*Learning rate at the step as lr_max runs from 0.00025 to 0.00175, every other input as you entered it (33 solutions). Marked: your lr_max = 0.001 gives lr = 0.00055. Your inputs: lr_max = 0.001, start_factor = 0.1, warmup = 10, total = 100, eta_min = 0, step = 5.*
-
-![Learning rate at the step as warmup runs from 1 to 29, every other input as you entered it (16 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-warmup-cosine-lr-schedule-live-2)
-
-*Learning rate at the step as warmup runs from 1 to 29, every other input as you entered it (16 solutions). Marked: your warmup = 10 gives lr = 0.00055. Your inputs: lr_max = 0.001, start_factor = 0.1, warmup = 10, total = 100, eta_min = 0, step = 5.*
+*Linear warm-up from 0.1 × lr_max to lr_max = 0.001, then cosine decay to 0.0 at step 100, for warm-ups of 10 and 25 steps (101 runs each). Marked: the worked example, step 5, lr = 0.00055.*
 
 ```python
 data_science_ml_ai999x.solve('ml_warmup_cosine_lr_schedule', lr_max=0.001, start_factor=0.1, warmup=10, total=100, eta_min=0, step=5)
@@ -5650,17 +5022,13 @@ $$
 - **Assumes:** d_model divisible by n_heads
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Parameters of one transformer layer by part for several d_model (d_ff = 4·d_model except the visitor's own d_ff, 8 heads), one run each: 256: attention 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-transformer-parameter-count-counts)
+![Parameters of one transformer layer by part for d_model = 256, 512, 768, 1024 with d_ff = 4·d_model and 8 heads, one run each: 256: attention 263168, feed-forward 525568; 512: attention 1050624, feed-forward 2099712; 768: attention 2362368, feed-forward 4722432; 1024: attention 4198400, feed-forward 8393728](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-transformer-parameter-count-counts)
 
-*Parameters of one transformer layer by part for several d_model (d_ff = 4·d_model except the visitor's own d_ff, 8 heads), one run each: 256: attention 2.632e+05, feed-forward 5.256e+05; 512: attention 1.051e+06, feed-forward 2.1e+06; 768: attention 2.362e+06, feed-forward 4.722e+06; 1024: attention 4.198e+06, feed-forward 8.394e+06. Visitor's example (6 layers): total 1.891e+07. Your inputs: d_model = 512, n_heads = 8, d_ff = 2048, n_layers = 6.*
+*Parameters of one transformer layer by part for d_model = 256, 512, 768, 1024 with d_ff = 4·d_model and 8 heads, one run each: 256: attention 263168, feed-forward 525568; 512: attention 1050624, feed-forward 2099712; 768: attention 2362368, feed-forward 4722432; 1024: attention 4198400, feed-forward 8393728. Worked example (d_model 512, 6 layers): total 18914304.*
 
-![Parameters of the stack as n_layers runs from 1 to 11, every other input as you entered it (11 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-transformer-parameter-count-live-1)
+![total (parameters of the stack) against d_model (model (embedding) dimension) from 1 to 1024 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-transformer-parameter-count-curve)
 
-*Parameters of the stack as n_layers runs from 1 to 11, every other input as you entered it (11 solutions). Marked: your n_layers = 6 gives total = 1.891e+07. Your inputs: d_model = 512, n_heads = 8, d_ff = 2048, n_layers = 6.*
-
-![Parameters of the stack as d_model runs from 504 to 520, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-transformer-parameter-count-live-2)
-
-*Parameters of the stack as d_model runs from 504 to 520, every other input as you entered it (3 solutions). Values in this range where the inputs admit no answer (14 of 17) are left out. Marked: your d_model = 512 gives total = 1.891e+07. Your inputs: d_model = 512, n_heads = 8, d_ff = 2048, n_layers = 6.*
+*total (parameters of the stack) against d_model (model (embedding) dimension) from 1 to 1024 on a logarithmic axis. One curve for each value of n_layers (number of layers): 6, 3, 12. Other inputs as in the worked example: n_heads = 8, d_ff = 2048. 9 points per curve computed by data-science-ml-ai999x; marked: the worked example, d_model = 512, total = 1.8914e+07.*
 
 ```python
 data_science_ml_ai999x.solve('ml_transformer_parameter_count', d_model=512, n_heads=8, d_ff=2048, n_layers=6)
@@ -5709,21 +5077,13 @@ $$
 - **Assumes:** positive whole-number sizes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Parameters of 1 recurrent layer(s) with 100 inputs and 128 hidden units for each cell type, one run each: rnn 2](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-counts)
+![Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional), 1, 3 and 4 gate blocks](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-counts)
 
-*Parameters of 1 recurrent layer(s) with 100 inputs and 128 hidden units for each cell type, one run each: rnn 2.944e+04 (5.888e+04 bidirectional), gru 8.832e+04 (1.766e+05 bidirectional), lstm 1.178e+05 (2.355e+05 bidirectional). Your inputs: cell = lstm, input_size = 100, hidden_size = 128, num_layers = 1, bidirectional = false.*
+*Parameters of one recurrent layer with 100 inputs and 128 hidden units for each cell type, one run each: rnn 29440 (58880 bidirectional), gru 88320 (176640 bidirectional), lstm 117760 (235520 bidirectional), 1, 3 and 4 gate blocks.*
 
-![Total parameters as num_layers runs from 1 to 5, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-live-1)
+![total (total parameters) against hidden_size (hidden units) from 1 to 256 on a logarithmic axis](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-curve)
 
-*Total parameters as num_layers runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your num_layers = 1 gives total = 1.178e+05. Your inputs: cell = lstm, input_size = 100, hidden_size = 128, num_layers = 1, bidirectional = false.*
-
-![Total parameters for every choice of cell, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-live-2)
-
-*Total parameters for every choice of cell, every other input as you entered it (highlighted: your choice). lstm: 1.178e+05; gru: 8.832e+04; rnn: 2.944e+04. Your inputs: cell = lstm, input_size = 100, hidden_size = 128, num_layers = 1, bidirectional = false.*
-
-![Total parameters as hidden_size runs from 108 to 148, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-rnn-parameter-count-live-3)
-
-*Total parameters as hidden_size runs from 108 to 148, every other input as you entered it (21 solutions). Marked: your hidden_size = 128 gives total = 1.178e+05. Your inputs: cell = lstm, input_size = 100, hidden_size = 128, num_layers = 1, bidirectional = false.*
+*total (total parameters) against hidden_size (hidden units) from 1 to 256 on a logarithmic axis. One curve for each value of num_layers (stacked layers): 1, 2, 3. Other inputs as in the worked example: cell = lstm, input_size = 100, bidirectional = False. 33 points per curve computed by data-science-ml-ai999x; marked: the worked example, hidden_size = 128, total = 117760.*
 
 ```python
 data_science_ml_ai999x.solve('ml_rnn_parameter_count', cell='lstm', input_size=100, hidden_size=128, num_layers=1, bidirectional=False)
@@ -5769,9 +5129,9 @@ $$
 - **Assumes:** one kernel, stride and dilation per layer; at most 20 layers
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Receptive field of a stack of 1 to 8 convolutions with 3-wide kernels: stride 1, stride 2, and dilations doubling per layer; one run per point](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-receptive-field-growth)
+![Receptive field of a stack of 1 to 8 convolutions with 3-wide kernels: stride 1 (grows by 2 per layer), stride 2 and dilations doubling per layer (both grow geometrically); one run per point](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-receptive-field-growth)
 
-*Receptive field of a stack of 1 to 8 convolutions with 3-wide kernels: stride 1, stride 2, and dilations doubling per layer; one run per point. Marked: the visitor's 3 layers (kernels 3, 3, 3, strides 1, 1, 1, dilations 1, 1, 1), receptive field 7 (jump 1). Your inputs: kernels = 3, 3, 3, strides = 1, 1, 1, dilations = 1, 1, 1.*
+*Receptive field of a stack of 1 to 8 convolutions with 3-wide kernels: stride 1 (grows by 2 per layer), stride 2 and dilations doubling per layer (both grow geometrically); one run per point. Marked: the worked example, three stride-1 layers, receptive field 7 (jump 1).*
 
 ```python
 data_science_ml_ai999x.solve('ml_receptive_field', kernels=[3, 3, 3], strides=[1, 1, 1], dilations=[1, 1, 1])
@@ -5819,17 +5179,9 @@ $$
 - **Assumes:** relevance 0 or 1; 1 <= k <= list length; n_relevant >= relevant items in the list
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Precision and recall among the top k of the ranked relevance list [1, 0, 1, 1, 0, 0, 1] (5 relevant items in all), one run per k](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-at-k-over-k)
+![Precision and recall among the top k of the ranked relevance list [1, 0, 1, 1, 0, 0, 1] (5 relevant items in all), one run per k; the strip at the bottom marks relevant results (dark)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-at-k-over-k)
 
-*Precision and recall among the top k of the ranked relevance list [1, 0, 1, 1, 0, 0, 1] (5 relevant items in all), one run per k. Visitor's k = 5: precision 0.6, recall 0.6, 3 hits. Your inputs: rel = 1, 0, 1, 1, 0, 0, 1, n_relevant = 5, k = 5.*
-
-![Precision at k as k runs from 1 to 7, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-at-k-live-1)
-
-*Precision at k as k runs from 1 to 7, every other input as you entered it (7 solutions). Marked: your k = 5 gives precision_at_k = 0.6. Your inputs: rel = 1, 0, 1, 1, 0, 0, 1, n_relevant = 5, k = 5.*
-
-![Precision at k as rel[1] runs from 0 to 1, every other input as you entered it (2 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-precision-recall-at-k-live-2)
-
-*Precision at k as rel[1] runs from 0 to 1, every other input as you entered it (2 solutions). Marked: your rel[1] = 1 gives precision_at_k = 0.6. Your inputs: rel = 1, 0, 1, 1, 0, 0, 1, n_relevant = 5, k = 5.*
+*Precision and recall among the top k of the ranked relevance list [1, 0, 1, 1, 0, 0, 1] (5 relevant items in all), one run per k; the strip at the bottom marks relevant results (dark). Worked example k = 5: precision 0.6, recall 0.6, 3 hits.*
 
 ```python
 data_science_ml_ai999x.solve('ml_precision_recall_at_k', rel=[1, 0, 1, 1, 0, 0, 1], n_relevant=5, k=5)
@@ -5874,13 +5226,9 @@ $$
 - **Assumes:** relevance 0 or 1; every query has a relevant item
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated relevance of each query's ranked results (1 = relevant, dark) and the returned average precision of each query (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-average-precision-ranks)
+![The stated relevance of each query's ranked results R = [[1, 0, 1, 0, 0], [0, 1, 0, 0, 1]] and the returned average precision of each query (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-average-precision-ranks)
 
-*The stated relevance of each query's ranked results (1 = relevant, dark) and the returned average precision of each query (0.8333, 0.45); mean 0.6417. Your inputs: R = 1 0 1 0 0; 0 1 0 0 1.*
-
-![Every entry of average_precision as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-average-precision-live-1)
-
-*Every entry of average_precision as computed for your inputs (2 entries: 0.8333, 0.45). Your inputs: R = 1 0 1 0 0; 0 1 0 0 1.*
+*The stated relevance of each query's ranked results R = [[1, 0, 1, 0, 0], [0, 1, 0, 0, 1]] and the returned average precision of each query (0.833333, 0.45); mean average precision 0.641667.*
 
 ```python
 data_science_ml_ai999x.solve('ml_mean_average_precision', R=[[1, 0, 1, 0, 0], [0, 1, 0, 0, 1]])
@@ -5928,21 +5276,9 @@ $$
 - **Assumes:** grades >= 0; 1 <= k <= list length; at least one relevant item
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![NDCG at each cut-off k for the ranked relevance grades [3, 2, 3, 0, 1, 2], linear and exponential gain, one run per point](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ndcg-at-k-over-k)
+![NDCG at each cut-off k for the ranked relevance grades [3, 2, 3, 0, 1, 2] (labelled along the bottom), linear and exponential gain, one run per point](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ndcg-at-k-over-k)
 
-*NDCG at each cut-off k for the ranked relevance grades [3, 2, 3, 0, 1, 2], linear and exponential gain, one run per point. Visitor's example (k = 6, linear gain): DCG 6.861, ideal 7.141, NDCG 0.9608. Your inputs: rel = 3, 2, 3, 0, 1, 2, k = 6, gain = linear.*
-
-![Ndcg as k runs from 1 to 6, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ndcg-at-k-live-1)
-
-*Ndcg as k runs from 1 to 6, every other input as you entered it (6 solutions). Marked: your k = 6 gives ndcg = 0.9608. Your inputs: rel = 3, 2, 3, 0, 1, 2, k = 6, gain = linear.*
-
-![Ndcg for every choice of gain, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ndcg-at-k-live-2)
-
-*Ndcg for every choice of gain, every other input as you entered it (highlighted: your choice). linear: 0.9608; exponential: 0.9488. Your inputs: rel = 3, 2, 3, 0, 1, 2, k = 6, gain = linear.*
-
-![Ndcg as rel[1] runs from 0 to 7, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-ndcg-at-k-live-3)
-
-*Ndcg as rel[1] runs from 0 to 7, every other input as you entered it (8 solutions). Marked: your rel[1] = 3 gives ndcg = 0.9608. Your inputs: rel = 3, 2, 3, 0, 1, 2, k = 6, gain = linear.*
+*NDCG at each cut-off k for the ranked relevance grades [3, 2, 3, 0, 1, 2] (labelled along the bottom), linear and exponential gain, one run per point. Worked example (k = 6, linear gain): DCG 6.86113, ideal 7.141, NDCG 0.960808; the 3 at rank 3 placed below a 2 costs a little.*
 
 ```python
 data_science_ml_ai999x.solve('ml_ndcg_at_k', rel=[3, 2, 3, 0, 1, 2], k=6, gain='linear')
@@ -5987,13 +5323,9 @@ $$
 - **Assumes:** relevance 0 or 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stated relevance of each query's ranked results (1 = relevant, dark) and the returned reciprocal rank of each query (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-reciprocal-rank-ranks)
+![The stated relevance of each query's ranked results R = [[0, 0, 1], [0, 1, 0], [1, 0, 0]] (1 = relevant) and the returned reciprocal rank of the first relevant result per query (0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-reciprocal-rank-ranks)
 
-*The stated relevance of each query's ranked results (1 = relevant, dark) and the returned reciprocal rank of each query (0.3333, 0.5, 1); mean 0.6111. Your inputs: R = 0 0 1; 0 1 0; 1 0 0.*
-
-![Every entry of reciprocal_ranks as computed for your inputs (3 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-mean-reciprocal-rank-live-1)
-
-*Every entry of reciprocal_ranks as computed for your inputs (3 entries: 0.3333, 0.5, 1). Your inputs: R = 0 0 1; 0 1 0; 1 0 0.*
+*The stated relevance of each query's ranked results R = [[0, 0, 1], [0, 1, 0], [1, 0, 0]] (1 = relevant) and the returned reciprocal rank of the first relevant result per query (0.333333, 0.5, 1); mean reciprocal rank 0.611111.*
 
 ```python
 data_science_ml_ai999x.solve('ml_mean_reciprocal_rank', R=[[0, 0, 1], [0, 1, 0], [1, 0, 0]])
@@ -6044,13 +5376,9 @@ $$
 - **Assumes:** labels 0 or 1; at least one score reaches the threshold; at least one positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Precision as threshold runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-threshold-metrics-live-1)
+![Recall, precision and accuracy of labels [0, 1, 1, 0, 1] with scores [0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-threshold-metrics-curve)
 
-*Precision as threshold runs from 0.0625 to 0.4375, every other input as you entered it (37 solutions). Marked: your threshold = 0.25 gives precision = 0.6667. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2, threshold = 0.25.*
-
-![Precision as scores[1] runs from -0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-threshold-metrics-live-2)
-
-*Precision as scores[1] runs from -0.1 to 0.3, every other input as you entered it (29 solutions). Marked: your scores[1] = 0.1 gives precision = 0.6667. Your inputs: y_true = 0, 1, 1, 0, 1, scores = 0.1, 0.9, 0.8, 0.3, 0.2, threshold = 0.25.*
+*Recall, precision and accuracy of labels [0, 1, 1, 0, 1] with scores [0.1, 0.9, 0.8, 0.3, 0.2] as the threshold runs from 0 to 1 (101 runs; a threshold where nothing is called positive leaves precision undrawn). Marked: threshold 0.25: TP 2, FP 1, FN 1, TN 1, precision 0.666667, recall 0.666667, accuracy 0.6.*
 
 ```python
 data_science_ml_ai999x.solve('ml_threshold_metrics', y_true=[0, 1, 1, 0, 1], scores=[0.1, 0.9, 0.8, 0.3, 0.2], threshold=0.25)
@@ -6095,21 +5423,13 @@ $$
 - **Assumes:** $T > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Softmax of z = (1, 2, 3) at several temperatures, one run each; returned entropies T = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-probabilities)
+![Softmax of z = [1, 2, 3] at temperatures T = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-probabilities)
 
-*Softmax of z = (1, 2, 3) at several temperatures, one run each; returned entropies T = 0.5: 0.4411, T = 1: 0.8324, T = 2: 1.02, T = 5: 1.085. Low temperature sharpens the distribution, high temperature flattens it. Your inputs: z = 1, 2, 3, T = 2.*
+*Softmax of z = [1, 2, 3] at temperatures T = 0.5, 1, 2, 5, one run each; returned entropies T = 0.5: 0.441057, T = 1: 0.832396, T = 2: 1.02019, T = 5: 1.08541. Low temperature sharpens the distribution, high temperature flattens it.*
 
-![Entropy of the distribution in nats as T runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-live-1)
+![entropy (entropy of the distribution in nats) against T (temperature (T > 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-curve)
 
-*Entropy of the distribution in nats as T runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your T = 2 gives entropy = 1.02. Your inputs: z = 1, 2, 3, T = 2.*
-
-![Every entry of probabilities as computed for your inputs (3 entries: 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-live-2)
-
-*Every entry of probabilities as computed for your inputs (3 entries: 0.1863, 0.3072, 0.5065). Your inputs: z = 1, 2, 3, T = 2.*
-
-![Entropy of the distribution in nats as z[3] runs from 0 to 7, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-softmax-temperature-live-3)
-
-*Entropy of the distribution in nats as z[3] runs from 0 to 7, every other input as you entered it (8 solutions). Marked: your z[3] = 3 gives entropy = 1.02. Your inputs: z = 1, 2, 3, T = 2.*
+*entropy (entropy of the distribution in nats) against T (temperature (T > 0)) from 0.2 to 20 on a logarithmic axis. Other inputs as in the worked example: z = [1, 2, 3]. 41 points computed by data-science-ml-ai999x; marked: the worked example, T = 2, entropy = 1.02019.*
 
 ```python
 data_science_ml_ai999x.solve('ml_softmax_temperature', z=[1, 2, 3], T=2)
@@ -6157,13 +5477,9 @@ $$
 - **Assumes:** degree 1 to 10; equal lengths
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Kernel as degree runs from 1 to 6, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-polynomial-kernel-live-1)
+![Polynomial kernel (γ·x·z + c₀)^d with γ = 1, c₀ = 1 between two unit vectors at an angle from 0° to 180° (chosen here; 37 runs per degree, d = 1, 2, 3): higher degree magnifies similarity](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-polynomial-kernel-curve)
 
-*Kernel as degree runs from 1 to 6, every other input as you entered it (6 solutions). Marked: your degree = 2 gives kernel = 144. Your inputs: x = 1, 2, z = 3, 4, gamma = 1, coef0 = 1, degree = 2.*
-
-![Kernel as γ runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-polynomial-kernel-live-2)
-
-*Kernel as γ runs from 0.25 to 1.75, every other input as you entered it (29 solutions). Marked: your γ = 1 gives kernel = 144. Your inputs: x = 1, 2, z = 3, 4, gamma = 1, coef0 = 1, degree = 2.*
+*Polynomial kernel (γ·x·z + c₀)^d with γ = 1, c₀ = 1 between two unit vectors at an angle from 0° to 180° (chosen here; 37 runs per degree, d = 1, 2, 3): higher degree magnifies similarity. Worked example x = [1, 2], z = [3, 4], degree 2: kernel 144.*
 
 ```python
 data_science_ml_ai999x.solve('ml_polynomial_kernel', x=[1, 2], z=[3, 4], gamma=1, coef0=1, degree=2)
@@ -6211,13 +5527,13 @@ $$
 - **Assumes:** equal lengths; margin >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Anchor (0, 0), positive (1, 1) and negative (2, 0) with margin 1: the returned distances d(a, p) = 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-geometry)
+![Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-geometry)
 
-*Anchor (0, 0), positive (1, 1) and negative (2, 0) with margin 1: the returned distances d(a, p) = 1.414 (inner circle) and d(a, n) = 2. The loss is zero only if the negative lies outside the outer circle (radius d(a, p) + margin); the returned loss is 0.4142. Your inputs: anchor = 0, 0, positive = 1, 1, negative = 2, 0, margin = 1.*
+*Anchor [0, 0], positive [1, 1] and negative [2, 0] with margin 1.0: the returned distances d(a, p) = 1.41421 and d(a, n) = 2. The loss is zero only if the negative lies outside the outer circle (radius d(a, p) + margin, sum shown here); here it lies inside, and the returned loss is 0.414214.*
 
-![Max(0, d_ap - d_an + margin) as margin runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-live-1)
+![loss (max(0, d_ap - d_an + margin)) against margin (margin (>= 0)) from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-triplet-loss-curve)
 
-*Max(0, d_ap - d_an + margin) as margin runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your margin = 1 gives loss = 0.4142. Your inputs: anchor = 0, 0, positive = 1, 1, negative = 2, 0, margin = 1.*
+*loss (max(0, d_ap - d_an + margin)) against margin (margin (>= 0)) from 0.1 to 10 on a logarithmic axis. Other inputs as in the worked example: anchor = [0, 0], positive = [1, 1], negative = [2, 0]. 41 points computed by data-science-ml-ai999x; marked: the worked example, margin = 1, loss = 0.414214.*
 
 ```python
 data_science_ml_ai999x.solve('ml_triplet_loss', anchor=[0, 0], positive=[1, 1], negative=[2, 0], margin=1)
@@ -6262,9 +5578,9 @@ $$
 - **Assumes:** counts >= 0 with a positive total
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The answer for your inputs: entropy_bits (entropy in bits) = 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-impurity-from-counts-live-1)
+![The three impurities of a two-class node with counts (100 − k, k), k = 0 … 100 (51 runs each)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-impurity-from-counts-curve)
 
-*The answer for your inputs: entropy_bits (entropy in bits) = 0.9403. Your inputs: counts = 9, 5.*
+*The three impurities of a two-class node with counts (100 − k, k), k = 0 … 100 (51 runs each). Marked: the worked example counts [9, 5] (fraction 0.357143): entropy 0.940286 bits, Gini 0.459184, misclassification 0.357143.*
 
 ```python
 data_science_ml_ai999x.solve('ml_impurity_from_counts', counts=[9, 5])
@@ -6310,21 +5626,13 @@ $$
 - **Assumes:** zero IQR: centred only
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Each feature of X = [[1], [2], [3], [4], [100]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: medians (3), iqr (2)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-before-after)
+![Each feature of X = [[1], [2], [3], [4], [100]] before (top dots) and after (bottom dots) subtracting the median and dividing by the interquartile range, the scaled values as returned; also returned: iqr ['2'], medians ['3']](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-before-after)
 
-*Each feature of X = [[1], [2], [3], [4], [100]] before (upper line) and after (lower line) the scaling, the scaled values as returned, each line on its own range (its ends labelled); also returned: medians (3), iqr (2). Your inputs: X = 1; 2; 3; 4; 100.*
+*Each feature of X = [[1], [2], [3], [4], [100]] before (top dots) and after (bottom dots) subtracting the median and dividing by the interquartile range, the scaled values as returned; also returned: iqr ['2'], medians ['3'].*
 
-![Column medians, entry 1 as X[3,1] runs from 0](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-matrix)
 
-*Column medians, entry 1 as X[3,1] runs from 0.75 to 5.25, every other input as you entered it (41 solutions). Marked: your X[3,1] = 3 gives medians[1] = 3. Your inputs: X = 1; 2; 3; 4; 100.*
-
-![Each cell is one entry of scaled for your inputs (row by row; shade by size and sign)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-live-2)
-
-*Each cell is one entry of scaled for your inputs (row by row; shade by size and sign). Your inputs: X = 1; 2; 3; 4; 100.*
-
-![Column medians, entry 1 as X[2,1] runs from -2 to 6, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-robust-scaler-live-3)
-
-*Column medians, entry 1 as X[2,1] runs from -2 to 6, every other input as you entered it (29 solutions). Marked: your X[2,1] = 2 gives medians[1] = 3. Your inputs: X = 1; 2; 3; 4; 100.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): X (input); scaled (returned).*
 
 ```python
 data_science_ml_ai999x.solve('ml_robust_scaler', X=[[1], [2], [3], [4], [100]])
@@ -6372,17 +5680,9 @@ $$
 - **Assumes:** whole-number features; targets not all equal; a unique best split
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The best single split of x = 1, 2, 3, 10, 11, 12 for y = 1, 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-regression-split)
+![The best single split of x = [1, 2, 3, 10, 11, 12] for y = [1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-regression-split)
 
-*The best single split of x = 1, 2, 3, 10, 11, 12 for y = 1, 1.2, 0.8, 5, 5.4, 4.6: the model returns threshold 6.5, left mean 1, right mean 5 and a decrease of the squared error by 4; the stump predicts the mean of each side. Your inputs: X = 1; 2; 3; 10; 11; 12, y = 1, 1.2, 0.8, 5, 5.4, 4.6.*
-
-![Decrease of the node's mean squared error as y[5] runs from 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-regression-live-1)
-
-*Decrease of the node's mean squared error as y[5] runs from 1.35 to 9.45, every other input as you entered it (41 solutions). Marked: your y[5] = 5.4 gives mse_decrease = 4. Your inputs: X = 1; 2; 3; 10; 11; 12, y = 1, 1.2, 0.8, 5, 5.4, 4.6.*
-
-![Decrease of the node's mean squared error as y[4] runs from 1](https://www.ai999x.com/?ax_fig=data-science-ml-ai999x/ml-decision-stump-regression-live-2)
-
-*Decrease of the node's mean squared error as y[4] runs from 1.25 to 8.75, every other input as you entered it (29 solutions). Marked: your y[4] = 5 gives mse_decrease = 4. Your inputs: X = 1; 2; 3; 10; 11; 12, y = 1, 1.2, 0.8, 5, 5.4, 4.6.*
+*The best single split of x = [1, 2, 3, 10, 11, 12] for y = [1.0, 1.2, 0.8, 5.0, 5.4, 4.6]: the package returns threshold 6.5, left mean 1, right mean 5 and a decrease of the squared error by 4; the stump predicts the mean of each side.*
 
 ```python
 data_science_ml_ai999x.solve('ml_decision_stump_regression', X=[[1], [2], [3], [10], [11], [12]], y=[1.0, 1.2, 0.8, 5.0, 5.4, 4.6])
